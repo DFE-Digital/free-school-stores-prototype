@@ -1,20 +1,37 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+  Prototype home – {{ serviceName }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l" id="alpha-sprint-2">
+      Alpha sprint 2
+    </h2>
+    <p>Here are some quick links:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="alpha-sprint-2/?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Log in as Zara Laney, a Team leader from North West (before a new project is received)</a></li>
+      <li><a class="govuk-link" href="alpha-sprint-2/?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Log in as Alex James, a Delivery officer from North West (before a new project is received)</a></li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  
+  </div>
+
 </div>
 
 {% endblock %}

@@ -4,3 +4,58 @@
 // 
 
 // Add extra styles here
+
+@import 'node_modules/dfe-frontend-alpha/packages/dfefrontend';
+
+.dfe-width-container {max-width: 960px;}
+.fss-wider-page .dfe-width-container,
+.fss-wider-page .govuk-width-container {
+    max-width: 1200px;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+div,
+table,
+th,
+td,
+blockquote,
+li,
+tr {
+    font-family:
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        'Helvetica Neue',
+        sans-serif !important;
+}
+
+.dfe-content-page--header {
+    background: #ebf2f6
+}
+
+
+.fss-dashboard-table__col-2 {
+    width: 8% !important;    
+}
+.fss-dashboard-table__col-3,
+.fss-dashboard-table__col-4,
+.fss-dashboard-table__col-5,
+.fss-dashboard-table__col-6,
+.fss-dashboard-table__col-7 {
+    width: 13% !important;
+}
+.fss-dashboard-table__col-8 {
+    width: 4% !important;
+}
