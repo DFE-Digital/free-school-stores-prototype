@@ -1,0 +1,120 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Login – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Free school stores
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>do something</li>
+        <li>update your name, address or other details</li>
+        <li>do something else</li>
+      </ul>
+
+      <form method="post" id="form-signin" class="form-signin govuk-!-margin-top-6" novalidate="novalidate" action="dashboard">
+        
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-visually-hidden">Sign-in</legend>
+          <div class="govuk-form-group ">  
+            <label class="govuk-label govuk-label--s" for="username">Email address</label>
+            <input class="govuk-input govuk-!-width-three-quarters" id="username" name="username" type="text" value="{{ data['userEmail'] }}">
+          </div>
+
+          <div class="govuk-form-group ">
+            <label class="govuk-label govuk-label--s" for="password">Password</label>
+            <input class="password-input govuk-input govuk-!-width-three-quarters govuk-!-margin-right-1" id="password" name="password" type="password"><button type="button" class="show-password govuk-button govuk-button--secondary govuk-!-margin-bottom-1" aria-label="Show password">Show</button>
+            <p class="govuk-body">
+                <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                    Forgotten your password?
+                </a>    
+            </p>
+          </div>
+          <div class="govuk-inset-text">
+              <p class="govuk-body">By signing in you accept our <a class="govuk-link govuk-!-font-weight-bold" href="/terms">terms and conditions</a>.</p>
+          </div>
+        </fieldset>
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button">
+              Sign in
+              <span class="loader spinner-inline vh">
+                  <span class="ball b-1"></span>
+                  <span class="ball b-2"></span>
+                  <span class="ball b-3"></span>
+              </span>
+          </button>
+          <a class="govuk-button govuk-button--secondary" href="https://profile.signin.education.gov.uk/register" role="button">Create account</a>  
+        </div>
+      </form>
+
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>
+        You can also <a href="#">register by post</a>.
+      </p>
+
+      <p>
+        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+      </p>
+
+      <p>
+        You can’t register for this service if you’re in the UK illegally.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
