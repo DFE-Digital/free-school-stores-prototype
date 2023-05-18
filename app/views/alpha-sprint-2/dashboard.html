@@ -12,6 +12,16 @@ Free schools store projects – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+      {% if data['userRole'] == "School places analysis team" %}
+      <p class="govuk-body govuk-!-margin-top-3">You can add new projects by using the button below.</p>
+      {{ govukButton({
+        text: "Create new projects",
+        classes: "govuk-!-margin-bottom-9",
+        href: "#",
+        isStartButton: false
+      }) }}
+      {% endif %}
+
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--l">All projects</caption>
         <thead class="govuk-table__head">
@@ -28,7 +38,6 @@ Free schools store projects – {{ serviceName }}
         </thead>
         <tbody class="govuk-table__body">
 
-          {% if data['userRole'] == "Team leader" or data['userName'] == "Alex James" %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Bolton Spa Primary</th>
             <td class="govuk-table__cell">112456</td>
@@ -39,9 +48,7 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
             <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
           </tr>
-          {% endif %}
 
-          {% if data['userRole'] == "Team leader" or data['userName'] == "Alex James" %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">St. Wilfrid's Primary School</th>
             <td class="govuk-table__cell">102062</td>
@@ -52,9 +59,9 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
             <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
           </tr>
-          {% endif %}
 
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Blessed John Henry Newman Roman Catholic College</th>
             <td class="govuk-table__cell">123920</td>
@@ -67,7 +74,8 @@ Free schools store projects – {{ serviceName }}
           </tr>
           {% endif %}
 
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">St Luke's Church of England Primary School</th>
             <td class="govuk-table__cell">145616</td>
@@ -80,7 +88,8 @@ Free schools store projects – {{ serviceName }}
           </tr>
           {% endif %}
 
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">St Thomas of Canterbury Catholic Primary School</th>
             <td class="govuk-table__cell">100357</td>
@@ -93,7 +102,8 @@ Free schools store projects – {{ serviceName }}
           </tr>
           {% endif %}
 
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Newcastle High School for Girls</th>
             <td class="govuk-table__cell">108538</td>
@@ -106,7 +116,8 @@ Free schools store projects – {{ serviceName }}
           </tr>
           {% endif %}
           
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Lymington Junior School</th>
             <td class="govuk-table__cell">116051</td>
@@ -119,7 +130,8 @@ Free schools store projects – {{ serviceName }}
           </tr>
           {% endif %}
 
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">St Marys Catholic Academy </th>
             <td class="govuk-table__cell">140114</td>
@@ -132,7 +144,6 @@ Free schools store projects – {{ serviceName }}
           </tr>
           {% endif %}
 
-          {% if data['userRole'] == "Team leader" or data['userName'] == "Alex James" %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Binstead Primary School</th>
             <td class="govuk-table__cell">118176</td>
@@ -143,9 +154,9 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Opened</strong></td>
             <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
           </tr>
-          {% endif %}
 
-          {% if data['userRole'] == "Team leader" %}
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">St James Catholic Primary School</th>
             <td class="govuk-table__cell">141820</td>
