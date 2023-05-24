@@ -1,7 +1,5 @@
 {% extends "./layouts/main.html" %}
 
-{% set currentProject = data['project-list'] %}
-
 {% block pageTitle %}
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -21,6 +19,8 @@
         Project name goes here
       </h1>
 
+      {% for currentProject in data['project-list'] %}
+      {% if currentProject.urnNumber == data['id'] %}
       {{ govukSummaryList({
         rows: [
           {
@@ -78,6 +78,8 @@
           }
         ]
       }) }}
+      {% endif %} 
+      {% endfor %}
 
       <h2 class="govuk-heading-m">
         Now send your application
