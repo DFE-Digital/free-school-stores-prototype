@@ -1,5 +1,7 @@
 {% extends "./layouts/main.html" %}
 
+{% set currentProject = data['project-list'] %}
+
 {% block pageTitle %}
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -16,7 +18,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Project overview: school name goes here
+        Project name goes here
       </h1>
 
       {{ govukSummaryList({
@@ -26,7 +28,7 @@
               text: "School name"
             },
             value: {
-              text: data["school-name-1"]
+              text: currentProject.projectTitle
             },
             actions: {
               items: [
@@ -44,7 +46,7 @@
               text: "Temporary project ID"
             },
             value: {
-              text: "Answer 2"
+              text: currentProject.urnNumber
             },
             actions: {
               items: [

@@ -38,6 +38,19 @@ Free schools store projects – {{ serviceName }}
         </thead>
         <tbody class="govuk-table__body">
 
+          {% for project in data['project-list'] %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{project.projectTitle"]}}</th>
+              <td class="govuk-table__cell">193323</td>
+              <td class="govuk-table__cell">Manchester City Council</td>
+              <td class="govuk-table__cell">Manchester City COuncil</td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">4 July 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+            </tr>
+          {% endfor %}
+
           {% if data['userName'] == "Alex James" %}
           {% else %}
           <tr class="govuk-table__row">

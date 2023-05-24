@@ -38,6 +38,19 @@ Free schools store projects – {{ serviceName }}
         </thead>
         <tbody class="govuk-table__body">
 
+          {% for project in data['project-list'] %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
+              <td class="govuk-table__cell">{{project.urnNumber}}</td>
+              <td class="govuk-table__cell">Manchester City Council</td>
+              <td class="govuk-table__cell">Manchester City COuncil</td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">4 July 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+              <td class="govuk-table__cell"><a href="project-overview?project.urnNumber" class="govuk-link">View</a></td>
+            </tr>
+          {% endfor %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Bolton Spa Primary</th>
             <td class="govuk-table__cell">112456</td>
@@ -46,7 +59,7 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell">Alex James</td>
             <td class="govuk-table__cell">1 September 2023</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+            <td class="govuk-table__cell"><a href="project-overview" class="govuk-link">View</a></td>
           </tr>
 
           <tr class="govuk-table__row">
@@ -57,7 +70,7 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell">Alex James</td>
             <td class="govuk-table__cell">3 August 2024</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+            <td class="govuk-table__cell"><a href="project-overview" class="govuk-link">View</a></td>
           </tr>
 
           {% if data['userName'] == "Alex James" %}
@@ -70,7 +83,7 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell"></td>
             <td class="govuk-table__cell">1 July 2024</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+            <td class="govuk-table__cell"><a href="project-overview" class="govuk-link">View</a></td>
           </tr>
           {% endif %}
 
