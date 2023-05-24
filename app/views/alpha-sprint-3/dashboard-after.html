@@ -1,0 +1,192 @@
+{% extends "./layouts/main-fss-internal.html" %}
+{% set fssPageTitle = "Free schools store projects" %}
+{% set fssPageDesc = "Here is a list of all free school application projects." %}
+{% set bodyClasses = "fss-wider-page" %}
+
+{% block pageTitle %}
+Free schools store projects – {{ serviceName }}
+{% endblock %}
+
+{% block pageContent %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% if data['userRole'] == "School places analysis team" %}
+      <p class="govuk-body govuk-!-margin-top-3">You can add new projects by using the button below.</p>
+      {{ govukButton({
+        text: "Create new projects",
+        classes: "govuk-!-margin-bottom-9",
+        href: "create-new-fss-landing",
+        isStartButton: false
+      }) }}
+      {% endif %}
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--l">All projects</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">URN number</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Applicant</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Opening date</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Status</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">St George's Primary School</th>
+            <td class="govuk-table__cell">193323</td>
+            <td class="govuk-table__cell">Manchester City Council</td>
+            <td class="govuk-table__cell">Manchester City COuncil</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">4 July 2024</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Bolton Spa Primary</th>
+            <td class="govuk-table__cell">112456</td>
+            <td class="govuk-table__cell">Oak Hill Trust</td>
+            <td class="govuk-table__cell">Bolton</td>
+            <td class="govuk-table__cell">Alex James</td>
+            <td class="govuk-table__cell">1 September 2023</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">St. Wilfrid's Primary School</th>
+            <td class="govuk-table__cell">102062</td>
+            <td class="govuk-table__cell">Dynamics Trust</td>
+            <td class="govuk-table__cell">Warrington</td>
+            <td class="govuk-table__cell">Alex James</td>
+            <td class="govuk-table__cell">3 August 2024</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Blessed John Henry Newman Roman Catholic College</th>
+            <td class="govuk-table__cell">123920</td>
+            <td class="govuk-table__cell">Kingfisher learning trust</td>
+            <td class="govuk-table__cell">Warrington</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">1 July 2024</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">St Luke's Church of England Primary School</th>
+            <td class="govuk-table__cell">145616</td>
+            <td class="govuk-table__cell">Lambeth</td>
+            <td class="govuk-table__cell">Lambeth</td>
+            <td class="govuk-table__cell">Paul Michaels</td>
+            <td class="govuk-table__cell">7 July 2022</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Opened</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">St Thomas of Canterbury Catholic Primary School</th>
+            <td class="govuk-table__cell">100357</td>
+            <td class="govuk-table__cell">Hammersmith and Fulham</td>
+            <td class="govuk-table__cell">Hammersmith and Fulham</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">8 August 2024</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Newcastle High School for Girls</th>
+            <td class="govuk-table__cell">108538</td>
+            <td class="govuk-table__cell">WISE ACADEMIES</td>
+            <td class="govuk-table__cell">Newcastle upon Tyne</td>
+            <td class="govuk-table__cell">Jo Lee</td>
+            <td class="govuk-table__cell">24 August 2023</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+          
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Lymington Junior School</th>
+            <td class="govuk-table__cell">116051</td>
+            <td class="govuk-table__cell">THE KITE ACADEMY TRUST</td>
+            <td class="govuk-table__cell">Hampshire</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">21 July 2024</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">St Marys Catholic Academy </th>
+            <td class="govuk-table__cell">140114</td>
+            <td class="govuk-table__cell">Blackpool</td>
+            <td class="govuk-table__cell">Blackpool</td>
+            <td class="govuk-table__cell">Zara Laney</td>
+            <td class="govuk-table__cell">25 August 2024</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Binstead Primary School</th>
+            <td class="govuk-table__cell">118176</td>
+            <td class="govuk-table__cell">UNITED LEARNING TRUST</td>
+            <td class="govuk-table__cell">Manchester City Council</td>
+            <td class="govuk-table__cell">Alex James</td>
+            <td class="govuk-table__cell">10 August 2022</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Opened</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+
+          {% if data['userName'] == "Alex James" %}
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">St James Catholic Primary School</th>
+            <td class="govuk-table__cell">141820</td>
+            <td class="govuk-table__cell">ACADEMY TRANSFORMATION TRUST</td>
+            <td class="govuk-table__cell">Birmingham</td>
+            <td class="govuk-table__cell">Paul Michaels</td>
+            <td class="govuk-table__cell">14 August 2023</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+          </tr>
+          {% endif %}
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+{% endblock %}
