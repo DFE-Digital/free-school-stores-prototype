@@ -12,7 +12,7 @@ module.exports = function (router) {
 
         // Check whether the variable matches a condition
         if (Task == "individual") { 
-            res.redirect('create-new-fss-check-your-answers')
+            res.redirect('create-new-fss-school-name')
         }   
         else if (Task == "bulk") {
             res.redirect('create-new-fss-confirmation')

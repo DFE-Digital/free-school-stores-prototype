@@ -1,0 +1,50 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Fast forward - Create new free school projects –  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="create-new-fss-check-your-answers" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-l">Creating a new free school project</span>
+            This is a placeholder page
+          </h1>
+
+          <p class="govuk-body">To save time, we will fast forward the process by filling in dummy data for the rest of the journey.</p>
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        
+        <input hidden type="text" name="create-new-fss-provisional-opening-date" value="5 August 2023"/>
+        <input hidden type="text" name="create-new-fss-constituency-mp" value="David Beckham"/>
+        <input hidden type="text" name="create-new-fss-number-of-forms-of-entry" value="5"/>
+        <input hidden type="text" name="create-new-fss-school-type" value="Main stream"/>
+        <input hidden type="text" name="create-new-fss-temp-project-id" value="155988"/>
+        
+        </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

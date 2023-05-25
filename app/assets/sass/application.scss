@@ -29,7 +29,8 @@ th,
 td,
 blockquote,
 li,
-tr {
+tr,
+label {
     font-family:
         BlinkMacSystemFont,
         'Segoe UI',
@@ -39,6 +40,9 @@ tr {
         Cantarell,
         'Helvetica Neue',
         sans-serif !important;
+}
+h1.govuk-fieldset__heading {
+    line-height: inherit !important;
 }
 
 .dfe-content-page--header {
