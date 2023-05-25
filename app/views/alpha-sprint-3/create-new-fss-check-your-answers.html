@@ -1,7 +1,7 @@
 {% extends "./layouts/main.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers - Create new free school projects – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,24 +16,141 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Project overview: school name goes here
+        Check your answers
       </h1>
 
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "School name"
+              text: "Current free school name"
             },
             value: {
-              text: data["school-name-1"]
+              text: data["create-new-fss-school-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-new-fss-school-name",
+                  text: "Change",
+                  visuallyHiddenText: "School name"
+                }
+              ]
+            }
+          }          
+          ,
+          {
+            key: {
+              text: "Geographical region"
+            },
+            value: {
+              text: data["create-new-fss-region"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-new-fss-regions",
+                  text: "Change",
+                  visuallyHiddenText: "Geographical region"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              text: data["create-new-fss-local-authority"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-new-fss-local-authority",
+                  text: "Change",
+                  visuallyHiddenText: "Local authority"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Provisional opening date agreed with trust"
+            },
+            value: {
+              text: data["create-new-fss-provisional-opening-date"]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency"
+            },
+            value: {
+              text: data["create-new-fss-local-authority"]
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "School name"
+                  visuallyHiddenText: "Constituency"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency MP"
+            },
+            value: {
+              text: data["create-new-fss-constituency-mp"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Constituency MP"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Number of forms of entry"
+            },
+            value: {
+              text: data["create-new-fss-number-of-forms-of-entry"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Number of forms of entry"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School type"
+            },
+            value: {
+              text: data["create-new-fss-school-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "School type"
                 }
               ]
             }
@@ -44,34 +161,7 @@
               text: "Temporary project ID"
             },
             value: {
-              text: "Answer 2"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "temporary project ID"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 3"
-            },
-            value: {
-              text: "Answer 3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
+              text: data["create-new-fss-temp-project-id"]
             }
           }
         ]

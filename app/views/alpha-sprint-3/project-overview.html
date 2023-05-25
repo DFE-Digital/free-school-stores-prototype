@@ -20,7 +20,7 @@
       </h1>
 
       {% for currentProject in data['project-list'] %}
-      {% if currentProject.urnNumber == data['id'] %}
+      {% if currentProject.projectID == data['id'] %}
       {{ govukSummaryList({
         rows: [
           {
@@ -46,7 +46,7 @@
               text: "Temporary project ID"
             },
             value: {
-              text: currentProject.urnNumber
+              text: currentProject.projectID
             },
             actions: {
               items: [

@@ -38,7 +38,7 @@ Free schools store projects – {{ serviceName }}
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">URN number</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Applicant</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
@@ -52,13 +52,13 @@ Free schools store projects – {{ serviceName }}
           {% if (data['userRole'] != 'Delivery officer' or data['userName'] == project.deliveryOfficer) %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
-              <td class="govuk-table__cell">{{project.urnNumber}}</td>
+              <td class="govuk-table__cell">{{project.projectID}}</td>
               <td class="govuk-table__cell">{{project.applicant}}</td>
               <td class="govuk-table__cell">{{project.localAuthority}}</td>
               <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
               <td class="govuk-table__cell">{{project.openingDate}}</td>
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
-              <td class="govuk-table__cell"><a href="project-overview?id={{project.urnNumber}}" class="govuk-link">View</a></td>
+              <td class="govuk-table__cell"><a href="project-overview?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
           {% endif %}
           {% endfor %}
