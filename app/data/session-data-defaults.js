@@ -1,10 +1,9 @@
 module.exports = {
 
   // Insert values here
-  'school-name-1': 'Chelsea Spa Primary',
   'project-list': [
     {
-      "projectTitle" : "St George's Primary School",projectID
+      "projectTitle" : "St George's Primary School",
       "projectID" : "193323",
       "applicant" : "Manchester City Council",
       "localAuthority" : "Manchester City COuncil",
