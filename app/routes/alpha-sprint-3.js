@@ -43,7 +43,7 @@ module.exports = function (router) {
             "status": "Not started"
         }
           console.log(newProject)
-        req.session.data['project-list'].push(newProject)
+        req.session.data['project-list'].unshift(newProject)
         res.redirect('create-new-fss-confirmation');
     })
 
