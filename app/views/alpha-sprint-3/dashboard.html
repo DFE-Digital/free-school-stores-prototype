@@ -58,7 +58,7 @@ Free schools store projects – {{ serviceName }}
               <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
               <td class="govuk-table__cell">{{project.openingDate}}</td>
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
-              <td class="govuk-table__cell"><a href="project-overview?id={{project.projectID}}" class="govuk-link">View</a></td>
+              <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
           {% endif %}
           {% endfor %}

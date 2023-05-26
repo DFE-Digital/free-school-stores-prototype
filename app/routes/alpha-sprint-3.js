@@ -20,4 +20,13 @@ module.exports = function (router) {
 
     })
 
+    router.get('/' + version + '/p-o', function (req, res) {
+        // Make a variable to give it the value from the radio buttons on the index page  
+        // Check whether the variable matches a condition
+        var project = req.session.data['project-list'].find(x => x.projectID == req.query.id)
+        console.log(project)
+        req.session.data.currentProject = project;
+        res.redirect('project-overview');
+    })
+
 }
