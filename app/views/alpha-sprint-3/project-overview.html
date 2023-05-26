@@ -1,7 +1,9 @@
 {% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{currentProject}} - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,15 +18,8 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        {% for currentProject in data['project-list'] %}
-        {% if currentProject.projectID == data['id'] %}
-          {{ currentProject.projectTitle }}
-        {% endif %} 
-        {% endfor %}
+        {{currentProject.projectTitle}}
       </h1>
-
-      {% for currentProject in data['project-list'] %}
-      {% if currentProject.projectID == data['id'] %}
       {{ govukSummaryList({
         rows: [
           {
@@ -82,8 +77,6 @@
           }
         ]
       }) }}
-      {% endif %} 
-      {% endfor %}
 
       <h2 class="govuk-heading-m">
         Now send your application
