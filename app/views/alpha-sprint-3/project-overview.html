@@ -16,7 +16,11 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Project name goes here
+        {% for currentProject in data['project-list'] %}
+        {% if currentProject.projectID == data['id'] %}
+          {{ currentProject.projectTitle }}
+        {% endif %} 
+        {% endfor %}
       </h1>
 
       {% for currentProject in data['project-list'] %}
