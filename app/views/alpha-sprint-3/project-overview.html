@@ -1,9 +1,10 @@
-{% extends "./layouts/main.html" %}
+{% extends "./layouts/main-fss-project-overview.html" %}
 {% set currentProject = data['currentProject'] %}
-
+{% set fssPageDesc = "Project details" %}
+{% set bodyClasses = "fss-wider-page" %}
 
 {% block pageTitle %}
-  {{currentProject}} - {{serviceName}}
+  {{currentProject.projectTitle}} - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,30 +14,86 @@
   }) }}
 {% endblock %}
 
-{% block content %}
+{% block pageContent %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+    <div class="govuk-grid-column-one-quarter">
+      Sidebar goes here
+    </div>
+    <div class="govuk-grid-column-three-quarters">
 
-      <h1 class="govuk-heading-xl">
-        {{currentProject.projectTitle}}
-      </h1>
+      <h2 class="govuk-heading-l">Key project information</h2>
+
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "School name"
+              text: "Current free school name"
             },
             value: {
               text: currentProject.projectTitle
+            }
+          }          
+          ,
+          {
+            key: {
+              text: "Geographical region"
             },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "School name"
-                }
-              ]
+            value: {
+              text: currentProject.geographicalRegion
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              text: currentProject.localAuthority
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Provisional opening date agreed with trust"
+            },
+            value: {
+              text: currentProject.openingDate
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency"
+            },
+            value: {
+              text: currentProject.localAuthority
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency MP"
+            },
+            value: {
+              text: ""
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Number of forms of entry"
+            },
+            value: {
+              text: currentProject.numberOfFormsOfEntry
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School type"
+            },
+            value: {
+              text: currentProject.schoolType
             }
           }
           ,
@@ -46,53 +103,11 @@
             },
             value: {
               text: currentProject.projectID
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "temporary project ID"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 3"
-            },
-            value: {
-              text: "Answer 3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
             }
           }
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Now send your application
-      </h2>
-
-      <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p>
-
-      <form action="create-new-fss-confirmation" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
-
-      </form>
 
     </div>
   </div>

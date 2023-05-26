@@ -21,25 +21,25 @@ module.exports = function (router) {
     })
 
     router.get('/' + version + '/p-o', function (req, res) {
-        // Make a variable to give it the value from the radio buttons on the index page  
-        // Check whether the variable matches a condition
         var project = req.session.data['project-list'].find(x => x.projectID == req.query.id)
         req.session.data.currentProject = project;
         res.redirect('project-overview');
     })
 
     router.post('/' + version + '/add-project', function (req, res) {
-        // Make a variable to give it the value from the radio buttons on the index page  
-        // Check whether the variable matches a condition
-   
         var newProject = 
         {
             "projectTitle": req.session.data['create-new-fss-school-name'],
             "projectID": req.session.data['create-new-fss-project-id'],
             "applicant": "",
+            "geographicalRegion": req.session.data['create-new-fss-region'],
             "localAuthority": req.session.data['create-new-fss-local-authority'],
+            "openingDate": req.session.data['create-new-fss-provisional-opening-date'],
+            "constituency": req.session.data['create-new-fss-region'],
+            "constituencyMP": "",
+            "numberOfFormsOfEntry": req.session.data['create-new-fss-number-of-forms-of-entry'],
+            "schoolType": req.session.data['create-new-fss-school-type'],
             "deliveryOfficer": "",
-            "openingDate": "",
             "status": "Not started"
         }
           console.log(newProject)
@@ -48,9 +48,9 @@ module.exports = function (router) {
     })
 
     router.get('/' + version + '/create-new-fss', function (req, res) {
-        // Make a variable to give it the value from the radio buttons on the index page  
-        // Check whether the variable matches a condition
-        req.session.data['create-new-fss-project-id'] = '1' + Math.floor(10000 + Math.random() * 90000).toString()
+        req.session.data['create-new-fss-project-id'] = '1' + Math.floor(10000 + Math.random() * 90000).toString();
+        req.session.data['create-new-fss-number-of-forms-of-entry'] = '1' + Math.floor(Math.random() * 5).toString();
+        req.session.data['create-new-fss-school-type'] = Math.random() > 0.5 ? "Mainstream" : "AP";
         res.redirect('create-new-fss-landing');
     })
 }
