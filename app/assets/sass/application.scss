@@ -49,6 +49,15 @@ h1.govuk-fieldset__heading {
     background: #ebf2f6
 }
 
+.fss-index-card {
+    background-color: #d9f0ff; 
+    padding: 20px 30px 10px 30px; 
+    margin-bottom: 30px;
+    code {
+        padding: 0 5px;
+        color: #d13118;
+    }
+}
 
 .fss-dashboard-table__col-2 {
     width: 8% !important;    

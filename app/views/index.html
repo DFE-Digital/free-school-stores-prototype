@@ -1,4 +1,5 @@
 {% extends "layouts/main.html" %}
+{% set bodyClasses = "fss-wider-page" %}
 
 {% block pageTitle %}
   Prototype home – {{ serviceName }}
@@ -7,67 +8,68 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
+  <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
       {{ serviceName }}
     </h1>
-
+    <p class="govuk-body-l">Home of the new Free Schools Store prototype.</p>
   </div>
-
-  <div class="govuk-grid-column-two-thirds">
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters" style="border-top: 1px solid #b1b4b6; padding-top: 30px;">
 
     <h2 class="govuk-heading-l" id="alpha-sprint-3">
       Alpha sprint 3
     </h2>
 
-    <p>More details are added to the sprint 3 prototype, including:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Check your answers page for creating new projects</li>
-    </ul>
+    <div class="fss-index-card">
+      <p>More details are added to the sprint 3 prototype, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>More pages added into the creating new projects journey</li>
+        <li>Moved project data into <code>session-data-defaults.js</code></li>
+      </ul>
+    </div>
 
     <h3 class="govuk-heading-m">
       Presumption route - conservative approach
     </h3>
     <p>This is a prototype to validate the ideas of replacing the current FSS by new FSS without changing the current work process for delivery officers.</p>
 
-    <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 1: Team leader</h4>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Zara Laney</li>
-      <li>Team leader</li>
-      <li>North West</li>
-      <li>Can see all projects</li>
-      <li>Cannot add new projects</li>
-      <li><a class="govuk-link" href="alpha-sprint-3/?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Log in as a Team leader (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-3/dashboard.html?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-3/dashboard-after.html?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
-    </ul>
-
-    <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 2: SPA team member</h4>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Step Park</li>
-      <li>School places analysis team</li>
-      <li>North West</li>
-      <li>Can see all projects</li>
-      <li>Can add new projects</li>
-      <li><a class="govuk-link" href="alpha-sprint-3/?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Log in as a School places analysis team member (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-3/dashboard.html?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-3/dashboard-after.htm?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
-    </ul>
-
-    <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 3: Delivery officer</h4>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Alex James</li>
-      <li>Delivery officer</li>
-      <li>North West</li>
-      <li>Can see their own projects only</li>
-      <li>Cannot add new projects</li>
-      <li><a class="govuk-link" href="alpha-sprint-3/?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Log in as a Delivery officer (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-3/dashboard.html?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-3/dashboard-after.html?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
-    </ul>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 1: Team leader</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Zara Laney</li>
+          <li>Team leader</li>
+          <li>North West</li>
+          <li>Can see all projects</li>
+          <li>Cannot add new projects</li>
+          <li><a class="govuk-link" href="alpha-sprint-3/?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Log in as a Team leader</a></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 2: SPA team member</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Step Park</li>
+          <li>School places analysis team</li>
+          <li>North West</li>
+          <li>Can see all projects</li>
+          <li>Can add new projects</li>
+          <li><a class="govuk-link" href="alpha-sprint-3/?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Log in as a School places analysis team member</a></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 3: Delivery officer</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Alex James</li>
+          <li>Delivery officer</li>
+          <li>North West</li>
+          <li>Can see their own projects only</li>
+          <li>Cannot add new projects</li>
+          <li><a class="govuk-link" href="alpha-sprint-3/?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Log in as a Delivery officer</a></li>
+        </ul>
+      </div>
+    </div>
     
     <h3 class="govuk-heading-m">
       Presumption route - disruptive approach
@@ -82,51 +84,82 @@
       Alpha sprint 2
     </h2>
 
+    <div class="fss-index-card">
+      <p>Initial prototype for FSS workflow design, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Login pages for different roles</li>
+        <li>Dashboard for different roles</li>
+        <li>A placeholder journey for creating new free school projects</li>
+      </ul>
+    </div>
+
     <h3 class="govuk-heading-m">
       Presumption route - conservative approach
     </h3>
     <p>This is a prototype to validate the ideas of replacing the current FSS by new FSS without changing the current work process for delivery officers.</p>
 
-    <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 1: Team leader</h4>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Zara Laney</li>
-      <li>Team leader</li>
-      <li>North West</li>
-      <li>Can see all projects</li>
-      <li>Cannot add new projects</li>
-      <li><a class="govuk-link" href="alpha-sprint-2/?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Log in as a Team leader (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-2/dashboard.html?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-2/dashboard-after.html?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
-    </ul>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 1: Team leader</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Zara Laney</li>
+          <li>Team leader</li>
+          <li>North West</li>
+          <li>Can see all projects</li>
+          <li>Cannot add new projects</li>
+          <li><a class="govuk-link" href="alpha-sprint-2/?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Log in as a Team leader (before a new project is received)</a></li>
+          <li><a class="govuk-link" href="alpha-sprint-2/dashboard.html?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
+          <li><a class="govuk-link" href="alpha-sprint-2/dashboard-after.html?userName=Zara%20Laney&userEmail=zara.laney@education.gov.uk&userRole=Team%20leader&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 2: SPA team member</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Step Park</li>
+          <li>School places analysis team</li>
+          <li>North West</li>
+          <li>Can see all projects</li>
+          <li>Can add new projects</li>
+          <li><a class="govuk-link" href="alpha-sprint-2/?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Log in as a School places analysis team member (before a new project is received)</a></li>
+          <li><a class="govuk-link" href="alpha-sprint-2/dashboard.html?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
+          <li><a class="govuk-link" href="alpha-sprint-2/dashboard-after.htm?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 3: Delivery officer</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Alex James</li>
+          <li>Delivery officer</li>
+          <li>North West</li>
+          <li>Can see their own projects only</li>
+          <li>Cannot add new projects</li>
+          <li><a class="govuk-link" href="alpha-sprint-2/?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Log in as a Delivery officer (before a new project is received)</a></li>
+          <li><a class="govuk-link" href="alpha-sprint-2/dashboard.html?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
+          <li><a class="govuk-link" href="alpha-sprint-2/dashboard-after.html?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 2: SPA team member</h4>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Step Park</li>
-      <li>School places analysis team</li>
-      <li>North West</li>
-      <li>Can see all projects</li>
-      <li>Can add new projects</li>
-      <li><a class="govuk-link" href="alpha-sprint-2/?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Log in as a School places analysis team member (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-2/dashboard.html?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-2/dashboard-after.htm?userName=Step%20Park&userEmail=step.park@education.gov.uk&userRole=School%20places%20analysis%20team&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
-    </ul>
-
-    <h4 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Role 3: Delivery officer</h4>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Alex James</li>
-      <li>Delivery officer</li>
-      <li>North West</li>
-      <li>Can see their own projects only</li>
-      <li>Cannot add new projects</li>
-      <li><a class="govuk-link" href="alpha-sprint-2/?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Log in as a Delivery officer (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-2/dashboard.html?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Dashboard (before a new project is received)</a></li>
-      <li><a class="govuk-link" href="alpha-sprint-2/dashboard-after.html?userName=Alex%20James&userEmail=alex.james@education.gov.uk&userRole=Delivery%20officer&userRegion=North%20West">Dashboard (after a new project is received)</a></li>
-    </ul>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
   </div>
-
+  <div class="govuk-grid-column-one-quarter">
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://github.com/DFE-Digital/free-schools-store-prototype">
+              GitHub repo
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
 </div>
 
 {% endblock %}
