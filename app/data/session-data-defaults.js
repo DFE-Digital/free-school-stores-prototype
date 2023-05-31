@@ -28,7 +28,7 @@ module.exports = {
       "numberOfFormsOfEntry" : 3,
       "schoolType": "Mainstream",
       "deliveryOfficer" : "Alex James", 
-      "status" : "In progress", 
+      "status" : "Not started", 
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
