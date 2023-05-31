@@ -1,6 +1,6 @@
 {% extends "./layouts/main-fss-project-overview.html" %}
 {% set currentProject = data['currentProject'] %}
-{% set fssPageDesc = "Project details" %}
+{% set fssPageDesc = "Project overview" %}
 {% set bodyClasses = "fss-wider-page" %}
 
 {% block pageTitle %}
@@ -49,6 +49,15 @@
             },
             value: {
               text: currentProject.localAuthority
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Lead applicant"
+            },
+            value: {
+              text: currentProject.leadApplicant
             }
           }
           ,

@@ -16,9 +16,10 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">Creating a new free school project</span>
         Check your answers
       </h1>
-
+      
       {{ govukSummaryList({
         rows: [
           {
@@ -89,16 +90,7 @@
               text: "Constituency"
             },
             value: {
-              text: data["create-new-fss-constituency"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Constituency"
-                }
-              ]
+              text: data["create-new-fss-local-authority"] + " (Retrieved from another system)"
             }
           }
           ,
@@ -107,16 +99,7 @@
               text: "Constituency MP"
             },
             value: {
-              text: data["create-new-fss-constituency-mp"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Constituency MP"
-                }
-              ]
+              text: "David Beckham (Retrieved from another system)"
             }
           }
           ,

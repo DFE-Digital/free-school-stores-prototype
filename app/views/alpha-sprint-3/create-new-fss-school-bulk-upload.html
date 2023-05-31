@@ -1,0 +1,52 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Bulk upload - Create new free school projects – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="create-new-fss-bulk-upload" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+            <span class="govuk-caption-l">Creating a new free school project</span>
+            Bulk upload
+          </h1>
+
+          <p class="govuk-body govuk-!-margin-bottom-8">You can upload a .csv file to create multiple projects in one go. If you are not sure about the format, you can download the csv template here, fill in the details and then upload it on this page.</p>
+
+          {{ govukFileUpload({
+            id: "file-upload-1",
+            name: "file-upload-1",
+            label: {
+              text: "Please upload a CSV file here."
+            }
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

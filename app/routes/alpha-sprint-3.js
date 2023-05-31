@@ -15,7 +15,7 @@ module.exports = function (router) {
             res.redirect('create-new-fss-school-name')
         }   
         else if (Task == "bulk") {
-            res.redirect('create-new-fss-confirmation')
+            res.redirect('create-new-fss-school-bulk-upload')
         }
 
     })
@@ -31,7 +31,7 @@ module.exports = function (router) {
         {
             "projectTitle": req.session.data['create-new-fss-school-name'],
             "projectID": req.session.data['create-new-fss-project-id'],
-            "applicant": "",
+            "leadApplicant": "",
             "geographicalRegion": req.session.data['create-new-fss-region'],
             "localAuthority": req.session.data['create-new-fss-local-authority'],
             "openingDate": req.session.data['create-new-fss-provisional-opening-date'],
@@ -42,8 +42,8 @@ module.exports = function (router) {
             "deliveryOfficer": "",
             "status": "Not started"
         }
-          console.log(newProject)
-        req.session.data['project-list'].unshift(newProject)
+        console.log(newProject);
+        req.session.data['project-list'].unshift(newProject);
         res.redirect('create-new-fss-confirmation');
     })
 
@@ -52,5 +52,60 @@ module.exports = function (router) {
         req.session.data['create-new-fss-number-of-forms-of-entry'] = '1' + Math.floor(Math.random() * 5).toString();
         req.session.data['create-new-fss-school-type'] = Math.random() > 0.5 ? "Mainstream" : "AP";
         res.redirect('create-new-fss-landing');
+    })
+
+    router.post('/' + version + '/create-new-fss-bulk-upload', function (req, res) {
+        var newProject1 = {
+            "projectTitle": "Birmingham Junior School",
+            "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
+            "leadApplicant": "Dynamics Trust",
+            "geographicalRegion": "Birmingham",
+            "localAuthority": "Birmingham",
+            "openingDate": "7 July 2023",
+            "constituency": "",
+            "constituencyMP": "",
+            "numberOfFormsOfEntry": "7",
+            "schoolType": "AP",
+            "deliveryOfficer": "",
+            "status": "Not started"
+        }
+        console.log(newProject1);
+        req.session.data['project-list'].unshift(newProject1);
+
+        var newProject2 = {
+            "projectTitle": "Kensington Public School",
+            "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
+            "leadApplicant": "Kingfisher learning trust",
+            "geographicalRegion": "Kensington and Chelsea",
+            "localAuthority": "Kensington and Chelsea",
+            "openingDate": "9 August 2023",
+            "constituency": "",
+            "constituencyMP": "",
+            "numberOfFormsOfEntry": "10",
+            "schoolType": "Mainstream",
+            "deliveryOfficer": "",
+            "status": "Not started"
+        }
+        console.log(newProject2);
+        req.session.data['project-list'].unshift(newProject2);
+
+        var newProject3 = {
+            "projectTitle": "Doncaster High School",
+            "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
+            "leadApplicant": "United Learning Trust",
+            "geographicalRegion": "Doncaster",
+            "localAuthority": "Doncaster",
+            "openingDate": "14 August 2023",
+            "constituency": "",
+            "constituencyMP": "",
+            "numberOfFormsOfEntry": "6",
+            "schoolType": "Mainstream",
+            "deliveryOfficer": "",
+            "status": "Not started"
+        }
+        console.log(newProject3);
+        req.session.data['project-list'].unshift(newProject3);
+
+        res.redirect('create-new-fss-confirmation');
     })
 }
