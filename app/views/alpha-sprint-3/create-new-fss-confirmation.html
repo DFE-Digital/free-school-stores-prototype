@@ -6,11 +6,19 @@
 
 {% block content %}
 
+{% set panelHead %}
+  {% if data["create-new-fss-methods"] == "individual" %}
+    New free school project created
+  {% else %}
+    New free school projects created
+  {% endif %}
+{% endset %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "New free school projects created",
+        titleText: panelHead,
         html: "Your reference number<br><strong>HDJ2123F</strong>"
       }) }}
 
