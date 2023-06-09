@@ -33,6 +33,7 @@ Free schools store projects – {{ serviceName }}
       }) }}
       {% endif %}
 
+      {% if data['userRole'] != 'Delivery officer' %}
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--l">All projects</caption>
         <thead class="govuk-table__head">
@@ -49,7 +50,37 @@ Free schools store projects – {{ serviceName }}
         </thead>
         <tbody class="govuk-table__body">
           {% for project in data['project-list'] %}
-          {% if (data['userRole'] != 'Delivery officer' or data['userName'] == project.deliveryOfficer) %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
+            <td class="govuk-table__cell">{{project.projectID}}</td>
+            <td class="govuk-table__cell">{{project.leadApplicant}}</td>
+            <td class="govuk-table__cell">{{project.localAuthority}}</td>
+            <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
+            <td class="govuk-table__cell">{{project.openingDate}}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
+            <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--l">My projects</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Lead applicant</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Opening date</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Status</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for project in data['project-list'] %}
+          {% if data['userName'] == project.deliveryOfficer %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -64,6 +95,39 @@ Free schools store projects – {{ serviceName }}
           {% endfor %}
         </tbody>
       </table>
+
+      <table class="govuk-table govuk-!-margin-top-9">
+        <caption class="govuk-table__caption govuk-table__caption--l">Projects not assigned to me</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Lead applicant</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Opening date</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Status</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for project in data['project-list'] %}
+          {% if data['userName'] != project.deliveryOfficer %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
+              <td class="govuk-table__cell">{{project.projectID}}</td>
+              <td class="govuk-table__cell">{{project.leadApplicant}}</td>
+              <td class="govuk-table__cell">{{project.localAuthority}}</td>
+              <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
+              <td class="govuk-table__cell">{{project.openingDate}}</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
+              <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
+            </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
 
     </div>
   </div>
