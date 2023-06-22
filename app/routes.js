@@ -13,3 +13,4 @@ const router = govukPrototypeKit.requests.setupRouter()
 //********************************************
 require('./routes/alpha-sprint-2.js')(router);
 require('./routes/alpha-sprint-3.js')(router);
+require('./routes/alpha-sprint-5.js')(router);

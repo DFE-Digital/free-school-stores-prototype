@@ -1,0 +1,637 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Local authority - Create new free school projects –  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="create-new-fss-fastforward" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          {% if data['create-new-fss-region'] == 'East Midlands' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Derby",
+                checked: checked("create-new-fss-local-authority", "Derby"),
+                text: "Derby"
+              },
+              {
+                value: "Cambridgeshire",
+                checked: checked("create-new-fss-local-authority", "Cambridgeshire"),
+                text: "Cambridgeshire"
+              },
+              {
+                value: "Central Bedfordshire",
+                checked: checked("create-new-fss-local-authority", "Central Bedfordshire"),
+                text: "Central Bedfordshire"
+              },
+              {
+                value: "Essex",
+                checked: checked("create-new-fss-local-authority", "Essex"),
+                text: "Essex"
+              },
+              {
+                value: "Lincolnshire",
+                checked: checked("create-new-fss-local-authority", "Lincolnshire"),
+                text: "Lincolnshire"
+              },
+              {
+                value: "North Northamptonshire",
+                checked: checked("create-new-fss-local-authority", "North Northamptonshire"),
+                text: "North Northamptonshire"
+              },
+              {
+                value: "Nottingham",
+                checked: checked("create-new-fss-local-authority", "Nottingham"),
+                text: "Nottingham"
+              },
+              {
+                value: "Nottinghamshire",
+                checked: checked("create-new-fss-local-authority", "Nottinghamshire"),
+                text: "Nottinghamshire"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+          {% if data['create-new-fss-region'] == 'East of England' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Bedford",
+                checked: checked("create-new-fss-local-authority", "Bedford"),
+                text: "Bedford"
+              },
+              {
+                value: "Cambridgeshire",
+                checked: checked("create-new-fss-local-authority", "Cambridgeshire"),
+                text: "Cambridgeshire"
+              },
+              {
+                value: "Central Bedfordshire",
+                checked: checked("create-new-fss-local-authority", "Central Bedfordshire"),
+                text: "Central Bedfordshire"
+              },
+              {
+                value: "Essex",
+                checked: checked("create-new-fss-local-authority", "Essex"),
+                text: "Essex"
+              },
+              {
+                value: "Hertfordshire",
+                checked: checked("create-new-fss-local-authority", "Hertfordshire"),
+                text: "Hertfordshire"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+          {% if data['create-new-fss-region'] == 'London' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Barking and Dagenham",
+                checked: checked("create-new-fss-local-authority", "Barking and Dagenham"),
+                text: "Barking and Dagenham"
+              },
+              {
+                value: "Barking and DagenhamBarnet",
+                checked: checked("create-new-fss-local-authority", "Barking and DagenhamBarnet"),
+                text: "Barking and DagenhamBarnet"
+              },
+              {
+                value: "Bexley",
+                checked: checked("create-new-fss-local-authority", "Bexley"),
+                text: "Bexley"
+              },
+              {
+                value: "Brent",
+                checked: checked("create-new-fss-local-authority", "Brent"),
+                text: "Brent"
+              },
+              {
+                value: "Bromley",
+                checked: checked("create-new-fss-local-authority", "Bromley"),
+                text: "Bromley"
+              },
+              {
+                value: "Camden",
+                checked: checked("create-new-fss-local-authority", "Camden"),
+                text: "Camden"
+              },
+              {
+                value: "City of London",
+                checked: checked("create-new-fss-local-authority", "City of London"),
+                text: "City of London"
+              },
+              {
+                value: "Croydon",
+                checked: checked("create-new-fss-local-authority", "Croydon"),
+                text: "Croydon"
+              },
+              {
+                value: "Ealing",
+                checked: checked("create-new-fss-local-authority", "Ealing"),
+                text: "Ealing"
+              },
+              {
+                value: "Enfield",
+                checked: checked("create-new-fss-local-authority", "Enfield"),
+                text: "Enfield"
+              },
+              {
+                value: "Greenwich",
+                checked: checked("create-new-fss-local-authority", "Greenwich"),
+                text: "Greenwich"
+              },
+              {
+                value: "Hackney",
+                checked: checked("create-new-fss-local-authority", "Hackney"),
+                text: "Hackney"
+              },
+              {
+                value: "Hammersmith and Fulham",
+                checked: checked("create-new-fss-local-authority", "Hammersmith and Fulham"),
+                text: "Hammersmith and Fulham"
+              },
+              {
+                value: "Haringey",
+                checked: checked("create-new-fss-local-authority", "Haringey"),
+                text: "Haringey"
+              },
+              {
+                value: "Harrow",
+                checked: checked("create-new-fss-local-authority", "Harrow"),
+                text: "Harrow"
+              },
+              {
+                value: "Havering",
+                checked: checked("create-new-fss-local-authority", "Haveringe"),
+                text: "Havering"
+              },
+              {
+                value: "Hillingdon",
+                checked: checked("create-new-fss-local-authority", "Hillingdon"),
+                text: "Hillingdon"
+              },
+              {
+                value: "Hounslow",
+                checked: checked("create-new-fss-local-authority", "Hounslow"),
+                text: "Hounslow"
+              },
+              {
+                value: "Lambeth",
+                checked: checked("create-new-fss-local-authority", "Lambeth"),
+                text: "Lambeth"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+          {% if data['create-new-fss-region'] == 'North East' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "County Durham",
+                checked: checked("create-new-fss-local-authority", "County Durham"),
+                text: "County Durham"
+              },
+              {
+                value: "Darlington",
+                checked: checked("create-new-fss-local-authority", "Darlington"),
+                text: "Darlington"
+              },
+              {
+                value: "Gateshead",
+                checked: checked("create-new-fss-local-authority", "Gateshead"),
+                text: "Gateshead"
+              },
+              {
+                value: "Hartlepool",
+                checked: checked("create-new-fss-local-authority", "Hartlepool"),
+                text: "Hartlepool"
+              },
+              {
+                value: "Middlesborough",
+                checked: checked("create-new-fss-local-authority", "Middlesborough"),
+                text: "Middlesborough"
+              },
+              {
+                value: "Newcastle upon Tyne",
+                checked: checked("create-new-fss-local-authority", "Newcastle upon Tyne"),
+                text: "Newcastle upon Tyne"
+              },
+              {
+                value: "North Tyneside",
+                checked: checked("create-new-fss-local-authority", "North Tyneside"),
+                text: "North Tyneside"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+          {% if data['create-new-fss-region'] == 'North West' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Blackburn with Darwen",
+                checked: checked("create-new-fss-local-authority", "Blackburn with Darwen"),
+                text: "Blackburn with Darwen"
+              },
+              {
+                value: "Blackpool",
+                checked: checked("create-new-fss-local-authority", "Blackpool"),
+                text: "Blackpool"
+              },
+              {
+                value: "Bolton",
+                checked: checked("create-new-fss-local-authority", "Bolton"),
+                text: "Bolton"
+              },
+              {
+                value: "Bury",
+                checked: checked("create-new-fss-local-authority", "Bury"),
+                text: "Bury"
+              },
+              {
+                value: "Cheshire East",
+                checked: checked("create-new-fss-local-authority", "Cheshire East"),
+                text: "Cheshire East"
+              },
+              {
+                value: "Cheshire West and Chester",
+                checked: checked("create-new-fss-local-authority", "Cheshire West and Chester"),
+                text: "Cheshire West and Chester"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+
+          {% if data['create-new-fss-region'] == 'South East' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Bracknell Forest",
+                checked: checked("create-new-fss-local-authority", "Bracknell Forest"),
+                text: "Bracknell Forest"
+              },
+              {
+                value: "Brighton and Hove",
+                checked: checked("create-new-fss-local-authority", "Brighton and Hove"),
+                text: "Brighton and Hove"
+              },
+              {
+                value: "Buckinghamshire",
+                checked: checked("create-new-fss-local-authority", "Buckinghamshire"),
+                text: "Buckinghamshire"
+              },
+              {
+                value: "Brent",
+                checked: checked("create-new-fss-local-authority", "Brent"),
+                text: "Brent"
+              },
+              {
+                value: "East Sussex",
+                checked: checked("create-new-fss-local-authority", "East Sussex"),
+                text: "East Sussex"
+              },
+              {
+                value: "Hampshire",
+                checked: checked("create-new-fss-local-authority", "Hampshire"),
+                text: "Hampshire"
+              },
+              {
+                value: "Isle of Wight",
+                checked: checked("create-new-fss-local-authority", "Isle of Wight"),
+                text: "Isle of Wight"
+              },
+              {
+                value: "Kent",
+                checked: checked("create-new-fss-local-authority", "Kent"),
+                text: "Kent"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+
+          {% if data['create-new-fss-region'] == 'South West' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Bath and North East Somerset",
+                checked: checked("create-new-fss-local-authority", "Bath and North East Somerset"),
+                text: "Bath and North East Somerset"
+              },
+              {
+                value: "Bournemouth, Christchurchand Poole",
+                checked: checked("create-new-fss-local-authority", "Bournemouth, Christchurchand Poole"),
+                text: "Bournemouth, Christchurchand Poole"
+              },
+              {
+                value: "City of Bristol",
+                checked: checked("create-new-fss-local-authority", "City of Bristol"),
+                text: "City of Bristol"
+              },
+              {
+                value: "Cornwall",
+                checked: checked("create-new-fss-local-authority", "Cornwall"),
+                text: "Cornwall"
+              },
+              {
+                value: "Devon",
+                checked: checked("create-new-fss-local-authority", "Devon"),
+                text: "Devon"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+          {% if data['create-new-fss-region'] == 'West Midlands' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Birmingham",
+                checked: checked("create-new-fss-local-authority", "Birmingham"),
+                text: "Birmingham"
+              },
+              {
+                value: "Coventry",
+                checked: checked("create-new-fss-local-authority", "Coventry"),
+                text: "Coventry"
+              },
+              {
+                value: "Dudley",
+                checked: checked("create-new-fss-local-authority", "Dudley"),
+                text: "Dudley"
+              },
+              {
+                value: "Stoke-on-Trent",
+                checked: checked("create-new-fss-local-authority", "Stoke-on-Trent"),
+                text: "Stoke-on-Trent"
+              },
+              {
+                value: "Walsall",
+                checked: checked("create-new-fss-local-authority", "Walsall"),
+                text: "Walsall"
+              },
+              {
+                value: "Warwickshire",
+                checked: checked("create-new-fss-local-authority", "Warwickshire"),
+                text: "Warwickshire"
+              },
+              {
+                value: "Wolverhampton",
+                checked: checked("create-new-fss-local-authority", "Wolverhampton"),
+                text: "Wolverhampton"
+              },
+              {
+                value: "Worcestershire",
+                checked: checked("create-new-fss-local-authority", "Worcestershire"),
+                text: "Worcestershire"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+
+          {% if data['create-new-fss-region'] == 'Yorkshire and the Humber' %}
+          {{ govukRadios({
+            idPrefix: "create-new-fss-local-authority",
+            name: "create-new-fss-local-authority",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the local authority?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Barnsley",
+                checked: checked("create-new-fss-local-authority", "Barnsley"),
+                text: "Barnsley"
+              },
+              {
+                value: "Bradford",
+                checked: checked("create-new-fss-local-authority", "Bradford"),
+                text: "Bradford"
+              },
+              {
+                value: "Calderdale",
+                checked: checked("create-new-fss-local-authority", "Calderdale"),
+                text: "Calderdale"
+              },
+              {
+                value: "Doncaster",
+                checked: checked("create-new-fss-local-authority", "Doncaster"),
+                text: "Doncaster"
+              },
+              {
+                value: "East Riding of Yorkshire",
+                checked: checked("create-new-fss-local-authority", "East Riding of Yorkshire"),
+                text: "East Riding of Yorkshire"
+              },
+              {
+                value: "Kirklees",
+                checked: checked("create-new-fss-local-authority", "Kirklees"),
+                text: "Kirklees"
+              },
+              {
+                value: "Leeds",
+                checked: checked("create-new-fss-local-authority", "Leeds"),
+                text: "Leeds"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Uncertain",
+                checked: checked("create-new-fss-local-authority", "Uncertain"),
+                text: "Uncertain"
+              }
+            ]
+          }) }} 
+          {% endif %}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
