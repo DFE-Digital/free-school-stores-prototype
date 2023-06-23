@@ -1,8 +1,11 @@
 // Add your routes here - above the module.exports line
+var versionMiddleware = require("./versionMiddleware")
 
 module.exports = function (router) {
 
     var version = "alpha-sprint-2";
+
+    versionMiddleware(router, version);
 
     router.post('/' + version + '/choose-create-method', function (req, res) {
         // Make a variable to give it the value from the radio buttons on the index page  
@@ -19,3 +22,4 @@ module.exports = function (router) {
     })
 
 }
+
