@@ -6,8 +6,8 @@ module.exports = function (router, version) {
         if(currentVersion !== version)
         {
             console.log('Loading data for ' + version)
-            res.locals.data['project-list'] = versionData['project-list']
-            currentVersion = version
+            req.session.data['project-list'] = versionData['project-list']
+            req.session.data['version'] = version
         }
         next()
        }
