@@ -7,6 +7,21 @@ module.exports = function (router) {
 
     versionMiddleware(router, version);
 
+    router.use('/' + version + '/*', (req, res, next) => {
+        if(req.baseUrl.match("dashboard") == null) {
+            req.session.data['dashboardSearch'] = ''
+        }
+        else {
+            if(req.session.data['dashboardSearch'] == null)
+            {
+                console.log("clearing search")
+                req.session.data['dashboardSearch'] = ''
+            }
+        }
+
+        next()
+    })
+
     router.post('/' + version + '/choose-create-method', function (req, res) {
         // Make a variable to give it the value from the radio buttons on the index page  
         var Task = req.session.data['create-new-fss-methods']
