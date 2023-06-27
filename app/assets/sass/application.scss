@@ -75,3 +75,39 @@ h1.govuk-fieldset__heading {
 .fss-project-overview .app-task-list__items {
     padding-left: 0;
 }
+.fss-project-listing__filters-details {
+    background-color: #f3f2f1;
+    padding: 1rem;
+    clear: both;
+    margin-bottom: 2em;
+    border-left: 0;
+}
+.fss-project-listing__fitlers-details-summary:before {
+    content:none;
+}
+.fss-project-listing__fitlers-details-summary {
+    padding-left: 0;
+    margin-top: 1em;
+}
+.fss-project-listing__button--main {
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+.fss-project-listing__filter {
+    background-color: govuk-colour("white");
+    overflow-y: auto;
+    height: 200px;
+}
+.fss-project-listing__conditional {
+    border: 0;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+}
+.fss-project-listing__button--apply {
+    background-color: govuk-colour("black");
+    color: govuk-colour("white");
+}
+.fss-project-listing__button--apply:hover {
+    background-color: govuk-colour("light-grey");
+}
