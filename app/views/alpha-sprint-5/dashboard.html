@@ -23,6 +23,17 @@ Free schools store projects – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+      <form method="get">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="dashboardSearch">
+              Search
+            </label>
+          </h1>
+          <input class="govuk-input" id="dashboardSearch" name="dashboardSearch" type="text" value="{{ data['dashboardSearch'] }}">
+        </div>
+      </form>
+
       {% if data['userRole'] == "School places analysis team" %}
       <p class="govuk-body govuk-!-margin-top-3">You can add new projects by using the button below.</p>
       {{ govukButton({
@@ -50,6 +61,7 @@ Free schools store projects – {{ serviceName }}
         </thead>
         <tbody class="govuk-table__body">
           {% for project in data['project-list'] %}
+          {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
             <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -60,6 +72,7 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
             <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
           </tr>
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>
@@ -81,6 +94,7 @@ Free schools store projects – {{ serviceName }}
         <tbody class="govuk-table__body">
           {% for project in data['project-list'] %}
           {% if data['userName'] == project.deliveryOfficer %}
+          {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -91,6 +105,7 @@ Free schools store projects – {{ serviceName }}
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
+          {% endif %}
           {% endif %}
           {% endfor %}
         </tbody>
@@ -113,6 +128,7 @@ Free schools store projects – {{ serviceName }}
         <tbody class="govuk-table__body">
           {% for project in data['project-list'] %}
           {% if data['userName'] != project.deliveryOfficer %}
+          {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -123,6 +139,7 @@ Free schools store projects – {{ serviceName }}
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
+          {% endif %}
           {% endif %}
           {% endfor %}
         </tbody>
