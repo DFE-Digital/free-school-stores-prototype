@@ -6,24 +6,28 @@
 
 {% block content %}
 
-{% set panelHead %}
-  {% if data["create-new-fss-methods"] == "individual" %}
-    New free school project created
-  {% else %}
-    New free school projects created
-  {% endif %}
-{% endset %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {{ govukPanel({
-        titleText: panelHead,
-        html: "Your reference number<br><strong>HDJ2123F</strong>"
-      }) }}
+      {% if data["create-new-fss-methods"] == "individual" %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Free school project created
+        </h1>
+        <div class="govuk-panel__body">
+          Temporary project ID<br><strong>{{data["create-new-fss-project-id"]}}</strong>
+        </div>
+      </div>
+      {% else %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          3 free school projects created
+        </h1>
+      </div>
+      {% endif %}
 
       <p>
-        We have sent a notification to team leaders.
+        We have sent a notification email to team leaders.
       </p>
 
       <h2 class="govuk-heading-m">
