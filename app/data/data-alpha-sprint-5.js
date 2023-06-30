@@ -89,7 +89,7 @@ module.exports = {
     {
       "projectTitle": "Newcastle High School for Girls",
       "projectID": "108538",
-      "leadApplicant": "WISE ACADEMIES",
+      "leadApplicant": "Wise Academies",
       "geographicalRegion": "North East",
       "localAuthority": "Newcastle upon Tyne",
       "openingDate": "24 August 2023",
@@ -103,7 +103,7 @@ module.exports = {
     {
       "projectTitle": "Lymington Junior School",
       "projectID": "116051",
-      "leadApplicant": "THE KITE ACADEMY TRUST",
+      "leadApplicant": "The Kite Academy Trust",
       "geographicalRegion": "South East",
       "localAuthority": "Hampshire",
       "openingDate": "21 July 2024",
@@ -131,7 +131,7 @@ module.exports = {
     {
       "projectTitle": "Binstead Primary School",
       "projectID": "118176",
-      "leadApplicant": "UNITED LEARNING TRUST",
+      "leadApplicant": "United Learning Trust",
       "geographicalRegion": "North West",
       "localAuthority": "Manchester City Council",
       "openingDate": "10 August 2022",
@@ -145,7 +145,7 @@ module.exports = {
     {
       "projectTitle": "St James Catholic Primary School",
       "projectID": "141820",
-      "leadApplicant": "ACADEMY TRANSFORMATION TRUST",
+      "leadApplicant": "Academy Transformation Trust",
       "geographicalRegion": "West Midlands",
       "localAuthority": "Birmingham",
       "openingDate": "14 August 2023",
