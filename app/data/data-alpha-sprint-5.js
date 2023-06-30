@@ -140,7 +140,7 @@ module.exports = {
       "numberOfFormsOfEntry" : 3,
       "schoolType": "AP",
       "deliveryOfficer": "Alex James",
-      "status": "Opened"
+      "status": "Cancelled"
     },
     {
       "projectTitle": "St James Catholic Primary School",
