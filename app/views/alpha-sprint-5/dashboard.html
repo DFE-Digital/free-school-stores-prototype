@@ -1,6 +1,6 @@
 {% extends "./layouts/main-fss-internal.html" %}
 {% set fssPageTitle = "Free schools store projects" %}
-{% set fssPageDesc = "Here is a list of all free school application projects." %}
+{% set fssPageDesc = "Here is a list of all free school projects." %}
 {% set bodyClasses = "fss-wider-page" %}
 
 {% block pageTitle %}
@@ -14,8 +14,14 @@ Free schools store projects – {{ serviceName }}
     govuk-tag--blue
   {% elif status == "Not started" %}
     govuk-tag--grey
-  {% elif status == "Opened" %}
+  {% elif status == "Completed" %}
     govuk-tag--green
+  {% elif status == "Withdrawn" %}
+    govuk-tag--purple
+  {% elif status == "Cancelled" %}
+    govuk-tag--red
+  {% elif status == "Deferred" %}
+    govuk-tag--yellow
   {% else %}
   {% endif %}
 {% endmacro%}
@@ -95,12 +101,13 @@ Free schools store projects – {{ serviceName }}
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Lead applicant</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Opening date</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Status</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Action</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Trust</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Regions</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Local authority</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Delivery officer</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Status</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-9">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -110,6 +117,7 @@ Free schools store projects – {{ serviceName }}
             <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
             <td class="govuk-table__cell">{{project.projectID}}</td>
             <td class="govuk-table__cell">{{project.leadApplicant}}</td>
+            <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
             <td class="govuk-table__cell">{{project.localAuthority}}</td>
             <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
             <td class="govuk-table__cell">{{project.openingDate}}</td>
@@ -128,11 +136,12 @@ Free schools store projects – {{ serviceName }}
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Lead applicant</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Opening date</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Status</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Action</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Regions</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Local authority</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Delivery officer</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Status</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-9">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -143,6 +152,7 @@ Free schools store projects – {{ serviceName }}
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
               <td class="govuk-table__cell">{{project.leadApplicant}}</td>
+              <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
               <td class="govuk-table__cell">{{project.localAuthority}}</td>
               <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
               <td class="govuk-table__cell">{{project.openingDate}}</td>
@@ -162,11 +172,12 @@ Free schools store projects – {{ serviceName }}
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
             <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Lead applicant</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Local authority</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Delivery officer</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Opening date</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Status</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Action</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Regions</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Local authority</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Delivery officer</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Status</th>
+            <th scope="col" class="govuk-table__header fss-dashboard-table__col-9">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -177,6 +188,7 @@ Free schools store projects – {{ serviceName }}
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
               <td class="govuk-table__cell">{{project.leadApplicant}}</td>
+              <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
               <td class="govuk-table__cell">{{project.localAuthority}}</td>
               <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
               <td class="govuk-table__cell">{{project.openingDate}}</td>

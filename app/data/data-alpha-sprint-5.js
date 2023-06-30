@@ -42,7 +42,7 @@ module.exports = {
       "numberOfFormsOfEntry" : 2,
       "schoolType": "AP",
       "deliveryOfficer": "Alex James",
-      "status": "In progress"
+      "status": "Completed"
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -70,7 +70,7 @@ module.exports = {
       "numberOfFormsOfEntry" : 2,
       "schoolType": "Mainstream",
       "deliveryOfficer": "Paul Michaels",
-      "status": "Opened"
+      "status": "Cancelled"
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -84,7 +84,7 @@ module.exports = {
       "numberOfFormsOfEntry" : 3,
       "schoolType": "Mainstream",
       "deliveryOfficer": "",
-      "status": "Not started"
+      "status": "Withdrawn"
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -98,7 +98,7 @@ module.exports = {
       "numberOfFormsOfEntry" : 2,
       "schoolType": "AP",
       "deliveryOfficer": "Jo Lee",
-      "status": "In progress"
+      "status": "Deferred"
     },
     {
       "projectTitle": "Lymington Junior School",

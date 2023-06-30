@@ -59,17 +59,21 @@ h1.govuk-fieldset__heading {
     }
 }
 
-.fss-dashboard-table__col-2 {
-    width: 8% !important;    
+.fss-dashboard-table__col-1 {
+    width: 22% !important;    
 }
+.fss-dashboard-table__col-2,
 .fss-dashboard-table__col-3,
 .fss-dashboard-table__col-4,
 .fss-dashboard-table__col-5,
 .fss-dashboard-table__col-6,
-.fss-dashboard-table__col-7 {
-    width: 13% !important;
-}
 .fss-dashboard-table__col-8 {
+    width: 10% !important;
+}
+.fss-dashboard-table__col-7 {
+    width: 14% !important;
+}
+.fss-dashboard-table__col-9 {
     width: 4% !important;
 }
 .fss-project-overview .app-task-list__items {
