@@ -5,7 +5,7 @@ module.exports = {
     {
       "projectTitle" : "St George's Primary School",
       "projectID" : "193323",
-      "leadApplicant" : "Manchester City Council",
+      "leadApplicant" : "",
       "geographicalRegion": "North West",
       "localAuthority" : "Manchester City Council",
       "openingDate" : "4 July 2024",
@@ -61,7 +61,7 @@ module.exports = {
     {
       "projectTitle": "St Luke's Church of England Primary School",
       "projectID": "145616",
-      "leadApplicant": "Lambeth",
+      "leadApplicant": "",
       "geographicalRegion": "London",
       "localAuthority": "Lambeth",
       "openingDate": "7 July 2022",
@@ -75,7 +75,7 @@ module.exports = {
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
       "projectID": "100357",
-      "leadApplicant": "Hammersmith and Fulham",
+      "leadApplicant": "",
       "geographicalRegion": "London",
       "localAuthority": "Hammersmith and Fulham",
       "openingDate": "8 August 2024",
@@ -117,7 +117,7 @@ module.exports = {
     {
       "projectTitle": "St Marys Catholic Academy",
       "projectID": "140114",
-      "leadApplicant": "Blackpool",
+      "leadApplicant": "",
       "geographicalRegion": "North West",
       "localAuthority": "Blackpool",
       "openingDate": "25 August 2024",
