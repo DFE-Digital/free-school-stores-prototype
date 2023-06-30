@@ -65,7 +65,7 @@ module.exports = function (router) {
 
     router.get('/' + version + '/create-new-fss', function (req, res) {
         req.session.data['create-new-fss-project-id'] = '1' + Math.floor(10000 + Math.random() * 90000).toString();
-        req.session.data['create-new-fss-number-of-forms-of-entry'] = '1' + Math.floor(Math.random() * 5).toString();
+        req.session.data['create-new-fss-number-of-forms-of-entry'] = Math.floor(1 + Math.random() * 3).toString();
         req.session.data['create-new-fss-school-type'] = Math.random() > 0.5 ? "Mainstream" : "AP";
         res.redirect('create-new-fss-landing');
     })
@@ -80,7 +80,7 @@ module.exports = function (router) {
             "openingDate": "7 July 2023",
             "constituency": "",
             "constituencyMP": "",
-            "numberOfFormsOfEntry": "7",
+            "numberOfFormsOfEntry": "3",
             "schoolType": "AP",
             "deliveryOfficer": "",
             "status": "Not started"
@@ -97,7 +97,7 @@ module.exports = function (router) {
             "openingDate": "9 August 2023",
             "constituency": "",
             "constituencyMP": "",
-            "numberOfFormsOfEntry": "10",
+            "numberOfFormsOfEntry": "2",
             "schoolType": "Mainstream",
             "deliveryOfficer": "",
             "status": "Not started"
@@ -114,7 +114,7 @@ module.exports = function (router) {
             "openingDate": "14 August 2023",
             "constituency": "",
             "constituencyMP": "",
-            "numberOfFormsOfEntry": "6",
+            "numberOfFormsOfEntry": "3",
             "schoolType": "Mainstream",
             "deliveryOfficer": "",
             "status": "Not started"

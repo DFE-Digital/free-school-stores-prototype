@@ -11,7 +11,7 @@ module.exports = {
       "openingDate" : "4 July 2024",
       "constituency": "Manchester City Council",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 4,
+      "numberOfFormsOfEntry" : 3,
       "schoolType": "Mainstream",
       "deliveryOfficer" : "",
       "status" : "Not started",
@@ -39,7 +39,7 @@ module.exports = {
       "openingDate": "3 August 2024",
       "constituency": "Warrington",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 12,
+      "numberOfFormsOfEntry" : 2,
       "schoolType": "AP",
       "deliveryOfficer": "Alex James",
       "status": "In progress"
@@ -53,7 +53,7 @@ module.exports = {
       "openingDate": "1 July 2024",
       "constituency": "Warrington",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 8,
+      "numberOfFormsOfEntry" : 1,
       "schoolType": "Mainstream",
       "deliveryOfficer": "",
       "status": "Not started"
@@ -67,7 +67,7 @@ module.exports = {
       "openingDate": "7 July 2022",
       "constituency": "Lambeth",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 4,
+      "numberOfFormsOfEntry" : 2,
       "schoolType": "Mainstream",
       "deliveryOfficer": "Paul Michaels",
       "status": "Opened"
@@ -81,7 +81,7 @@ module.exports = {
       "openingDate": "8 August 2024",
       "constituency": "Hammersmith and Fulham",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 6,
+      "numberOfFormsOfEntry" : 3,
       "schoolType": "Mainstream",
       "deliveryOfficer": "",
       "status": "Not started"
@@ -95,7 +95,7 @@ module.exports = {
       "openingDate": "24 August 2023",
       "constituency": "Newcastle upon Tyne",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 8,
+      "numberOfFormsOfEntry" : 2,
       "schoolType": "AP",
       "deliveryOfficer": "Jo Lee",
       "status": "In progress"
@@ -109,7 +109,7 @@ module.exports = {
       "openingDate": "21 July 2024",
       "constituency": "Hampshire",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 10,
+      "numberOfFormsOfEntry" : 1,
       "schoolType": "Mainstream",
       "deliveryOfficer": "",
       "status": "Not started"
@@ -123,7 +123,7 @@ module.exports = {
       "openingDate": "25 August 2024",
       "constituency": "Blackpool",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 6,
+      "numberOfFormsOfEntry" : 2,
       "schoolType": "Mainstream",
       "deliveryOfficer": "Zara Laney",
       "status": "In progress"
@@ -137,7 +137,7 @@ module.exports = {
       "openingDate": "10 August 2022",
       "constituency": "Manchester City Council",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 9,
+      "numberOfFormsOfEntry" : 3,
       "schoolType": "AP",
       "deliveryOfficer": "Alex James",
       "status": "Opened"
@@ -151,7 +151,7 @@ module.exports = {
       "openingDate": "14 August 2023",
       "constituency": "Birmingham",
       "constituencyMP": "",
-      "numberOfFormsOfEntry" : 11,
+      "numberOfFormsOfEntry" : 1,
       "schoolType": "Mainstream",
       "deliveryOfficer": "Paul Michaels",
       "status": "In progress"

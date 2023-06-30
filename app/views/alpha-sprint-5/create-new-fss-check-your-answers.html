@@ -82,24 +82,15 @@
             },
             value: {
               text: data["create-new-fss-provisional-opening-date"]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Constituency"
             },
-            value: {
-              text: data["create-new-fss-local-authority"] + " (Retrieved from another system)"
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Constituency MP"
-            },
-            value: {
-              text: "David Beckham (Retrieved from another system)"
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Provisional opening date agreed with trust"
+                }
+              ]
             }
           }
           ,
@@ -138,30 +129,21 @@
               ]
             }
           }
-          ,
-          {
-            key: {
-              text: "Temporary project ID"
-            },
-            value: {
-              text: data["create-new-fss-project-id"]
-            }
-          }
         ]
       }) }}
 
       <h2 class="govuk-heading-m">
-        Now send your application
+        Now create your project
       </h2>
 
       <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        By selecting the Create project button, you are confirming that you have approval to create projects.
       </p>
 
       <form action="add-project" method="post" novalidate>
 
         {{ govukButton({
-          text: "Accept and send"
+          text: "Create project"
         }) }}
 
       </form>
