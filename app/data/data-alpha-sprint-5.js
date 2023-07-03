@@ -5,7 +5,7 @@ module.exports = {
     {
       "projectTitle" : "St George's Primary School",
       "projectID" : "193323",
-      "leadApplicant" : "",
+      "trust" : "",
       "geographicalRegion": "North West",
       "localAuthority" : "Manchester City Council",
       "openingDate" : "4 July 2024",
@@ -19,7 +19,7 @@ module.exports = {
     {
       "projectTitle" : "Bolton Spa Primary", 
       "projectID" : "112456", 
-      "leadApplicant" : "Oak Hill Trust", 
+      "trust" : "Oak Hill Trust", 
       "geographicalRegion": "North West",
       "localAuthority" : "Bolton", 
       "openingDate" : "1 September 2023",
@@ -33,7 +33,7 @@ module.exports = {
     {
       "projectTitle": "St. Wilfrid's Primary School",
       "projectID": "102062",
-      "leadApplicant": "Dynamics Trust",
+      "trust": "Dynamics Trust",
       "geographicalRegion": "North West",
       "localAuthority": "Warrington",
       "openingDate": "3 August 2024",
@@ -47,7 +47,7 @@ module.exports = {
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
       "projectID": "123920",
-      "leadApplicant": "Kingfisher learning trust",
+      "trust": "Kingfisher learning trust",
       "geographicalRegion": "North West",
       "localAuthority": "Warrington",
       "openingDate": "1 July 2024",
@@ -61,7 +61,7 @@ module.exports = {
     {
       "projectTitle": "St Luke's Church of England Primary School",
       "projectID": "145616",
-      "leadApplicant": "",
+      "trust": "",
       "geographicalRegion": "London",
       "localAuthority": "Lambeth",
       "openingDate": "7 July 2022",
@@ -75,7 +75,7 @@ module.exports = {
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
       "projectID": "100357",
-      "leadApplicant": "",
+      "trust": "",
       "geographicalRegion": "London",
       "localAuthority": "Hammersmith and Fulham",
       "openingDate": "8 August 2024",
@@ -89,7 +89,7 @@ module.exports = {
     {
       "projectTitle": "Newcastle High School for Girls",
       "projectID": "108538",
-      "leadApplicant": "Wise Academies",
+      "trust": "Wise Academies",
       "geographicalRegion": "North East",
       "localAuthority": "Newcastle upon Tyne",
       "openingDate": "24 August 2023",
@@ -103,7 +103,7 @@ module.exports = {
     {
       "projectTitle": "Lymington Junior School",
       "projectID": "116051",
-      "leadApplicant": "The Kite Academy Trust",
+      "trust": "The Kite Academy Trust",
       "geographicalRegion": "South East",
       "localAuthority": "Hampshire",
       "openingDate": "21 July 2024",
@@ -117,7 +117,7 @@ module.exports = {
     {
       "projectTitle": "St Marys Catholic Academy",
       "projectID": "140114",
-      "leadApplicant": "",
+      "trust": "",
       "geographicalRegion": "North West",
       "localAuthority": "Blackpool",
       "openingDate": "25 August 2024",
@@ -131,7 +131,7 @@ module.exports = {
     {
       "projectTitle": "Binstead Primary School",
       "projectID": "118176",
-      "leadApplicant": "United Learning Trust",
+      "trust": "United Learning Trust",
       "geographicalRegion": "North West",
       "localAuthority": "Manchester City Council",
       "openingDate": "10 August 2022",
@@ -145,7 +145,7 @@ module.exports = {
     {
       "projectTitle": "St James Catholic Primary School",
       "projectID": "141820",
-      "leadApplicant": "Academy Transformation Trust",
+      "trust": "Academy Transformation Trust",
       "geographicalRegion": "West Midlands",
       "localAuthority": "Birmingham",
       "openingDate": "14 August 2023",

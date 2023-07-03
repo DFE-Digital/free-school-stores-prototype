@@ -47,7 +47,7 @@ module.exports = function (router) {
         {
             "projectTitle": req.session.data['create-new-fss-school-name'],
             "projectID": req.session.data['create-new-fss-project-id'],
-            "leadApplicant": "",
+            "trust": "",
             "geographicalRegion": req.session.data['create-new-fss-region'],
             "localAuthority": req.session.data['create-new-fss-local-authority'],
             "openingDate": req.session.data['create-new-fss-provisional-opening-date'],
@@ -74,7 +74,7 @@ module.exports = function (router) {
         var newProject1 = {
             "projectTitle": "Birmingham Junior School",
             "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
-            "leadApplicant": "Dynamics Trust",
+            "trust": "Dynamics Trust",
             "geographicalRegion": "West Midlands",
             "localAuthority": "Birmingham",
             "openingDate": "7 July 2023",
@@ -91,7 +91,7 @@ module.exports = function (router) {
         var newProject2 = {
             "projectTitle": "Kensington Public School",
             "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
-            "leadApplicant": "Kingfisher learning trust",
+            "trust": "Kingfisher learning trust",
             "geographicalRegion": "London",
             "localAuthority": "Kensington and Chelsea",
             "openingDate": "9 August 2023",
@@ -108,7 +108,7 @@ module.exports = function (router) {
         var newProject3 = {
             "projectTitle": "Doncaster High School",
             "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
-            "leadApplicant": "United Learning Trust",
+            "trust": "United Learning Trust",
             "geographicalRegion": "Yorkshire and Humber",
             "localAuthority": "Doncaster",
             "openingDate": "14 August 2023",
