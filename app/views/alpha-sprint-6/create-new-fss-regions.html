@@ -1,0 +1,98 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Region - Create new free school projects –  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="create-new-fss-local-authority" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          {{ govukRadios({
+            idPrefix: "create-new-fss-region",
+            name: "create-new-fss-region",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the region of the school?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "East Midlands",
+                checked: checked("create-new-fss-region", "East Midlands"),
+                text: "East Midlands"
+              },
+              {
+                value: "East of England",
+                checked: checked("create-new-fss-region", "East of England"),
+                text: "East of England"
+              },
+              {
+                value: "London",
+                checked: checked("create-new-fss-region", "London"),
+                text: "London"
+              },
+              {
+                value: "North East",
+                checked: checked("create-new-fss-region", "North East"),
+                text: "North East"
+              },
+              {
+                value: "North West",
+                checked: checked("create-new-fss-region", "North West"),
+                text: "North West"
+              },
+              {
+                value: "South East",
+                checked: checked("create-new-fss-region", "South East"),
+                text: "South East"
+              },
+              {
+                value: "South West",
+                checked: checked("create-new-fss-region", "South West"),
+                text: "South West"
+              },
+              {
+                value: "West Midlands",
+                checked: checked("create-new-fss-region", "West Midlands"),
+                text: "West Midlands"
+              },
+              {
+                value: "Yorkshire and the Humber",
+                checked: checked("create-new-fss-region", "Yorkshire and the Humber"),
+                text: "Yorkshire and the Humber"
+              }
+
+            ]
+          }) }} 
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
