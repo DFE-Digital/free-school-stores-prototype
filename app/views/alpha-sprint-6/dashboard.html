@@ -68,6 +68,68 @@ Free schools store projects – {{ serviceName }}
               </div>
   
               <div class="govuk-grid-column-one-quarter">
+                {{ govukCheckboxes({
+                  idPrefix: "filter-regions",
+                  name: "filter-regions",
+                  classes: "govuk-checkboxes--small fss-project-listing__filter",
+                  fieldset: {
+                    legend: {
+                      text: "Regions",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "Select all that apply."
+                  },
+                  items: [
+                    {
+                      value: "East Midlands",
+                      text: "East Midlands",
+                      checked: checked("filter-regions", "East Midlands")
+                    },
+                    {
+                      value: "East of England",
+                      text: "East of England",
+                      checked: checked("filter-regions", "East of England")
+                    },
+                    {
+                      value: "London",
+                      text: "London",
+                      checked: checked("filter-regions", "London")
+                    },
+                    {
+                      value: "North East",
+                      text: "North East",
+                      checked: checked("filter-regions", "North East")
+                    },
+                    {
+                      value: "North West",
+                      text: "North West",
+                      checked: checked("filter-regions", "North West")
+                    },
+                    {
+                      value: "South East",
+                      text: "South East",
+                      checked: checked("filter-regions", "South East")
+                    },
+                    {
+                      value: "South West",
+                      text: "South West",
+                      checked: checked("filter-regions", "South West")
+                    },
+                    {
+                      value: "West Midlands",
+                      text: "West Midlands",
+                      checked: checked("filter-regions", "West Midlands")
+                    },
+                    {
+                      value: "Yorkshire and the Humber",
+                      text: "Yorkshire and the Humber",
+                      checked: checked("filter-regions", "Yorkshire and the Humber")
+                    }
+                  ]
+                }) }}
               </div>
   
               <div class="govuk-grid-column-one-quarter">
