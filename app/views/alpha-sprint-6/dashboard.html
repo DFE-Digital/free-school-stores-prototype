@@ -147,7 +147,7 @@ Free schools store projects – {{ serviceName }}
                     Apply filters
                   </button>
                 
-                  <a class="govuk-link" href="dashboard.html?dashboardSearch=">Clear filters</a>
+                  <a class="govuk-link" href="dashboard.html?dashboardSearch=&filter-regions">Clear filters</a>
                 </div>
               </div>
             </div>
@@ -175,6 +175,7 @@ Free schools store projects – {{ serviceName }}
         <tbody class="govuk-table__body">
           {% for project in data['project-list'] %}
           {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() or data['dashboardSearch'].toLowerCase() in project.projectID.toLowerCase() %}
+          {% if not data['filter-regions'] or project.geographicalRegion in data['filter-regions'] %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
             <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -186,6 +187,7 @@ Free schools store projects – {{ serviceName }}
             <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
             <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
           </tr>
+          {% endif %}
           {% endif %}
           {% endfor %}
         </tbody>
@@ -210,6 +212,7 @@ Free schools store projects – {{ serviceName }}
           {% for project in data['project-list'] %}
           {% if data['userName'] == project.deliveryOfficer %}
           {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() or data['dashboardSearch'].toLowerCase() in project.projectID.toLowerCase() %}
+          {% if not data['filter-regions'] or project.geographicalRegion in data['filter-regions'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -221,6 +224,7 @@ Free schools store projects – {{ serviceName }}
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
+          {% endif %}
           {% endif %}
           {% endif %}
           {% endfor %}
@@ -246,6 +250,7 @@ Free schools store projects – {{ serviceName }}
           {% for project in data['project-list'] %}
           {% if data['userName'] != project.deliveryOfficer %}
           {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() or data['dashboardSearch'].toLowerCase() in project.projectID.toLowerCase() %}
+          {% if not data['filter-regions'] or project.geographicalRegion in data['filter-regions'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -257,6 +262,7 @@ Free schools store projects – {{ serviceName }}
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
+          {% endif %}
           {% endif %}
           {% endif %}
           {% endfor %}
