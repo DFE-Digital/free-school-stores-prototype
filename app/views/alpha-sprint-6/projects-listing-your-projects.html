@@ -94,6 +94,68 @@ Your free school projects – {{ serviceName }}
               </div>
   
               <div class="govuk-grid-column-one-quarter">
+                {{ govukCheckboxes({
+                  idPrefix: "filter-regions",
+                  name: "filter-regions",
+                  classes: "govuk-checkboxes--small fss-project-listing__filter",
+                  fieldset: {
+                    legend: {
+                      text: "Regions",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "Select all that apply."
+                  },
+                  items: [
+                    {
+                      value: "East Midlands",
+                      text: "East Midlands",
+                      checked: checked("filter-regions", "East Midlands")
+                    },
+                    {
+                      value: "East of England",
+                      text: "East of England",
+                      checked: checked("filter-regions", "East of England")
+                    },
+                    {
+                      value: "London",
+                      text: "London",
+                      checked: checked("filter-regions", "London")
+                    },
+                    {
+                      value: "North East",
+                      text: "North East",
+                      checked: checked("filter-regions", "North East")
+                    },
+                    {
+                      value: "North West",
+                      text: "North West",
+                      checked: checked("filter-regions", "North West")
+                    },
+                    {
+                      value: "South East",
+                      text: "South East",
+                      checked: checked("filter-regions", "South East")
+                    },
+                    {
+                      value: "South West",
+                      text: "South West",
+                      checked: checked("filter-regions", "South West")
+                    },
+                    {
+                      value: "West Midlands",
+                      text: "West Midlands",
+                      checked: checked("filter-regions", "West Midlands")
+                    },
+                    {
+                      value: "Yorkshire and the Humber",
+                      text: "Yorkshire and the Humber",
+                      checked: checked("filter-regions", "Yorkshire and the Humber")
+                    }
+                  ]
+                }) }}
               </div>
   
               <div class="govuk-grid-column-one-quarter">
@@ -111,7 +173,7 @@ Your free school projects – {{ serviceName }}
                     Apply filters
                   </button>
                 
-                  <a class="govuk-link" href="dashboard.html?dashboardSearch=">Clear filters</a>
+                  <a class="govuk-link" href="projects-listing-your-projects?dashboardSearch=&filter-regions">Clear filters</a>
                 </div>
               </div>
             </div>
@@ -137,6 +199,7 @@ Your free school projects – {{ serviceName }}
           {% for project in data['project-list'] %}
           {% if data['userName'] == project.deliveryOfficer %}
           {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() or data['dashboardSearch'].toLowerCase() in project.projectID.toLowerCase() %}
+          {% if not data['filter-regions'] or project.geographicalRegion in data['filter-regions'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -147,6 +210,7 @@ Your free school projects – {{ serviceName }}
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
+          {% endif %}
           {% endif %}
           {% endif %}
           {% endfor %}
