@@ -22,6 +22,20 @@ module.exports = function (router) {
         next()
     })
 
+    router.post('/' + version + '/checking-roles', function (req, res) {
+        // Make a variable to give it the value from the radio buttons on the index page  
+        var Role = req.session.data['userRole']
+
+        // Check whether the variable matches a condition
+        if (Role == "School places analysis team") { 
+            res.redirect('projects-listing-all-projects')
+        }   
+        else {
+            res.redirect('projects-listing-your-projects')
+        }
+
+    })
+    
     router.post('/' + version + '/choose-create-method', function (req, res) {
         // Make a variable to give it the value from the radio buttons on the index page  
         var Task = req.session.data['create-new-fss-methods']
