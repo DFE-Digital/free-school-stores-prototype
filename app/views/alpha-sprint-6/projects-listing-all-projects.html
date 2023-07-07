@@ -7,53 +7,41 @@ All free schools projects – {{ serviceName }}
 {% endblock %}
 
 {% if data['userRole'] == "School places analysis team" %}
-  {% block header %}
-    {{ header({
-      "showNav": "true",
-      "showSearch": "false",
-      "showUserName": "true",
-      "userName": "Sign out",
-      "userNameURL": "",
-      "selectedNav": "All projects",
-      "logoPath": "public/images",
-      "homeHref": "/",
-      "service": {
-        "name": serviceName
-      },
-      "primaryLinks": [
-        {
-          "url"  : "projects-listing-all-projects",
-          "label" : "All projects"
-        }
-      ]
-    }) }}
-  {% endblock %}
+  {% set pLinks =  [
+    {
+      "url"  : "projects-listing-all-projects",
+      "label" : "All projects"
+    }
+  ] %}
 {% else %}
-  {% block header2 %}
-    {{ header({
-      "showNav": "true",
-      "showSearch": "false",
-      "showUserName": "true",
-      "userName": "Sign out",
-      "userNameURL": "",
-      "selectedNav": "All projects",
-      "logoPath": "public/images",
-      "homeHref": "/",
-      "service": {
-        "name": serviceName
-      },
-      "primaryLinks": [
-        {
-          "url"  : "projects-listing-your-projects",
-          "label" : "Your projects"
-        }, {
-          "url"  : "projects-listing-all-projects",
-          "label" : "All projects"
-        }
-      ]
-    }) }}
-  {% endblock %}
+  {% set pLinks =  [
+    {
+      "url"  : "projects-listing-your-projects",
+      "label" : "Your projects"
+    }, {
+      "url"  : "projects-listing-all-projects",
+      "label" : "All projects"
+    }
+  ] %}
 {% endif %}
+
+{% block header %}
+  {{ header({
+    "showNav": "true",
+    "showSearch": "false",
+    "showUserName": "true",
+    "userName": "Sign out",
+    "userNameURL": "",
+    "selectedNav": "All projects",
+    "logoPath": "public/images",
+    "homeHref": "/",
+    "service": {
+      "name": serviceName
+    },
+    "primaryLinks": pLinks
+  }) }}
+{% endblock %}
+
 
 
 {% block pageContent %}
