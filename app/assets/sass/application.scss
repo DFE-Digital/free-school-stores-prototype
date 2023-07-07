@@ -136,7 +136,6 @@ h1.govuk-fieldset__heading {
 }
 
 .app-sub-navigation__item {
-    font-family: "GDS Transport", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
@@ -184,7 +183,6 @@ h1.govuk-fieldset__heading {
 }
 
 .app-sub-navigation__link {
-    font-family: "GDS Transport", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: block;
@@ -289,3 +287,15 @@ h1.govuk-fieldset__heading {
 .app-sub-navigation__link[aria-current="page"]:focus:before {
     background-color: #0b0c0c;
 }
+
+.fss-project-listing__filters-container {
+    margin-bottom: 0;
+  }
+  
+  .fss-project-listing__filters-details {
+    background-color: govuk-colour("light-grey");
+    padding: 1rem;
+    clear: both;
+    margin-bottom: 2em;
+    border-left: 0;
+  }
