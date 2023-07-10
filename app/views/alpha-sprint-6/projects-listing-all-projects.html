@@ -76,10 +76,10 @@ All free schools projects – {{ serviceName }}
       }) }}
       {% endif %}
 
-      {% if data['dashboardSearch'] == "" %}
-      <details class="govuk-details fss-project-listing__filters-container" data-module="govuk-details">
-      {% else %}
+      {% if (data['dashboardSearch'] or data['filter-regions']) %}
       <details class="govuk-details fss-project-listing__filters-container" data-module="govuk-details" open>
+      {% else %}
+      <details class="govuk-details fss-project-listing__filters-container" data-module="govuk-details">
       {% endif %}
         <summary class="govuk-details__summary fss-project-listing__fitlers-details-summary">
           <span class="govuk-details__summary-text govuk-button govuk-button--secondary fss-project-listing__button--main">
