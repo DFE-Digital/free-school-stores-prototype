@@ -159,6 +159,26 @@ Your free school projects – {{ serviceName }}
               </div>
   
               <div class="govuk-grid-column-one-quarter">
+                {{ govukCheckboxes({
+                  idPrefix: "filter-la",
+                  name: "filter-la",
+                  classes: "govuk-checkboxes--small fss-project-listing__filter id-filter-la",
+                  fieldset: {
+                    legend: {
+                      text: "Local Authority",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "Select all that apply."
+                  },
+                  items: [
+                    {
+                      divider: "Please select Region"
+                    }
+                  ]
+                }) }}
               </div>
   
               <div class="govuk-grid-column-one-quarter">
@@ -173,7 +193,7 @@ Your free school projects – {{ serviceName }}
                     Apply filters
                   </button>
                 
-                  <a class="govuk-link" href="projects-listing-your-projects?dashboardSearch=&filter-regions">Clear filters</a>
+                  <a class="govuk-link" href="projects-listing-your-projects?dashboardSearch=&filter-regions&filter-la">Clear filters</a>
                 </div>
               </div>
             </div>
@@ -200,6 +220,7 @@ Your free school projects – {{ serviceName }}
           {% if data['userName'] == project.deliveryOfficer %}
           {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() or data['dashboardSearch'].toLowerCase() in project.projectID.toLowerCase() %}
           {% if not data['filter-regions'] or project.geographicalRegion in data['filter-regions'] %}
+          {% if not data['filter-la'] or project.localAuthority in data['filter-la'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
               <td class="govuk-table__cell">{{project.projectID}}</td>
@@ -213,11 +234,15 @@ Your free school projects – {{ serviceName }}
           {% endif %}
           {% endif %}
           {% endif %}
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>
 
     </div>
   </div>
+  {% block pageScripts %}
+      <script src="/public/javascripts/regionfilter.js"></script>
+  {% endblock %}
 
 {% endblock %}
