@@ -101,6 +101,7 @@ h1.govuk-fieldset__heading {
     background-color: govuk-colour("white");
     overflow-y: auto;
     height: 200px;
+    padding: 0 0.5em;
 }
 .fss-project-listing__conditional {
     border: 0;
@@ -290,12 +291,22 @@ h1.govuk-fieldset__heading {
 
 .fss-project-listing__filters-container {
     margin-bottom: 0;
-  }
-  
-  .fss-project-listing__filters-details {
-    background-color: govuk-colour("light-grey");
-    padding: 1rem;
-    clear: both;
-    margin-bottom: 2em;
-    border-left: 0;
-  }
+
+    .fss-project-listing__filters-details {
+        background-color: govuk-colour("light-grey");
+        padding: 1rem;
+        clear: both;
+        margin-bottom: 2em;
+        border-left: 0;
+    }
+    
+    .govuk-checkboxes__divider {
+        width: inherit;
+        text-align: left;
+        clear: both;
+        padding: 0.3em 0;
+        font-size: 19px;
+        margin: 0.3em 0;
+    }
+
+}
