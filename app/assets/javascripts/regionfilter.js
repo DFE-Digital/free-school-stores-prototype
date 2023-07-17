@@ -1,7 +1,7 @@
 const main = () => {
     const updateRegions = () => {
         const checkboxToAdd = "<div class=\"govuk-checkboxes__item\">\r\n <input class=\"govuk-checkboxes__input\" id=\"filter-la\" name=\"filter-la\" type=\"checkbox\" value=\"{VALUE}\"><label class=\"govuk-label govuk-checkboxes__label\" for=\"filter-la\">{VALUE}<\/label>\r\n \r\n <\/div>"
-        const divider = "<div class=\"govuk-checkboxes__divider\">{VALUE}<\/div>"
+        const divider = "<div class=\"govuk-checkboxes__divider govuk-!-font-weight-bold\">{VALUE}<\/div>"
         const regions = {"East Midlands" : ["Derby","Derbyshire","Leicester","Leicestershire","Lincolnshire","Northamptonshire","Nottingham","Nottinghamshire","Rutland"],
         "East of England": ["Bedford","Cambridgeshire","Central Bedfordshire","Essex","Hertfordshire","Luton","Norfolk","Peterborough","Southend on Sea","Suffolk","Thurrock"],
         "London" : ["Barking and Dagenham","Barnet","Bexley","Birmingham","Brent","Bromley","Camden","City of London","Croydon","Ealing","Enfield","Greenwich","Hackney","Hammersmith and Fulham","Haringey","Harrow","Havering","Hillingdon","Hounslow","Islington","Kensington and Chelsea","Kingston upon Thames","Lambeth","Lewisham","Merton","Milton Keynes","Newham","Redbridge","Richmond upon Thames","Southwark","Sutton","Tower Hamlets","Waltham Forest","Wandsworth","Westminster"],
