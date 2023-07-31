@@ -8,8 +8,8 @@
 @import 'node_modules/dfe-frontend-alpha/packages/dfefrontend';
 
 .dfe-width-container {max-width: 960px;}
-.fss-wider-page .dfe-width-container,
-.fss-wider-page .govuk-width-container {
+.mfsp-wider-page .dfe-width-container,
+.mfsp-wider-page .govuk-width-container {
     max-width: 1200px;
 }
 
@@ -49,7 +49,7 @@ h1.govuk-fieldset__heading {
     background: #ebf2f6
 }
 
-.fss-index-card {
+.mfsp-index-card {
     background-color: #d9f0ff; 
     padding: 20px 30px 10px 30px; 
     margin-bottom: 30px;
@@ -59,61 +59,61 @@ h1.govuk-fieldset__heading {
     }
 }
 
-.fss-dashboard-table__col-1 {
+.mfsp-dashboard-table__col-1 {
     width: 22% !important;    
 }
-.fss-dashboard-table__col-2,
-.fss-dashboard-table__col-3,
-.fss-dashboard-table__col-4,
-.fss-dashboard-table__col-5,
-.fss-dashboard-table__col-6,
-.fss-dashboard-table__col-8 {
+.mfsp-dashboard-table__col-2,
+.mfsp-dashboard-table__col-3,
+.mfsp-dashboard-table__col-4,
+.mfsp-dashboard-table__col-5,
+.mfsp-dashboard-table__col-6,
+.mfsp-dashboard-table__col-8 {
     width: 10% !important;
 }
-.fss-dashboard-table__col-7 {
+.mfsp-dashboard-table__col-7 {
     width: 14% !important;
 }
-.fss-dashboard-table__col-9 {
+.mfsp-dashboard-table__col-9 {
     width: 4% !important;
 }
-.fss-project-overview .app-task-list__items {
+.mfsp-project-overview .app-task-list__items {
     padding-left: 0;
 }
-.fss-project-listing__filters-details {
+.mfsp-project-listing__filters-details {
     background-color: #f3f2f1;
     padding: 1rem;
     clear: both;
     margin-bottom: 2em;
     border-left: 0;
 }
-.fss-project-listing__fitlers-details-summary:before {
+.mfsp-project-listing__fitlers-details-summary:before {
     content:none;
 }
-.fss-project-listing__fitlers-details-summary {
+.mfsp-project-listing__fitlers-details-summary {
     padding-left: 0;
     margin-top: 1em;
 }
-.fss-project-listing__button--main {
+.mfsp-project-listing__button--main {
     margin-bottom: 1em;
     text-decoration: none;
 }
-.fss-project-listing__filter {
+.mfsp-project-listing__filter {
     background-color: govuk-colour("white");
     overflow-y: auto;
     height: 200px;
     padding: 0 0.5em;
 }
-.fss-project-listing__conditional {
+.mfsp-project-listing__conditional {
     border: 0;
     margin-left: 0 !important;
     margin-bottom: 0 !important;
     padding-left: 0 !important;
 }
-.fss-project-listing__button--apply {
+.mfsp-project-listing__button--apply {
     background-color: govuk-colour("black");
     color: govuk-colour("white");
 }
-.fss-project-listing__button--apply:hover {
+.mfsp-project-listing__button--apply:hover {
     background-color: govuk-colour("light-grey");
 }
 
@@ -289,10 +289,10 @@ h1.govuk-fieldset__heading {
     background-color: #0b0c0c;
 }
 
-.fss-project-listing__filters-container {
+.mfsp-project-listing__filters-container {
     margin-bottom: 0;
 
-    .fss-project-listing__filters-details {
+    .mfsp-project-listing__filters-details {
         background-color: govuk-colour("light-grey");
         padding: 1rem;
         clear: both;

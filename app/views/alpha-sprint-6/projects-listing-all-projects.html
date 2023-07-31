@@ -1,6 +1,6 @@
 {% extends "./layouts/main-fss-internal.html" %}
 {% set fssPageTitle = "All free school projects" %}
-{% set bodyClasses = "fss-wider-page" %}
+{% set bodyClasses = "mfsp-wider-page" %}
 
 {% block pageTitle %}
 All free schools projects – {{ serviceName }}
@@ -77,16 +77,16 @@ All free schools projects – {{ serviceName }}
       {% endif %}
 
       {% if (data['dashboardSearch'] or data['filter-regions']) %}
-      <details class="govuk-details fss-project-listing__filters-container" data-module="govuk-details" open>
+      <details class="govuk-details mfsp-project-listing__filters-container" data-module="govuk-details" open>
       {% else %}
-      <details class="govuk-details fss-project-listing__filters-container" data-module="govuk-details">
+      <details class="govuk-details mfsp-project-listing__filters-container" data-module="govuk-details">
       {% endif %}
-        <summary class="govuk-details__summary fss-project-listing__fitlers-details-summary">
-          <span class="govuk-details__summary-text govuk-button govuk-button--secondary fss-project-listing__button--main">
+        <summary class="govuk-details__summary mfsp-project-listing__fitlers-details-summary">
+          <span class="govuk-details__summary-text govuk-button govuk-button--secondary mfsp-project-listing__button--main">
             Filter projects
           </span>
         </summary>
-        <div class="govuk-details__text fss-project-listing__filters-details">
+        <div class="govuk-details__text mfsp-project-listing__filters-details">
           <form method="get" class="form">
   
             <div class="govuk-grid-row">
@@ -108,7 +108,7 @@ All free schools projects – {{ serviceName }}
                 {{ govukCheckboxes({
                   idPrefix: "filter-regions",
                   name: "filter-regions",
-                  classes: "govuk-checkboxes--small fss-project-listing__filter",
+                  classes: "govuk-checkboxes--small mfsp-project-listing__filter",
                   fieldset: {
                     legend: {
                       text: "Regions",
@@ -173,7 +173,7 @@ All free schools projects – {{ serviceName }}
                 {{ govukCheckboxes({
                   idPrefix: "filter-la",
                   name: "filter-la",
-                  classes: "govuk-checkboxes--small fss-project-listing__filter id-filter-la",
+                  classes: "govuk-checkboxes--small mfsp-project-listing__filter id-filter-la",
                   fieldset: {
                     legend: {
                       text: "Local Authority",
@@ -200,7 +200,7 @@ All free schools projects – {{ serviceName }}
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-full">
                 <div class="govuk-button-group">
-                  <button class="govuk-button govuk-button--secondary fss-project-listing__button--apply" data-module="govuk-button ">
+                  <button class="govuk-button govuk-button--secondary mfsp-project-listing__button--apply" data-module="govuk-button ">
                     Apply filters
                   </button>
                 
@@ -217,14 +217,14 @@ All free schools projects – {{ serviceName }}
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Trust</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Region</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Local authority</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Realistic opening date</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Status</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-9">Action</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-1">Project title</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-2">Project ID</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-3">Trust</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-4">Region</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -252,15 +252,15 @@ All free schools projects – {{ serviceName }}
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-1">Project title</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-2">Project ID</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-3">Trust</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-4">Region</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-5">Local authority</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-6">Delivery officer</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-7">Realistic opening date</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-8">Status</th>
-            <th scope="col" class="govuk-table__header fss-dashboard-table__col-9">Action</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-1">Project title</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-2">Project ID</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-3">Trust</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-4">Region</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-6">Delivery officer</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
