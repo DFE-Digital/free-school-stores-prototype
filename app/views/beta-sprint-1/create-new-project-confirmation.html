@@ -1,0 +1,45 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data["create-new-project-methods"] == "individual" %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Free school project created
+        </h1>
+        <div class="govuk-panel__body">
+          Temporary project ID<br><strong>{{data["create-new-project-project-id"]}}</strong>
+        </div>
+      </div>
+      {% else %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          3 free school projects created
+        </h1>
+      </div>
+      {% endif %}
+
+      <p>
+        We have sent a notification email to team leaders.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        <a class="govuk-link" href="projects-listing-all-projects.html">Go back to the projects listing page</a> and see the newly created projects.
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
