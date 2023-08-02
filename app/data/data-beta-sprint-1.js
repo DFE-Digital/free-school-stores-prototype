@@ -8,7 +8,7 @@ module.exports = {
       "trust" : "",
       "geographicalRegion": "North West",
       "localAuthority" : "Manchester City Council",
-      "openingDate" : "4 July 2024",
+      "openingDate" : "1 September 2024",
       "constituency": "Manchester City Council",
       "constituencyMP": "",
       "numberOfFormsOfEntry" : 3,
@@ -50,13 +50,13 @@ module.exports = {
       "trust": "Kingfisher learning trust",
       "geographicalRegion": "North West",
       "localAuthority": "Warrington",
-      "openingDate": "1 July 2024",
+      "openingDate": "1 September 2023",
       "constituency": "Warrington",
       "constituencyMP": "",
       "numberOfFormsOfEntry" : 1,
       "schoolType": "Mainstream",
       "deliveryOfficer": "",
-      "status": "Not started"
+      "status": "In progress"
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -134,13 +134,13 @@ module.exports = {
       "trust": "United Learning Trust",
       "geographicalRegion": "North West",
       "localAuthority": "Manchester City Council",
-      "openingDate": "10 August 2022",
+      "openingDate": "1 September 2024",
       "constituency": "Manchester City Council",
       "constituencyMP": "",
       "numberOfFormsOfEntry" : 3,
       "schoolType": "AP",
       "deliveryOfficer": "Alex James",
-      "status": "Cancelled"
+      "status": "In progress"
     },
     {
       "projectTitle": "St James Catholic Primary School",
