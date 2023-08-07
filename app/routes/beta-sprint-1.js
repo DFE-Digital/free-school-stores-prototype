@@ -168,17 +168,19 @@ module.exports = function (router) {
     })
 
     router.post('/' + version + '/task-dates-landing-page', function (req, res) {
-        var currentProject = req.session.data.currentProject;
+        var masterProject = req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
 
-        console.log(req.session.data);
+        // Update the master list
+        masterProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
+        masterProject.dateOfEntryIntoPreOpeningMonth = req.session.data['dateOfEntryIntoPreOpening-month'];
+        masterProject.dateOfEntryIntoPreOpeningYear = req.session.data['dateOfEntryIntoPreOpening-year'];
+        masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening-year'];
+        masterProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
+        masterProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
+        masterProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
 
-        currentProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
-        currentProject.dateOfEntryIntoPreOpeningMonth = req.session.data['dateOfEntryIntoPreOpening-month'];
-        currentProject.dateOfEntryIntoPreOpeningYear = req.session.data['dateOfEntryIntoPreOpening-year'];
-        currentProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening-year'];
-        currentProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
-        currentProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
-        currentProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
+        // Update our current project with the latest changes
+        req.session.data.currentProject = masterProject;
 
         res.redirect("task-dates-landing-page");
     });
