@@ -1,0 +1,108 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Dates - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Dates
+      </h1>
+      
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date of entry into pre-opening
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.dateOfEntryIntoPreOpeningDay and 
+              currentProject.dateOfEntryIntoPreOpeningMonth and 
+              currentProject.dateOfEntryIntoPreOpeningYear %}
+              <span>{{ currentProject.dateOfEntryIntoPreOpeningDay }} </span>
+              <span>{{ currentProject.dateOfEntryIntoPreOpeningMonth }} </span>
+              <span>{{ currentProject.dateOfEntryIntoPreOpeningYear }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change<span class="govuk-visually-hidden">date LA proforma was sent to LA</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Realistic year of opening
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['la-sent-back-day'] %}
+              <span>{{ data['la-sent-back-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change<span class="govuk-visually-hidden">date LA proforma was sent back from LA</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provisional opening date agreed with trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.provisionalOpeningDateDay and 
+              currentProject.provisionalOpeningDateMonth and 
+              currentProject.provisionalOpeningDateYear %}
+              <span>{{ currentProject.provisionalOpeningDateDay }} </span>
+              <span>{{ currentProject.provisionalOpeningDateMonth }} </span>
+              <span>{{ currentProject.provisionalOpeningDateYear }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change<span class="govuk-visually-hidden">date LA proforma was sent back from LA</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "la-proforma-status",
+        name: "la-proforma-status",
+        
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit dates - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit dates
+      </h1>
+      
+      <form method="post"  action="task-dates-landing-page">
+        <div class="govuk-form-group">
+
+          {{ govukDateInput({
+            id: "dateOfEntryIntoPreOpening",
+            namePrefix: "dateOfEntryIntoPreOpening",
+            fieldset: {
+              legend: {
+                text: "Date of entry into pre-opening",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+              {
+                name: "day",
+                value: currentProject.dateOfEntryIntoPreOpeningDay,
+                classes: "govuk-input--width-2"
+              },
+              {
+                name: "month",
+                value: currentProject.dateOfEntryIntoPreOpeningMonth,
+                classes: "govuk-input--width-2"
+              },                
+              {
+                name: "year",
+                value: currentProject.dateOfEntryIntoPreOpeningYear,
+                classes: "govuk-input--width-4"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "realisticYearOfOpening",
+            namePrefix: "realisticYearOfOpening",
+            fieldset: {
+              legend: {
+                text: "Realistic year of opening",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [               
+            {
+              name: "year",                  
+              value: currentProject.realisticYearOfOpening,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "provisionalOpeningDate",
+            namePrefix: "provisionalOpeningDate",
+            fieldset: {
+              legend: {
+                text: "Provisional opening date agreed with trust",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: data["provisionalOpeningDateDay"],
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: data["provisionalOpeningDateMonth"],
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: data["provisionalOpeningDateYear"],
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          <br><br>
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}

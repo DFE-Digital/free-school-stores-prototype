@@ -70,7 +70,14 @@ module.exports = function (router) {
             "numberOfFormsOfEntry": req.session.data['create-new-project-number-of-forms-of-entry'],
             "schoolType": req.session.data['create-new-project-school-type'],
             "deliveryOfficer": "",
-            "status": "Not started"
+            "status": "Not started",
+            "dateOfEntryIntoPreOpeningDay" : "",
+            "dateOfEntryIntoPreOpeningMonth" : "",
+            "dateOfEntryIntoPreOpeningYear" : "",
+            "realisticYearOfOpening" : "",
+            "provisionalOpeningDateDay" : "",
+            "provisionalOpeningDateMonth" : "",
+            "provisionalOpeningDateYear" : ""
         }
         console.log(newProject);
         req.session.data['project-list'].unshift(newProject);
@@ -97,7 +104,14 @@ module.exports = function (router) {
             "numberOfFormsOfEntry": "3",
             "schoolType": "AP",
             "deliveryOfficer": "",
-            "status": "Not started"
+            "status": "Not started",
+            "dateOfEntryIntoPreOpeningDay" : "",
+            "dateOfEntryIntoPreOpeningMonth" : "",
+            "dateOfEntryIntoPreOpeningYear" : "",
+            "realisticYearOfOpening" : "",
+            "provisionalOpeningDateDay" : "",
+            "provisionalOpeningDateMonth" : "",
+            "provisionalOpeningDateYear" : ""
         }
         console.log(newProject1);
         req.session.data['project-list'].unshift(newProject1);
@@ -114,7 +128,14 @@ module.exports = function (router) {
             "numberOfFormsOfEntry": "2",
             "schoolType": "Mainstream",
             "deliveryOfficer": "",
-            "status": "Not started"
+            "status": "Not started",
+            "dateOfEntryIntoPreOpeningDay" : "",
+            "dateOfEntryIntoPreOpeningMonth" : "",
+            "dateOfEntryIntoPreOpeningYear" : "",
+            "realisticYearOfOpening" : "",
+            "provisionalOpeningDateDay" : "",
+            "provisionalOpeningDateMonth" : "",
+            "provisionalOpeningDateYear" : ""
         }
         console.log(newProject2);
         req.session.data['project-list'].unshift(newProject2);
@@ -131,7 +152,14 @@ module.exports = function (router) {
             "numberOfFormsOfEntry": "3",
             "schoolType": "Mainstream",
             "deliveryOfficer": "",
-            "status": "Not started"
+            "status": "Not started",
+            "dateOfEntryIntoPreOpeningDay" : "",
+            "dateOfEntryIntoPreOpeningMonth" : "",
+            "dateOfEntryIntoPreOpeningYear" : "",
+            "realisticYearOfOpening" : "",
+            "provisionalOpeningDateDay" : "",
+            "provisionalOpeningDateMonth" : "",
+            "provisionalOpeningDateYear" : ""
         }
         console.log(newProject3);
         req.session.data['project-list'].unshift(newProject3);
