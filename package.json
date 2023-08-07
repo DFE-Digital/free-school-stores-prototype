@@ -11,5 +11,8 @@
     "dfe-frontend-alpha": "^0.1.7",
     "govuk-frontend": "^4.5.0",
     "govuk-prototype-kit": "^13.7.0"
+  },
+  "devDependencies": {
+    "luxon": "^3.3.0"
   }
 }

@@ -30,10 +30,11 @@
             {% if currentProject.dateOfEntryIntoPreOpeningDay and 
               currentProject.dateOfEntryIntoPreOpeningMonth and 
               currentProject.dateOfEntryIntoPreOpeningYear %}
-              <span>{{ currentProject.dateOfEntryIntoPreOpeningDay }} </span>
-              <span>{{ currentProject.dateOfEntryIntoPreOpeningMonth }} </span>
-              <span>{{ currentProject.dateOfEntryIntoPreOpeningYear }}</span>
-              {% else %} 
+
+              {% set dateOfEntryIntoPreopening = currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay %}
+
+              {{ dateOfEntryIntoPreopening | displayDate }}
+              {% else %}
               <span class="empty">Empty</span>
             {% endif %}
           </dd>
@@ -48,8 +49,8 @@
             Realistic year of opening
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['la-sent-back-day'] %}
-              <span>{{ data['la-sent-back-year'] }}</span>
+            {% if currentProject.realisticYearOfOpening %}
+              <span>{{ currentProject.realisticYearOfOpening }}</span>
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
@@ -68,9 +69,10 @@
             {% if currentProject.provisionalOpeningDateDay and 
               currentProject.provisionalOpeningDateMonth and 
               currentProject.provisionalOpeningDateYear %}
-              <span>{{ currentProject.provisionalOpeningDateDay }} </span>
-              <span>{{ currentProject.provisionalOpeningDateMonth }} </span>
-              <span>{{ currentProject.provisionalOpeningDateYear }}</span>
+
+              {% set provisionalOpeningDate = currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay  %}
+
+              {{ provisionalOpeningDate | displayDate }}
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}

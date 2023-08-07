@@ -16,7 +16,7 @@ module.exports = {
       "deliveryOfficer" : "",
       "status" : "Not started",
       "dateOfEntryIntoPreOpeningDay" : "23",
-      "dateOfEntryIntoPreOpeningMonth" : "9",
+      "dateOfEntryIntoPreOpeningMonth" : "09",
       "dateOfEntryIntoPreOpeningYear" : "2022",
       "realisticYearOfOpening" : "",
       "provisionalOpeningDateDay" : "",

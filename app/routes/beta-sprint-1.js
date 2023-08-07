@@ -166,4 +166,20 @@ module.exports = function (router) {
 
         res.redirect('create-new-project-confirmation');
     })
+
+    router.post('/' + version + '/task-dates-landing-page', function (req, res) {
+        var currentProject = req.session.data.currentProject;
+
+        console.log(req.session.data);
+
+        currentProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
+        currentProject.dateOfEntryIntoPreOpeningMonth = req.session.data['dateOfEntryIntoPreOpening-month'];
+        currentProject.dateOfEntryIntoPreOpeningYear = req.session.data['dateOfEntryIntoPreOpening-year'];
+        currentProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening-year'];
+        currentProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
+        currentProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
+        currentProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
+
+        res.redirect("task-dates-landing-page");
+    });
 }
