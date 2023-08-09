@@ -1,0 +1,149 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit risk appraisal - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit risk appraisal
+      </h1>
+      
+      <form method="post"  action="task-risk-appraisal-landing-page">
+        <div class="govuk-form-group">
+
+          {{ govukRadios({
+            id: "riskAppraisalFormSaved",
+            namePrefix: "riskAppraisalFormSaved",
+            fieldset: {
+              legend: {
+                text: 'Have you completed and saved the risk appraisal form in SharePoint?',
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                text: "Yes",
+                value: "Yes",
+                checked: checked("riskAppraisalFormSaved", "Yes")
+              },
+              {
+                text: "No",
+                value: "No",
+                checked: checked("riskAppraisalFormSaved", "No")
+              }
+            ]
+          }) }} 
+
+          {{ govukDateInput({
+            id: "riskAppraisalSharepointLink",
+            fieldset: {
+              legend: {
+                text: "Risk appraisal SharePoint link",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [               
+            {                
+              value: currentProject.riskAppraisalSharepointLink
+            }
+          ]
+          }) }}
+
+          {{ govukRadios({
+            id: "riskAppraisalEducationRiskRating",
+            namePrefix: "riskAppraisalEducationRiskRating",
+            fieldset: {
+              legend: {
+                text: "What's the education risk rating?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                text: "High",
+                value: "High",
+                checked: checked("riskAppraisalEducationRiskRating", "High")
+              },
+              {
+                text: "Low",
+                value: "Low",
+                checked: checked("riskAppraisalEducationRiskRating", "Low")
+              }
+            ]
+          }) }} 
+
+          {{ govukRadios({
+            id: "riskAppraisalFormSaved",
+            namePrefix: "riskAppraisalFormSaved",
+            fieldset: {
+              legend: {
+                text: "What's the governance risk rating?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                text: "High",
+                value: "High",
+                checked: checked("riskAppraisalFormSaved", "High")
+              },
+              {
+                text: "Low",
+                value: "Low",
+                checked: checked("riskAppraisalFormSaved", "Low")
+              }
+            ]
+          }) }} 
+
+          {{ govukRadios({
+            id: "riskAppraisalFormSaved",
+            namePrefix: "riskAppraisalFormSaved",
+            fieldset: {
+              legend: {
+                text: "What's the finance risk rating?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                text: "High",
+                value: "High",
+                checked: checked("riskAppraisalFormSaved", "High")
+              },
+              {
+                text: "Low",
+                value: "Low",
+                checked: checked("riskAppraisalFormSaved", "Low")
+              }
+            ]
+          }) }} 
+
+          <br><br>
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
