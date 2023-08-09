@@ -288,6 +288,13 @@ All free schools projects – {{ serviceName }}
 
 
       {% endif %}
+      <div name="hiddenData" hidden>
+        {% for la in data['filter-la'] %}
+          <ul>
+            <li class="data-selected-la">{{la}}</li>
+          </ul>
+        {% endfor %}
+      </div>
 
     </div>
   </div>

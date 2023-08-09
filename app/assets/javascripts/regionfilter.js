@@ -1,6 +1,6 @@
 const main = () => {
     const updateRegions = () => {
-        const checkboxToAdd = "<div class=\"govuk-checkboxes__item\">\r\n <input class=\"govuk-checkboxes__input\" id=\"filter-la\" name=\"filter-la\" type=\"checkbox\" value=\"{VALUE}\"><label class=\"govuk-label govuk-checkboxes__label\" for=\"filter-la\">{VALUE}<\/label>\r\n \r\n <\/div>"
+        const checkboxToAdd = "<div class=\"govuk-checkboxes__item\">\r\n <input class=\"govuk-checkboxes__input\" id=\"filter-la\" name=\"filter-la\" {CHECKED}  type=\"checkbox\" value=\"{VALUE}\"><label class=\"govuk-label govuk-checkboxes__label\" for=\"filter-la\">{VALUE}<\/label>\r\n \r\n <\/div>"
         const divider = "<div class=\"govuk-checkboxes__divider govuk-!-font-weight-bold\">{VALUE}<\/div>"
         const regions = {"East Midlands" : ["Derby","Derbyshire","Leicester","Leicestershire","Lincolnshire","Northamptonshire","Nottingham","Nottinghamshire","Rutland"],
         "East of England": ["Bedford","Cambridgeshire","Central Bedfordshire","Essex","Hertfordshire","Luton","Norfolk","Peterborough","Southend on Sea","Suffolk","Thurrock"],
@@ -17,6 +17,13 @@ const main = () => {
     
         let counter = 0;
         
+        let selected = [];
+
+        Array.from(document.getElementsByClassName('data-selected-la')).forEach((la) =>
+        { 
+            selected.push(la.innerText);
+        });
+
         document.getElementsByName('filter-regions').forEach((region) => 
         {
             if(region.checked)
@@ -28,7 +35,7 @@ const main = () => {
                 if(localAuthority)
                 {
                     let html = ""
-                    html = localAuthority.map(x => checkboxToAdd.replaceAll("{VALUE}", x)).reduce((acc, next) => acc + next)
+                    html = localAuthority.map(x => checkboxToAdd.replaceAll("{VALUE}", x).replaceAll("{CHECKED}", selected.indexOf(x) == -1 ? "" : "checked" )).reduce((acc, next) => acc + next)
     
                     LACheckboxes.innerHTML += html
                 }
@@ -47,7 +54,24 @@ const main = () => {
         element.addEventListener('click', updateRegions)
     }
 
-    document.getElementsByName('filter-regions').forEach(x => addListener(x))
+    const clearLAifRegionsNotSelected = () => {
+
+        if(Array.from(document.getElementsByName('filter-regions')).every((region) => !region.checked ))
+        {
+            const checkboxToAdd = "<div style=\"visibility: hidden\" class=\"govuk-checkboxes__item\">\r\n <input class=\"govuk-checkboxes__input\" id=\"filter-la\" name=\"filter-la\" type=\"checkbox\" value=\"Blank\"><label class=\"govuk-label govuk-checkboxes__label\" for=\"filter-la\">Blank<\/label>\r\n \r\n <\/div>"
+            const LACheckboxes = document.getElementsByClassName('id-filter-la')[0]
+            LACheckboxes.innerHTML += checkboxToAdd
+        }
+    }
+
+
+    const addApply = (element) => {
+        element.addEventListener('click', clearLAifRegionsNotSelected);
+    }
+
+    document.getElementsByName('filter-regions').forEach(x => addListener(x));
+    Array.from(document.getElementsByClassName('mfsp-project-listing__button--apply')).forEach((bu) => addApply(bu));
+    
 
     updateRegions()
 }

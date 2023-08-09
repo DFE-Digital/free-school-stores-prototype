@@ -238,7 +238,13 @@ Your free school projects – {{ serviceName }}
           {% endfor %}
         </tbody>
       </table>
-
+      <div name="hiddenData" hidden>
+        {% for la in data['filter-la'] %}
+          <ul>
+            <li class="data-selected-la">{{la}}</li>
+          </ul>
+        {% endfor %}
+      </div>
     </div>
   </div>
   {% block pageScripts %}
