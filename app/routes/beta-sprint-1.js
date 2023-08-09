@@ -220,7 +220,7 @@ module.exports = function (router) {
     })
 
     router.post('/' + version + '/task-dates-landing-page', function (req, res) {
-        var masterProject = req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
+        var masterProject = getProject(req);
 
         // Update the master list
         masterProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
@@ -249,4 +249,22 @@ module.exports = function (router) {
 
         res.redirect("task-dates-landing-page");
     });
+
+    router.post('/' + version + '/task-risk-appraisal-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.riskAppraisalSharepointLink = req.session.data['riskAppraisalSharepointLink-undefined'];
+        masterProject.riskAppraisalFormSaved = req.session.data['riskAppraisalFormSaved'];
+        masterProject.riskAppraisalEducationRiskRating = req.session.data['riskAppraisalEducationRiskRating'];
+        masterProject.governanceRiskRating = req.session.data['governanceRiskRating'];
+        masterProject.financeRiskRating = req.session.data['financeRiskRating'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-risk-appraisal-landing-page");
+    });
+
+    function getProject(req) {
+        return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
+    }
 }

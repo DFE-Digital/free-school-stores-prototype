@@ -25,8 +25,7 @@
         <div class="govuk-form-group">
 
           {{ govukRadios({
-            id: "riskAppraisalFormSaved",
-            namePrefix: "riskAppraisalFormSaved",
+            name: "riskAppraisalFormSaved",
             fieldset: {
               legend: {
                 text: 'Have you completed and saved the risk appraisal form in SharePoint?',
@@ -38,18 +37,19 @@
               {
                 text: "Yes",
                 value: "Yes",
-                checked: checked("riskAppraisalFormSaved", "Yes")
+                checked: checked("currentProject.riskAppraisalFormSaved", "Yes")
               },
               {
                 text: "No",
                 value: "No",
-                checked: checked("riskAppraisalFormSaved", "No")
+                checked: checked("currentProject.riskAppraisalFormSaved", "No")
               }
             ]
           }) }} 
 
           {{ govukDateInput({
             id: "riskAppraisalSharepointLink",
+            namePrefix: "riskAppraisalSharepointLink",
             fieldset: {
               legend: {
                 text: "Risk appraisal SharePoint link",
@@ -57,15 +57,15 @@
               }
             },
             items: [               
-            {                
+            {
+              namePrefix: "value",
               value: currentProject.riskAppraisalSharepointLink
             }
           ]
           }) }}
 
           {{ govukRadios({
-            id: "riskAppraisalEducationRiskRating",
-            namePrefix: "riskAppraisalEducationRiskRating",
+            name: "riskAppraisalEducationRiskRating",
             fieldset: {
               legend: {
                 text: "What's the education risk rating?",
@@ -77,19 +77,18 @@
               {
                 text: "High",
                 value: "High",
-                checked: checked("riskAppraisalEducationRiskRating", "High")
+                checked: checked("currentProject.riskAppraisalEducationRiskRating", "High")
               },
               {
                 text: "Low",
                 value: "Low",
-                checked: checked("riskAppraisalEducationRiskRating", "Low")
+                checked: checked("currentProject.riskAppraisalEducationRiskRating", "Low")
               }
             ]
           }) }} 
 
           {{ govukRadios({
-            id: "riskAppraisalFormSaved",
-            namePrefix: "riskAppraisalFormSaved",
+            name: "governanceRiskRating",
             fieldset: {
               legend: {
                 text: "What's the governance risk rating?",
@@ -101,19 +100,18 @@
               {
                 text: "High",
                 value: "High",
-                checked: checked("riskAppraisalFormSaved", "High")
+                checked: checked("currentProject.governanceRiskRating", "High")
               },
               {
                 text: "Low",
                 value: "Low",
-                checked: checked("riskAppraisalFormSaved", "Low")
+                checked: checked("currentProject.governanceRiskRating", "Low")
               }
             ]
           }) }} 
 
           {{ govukRadios({
-            id: "riskAppraisalFormSaved",
-            namePrefix: "riskAppraisalFormSaved",
+            name: "financeRiskRating",
             fieldset: {
               legend: {
                 text: "What's the finance risk rating?",
@@ -125,12 +123,12 @@
               {
                 text: "High",
                 value: "High",
-                checked: checked("riskAppraisalFormSaved", "High")
+                checked: checked("currentProject.financeRiskRating", "High")
               },
               {
                 text: "Low",
                 value: "Low",
-                checked: checked("riskAppraisalFormSaved", "Low")
+                checked: checked("currentProject.financeRiskRating", "Low")
               }
             ]
           }) }} 
@@ -142,8 +140,6 @@
 
         </div>
       </form>
-
-
     </div>
   </div>
 {% endblock %}
