@@ -107,6 +107,151 @@
           ]
           }) }}
 
+          {{ govukDateInput({
+            id: "actualOpeningDate",
+            namePrefix: "actualOpeningDate",
+            fieldset: {
+              legend: {
+                text: "Actual opening date",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: currentProject.actualOpeningDateDay,
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: currentProject.actualOpeningDateMonth,
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: currentProject.actualOpeningDateYear,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+          
+          {{ govukDateInput({
+            id: "openingAcademic",
+            namePrefix: "openingAcademic",
+            fieldset: {
+              legend: {
+                text: "Opening academic year",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 2021"
+            },
+            items: [               
+            {
+              name: "year",                  
+              value: currentProject.openingAcademic,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "startOfTermDate",
+            namePrefix: "startOfTermDate",
+            fieldset: {
+              legend: {
+                text: "Start of term date",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: currentProject.startOfTermDateDay,
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: currentProject.startOfTermDateMonth,
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: currentProject.startOfTermDateYear,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "provisionalKickOffMeetingDate",
+            namePrefix: "provisionalKickOffMeetingDate",
+            fieldset: {
+              legend: {
+                text: "Provisional kick-off meeting date",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: currentProject.provisionalKickOffMeetingDateDay,
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: currentProject.provisionalKickOffMeetingDateMonth,
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: currentProject.provisionalKickOffMeetingDateYear,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "actualKickOffMeetingDate",
+            namePrefix: "actualKickOffMeetingDate",
+            fieldset: {
+              legend: {
+                text: "Actual kick-off meeting date",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: currentProject.actualKickOffMeetingDateDay,
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: currentProject.actualKickOffMeetingDateMonth,
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: currentProject.actualKickOffMeetingDateYear,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
           <br><br>
           {{ govukButton({
             text: "Save and continue"

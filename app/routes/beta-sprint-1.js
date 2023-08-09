@@ -77,7 +77,20 @@ module.exports = function (router) {
             "realisticYearOfOpening" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
-            "provisionalOpeningDateYear" : ""
+            "provisionalOpeningDateYear" : "",
+            "actualOpeningDateDay" : "",
+            "actualOpeningDateMonth" : "",
+            "actualOpeningDateYear" : "",
+            "openingAcademic" : "",
+            "startOfTermDateDay" : "",
+            "startOfTermDateMonth" : "",
+            "startOfTermDateYear" : "",
+            "provisionalKickOffMeetingDateDay" : "",
+            "provisionalKickOffMeetingDateMonth" : "",
+            "provisionalKickOffMeetingDateYear" : "",
+            "actualKickOffMeetingDateDay" : "",
+            "actualKickOffMeetingDateMonth" : "",
+            "actualKickOffMeetingDateYear" : ""
         }
         console.log(newProject);
         req.session.data['project-list'].unshift(newProject);
@@ -111,7 +124,20 @@ module.exports = function (router) {
             "realisticYearOfOpening" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
-            "provisionalOpeningDateYear" : ""
+            "provisionalOpeningDateYear" : "",
+            "actualOpeningDateDay" : "",
+            "actualOpeningDateMonth" : "",
+            "actualOpeningDateYear" : "",
+            "openingAcademic" : "",
+            "startOfTermDateDay" : "",
+            "startOfTermDateMonth" : "",
+            "startOfTermDateYear" : "",
+            "provisionalKickOffMeetingDateDay" : "",
+            "provisionalKickOffMeetingDateMonth" : "",
+            "provisionalKickOffMeetingDateYear" : "",
+            "actualKickOffMeetingDateDay" : "",
+            "actualKickOffMeetingDateMonth" : "",
+            "actualKickOffMeetingDateYear" : ""
         }
         console.log(newProject1);
         req.session.data['project-list'].unshift(newProject1);
@@ -135,7 +161,20 @@ module.exports = function (router) {
             "realisticYearOfOpening" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
-            "provisionalOpeningDateYear" : ""
+            "provisionalOpeningDateYear" : "",
+            "actualOpeningDateDay" : "",
+            "actualOpeningDateMonth" : "",
+            "actualOpeningDateYear" : "",
+            "openingAcademic" : "",
+            "startOfTermDateDay" : "",
+            "startOfTermDateMonth" : "",
+            "startOfTermDateYear" : "",
+            "provisionalKickOffMeetingDateDay" : "",
+            "provisionalKickOffMeetingDateMonth" : "",
+            "provisionalKickOffMeetingDateYear" : "",
+            "actualKickOffMeetingDateDay" : "",
+            "actualKickOffMeetingDateMonth" : "",
+            "actualKickOffMeetingDateYear" : ""
         }
         console.log(newProject2);
         req.session.data['project-list'].unshift(newProject2);
@@ -159,7 +198,20 @@ module.exports = function (router) {
             "realisticYearOfOpening" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
-            "provisionalOpeningDateYear" : ""
+            "provisionalOpeningDateYear" : "",
+            "actualOpeningDateDay" : "",
+            "actualOpeningDateMonth" : "",
+            "actualOpeningDateYear" : "",
+            "openingAcademic" : "",
+            "startOfTermDateDay" : "",
+            "startOfTermDateMonth" : "",
+            "startOfTermDateYear" : "",
+            "provisionalKickOffMeetingDateDay" : "",
+            "provisionalKickOffMeetingDateMonth" : "",
+            "provisionalKickOffMeetingDateYear" : "",
+            "actualKickOffMeetingDateDay" : "",
+            "actualKickOffMeetingDateMonth" : "",
+            "actualKickOffMeetingDateYear" : ""
         }
         console.log(newProject3);
         req.session.data['project-list'].unshift(newProject3);
@@ -178,6 +230,19 @@ module.exports = function (router) {
         masterProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
         masterProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
         masterProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
+        masterProject.actualOpeningDateDay = req.session.data['actualOpeningDate-day'];
+        masterProject.actualOpeningDateMonth = req.session.data['actualOpeningDate-month'];
+        masterProject.actualOpeningDateYear = req.session.data['actualOpeningDate-year'];
+        masterProject.openingAcademic = req.session.data['openingAcademic-year'];
+        masterProject.startOfTermDateDay = req.session.data['startOfTermDate-day'];
+        masterProject.startOfTermDateMonth = req.session.data['startOfTermDate-month'];
+        masterProject.startOfTermDateYear = req.session.data['startOfTermDate-year'];
+        masterProject.provisionalKickOffMeetingDateDay = req.session.data['provisionalKickOffMeetingDate-day'];
+        masterProject.provisionalKickOffMeetingDateMonth = req.session.data['provisionalKickOffMeetingDate-month'];
+        masterProject.provisionalKickOffMeetingDateYear = req.session.data['provisionalKickOffMeetingDate-year'];
+        masterProject.actualKickOffMeetingDateDay = req.session.data['actualKickOffMeetingDate-day'];
+        masterProject.actualKickOffMeetingDateMonth = req.session.data['actualKickOffMeetingDate-month'];
+        masterProject.actualKickOffMeetingDateYear = req.session.data['actualKickOffMeetingDate-year'];
 
         // Update our current project with the latest changes
         req.session.data.currentProject = masterProject;
