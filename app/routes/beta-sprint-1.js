@@ -19,7 +19,7 @@ module.exports = function (router) {
             }
         }
 
-        next()
+        next();
     })
 
     router.post('/' + version + '/checking-roles', function (req, res) {

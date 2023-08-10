@@ -45,6 +45,7 @@
     <div class="govuk-grid-column-one-half">
 
       <h3 class="govuk-heading-m">Project status</h3>
+
       {{ govukSummaryList({
         rows: [
           {
@@ -79,7 +80,7 @@
               text: "Free schools application number"
             },
             value: {
-              html: currentProject.freeSchoolsApplicationNumber
+              html: currentProject.freeSchoolsApplicationNumber | displayText
             }
           }
           ,
@@ -88,7 +89,7 @@
               text: "Project ID"
             },
             value: {
-              html: currentProject.projectID
+              html: currentProject.projectID | displayText
             }
           }
           ,
@@ -97,7 +98,7 @@
               text: "URN"
             },
             value: {
-              html: ""
+              html: "" | displayText
             }
           }
           ,
@@ -133,7 +134,7 @@
               text: "Date of entry into pre-opening"
             },
             value: {
-              html: currentProject.dateOfEntryIntoPreOpeningDay + " " + currentProject.dateOfEntryIntoPreOpeningMonth + " " + currentProject.dateOfEntryIntoPreOpeningYear
+              html:  (currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay) | displayDate
             },
             actions: {
               items: [
@@ -151,7 +152,7 @@
               text: "Provisional opening date agreed with trust"
             },
             value: {
-              html: currentProject.provisionalOpeningDateDay + " " + currentProject.provisionalOpeningDateMonth + " " + currentProject.provisionalOpeningDateYear
+              html: (currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay) | displayDate
             },
             actions: {
               items: [
@@ -169,7 +170,7 @@
               text: "Actual opening date"
             },
             value: {
-              html: currentProject.actualOpeningDateDay + " " + currentProject.actualOpeningDateMonth + " " + currentProject.actualOpeningDateYear
+              html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate
             },
             actions: {
               items: [
