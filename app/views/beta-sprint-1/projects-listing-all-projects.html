@@ -9,17 +9,17 @@ All free schools projects – {{ serviceName }}
 {% if data['userRole'] == "School places analysis team" %}
   {% set pLinks =  [
     {
-      "url"  : "projects-listing-all-projects",
+      "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
       "label" : "All projects"
     }
   ] %}
 {% else %}
   {% set pLinks =  [
     {
-      "url"  : "projects-listing-your-projects",
+      "url"  : "projects-listing-your-projects?dashboardSearch=&filter-regions&filter-la",
       "label" : "Your projects"
     }, {
-      "url"  : "projects-listing-all-projects",
+      "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
       "label" : "All projects"
     }
   ] %}
@@ -288,6 +288,13 @@ All free schools projects – {{ serviceName }}
 
 
       {% endif %}
+      <div name="hiddenData" hidden>
+        {% for la in data['filter-la'] %}
+          <ul>
+            <li class="data-selected-la">{{la}}</li>
+          </ul>
+        {% endfor %}
+      </div>
 
     </div>
   </div>

@@ -24,7 +24,7 @@ Your free school projects – {{ serviceName }}
         "url"  : "#",
         "label" : "Your projects"
       }, {
-        "url"  : "projects-listing-all-projects",
+        "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
         "label" : "All projects"
       }
     ]
@@ -238,7 +238,13 @@ Your free school projects – {{ serviceName }}
           {% endfor %}
         </tbody>
       </table>
-
+      <div name="hiddenData" hidden>
+        {% for la in data['filter-la'] %}
+          <ul>
+            <li class="data-selected-la">{{la}}</li>
+          </ul>
+        {% endfor %}
+      </div>
     </div>
   </div>
   {% block pageScripts %}
