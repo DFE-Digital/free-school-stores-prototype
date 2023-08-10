@@ -61,7 +61,10 @@ module.exports = function (router) {
         {
             "projectTitle": req.session.data['create-new-project-school-name'],
             "projectID": req.session.data['create-new-project-project-id'],
-            "trust": "",
+            "freeSchoolsApplicationNumber" : "",
+            "freeSchoolApplicationWave": "",
+            "trust" : "",
+            "trustID" : "",
             "geographicalRegion": req.session.data['create-new-project-region'],
             "localAuthority": req.session.data['create-new-project-local-authority'],
             "openingDate": req.session.data['create-new-project-provisional-opening-date'],
@@ -69,6 +72,9 @@ module.exports = function (router) {
             "constituencyMP": "",
             "numberOfFormsOfEntry": req.session.data['create-new-project-number-of-forms-of-entry'],
             "schoolType": req.session.data['create-new-project-school-type'],
+            "schoolPhase": "Primary",
+            "faithStatus" : "None",
+            "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
             "dateOfEntryIntoPreOpeningDay" : "",
@@ -90,7 +96,16 @@ module.exports = function (router) {
             "provisionalKickOffMeetingDateYear" : "",
             "actualKickOffMeetingDateDay" : "",
             "actualKickOffMeetingDateMonth" : "",
-            "actualKickOffMeetingDateYear" : ""
+            "actualKickOffMeetingDateYear" : "",
+            "capacityYRY6" : "",
+            "capacityY7Y11" : "",
+            "capacityY12Y14" : "",
+            "ageRange" : "",
+            "sixthForm" : "",
+            "riskAppraisalSharepointLink" : "",
+            "riskRatingEducation" : "",
+            "riskRatingGovernance" : "",
+            "riskRatingFinance" : ""
         }
         console.log(newProject);
         req.session.data['project-list'].unshift(newProject);
@@ -108,7 +123,10 @@ module.exports = function (router) {
         var newProject1 = {
             "projectTitle": "Birmingham Junior School",
             "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
+            "freeSchoolsApplicationNumber" : "",
+            "freeSchoolApplicationWave": "",
             "trust": "Dynamics Trust",
+            "trustID" : "",
             "geographicalRegion": "West Midlands",
             "localAuthority": "Birmingham",
             "openingDate": "7 July 2023",
@@ -116,6 +134,9 @@ module.exports = function (router) {
             "constituencyMP": "",
             "numberOfFormsOfEntry": "3",
             "schoolType": "AP",
+            "schoolPhase": "Primary",
+            "faithStatus" : "None",
+            "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
             "dateOfEntryIntoPreOpeningDay" : "",
@@ -137,7 +158,16 @@ module.exports = function (router) {
             "provisionalKickOffMeetingDateYear" : "",
             "actualKickOffMeetingDateDay" : "",
             "actualKickOffMeetingDateMonth" : "",
-            "actualKickOffMeetingDateYear" : ""
+            "actualKickOffMeetingDateYear" : "",
+            "capacityYRY6" : "",
+            "capacityY7Y11" : "",
+            "capacityY12Y14" : "",
+            "ageRange" : "",
+            "sixthForm" : "",
+            "riskAppraisalSharepointLink" : "",
+            "riskRatingEducation" : "",
+            "riskRatingGovernance" : "",
+            "riskRatingFinance" : ""
         }
         console.log(newProject1);
         req.session.data['project-list'].unshift(newProject1);
@@ -145,7 +175,10 @@ module.exports = function (router) {
         var newProject2 = {
             "projectTitle": "Kensington Public School",
             "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
+            "freeSchoolsApplicationNumber" : "",
+            "freeSchoolApplicationWave": "",
             "trust": "Kingfisher learning trust",
+            "trustID" : "",
             "geographicalRegion": "London",
             "localAuthority": "Kensington and Chelsea",
             "openingDate": "9 August 2023",
@@ -153,6 +186,9 @@ module.exports = function (router) {
             "constituencyMP": "",
             "numberOfFormsOfEntry": "2",
             "schoolType": "Mainstream",
+            "schoolPhase": "Primary",
+            "faithStatus" : "None",
+            "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
             "dateOfEntryIntoPreOpeningDay" : "",
@@ -174,7 +210,16 @@ module.exports = function (router) {
             "provisionalKickOffMeetingDateYear" : "",
             "actualKickOffMeetingDateDay" : "",
             "actualKickOffMeetingDateMonth" : "",
-            "actualKickOffMeetingDateYear" : ""
+            "actualKickOffMeetingDateYear" : "",
+            "capacityYRY6" : "",
+            "capacityY7Y11" : "",
+            "capacityY12Y14" : "",
+            "ageRange" : "",
+            "sixthForm" : "",
+            "riskAppraisalSharepointLink" : "",
+            "riskRatingEducation" : "",
+            "riskRatingGovernance" : "",
+            "riskRatingFinance" : ""
         }
         console.log(newProject2);
         req.session.data['project-list'].unshift(newProject2);
@@ -182,7 +227,10 @@ module.exports = function (router) {
         var newProject3 = {
             "projectTitle": "Doncaster High School",
             "projectID": '1' + Math.floor(10000 + Math.random() * 90000).toString(),
+            "freeSchoolsApplicationNumber" : "",
+            "freeSchoolApplicationWave": "",
             "trust": "United Learning Trust",
+            "trustID" : "",
             "geographicalRegion": "Yorkshire and Humber",
             "localAuthority": "Doncaster",
             "openingDate": "14 August 2023",
@@ -190,6 +238,9 @@ module.exports = function (router) {
             "constituencyMP": "Nick Fletcher",
             "numberOfFormsOfEntry": "3",
             "schoolType": "Mainstream",
+            "schoolPhase": "Primary",
+            "faithStatus" : "None",
+            "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
             "dateOfEntryIntoPreOpeningDay" : "",
@@ -211,7 +262,16 @@ module.exports = function (router) {
             "provisionalKickOffMeetingDateYear" : "",
             "actualKickOffMeetingDateDay" : "",
             "actualKickOffMeetingDateMonth" : "",
-            "actualKickOffMeetingDateYear" : ""
+            "actualKickOffMeetingDateYear" : "",
+            "capacityYRY6" : "",
+            "capacityY7Y11" : "",
+            "capacityY12Y14" : "",
+            "ageRange" : "",
+            "sixthForm" : "",
+            "riskAppraisalSharepointLink" : "",
+            "riskRatingEducation" : "",
+            "riskRatingGovernance" : "",
+            "riskRatingFinance" : ""
         }
         console.log(newProject3);
         req.session.data['project-list'].unshift(newProject3);
@@ -253,11 +313,10 @@ module.exports = function (router) {
     router.post('/' + version + '/task-risk-appraisal-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.riskAppraisalSharepointLink = req.session.data['riskAppraisalSharepointLink-undefined'];
-        masterProject.riskAppraisalFormSaved = req.session.data['riskAppraisalFormSaved'];
-        masterProject.riskAppraisalEducationRiskRating = req.session.data['riskAppraisalEducationRiskRating'];
-        masterProject.governanceRiskRating = req.session.data['governanceRiskRating'];
-        masterProject.financeRiskRating = req.session.data['financeRiskRating'];
+        masterProject.riskAppraisalSharepointLink = req.session.data['riskAppraisalSharepointLink'];
+        masterProject.riskRatingEducation = req.session.data['riskRatingEducation'];
+        masterProject.riskRatingGovernance = req.session.data['riskRatingGovernance'];
+        masterProject.riskRatingFinance = req.session.data['riskRatingFinance'];
 
         req.session.data.currentProject = masterProject;
 

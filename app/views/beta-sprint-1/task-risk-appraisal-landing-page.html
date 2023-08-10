@@ -23,26 +23,8 @@
       
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Have you completed and saved your Risk Appraisal For?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if currentProject.riskAppraisalFormSaved %}
-
-              {{ currentProject.riskAppraisalFormSaved }}
-              {% else %}
-              <span class="empty">Empty</span>
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="task-risk-appraisal-edit">
-              Change <span class="govuk-visually-hidden">Have you completed and saved your Risk Appraisal For?</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Link to Risk Appraisal From
+            Risk appraisal form SharePoint link
           </dt>
           <dd class="govuk-summary-list__value">
             {% if currentProject.riskAppraisalSharepointLink %}
@@ -53,7 +35,7 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="task-risk-appraisal-edit">
-              Change <span class="govuk-visually-hidden">Link to Risk Appraisal From</span>
+              Change <span class="govuk-visually-hidden">Risk appraisal form SharePoint link</span>
             </a>
           </dd>
         </div>
@@ -62,9 +44,9 @@
             Is this project high or low risk for education?
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if currentProject.riskAppraisalEducationRiskRating %}
+            {% if currentProject.riskRatingEducation %}
 
-              {{ currentProject.riskAppraisalEducationRiskRating }}
+              {{ currentProject.riskRatingEducation }}
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
@@ -80,9 +62,9 @@
             Is this project rated high or low risk for governance?
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if currentProject.governanceRiskRating %}
+            {% if currentProject.riskRatingGovernance %}
 
-              {{ currentProject.governanceRiskRating }}
+              {{ currentProject.riskRatingGovernance }}
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
@@ -98,8 +80,8 @@
             Is this project rated high or low risk for finance?
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if currentProject.financeRiskRating %}
-              <span>{{ currentProject.financeRiskRating }}</span>
+            {% if currentProject.riskRatingFinance %}
+              <span>{{ currentProject.riskRatingFinance }}</span>
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
