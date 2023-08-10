@@ -70,7 +70,7 @@
               text: "Project status"
             },
             value: {
-              html: ""
+              html: currentProject.status
             }
           }        
           ,
@@ -79,7 +79,7 @@
               text: "Free schools application number"
             },
             value: {
-              html: ""
+              html: currentProject.freeSchoolsApplicationNumber
             }
           }
           ,
@@ -106,7 +106,7 @@
               text: "Application wave"
             },
             value: {
-              html: ""
+              html: currentProject.freeSchoolApplicationWave
             }
           }
           ,
@@ -115,7 +115,7 @@
               text: "Realistic year of opening"
             },
             value: {
-              html: ""
+              html: currentProject.realisticYearOfOpening
             },
             actions: {
               items: [
@@ -133,7 +133,7 @@
               text: "Date of entry into pre-opening"
             },
             value: {
-              html: currentProject.openingDate
+              html: currentProject.dateOfEntryIntoPreOpeningDay + " " + currentProject.dateOfEntryIntoPreOpeningMonth + " " + currentProject.dateOfEntryIntoPreOpeningYear
             },
             actions: {
               items: [
@@ -151,7 +151,7 @@
               text: "Provisional opening date agreed with trust"
             },
             value: {
-              html: currentProject.openingDate
+              html: currentProject.provisionalOpeningDateDay + " " + currentProject.provisionalOpeningDateMonth + " " + currentProject.provisionalOpeningDateYear
             },
             actions: {
               items: [
@@ -169,7 +169,7 @@
               text: "Actual opening date"
             },
             value: {
-              html: ""
+              html: currentProject.actualOpeningDateDay + " " + currentProject.actualOpeningDateMonth + " " + currentProject.actualOpeningDateYear
             },
             actions: {
               items: [
@@ -187,7 +187,7 @@
               text: "Opening academic year"
             },
             value: {
-              html: ""
+              html: currentProject.openingAcademic
             },
             actions: {
               items: [
@@ -450,7 +450,7 @@
               text: "School phase"
             },
             value: {
-              html: ""
+              html: currentProject.schoolPhase
             },
             actions: {
               items: [
@@ -468,7 +468,7 @@
               text: "Age range"
             },
             value: {
-              html: ""
+              html: currentProject.ageRange
             },
             actions: {
               items: [
@@ -522,7 +522,7 @@
               text: "Sixth form"
             },
             value: {
-              html: ""
+              html: currentProject.sixthForm
             },
             actions: {
               items: [
@@ -576,7 +576,7 @@
               text: "Faith Status"
             },
             value: {
-              html: ""
+              html: currentProject.faithStatus
             },
             actions: {
               items: [
@@ -594,7 +594,7 @@
               text: "Faith type"
             },
             value: {
-              html: ""
+              html: currentProject.faithType
             },
             actions: {
               items: [
@@ -612,7 +612,7 @@
               text: "Trust ID"
             },
             value: {
-              html: ""
+              html: currentProject.trustID
             }
           }
           ,
