@@ -49,8 +49,9 @@
             Realistic year of opening
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if currentProject.realisticYearOfOpening %}
-              <span>{{ currentProject.realisticYearOfOpening }}</span>
+            {% if currentProject.realisticYearOfOpeningStart and
+              currentProject.realisticYearOfOpeningEnd %}
+              <span>{{ currentProject.realisticYearOfOpeningStart }}/{{ currentProject.realisticYearOfOpeningEnd }}</span>
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}

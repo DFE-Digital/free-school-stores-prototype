@@ -80,7 +80,8 @@ module.exports = function (router) {
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
-            "realisticYearOfOpening" : "",
+            "realisticYearOfOpeningStart" : "",
+            "realisticYearOfOpeningEnd" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
             "provisionalOpeningDateYear" : "",
@@ -142,7 +143,8 @@ module.exports = function (router) {
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
-            "realisticYearOfOpening" : "",
+            "realisticYearOfOpeningStart" : "",
+            "realisticYearOfOpeningEnd" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
             "provisionalOpeningDateYear" : "",
@@ -194,7 +196,8 @@ module.exports = function (router) {
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
-            "realisticYearOfOpening" : "",
+            "realisticYearOfOpeningStart" : "",
+            "realisticYearOfOpeningEnd" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
             "provisionalOpeningDateYear" : "",
@@ -246,7 +249,8 @@ module.exports = function (router) {
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
-            "realisticYearOfOpening" : "",
+            "realisticYearOfOpeningStart" : "",
+            "realisticYearOfOpeningEnd" : "",
             "provisionalOpeningDateDay" : "",
             "provisionalOpeningDateMonth" : "",
             "provisionalOpeningDateYear" : "",
@@ -286,7 +290,8 @@ module.exports = function (router) {
         masterProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
         masterProject.dateOfEntryIntoPreOpeningMonth = req.session.data['dateOfEntryIntoPreOpening-month'];
         masterProject.dateOfEntryIntoPreOpeningYear = req.session.data['dateOfEntryIntoPreOpening-year'];
-        masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening-year'];
+        masterProject.realisticYearOfOpeningStart = req.session.data['realisticYearOfOpening-start year'];
+        masterProject.realisticYearOfOpeningEnd = req.session.data['realisticYearOfOpening-end year'];
         masterProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
         masterProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
         masterProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
