@@ -28,10 +28,31 @@ addFilter("displayText", value =>
 
 // Task list status filters
 
-/* 
-var filters = {}
+addFilter("taskDatesStatusClass", (data, completedFields) =>
+{
+    if (data[completedFields] == "Complete"){
+        return "govuk-tag";
+    }
+    else {
+    
+    }
+})
 
-filters.taskDatesStatusClass = function (data, completedFields, legalGoverningBody, legalConsultation, legalDiocesanConsent, legalFoundationConsent) {
+addFilter("taskDatesStatusText", (data, completedFields) =>
+{
+    if (data[completedFields] == "Complete"){
+        return "Completed";
+    }
+    else {
+        return "Not Started";
+    }
+})
+
+/*
+
+ // Legal requirements
+  
+  filters.legalStatusClass = function (data, completedFields, legalGoverningBody, legalConsultation, legalDiocesanConsent, legalFoundationConsent) {
     let checkGoverningBody = data["legal-governing-body-checked"]  == "Yes" || data["legal-governing-body-checked"]  == "No" || data["legal-governing-body-checked"]  == "Not applicable" ? true : false;
     let checkConsultation = data["legal-consultation-checked"]  == "Yes" || data["legal-consultation-checked"]  == "No" || data["legal-consultation-checked"]  == "Not applicable" ? true : false;
     let checkDiocesanConsent = data["legal-diocesan-consent-checked"]  == "Yes" || data["legal-diocesan-consent-checked"]  == "No" || data["legal-diocesan-consent-checked"]  == "Not applicable" ? true : false;
@@ -49,7 +70,7 @@ filters.taskDatesStatusClass = function (data, completedFields, legalGoverningBo
     }
   }
 
-  filters.taskDatesStatusText = function (data, completedFields, legalGoverningBody, legalConsultation, legalDiocesanConsent, legalFoundationConsent) {
+  filters.legalStatusText = function (data, completedFields, legalGoverningBody, legalConsultation, legalDiocesanConsent, legalFoundationConsent) {
     let checkGoverningBody = data["legal-governing-body-checked"]  == "Yes" || data["legal-governing-body-checked"]  == "No" || data["legal-governing-body-checked"]  == "Not applicable" ? true : false;
     let checkConsultation = data["legal-consultation-checked"]  == "Yes" || data["legal-consultation-checked"]  == "No" || data["legal-consultation-checked"]  == "Not applicable" ? true : false;
     let checkDiocesanConsent = data["legal-diocesan-consent-checked"]  == "Yes" || data["legal-diocesan-consent-checked"]  == "No" || data["legal-diocesan-consent-checked"]  == "Not applicable" ? true : false;
@@ -66,4 +87,5 @@ filters.taskDatesStatusClass = function (data, completedFields, legalGoverningBo
       return "Not Started";
     }
   }
+
   */

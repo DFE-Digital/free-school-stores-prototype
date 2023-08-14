@@ -27,9 +27,10 @@
           {{ govukDateInput({
             id: "dateOfEntryIntoPreOpening",
             namePrefix: "dateOfEntryIntoPreOpening",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
-                text: "Date of entry into pre-opening",
+                text: "Entry into pre-opening",
                 classes: "govuk-fieldset__legend--m"
               }
             },
@@ -58,6 +59,7 @@
           {{ govukDateInput({
             id: "realisticYearOfOpening",
             namePrefix: "realisticYearOfOpening",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Realistic year of opening",
@@ -65,7 +67,7 @@
               }
             },
             hint: {
-              text: "For example, 2021"
+              text: "For example, 2021 2022"
             },
             items: [               
             {
@@ -84,6 +86,7 @@
           {{ govukDateInput({
             id: "provisionalOpeningDate",
             namePrefix: "provisionalOpeningDate",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Provisional opening date agreed with trust",
@@ -115,6 +118,7 @@
           {{ govukDateInput({
             id: "actualOpeningDate",
             namePrefix: "actualOpeningDate",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Actual opening date",
@@ -142,10 +146,11 @@
             }
           ]
           }) }}
-          
+
           {{ govukDateInput({
             id: "openingAcademic",
             namePrefix: "openingAcademic",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Opening academic year",
@@ -153,11 +158,16 @@
               }
             },
             hint: {
-              text: "For example, 2021"
+              text: "For example, 2021 2022"
             },
             items: [               
             {
-              name: "year",                  
+              name: "start year",                  
+              value: currentProject.openingAcademic,
+              classes: "govuk-input--width-4"
+            },
+            {
+              name: "end year",                  
               value: currentProject.openingAcademic,
               classes: "govuk-input--width-4"
             }
@@ -167,6 +177,7 @@
           {{ govukDateInput({
             id: "startOfTermDate",
             namePrefix: "startOfTermDate",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Start of term date",
@@ -198,6 +209,7 @@
           {{ govukDateInput({
             id: "provisionalKickOffMeetingDate",
             namePrefix: "provisionalKickOffMeetingDate",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Provisional kick-off meeting date",
@@ -229,6 +241,7 @@
           {{ govukDateInput({
             id: "actualKickOffMeetingDate",
             namePrefix: "actualKickOffMeetingDate",
+            classes: "govuk-!-margin-bottom-6",
             fieldset: {
               legend: {
                 text: "Actual kick-off meeting date",

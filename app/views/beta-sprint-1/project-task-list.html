@@ -55,11 +55,7 @@
                   Risk appraisal
                 </a>
               </span>
-              {% if currentProject.taskStatusRiskAppraisal == "not started" %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
-              {% else %} 
-                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% endif %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -67,7 +63,11 @@
                   Dates
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not started</strong>
+              <strong class="{{data|taskDatesStatusClass(['task-dates-status'] )}} app-task-list__tag" id="task-dates-status">  
+                {{data|taskDatesStatusText(
+                  ['task-dates-status']
+                )}} 
+              </strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
