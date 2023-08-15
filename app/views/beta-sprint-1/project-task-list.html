@@ -61,7 +61,7 @@
                 </a>
               </span>
               {{ currentProject.taskRiskAppraisalStatus 
-              | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation]) 
+              | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation, currentProject.riskRatingGovernance, currentProject.riskRatingFinance]) 
               | safe }}
             </li>
             <li class="app-task-list__item">
@@ -71,7 +71,14 @@
                 </a>
               </span>
               {{ currentProject.taskDatesStatus 
-                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay])
+                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
+                currentProject.realisticYearOfOpeningStart, 
+                currentProject.provisionalOpeningDateDay, 
+                currentProject.actualOpeningDateDay, 
+                currentProject.openingAcademicStart, 
+                currentProject.startOfTermDateDay,
+                currentProject.provisionalKickOffMeetingDateDay,
+                currentProject.actualKickOffMeetingDateDay])
                 | safe }}
             </li>
             <li class="app-task-list__item">
