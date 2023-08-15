@@ -32,7 +32,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -47,10 +48,13 @@ module.exports = {
       "capacityY12Y14" : "Not applicable",
       "ageRange" : "4 to 11",
       "sixthForm" : "Not applicable",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -82,7 +86,8 @@ module.exports = {
       "actualOpeningDateDay" : "01",
       "actualOpeningDateMonth" : "09",
       "actualOpeningDateYear" : "2023",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "2023",
+      "openingAcademicEnd" : "2024",
       "startOfTermDateDay" : "01",
       "startOfTermDateMonth" : "09",
       "startOfTermDateYear" : "2023",
@@ -97,10 +102,13 @@ module.exports = {
       "capacityY12Y14" : "Not applicable",
       "ageRange" : "4 to 11",
       "sixthForm" : "Not applicable",
+      "taskRiskAppraisalStatus" : "Complete",
       "riskAppraisalSharepointLink" : "https://educationgovuk.sharepoint.com/:x:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B501467E9-2C20-4B4A-92A6-BFD975D85997%7D&file=Free%20School%20Store%20Inventory.xlsx&action=default&mobileredirect=true",
       "riskRatingEducation" : "Low",
       "riskRatingGovernance" : "Low",
-      "riskRatingFinance" : "High"
+      "riskRatingFinance" : "High",
+      "taskDatesStatus": "Complete",
+      "taskPDGStatus": "Complete"
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -132,7 +140,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -147,10 +156,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -182,7 +194,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -197,10 +210,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -232,7 +248,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -247,10 +264,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -282,7 +302,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -297,10 +318,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -332,7 +356,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -347,10 +372,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -382,7 +410,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -397,10 +426,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -432,7 +464,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -447,10 +480,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -482,7 +518,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -497,10 +534,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     },
     {
       "projectTitle": "St James Catholic Primary School",
@@ -532,7 +572,8 @@ module.exports = {
       "actualOpeningDateDay" : "",
       "actualOpeningDateMonth" : "",
       "actualOpeningDateYear" : "",
-      "openingAcademic" : "",
+      "openingAcademicStart" : "",
+      "openingAcademicEnd" : "",
       "startOfTermDateDay" : "",
       "startOfTermDateMonth" : "",
       "startOfTermDateYear" : "",
@@ -547,10 +588,13 @@ module.exports = {
       "capacityY12Y14" : "",
       "ageRange" : "",
       "sixthForm" : "",
+      "taskRiskAppraisalStatus" : "",
       "riskAppraisalSharepointLink" : "",
       "riskRatingEducation" : "",
       "riskRatingGovernance" : "",
-      "riskRatingFinance" : ""
+      "riskRatingFinance" : "",
+      "taskDatesStatus": "",
+      "taskPDGStatus": ""
     }
   ]
 }

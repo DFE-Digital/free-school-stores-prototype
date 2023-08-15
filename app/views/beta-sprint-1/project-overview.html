@@ -116,7 +116,7 @@
               text: "Realistic year of opening"
             },
             value: {
-              html: currentProject.realisticYearOfOpening
+              html: (currentProject.realisticYearOfOpeningStart + "/" + currentProject.realisticYearOfOpeningEnd) | displayText
             },
             actions: {
               items: [
@@ -188,7 +188,7 @@
               text: "Opening academic year"
             },
             value: {
-              html: currentProject.openingAcademic
+              html: (currentProject.openingAcademicStart + "/" + currentProject.openingAcademicEnd) | displayText
             },
             actions: {
               items: [

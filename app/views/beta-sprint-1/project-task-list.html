@@ -55,8 +55,8 @@
                   Risk appraisal
                 </a>
               </span>
-             {{ currentProject.taskRiskAppraisalStatus 
-              | taskStatus([currentProject.riskAppraisalSharepointLink]) 
+              {{ currentProject.taskRiskAppraisalStatus 
+              | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation]) 
               | safe }}
             </li>
             <li class="app-task-list__item">
@@ -75,7 +75,11 @@
                   Project development grant (PDG) 
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not started</strong>
+              {% if currentProject.taskPDGStatus == "Complete" %}
+              <strong class="govuk-tag app-task-list__tag" id="task-dates-status">Completed </strong>
+              {% else %}
+              <strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>
+              {% endif%}
             </li>
           </ul>
         </li>

@@ -88,7 +88,8 @@ module.exports = function (router) {
             "actualOpeningDateDay" : "",
             "actualOpeningDateMonth" : "",
             "actualOpeningDateYear" : "",
-            "openingAcademic" : "",
+            "openingAcademicStart" : "",
+            "openingAcademicEnd" : "",
             "startOfTermDateDay" : "",
             "startOfTermDateMonth" : "",
             "startOfTermDateYear" : "",
@@ -103,10 +104,13 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
             "riskRatingGovernance" : "",
-            "riskRatingFinance" : ""
+            "riskRatingFinance" : "",
+            "taskDatesStatus": "",
+            "taskPDGStatus": ""
         }
         console.log(newProject);
         req.session.data['project-list'].unshift(newProject);
@@ -151,7 +155,8 @@ module.exports = function (router) {
             "actualOpeningDateDay" : "",
             "actualOpeningDateMonth" : "",
             "actualOpeningDateYear" : "",
-            "openingAcademic" : "",
+            "openingAcademicStart" : "",
+            "openingAcademicEnd" : "",
             "startOfTermDateDay" : "",
             "startOfTermDateMonth" : "",
             "startOfTermDateYear" : "",
@@ -166,10 +171,13 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
             "riskRatingGovernance" : "",
-            "riskRatingFinance" : ""
+            "riskRatingFinance" : "",
+            "taskDatesStatus": "",
+            "taskPDGStatus": ""
         }
         console.log(newProject1);
         req.session.data['project-list'].unshift(newProject1);
@@ -204,7 +212,8 @@ module.exports = function (router) {
             "actualOpeningDateDay" : "",
             "actualOpeningDateMonth" : "",
             "actualOpeningDateYear" : "",
-            "openingAcademic" : "",
+            "openingAcademicStart" : "",
+            "openingAcademicEnd" : "",
             "startOfTermDateDay" : "",
             "startOfTermDateMonth" : "",
             "startOfTermDateYear" : "",
@@ -219,10 +228,13 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
             "riskRatingGovernance" : "",
-            "riskRatingFinance" : ""
+            "riskRatingFinance" : "",
+            "taskDatesStatus": "",
+            "taskPDGStatus": ""
         }
         console.log(newProject2);
         req.session.data['project-list'].unshift(newProject2);
@@ -257,7 +269,8 @@ module.exports = function (router) {
             "actualOpeningDateDay" : "",
             "actualOpeningDateMonth" : "",
             "actualOpeningDateYear" : "",
-            "openingAcademic" : "",
+            "openingAcademicStart" : "",
+            "openingAcademicEnd" : "",
             "startOfTermDateDay" : "",
             "startOfTermDateMonth" : "",
             "startOfTermDateYear" : "",
@@ -272,10 +285,13 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
             "riskRatingGovernance" : "",
-            "riskRatingFinance" : ""
+            "riskRatingFinance" : "",
+            "taskDatesStatus": "",
+            "taskPDGStatus": ""
         }
         console.log(newProject3);
         req.session.data['project-list'].unshift(newProject3);
@@ -298,7 +314,8 @@ module.exports = function (router) {
         masterProject.actualOpeningDateDay = req.session.data['actualOpeningDate-day'];
         masterProject.actualOpeningDateMonth = req.session.data['actualOpeningDate-month'];
         masterProject.actualOpeningDateYear = req.session.data['actualOpeningDate-year'];
-        masterProject.openingAcademic = req.session.data['openingAcademic-year'];
+        masterProject.openingAcademicStart = req.session.data['openingAcademic-start year'];
+        masterProject.openingAcademicEnd = req.session.data['openingAcademic-end year'];
         masterProject.startOfTermDateDay = req.session.data['startOfTermDate-day'];
         masterProject.startOfTermDateMonth = req.session.data['startOfTermDate-month'];
         masterProject.startOfTermDateYear = req.session.data['startOfTermDate-year'];
