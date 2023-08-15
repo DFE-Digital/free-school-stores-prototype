@@ -55,7 +55,9 @@
                   Risk appraisal
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+             {{ currentProject.taskRiskAppraisalStatus 
+              | taskStatus([currentProject.riskAppraisalSharepointLink]) 
+              | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -63,11 +65,9 @@
                   Dates
                 </a>
               </span>
-              <strong class="{{data|taskDatesStatusClass(['task-dates-status'] )}} app-task-list__tag" id="task-dates-status">  
-                {{data|taskDatesStatusText(
-                  ['task-dates-status']
-                )}} 
-              </strong>
+              {{ currentProject.taskDatesStatus 
+                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay])
+                | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">

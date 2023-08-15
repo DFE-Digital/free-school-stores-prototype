@@ -97,9 +97,9 @@
       <form action="project-task-list" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-dates-status",
-        name: "task-dates-status",
-        
+        idPrefix: "task-risk-appraisal-status",
+        name: "task-risk-appraisal-status",
+        values: currentProject.taskRiskAppraisalStatus,
         items: [
         {
           value: "Complete",
