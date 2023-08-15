@@ -102,13 +102,13 @@ module.exports = {
       "capacityY12Y14" : "Not applicable",
       "ageRange" : "4 to 11",
       "sixthForm" : "Not applicable",
-      "taskRiskAppraisalStatus" : "Complete",
+      "taskRiskAppraisalStatus" : ["Complete"],
       "riskAppraisalSharepointLink" : "https://educationgovuk.sharepoint.com/:x:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B501467E9-2C20-4B4A-92A6-BFD975D85997%7D&file=Free%20School%20Store%20Inventory.xlsx&action=default&mobileredirect=true",
       "riskRatingEducation" : "Low",
       "riskRatingGovernance" : "Low",
       "riskRatingFinance" : "High",
-      "taskDatesStatus": "Complete",
-      "taskPDGStatus": "Complete"
+      "taskDatesStatus": ["Complete"],
+      "taskPDGStatus": ["Complete"]
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
