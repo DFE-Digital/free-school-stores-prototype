@@ -41,7 +41,12 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Project progress</h2>
+      {% if currentProject.projectID == "W3456" %}
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 22 sections.</p>
+      {% else %}
       <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 22 sections.</p>
+      {% endif %}
+      
 
       <ol class="app-task-list">
         <li>
@@ -79,7 +84,7 @@
               <strong class="govuk-tag app-task-list__tag" id="task-dates-status">Completed </strong>
               {% else %}
               <strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>
-              {% endif%}
+              {% endif %}
             </li>
           </ul>
         </li>
