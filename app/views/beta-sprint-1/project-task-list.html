@@ -41,7 +41,12 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Project progress</h2>
+      {% if currentProject.projectID == "W3456" %}
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 22 sections.</p>
+      {% else %}
       <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 22 sections.</p>
+      {% endif %}
+      
 
       <ol class="app-task-list">
         <li>
@@ -55,7 +60,9 @@
                   Risk appraisal
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+              {{ currentProject.taskRiskAppraisalStatus 
+              | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation, currentProject.riskRatingGovernance, currentProject.riskRatingFinance]) 
+              | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -63,7 +70,16 @@
                   Dates
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not started</strong>
+              {{ currentProject.taskDatesStatus 
+                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
+                currentProject.realisticYearOfOpeningStart, 
+                currentProject.provisionalOpeningDateDay, 
+                currentProject.actualOpeningDateDay, 
+                currentProject.openingAcademicStart, 
+                currentProject.startOfTermDateDay,
+                currentProject.provisionalKickOffMeetingDateDay,
+                currentProject.actualKickOffMeetingDateDay])
+                | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -71,7 +87,11 @@
                   Project development grant (PDG) 
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not started</strong>
+              {% if currentProject.taskPDGStatus == "Complete" %}
+              <strong class="govuk-tag app-task-list__tag" id="task-dates-status">Completed </strong>
+              {% else %}
+              <strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>
+              {% endif %}
             </li>
           </ul>
         </li>

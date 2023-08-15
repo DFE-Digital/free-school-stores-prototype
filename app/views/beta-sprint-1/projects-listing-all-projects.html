@@ -222,7 +222,7 @@ All free schools projects – {{ serviceName }}
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-3">Trust</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-4">Region</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
-            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Provisional opening date</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Action</th>
           </tr>
@@ -237,7 +237,18 @@ All free schools projects – {{ serviceName }}
             <td class="govuk-table__cell">{{project.projectID}}</td>
             <td class="govuk-table__cell">{{project.trust}}</td>
             <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
-            <td class="govuk-table__cell">{{project.localAuthority}}</td>
+            <td class="govuk-table__cell">
+              {% if project.provisionalOpeningDateDay and 
+                project.provisionalOpeningDateMonth and 
+                project.provisionalOpeningDateYear %}
+  
+                {% set provisionalOpeningDate = project.provisionalOpeningDateYear + project.provisionalOpeningDateMonth + project.provisionalOpeningDateDay  %}
+  
+                {{ provisionalOpeningDate | displayDate }}
+                {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </td>
             <td class="govuk-table__cell">{{project.openingDate}}</td>
             <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
             <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
@@ -258,7 +269,7 @@ All free schools projects – {{ serviceName }}
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-4">Region</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-6">Delivery officer</th>
-            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Realistic opening date</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Provisional opening date</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Action</th>
           </tr>
@@ -275,7 +286,18 @@ All free schools projects – {{ serviceName }}
               <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
               <td class="govuk-table__cell">{{project.localAuthority}}</td>
               <td class="govuk-table__cell">{{project.deliveryOfficer}}</td>
-              <td class="govuk-table__cell">{{project.openingDate}}</td>
+              <td class="govuk-table__cell">
+                {% if project.provisionalOpeningDateDay and 
+                  project.provisionalOpeningDateMonth and 
+                  project.provisionalOpeningDateYear %}
+    
+                  {% set provisionalOpeningDate = project.provisionalOpeningDateYear + project.provisionalOpeningDateMonth + project.provisionalOpeningDateDay  %}
+    
+                  {{ provisionalOpeningDate | displayDate }}
+                  {% else %} 
+                  <span class="empty">Empty</span>
+                {% endif %}
+              </td>
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>

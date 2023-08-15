@@ -54,15 +54,6 @@
             },
             value: {
               html: currentProject.projectTitle
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "free school name"
-                }
-              ]
             }
           }          
           ,
@@ -116,16 +107,7 @@
               text: "Realistic year of opening"
             },
             value: {
-              html: currentProject.realisticYearOfOpening
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "realistic year of opening"
-                }
-              ]
+              html: (currentProject.realisticYearOfOpeningStart + "/" + currentProject.realisticYearOfOpeningEnd) | displayText
             }
           }
           ,
@@ -135,15 +117,6 @@
             },
             value: {
               html:  (currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay) | displayDate
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date of entry into pre-opening"
-                }
-              ]
             }
           }
           ,
@@ -153,15 +126,6 @@
             },
             value: {
               html: (currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay) | displayDate
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "provisional opening date agreed with trust"
-                }
-              ]
             }
           }
           ,
@@ -171,15 +135,6 @@
             },
             value: {
               html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "actual opening date"
-                }
-              ]
             }
           }
           ,
@@ -188,160 +143,7 @@
               text: "Opening academic year"
             },
             value: {
-              html: currentProject.openingAcademic
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "opening academic year"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Has project been withdrawn?"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "has project been withdrawn"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Date withdrawn"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date withdrawn"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Primary reason"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "primary reason"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Has project been cancelled?"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "has project been cancelled"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Date cancelled"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date cancelled"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Primary reason"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "primary reason"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Date closed"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date closed"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Closing academic year"
-            },
-            value: {
-              html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "closing academic year"
-                }
-              ]
+              html: (currentProject.openingAcademicStart + "/" + currentProject.openingAcademicEnd) | displayText
             }
           }
         ]
@@ -362,15 +164,6 @@
             },
             value: {
               html: currentProject.localAuthority
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "closing academic year"
-                }
-              ]
             }
           }
           ,
@@ -380,15 +173,6 @@
             },
             value: {
               html: currentProject.geographicalRegion
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "region"
-                }
-              ]
             }
           }
           ,
@@ -416,15 +200,6 @@
             },
             value: {
               text: currentProject.numberOfFormsOfEntry
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "number of forms of entry"
-                }
-              ]
             }
           }
           ,
@@ -434,15 +209,6 @@
             },
             value: {
               html: currentProject.schoolType
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "school type"
-                }
-              ]
             }
           }
           ,
@@ -452,15 +218,6 @@
             },
             value: {
               html: currentProject.schoolPhase
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "school phase"
-                }
-              ]
             }
           }
           ,
@@ -470,15 +227,6 @@
             },
             value: {
               html: currentProject.ageRange
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "age range"
-                }
-              ]
             }
           }
           ,
@@ -488,15 +236,6 @@
             },
             value: {
               html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "gender"
-                }
-              ]
             }
           }
           ,
@@ -506,15 +245,6 @@
             },
             value: {
               html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "nursery"
-                }
-              ]
             }
           }
           ,
@@ -524,15 +254,6 @@
             },
             value: {
               html: currentProject.sixthForm
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "sixth form"
-                }
-              ]
             }
           }
           ,
@@ -542,15 +263,6 @@
             },
             value: {
               html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "independent converter"
-                }
-              ]
             }
           }
           ,
@@ -560,15 +272,6 @@
             },
             value: {
               html: ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "specialist Resource Provision"
-                }
-              ]
             }
           }
           ,
@@ -578,15 +281,6 @@
             },
             value: {
               html: currentProject.faithStatus
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "faith Status"
-                }
-              ]
             }
           }
           ,
@@ -596,15 +290,6 @@
             },
             value: {
               html: currentProject.faithType
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "faith type"
-                }
-              ]
             }
           }
           ,
@@ -623,15 +308,6 @@
             },
             value: {
               html: currentProject.trust
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "trust name"
-                }
-              ]
             }
           }
           ,

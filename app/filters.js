@@ -23,3 +23,20 @@ addFilter("displayText", value =>
 
     return value;
 })
+
+addFilter('taskStatus', (taskStatus, fields) =>
+{
+    if (taskStatus != null && taskStatus.includes('Complete'))
+    {
+        return '<strong class="govuk-tag app-task-list__tag" id="task-dates-status">Completed </strong>'
+    }
+
+    const inProgress = fields.some(field => field && field.length > 0);
+
+    if (inProgress)
+    {
+        return '<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>';
+    }
+
+    return "<strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>";
+});

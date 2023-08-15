@@ -41,7 +41,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Is this project high or low risk for education?
+            What's the education risk rating?
           </dt>
           <dd class="govuk-summary-list__value">
             {% if currentProject.riskRatingEducation %}
@@ -53,13 +53,13 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="task-risk-appraisal-edit">
-              Change <span class="govuk-visually-hidden">Is this project high or low risk for education?</span>
+              Change <span class="govuk-visually-hidden">What's the education risk rating?</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Is this project rated high or low risk for governance?
+            What's the governance risk rating?
           </dt>
           <dd class="govuk-summary-list__value">
             {% if currentProject.riskRatingGovernance %}
@@ -71,13 +71,13 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="task-risk-appraisal-edit">
-              Change <span class="govuk-visually-hidden">Is this project rated high or low risk for governance?</span>
+              Change <span class="govuk-visually-hidden">What's the governance risk rating?</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Is this project rated high or low risk for finance?
+            What's the finance risk rating?
           </dt>
           <dd class="govuk-summary-list__value">
             {% if currentProject.riskRatingFinance %}
@@ -88,18 +88,18 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="task-risk-appraisal-edit">
-              Change <span class="govuk-visually-hidden">Is this project rated high or low risk for finance?</span>
+              Change <span class="govuk-visually-hidden">What's the finance risk rating?</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <form action="project-task-list" method="post">
+      <form action="task-risk-appraisal-confirmation" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-dates-status",
-        name: "task-dates-status",
-        
+        idPrefix: "task-risk-appraisal-status",
+        name: "task-risk-appraisal-status",
+        values: currentProject.taskRiskAppraisalStatus,
         items: [
         {
           value: "Complete",
