@@ -237,6 +237,7 @@ All free schools projects – {{ serviceName }}
             <td class="govuk-table__cell">{{project.projectID}}</td>
             <td class="govuk-table__cell">{{project.trust}}</td>
             <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
+            <td class="govuk-table__cell">{{project.localAuthority}}</td>
             <td class="govuk-table__cell">
               {% if project.provisionalOpeningDateDay and 
                 project.provisionalOpeningDateMonth and 
@@ -249,7 +250,6 @@ All free schools projects – {{ serviceName }}
                 <span class="empty">Empty</span>
               {% endif %}
             </td>
-            <td class="govuk-table__cell">{{project.openingDate}}</td>
             <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
             <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
           </tr>
