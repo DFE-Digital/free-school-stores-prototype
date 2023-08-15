@@ -345,17 +345,25 @@ module.exports = function (router) {
         res.redirect("task-risk-appraisal-landing-page");
     });
 
-    router.post('/' + version + '/project-task-list', function (req, res) {
-
+    router.post('/' + version + '/task-dates-confirmation', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.taskRiskAppraisalStatus = req.session.data['task-risk-appraisal-status'];
         masterProject.taskDatesStatus = req.session.data['task-dates-status'];
 
         req.session.data.currentProject = masterProject;
 
         res.redirect("project-task-list");
-    })
+    });
+
+    router.post('/' + version + '/task-risk-appraisal-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskRiskAppraisalStatus = req.session.data['task-risk-appraisal-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
 
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
