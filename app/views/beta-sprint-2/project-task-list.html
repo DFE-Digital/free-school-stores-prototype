@@ -1,0 +1,262 @@
+{% extends "./layouts/main-mfsp-project-overview.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set fssPageDesc = "Task list" %}
+{% set bodyClasses = "mfsp-project-overview" %}
+
+{% block pageTitle %}
+  {{currentProject.projectTitle}} - key project information - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageContent %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+  
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="p-o?id={{currentProject.projectID}}">Project overview</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" aria-current="page" href="#">Task list</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="#">Project notes</a>
+        </li>
+      </ul>
+  
+    </nav>
+  </div>
+</div>
+
+  <div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Project progress</h2>
+      {% if currentProject.projectID == "W3456" %}
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 22 sections.</p>
+      {% else %}
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 22 sections.</p>
+      {% endif %}
+      
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Setting-up
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-risk-appraisal-landing-page" aria-describedby="eligibility-status">
+                  Risk appraisal
+                </a>
+              </span>
+              {{ currentProject.taskRiskAppraisalStatus 
+              | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation, currentProject.riskRatingGovernance, currentProject.riskRatingFinance]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-dates-landing-page" aria-describedby="read-declaration-status">
+                  Dates
+                </a>
+              </span>
+              {{ currentProject.taskDatesStatus 
+                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
+                currentProject.realisticYearOfOpeningStart, 
+                currentProject.provisionalOpeningDateDay, 
+                currentProject.actualOpeningDateDay, 
+                currentProject.openingAcademicStart, 
+                currentProject.startOfTermDateDay,
+                currentProject.provisionalKickOffMeetingDateDay,
+                currentProject.actualKickOffMeetingDateDay])
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Project development grant (PDG) 
+                </a>
+              </span>
+              {% if currentProject.taskPDGStatus == "Complete" %}
+              <strong class="govuk-tag app-task-list__tag" id="task-dates-status">Completed </strong>
+              {% else %}
+              <strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Pre-opening
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Funding Agreement Signed - Forecast
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="company-information-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-status">
+                  High-quality principal designate appointed - Forecast
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  Article of association
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Statutory consultation S10
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                School admission policy agreed
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Suitable chair of governors appointed
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Sign-off preparation
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  DBS checks
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-status">
+                  High-quality principal designate appointed - Actual
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  Impact assessment and equalities analysis completed
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Governance plans finalised and agreed
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Pre-FA checkpoint meeting completed successfully
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Educational brief agreed
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Getting ready to open
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Funding Agreement Signed - Actual
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-status">
+                  GIAS registration
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  Final finance plan agreed
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Readiness to open meeting (ROM) and any follow up actions completed
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                OFSTED pre-registration
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Finish the project
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Submit and close file
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+
+  </div>
+
+{% endblock %}

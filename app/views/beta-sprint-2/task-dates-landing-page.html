@@ -1,0 +1,217 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Dates - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Dates
+      </h1>
+      
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Entry into pre-opening
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.dateOfEntryIntoPreOpeningDay and 
+              currentProject.dateOfEntryIntoPreOpeningMonth and 
+              currentProject.dateOfEntryIntoPreOpeningYear %}
+
+              {% set dateOfEntryIntoPreopening = currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay %}
+
+              {{ dateOfEntryIntoPreopening | displayDate }}
+              {% else %}
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Entry into pre-opening</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Realistic year of opening
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.realisticYearOfOpeningStart and
+              currentProject.realisticYearOfOpeningEnd %}
+              <span>{{ currentProject.realisticYearOfOpeningStart }}/{{ currentProject.realisticYearOfOpeningEnd }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Realistic year of opening</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provisional opening date agreed with trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.provisionalOpeningDateDay and 
+              currentProject.provisionalOpeningDateMonth and 
+              currentProject.provisionalOpeningDateYear %}
+
+              {% set provisionalOpeningDate = currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay  %}
+
+              {{ provisionalOpeningDate | displayDate }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Provisional opening date agreed with trust</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Actual opening date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.actualOpeningDateDay and 
+              currentProject.actualOpeningDateMonth and 
+              currentProject.actualOpeningDateYear %}
+
+              {% set actualOpeningDate = currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay  %}
+
+              {{ actualOpeningDate | displayDate }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Actual opening date</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Opening academic year
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.openingAcademicStart and
+              currentProject.openingAcademicEnd %}
+              <span>{{ currentProject.openingAcademicStart }}/{{ currentProject.openingAcademicEnd }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Opening academic year</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Start of term date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.startOfTermDateDay and 
+              currentProject.startOfTermDateMonth and 
+              currentProject.startOfTermDateYear %}
+
+              {% set startOfTermDate = currentProject.startOfTermDateYear + currentProject.startOfTermDateMonth + currentProject.startOfTermDateDay  %}
+
+              {{ startOfTermDate | displayDate }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Start of term date</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provisional kick-off meeting date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.provisionalKickOffMeetingDateDay and 
+              currentProject.provisionalKickOffMeetingDateMonth and 
+              currentProject.provisionalKickOffMeetingDateYear %}
+
+              {% set provisionalKickOffMeetingDate = currentProject.provisionalKickOffMeetingDateYear + currentProject.provisionalKickOffMeetingDateMonth + currentProject.provisionalKickOffMeetingDateDay  %}
+
+              {{ provisionalKickOffMeetingDate | displayDate }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Provisional kick-off meeting date</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Actual kick-off meeting date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.actualKickOffMeetingDateDay and 
+              currentProject.actualKickOffMeetingDateMonth and 
+              currentProject.actualKickOffMeetingDateYear %}
+
+              {% set actualKickOffMeetingDate = currentProject.actualKickOffMeetingDateYear + currentProject.actualKickOffMeetingDateMonth + currentProject.actualKickOffMeetingDateDay  %}
+
+              {{ actualKickOffMeetingDate | displayDate }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Actual kick-off meeting date</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="task-dates-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-dates-status",
+        name: "task-dates-status",
+        values: currentProject.taskDatesStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

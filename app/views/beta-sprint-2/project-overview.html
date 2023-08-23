@@ -1,0 +1,536 @@
+{% extends "./layouts/main-mfsp-project-overview.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set fssPageDesc = "Project overview" %}
+{% set bodyClasses = "mfsp-project-overview mfsp-wider-page" %}
+
+{% block pageTitle %}
+  {{currentProject.projectTitle}} - key project information - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageContent %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+  
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" aria-current="page" href="#">Project overview</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="project-task-list.html">Task list</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="#">Project notes</a>
+        </li>
+      </ul>
+  
+    </nav>
+  </div>
+</div>
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+      <h2 class="govuk-heading-l">Key project information</h2>
+    </div>
+    
+    <div class="govuk-grid-column-one-half">
+
+      <h3 class="govuk-heading-m">Project status</h3>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Current free school name"
+            },
+            value: {
+              html: currentProject.projectTitle
+            }
+          }          
+          ,
+          {
+            key: {
+              text: "Project status"
+            },
+            value: {
+              html: currentProject.status
+            }
+          }        
+          ,
+          {
+            key: {
+              text: "Free schools application number"
+            },
+            value: {
+              html: currentProject.freeSchoolsApplicationNumber | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Project ID"
+            },
+            value: {
+              html: currentProject.projectID | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "URN"
+            },
+            value: {
+              html: "" | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Application wave"
+            },
+            value: {
+              html: currentProject.freeSchoolApplicationWave
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Realistic year of opening"
+            },
+            value: {
+              html: (currentProject.realisticYearOfOpeningStart + "/" + currentProject.realisticYearOfOpeningEnd) | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date of entry into pre-opening"
+            },
+            value: {
+              html:  (currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay) | displayDate
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Provisional opening date agreed with trust"
+            },
+            value: {
+              html: (currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay) | displayDate
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual opening date"
+            },
+            value: {
+              html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Opening academic year"
+            },
+            value: {
+              html: (currentProject.openingAcademicStart + "/" + currentProject.openingAcademicEnd) | displayText
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      <h3 class="govuk-heading-m">School details</h3>
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              html: currentProject.localAuthority
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Region"
+            },
+            value: {
+              html: currentProject.geographicalRegion
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency"
+            },
+            value: {
+              html: currentProject.constituency
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency MP"
+            },
+            value: {
+              html: currentProject.constituencyMP
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Number of forms of entry"
+            },
+            value: {
+              text: currentProject.numberOfFormsOfEntry
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School type"
+            },
+            value: {
+              html: currentProject.schoolType
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School phase"
+            },
+            value: {
+              html: currentProject.schoolPhase
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Age range"
+            },
+            value: {
+              html: currentProject.ageRange
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Gender"
+            },
+            value: {
+              html: ""
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Nursery"
+            },
+            value: {
+              html: ""
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Sixth form"
+            },
+            value: {
+              html: currentProject.sixthForm
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Independent converter"
+            },
+            value: {
+              html: ""
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Specialist Resource Provision"
+            },
+            value: {
+              html: ""
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Faith Status"
+            },
+            value: {
+              html: currentProject.faithStatus
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Faith type"
+            },
+            value: {
+              html: currentProject.faithType
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust ID"
+            },
+            value: {
+              html: currentProject.trustID
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust name"
+            },
+            value: {
+              html: currentProject.trust
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust type"
+            },
+            value: {
+              html: ""
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Other information</h2>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Key contacts"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "FSG Lead Contact"
+            },
+            value: {
+              html: currentProject.deliveryOfficer
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "FSG Lead Contact"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "FSG Team Leader"
+            },
+            value: {
+              html: ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "FSG Team Leader"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "FSG Grade 6"
+            },
+            value: {
+              html: ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "FSG Grade 6"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Project director"
+            },
+            value: {
+              html: ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Project director"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Site information"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Property"
+            },
+            value: {
+              html: "Property content here"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Property"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Postcode"
+            },
+            value: {
+              html: "W1A 1AA"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Postcode"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Pupil numbers and capacity"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Fields to be put here"
+            },
+            value: {
+              html: "Content coming"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Fields to be put here"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "RAG (red, amber, green) rating"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Overall RAG rating"
+            },
+            value: {
+              html: ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "overall RAG rating"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Overall RAG summary"
+            },
+            value: {
+              html: ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "overall RAG summary"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
