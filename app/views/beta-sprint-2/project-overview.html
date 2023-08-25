@@ -53,7 +53,7 @@
               text: "Current free school name"
             },
             value: {
-              html: currentProject.projectTitle
+              html: currentProject.projectTitle | displayText
             }
           }          
           ,
@@ -62,7 +62,7 @@
               text: "Project status"
             },
             value: {
-              html: currentProject.status
+              html: currentProject.status | displayText
             }
           }        
           ,
@@ -98,7 +98,7 @@
               text: "Application wave"
             },
             value: {
-              html: currentProject.freeSchoolApplicationWave
+              html: currentProject.freeSchoolApplicationWave | displayText
             }
           }
           ,
@@ -116,7 +116,7 @@
               text: "Date of entry into pre-opening"
             },
             value: {
-              html:  (currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay) | displayDate
+              html:  (currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay) | displayDate | displayText
             }
           }
           ,
@@ -125,7 +125,7 @@
               text: "Provisional opening date agreed with trust"
             },
             value: {
-              html: (currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay) | displayDate
+              html: (currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay) | displayDate | displayText
             }
           }
           ,
@@ -134,7 +134,7 @@
               text: "Actual opening date"
             },
             value: {
-              html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate
+              html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate | displayText
             }
           }
           ,
@@ -163,7 +163,7 @@
               text: "Local authority"
             },
             value: {
-              html: currentProject.localAuthority
+              html: currentProject.localAuthority | displayText
             }
           }
           ,
@@ -172,7 +172,7 @@
               text: "Region"
             },
             value: {
-              html: currentProject.geographicalRegion
+              html: currentProject.geographicalRegion | displayText
             }
           }
           ,
@@ -181,7 +181,7 @@
               text: "Constituency"
             },
             value: {
-              html: currentProject.constituency
+              html: currentProject.constituency | displayText
             }
           }
           ,
@@ -190,7 +190,7 @@
               text: "Constituency MP"
             },
             value: {
-              html: currentProject.constituencyMP
+              html: currentProject.constituencyMP | displayText
             }
           }
           ,
@@ -199,7 +199,7 @@
               text: "Number of forms of entry"
             },
             value: {
-              text: currentProject.numberOfFormsOfEntry
+              text: currentProject.numberOfFormsOfEntry | displayText
             }
           }
           ,
@@ -208,7 +208,7 @@
               text: "School type"
             },
             value: {
-              html: currentProject.schoolType
+              html: currentProject.schoolType | displayText
             }
           }
           ,
@@ -217,7 +217,7 @@
               text: "School phase"
             },
             value: {
-              html: currentProject.schoolPhase
+              html: currentProject.schoolPhase | displayText
             }
           }
           ,
@@ -226,7 +226,7 @@
               text: "Age range"
             },
             value: {
-              html: currentProject.ageRange
+              html: currentProject.ageRange | displayText
             }
           }
           ,
@@ -235,7 +235,7 @@
               text: "Gender"
             },
             value: {
-              html: ""
+              html: currentProject.gender | displayText
             }
           }
           ,
@@ -244,7 +244,7 @@
               text: "Nursery"
             },
             value: {
-              html: ""
+              html: currentProject.nursery | displayText
             }
           }
           ,
@@ -253,7 +253,7 @@
               text: "Sixth form"
             },
             value: {
-              html: currentProject.sixthForm
+              html: currentProject.sixthForm | displayText
             }
           }
           ,
@@ -262,7 +262,7 @@
               text: "Independent converter"
             },
             value: {
-              html: ""
+              html: currentProject.independentConverter | displayText
             }
           }
           ,
@@ -271,7 +271,7 @@
               text: "Specialist Resource Provision"
             },
             value: {
-              html: ""
+              html: currentProject.specialistResourceProvision | displayText
             }
           }
           ,
@@ -280,7 +280,7 @@
               text: "Faith Status"
             },
             value: {
-              html: currentProject.faithStatus
+              html: currentProject.faithStatus | displayText
             }
           }
           ,
@@ -289,7 +289,7 @@
               text: "Faith type"
             },
             value: {
-              html: currentProject.faithType
+              html: currentProject.faithType | displayText
             }
           }
           ,
@@ -298,7 +298,7 @@
               text: "Trust ID"
             },
             value: {
-              html: currentProject.trustID
+              html: currentProject.trustID | displayText
             }
           }
           ,
@@ -307,7 +307,7 @@
               text: "Trust name"
             },
             value: {
-              html: currentProject.trust
+              html: currentProject.trust | displayText
             }
           }
           ,
@@ -316,7 +316,7 @@
               text: "Trust type"
             },
             value: {
-              html: ""
+              html: currentProject.trustType | displayText
             }
           }
         ]

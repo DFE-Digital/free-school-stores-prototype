@@ -1,0 +1,114 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit school details - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit school details
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post"  action="task-school-details-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukInput({
+                id: "projectTitle",
+                name: "projectTitle",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Current free school name",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.projectTitle
+              }) }}
+
+              {{ govukRadios({
+                name: "geographicalRegion",
+                fieldset: {
+                  legend: {
+                    text: "Region",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                  {
+                    text: "East Midlands",
+                    value: "East Midlands",
+                    checked: checked("currentProject.geographicalRegion", "East Midlands")
+                  },
+                  {
+                    text: "East of England",
+                    value: "East of England",
+                    checked: checked("currentProject.geographicalRegion", "East of England")
+                  },
+                  {
+                    text: "London",
+                    value: "London",
+                    checked: checked("currentProject.geographicalRegion", "London")
+                  },
+                  {
+                    text: "North East",
+                    value: "North East",
+                    checked: checked("currentProject.geographicalRegion", "North East")
+                  },
+                  {
+                    text: "North West",
+                    value: "North West",
+                    checked: checked("currentProject.geographicalRegion", "North West")
+                  },
+                  {
+                    text: "South East",
+                    value: "South East",
+                    checked: checked("currentProject.geographicalRegion", "South East")
+                  },
+                  {
+                    text: "South West",
+                    value: "South West",
+                    checked: checked("currentProject.geographicalRegion", "South West")
+                  },
+                  {
+                    text: "West Midlands",
+                    value: "West Midlands",
+                    checked: checked("currentProject.geographicalRegion", "West Midlands")
+                  },
+                  {
+                    text: "Yorkshire and the Humber",
+                    value: "Yorkshire and the Humber",
+                    checked: checked("currentProject.geographicalRegion", "Yorkshire and the Humber")
+                  }
+                ]
+              }) }} 
+
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

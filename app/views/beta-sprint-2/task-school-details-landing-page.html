@@ -1,0 +1,394 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  School details - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        School details
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Current free school name"
+            },
+            value: {
+              html: currentProject.projectTitle | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Current free school name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              html: currentProject.localAuthority | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Local authority"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Region"
+            },
+            value: {
+              html: currentProject.geographicalRegion | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Region"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency"
+            },
+            value: {
+              html: currentProject.constituency | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Constituency"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Constituency MP"
+            },
+            value: {
+              html: currentProject.constituencyMP | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Constituency MP"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Number of forms of entry"
+            },
+            value: {
+              text: currentProject.numberOfFormsOfEntry | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Number of forms of entry"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School type"
+            },
+            value: {
+              html: currentProject.schoolType | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "School type"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School phase"
+            },
+            value: {
+              html: currentProject.schoolPhase | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "School phase"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Age range"
+            },
+            value: {
+              html: currentProject.ageRange | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Age range"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Gender"
+            },
+            value: {
+              html: currentProject.gender | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Gender"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Nursery"
+            },
+            value: {
+              html: currentProject.nursery | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Nursery"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Sixth form"
+            },
+            value: {
+              html: currentProject.sixthForm | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Sixth form"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Independent converter"
+            },
+            value: {
+              html: currentProject.independentConverter | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Independent converter"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Specialist Resource Provision"
+            },
+            value: {
+              html: currentProject.specialistResourceProvision | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Specialist Resource Provision"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Faith status"
+            },
+            value: {
+              html: currentProject.faithStatus | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Faith status"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Faith type"
+            },
+            value: {
+              html: currentProject.faithType | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Faith type"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust ID"
+            },
+            value: {
+              html: currentProject.trustID | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust ID"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust name"
+            },
+            value: {
+              html: currentProject.trust | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust type"
+            },
+            value: {
+              html: currentProject.trustType | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust type"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-school-details-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-school-details-status",
+        name: "task-school-details-status",
+        values: currentProject.taskSchoolDetailsStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

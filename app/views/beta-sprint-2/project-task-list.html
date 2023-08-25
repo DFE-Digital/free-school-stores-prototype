@@ -56,7 +56,17 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-risk-appraisal-landing-page" aria-describedby="eligibility-status">
+                <a href="task-school-details-landing-page" aria-describedby="">
+                  School details
+                </a>
+              </span>
+              {{ currentProject.taskSchoolDetailsStatus 
+              | taskStatus([currentProject.projectTitle, currentProject.geographicalRegion]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-risk-appraisal-landing-page" aria-describedby="">
                   Risk appraisal
                 </a>
               </span>
@@ -66,7 +76,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-dates-landing-page" aria-describedby="read-declaration-status">
+                <a href="task-dates-landing-page" aria-describedby="">
                   Dates
                 </a>
               </span>
@@ -83,7 +93,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-status">
+                <a href="#" aria-describedby="">
                   Project development grant (PDG) 
                 </a>
               </span>

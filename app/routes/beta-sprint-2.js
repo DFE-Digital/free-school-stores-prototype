@@ -104,6 +104,7 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskSchoolDetailsStatus" : "",
             "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
@@ -171,6 +172,7 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskSchoolDetailsStatus" : "",
             "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
@@ -228,6 +230,7 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskSchoolDetailsStatus" : "",
             "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
@@ -285,6 +288,7 @@ module.exports = function (router) {
             "capacityY12Y14" : "",
             "ageRange" : "",
             "sixthForm" : "",
+            "taskSchoolDetailsStatus" : "",
             "taskRiskAppraisalStatus" : "",
             "riskAppraisalSharepointLink" : "",
             "riskRatingEducation" : "",
@@ -345,6 +349,17 @@ module.exports = function (router) {
         res.redirect("task-risk-appraisal-landing-page");
     });
 
+    router.post('/' + version + '/task-school-details-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.projectTitle = req.session.data['projectTitle'];
+        masterProject.geographicalRegion = req.session.data['geographicalRegion'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-school-details-landing-page");
+    });
+
     router.post('/' + version + '/task-dates-confirmation', function(req, res) {
         var masterProject = getProject(req);
 
@@ -359,6 +374,16 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.taskRiskAppraisalStatus = req.session.data['task-risk-appraisal-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-school-details-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskSchoolDetailsStatus = req.session.data['task-school-details-status'];
 
         req.session.data.currentProject = masterProject;
 
