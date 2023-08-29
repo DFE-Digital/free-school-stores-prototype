@@ -56,12 +56,54 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
+                <a href="task-dates-landing-page" aria-describedby="">
+                  Dates
+                </a>
+              </span>
+              {{ currentProject.taskDatesStatus 
+                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
+                currentProject.provisionalOpeningDateDay,
+                currentProject.openingAcademicStart])
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
                 <a href="task-school-details-landing-page" aria-describedby="">
-                  School details
+                  School
                 </a>
               </span>
               {{ currentProject.taskSchoolDetailsStatus 
               | taskStatus([currentProject.projectTitle, currentProject.geographicalRegion]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="">
+                  Trust
+                </a>
+              </span>
+              {{ ""
+              | taskStatus([]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="">
+                  Region and local authority
+                </a>
+              </span>
+              {{ ""
+              | taskStatus([]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="">
+                  Constituency
+                </a>
+              </span>
+              {{ ""
+              | taskStatus([]) 
               | safe }}
             </li>
             <li class="app-task-list__item">
@@ -73,23 +115,6 @@
               {{ currentProject.taskRiskAppraisalStatus 
               | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation, currentProject.riskRatingGovernance, currentProject.riskRatingFinance]) 
               | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="task-dates-landing-page" aria-describedby="">
-                  Dates
-                </a>
-              </span>
-              {{ currentProject.taskDatesStatus 
-                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
-                currentProject.realisticYearOfOpeningStart, 
-                currentProject.provisionalOpeningDateDay, 
-                currentProject.actualOpeningDateDay, 
-                currentProject.openingAcademicStart, 
-                currentProject.startOfTermDateDay,
-                currentProject.provisionalKickOffMeetingDateDay,
-                currentProject.actualKickOffMeetingDateDay])
-                | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">

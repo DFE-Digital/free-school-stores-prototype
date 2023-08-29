@@ -310,25 +310,11 @@ module.exports = function (router) {
         masterProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
         masterProject.dateOfEntryIntoPreOpeningMonth = req.session.data['dateOfEntryIntoPreOpening-month'];
         masterProject.dateOfEntryIntoPreOpeningYear = req.session.data['dateOfEntryIntoPreOpening-year'];
-        masterProject.realisticYearOfOpeningStart = req.session.data['realisticYearOfOpening-start year'];
-        masterProject.realisticYearOfOpeningEnd = req.session.data['realisticYearOfOpening-end year'];
         masterProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
         masterProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
         masterProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
-        masterProject.actualOpeningDateDay = req.session.data['actualOpeningDate-day'];
-        masterProject.actualOpeningDateMonth = req.session.data['actualOpeningDate-month'];
-        masterProject.actualOpeningDateYear = req.session.data['actualOpeningDate-year'];
         masterProject.openingAcademicStart = req.session.data['openingAcademic-start year'];
         masterProject.openingAcademicEnd = req.session.data['openingAcademic-end year'];
-        masterProject.startOfTermDateDay = req.session.data['startOfTermDate-day'];
-        masterProject.startOfTermDateMonth = req.session.data['startOfTermDate-month'];
-        masterProject.startOfTermDateYear = req.session.data['startOfTermDate-year'];
-        masterProject.provisionalKickOffMeetingDateDay = req.session.data['provisionalKickOffMeetingDate-day'];
-        masterProject.provisionalKickOffMeetingDateMonth = req.session.data['provisionalKickOffMeetingDate-month'];
-        masterProject.provisionalKickOffMeetingDateYear = req.session.data['provisionalKickOffMeetingDate-year'];
-        masterProject.actualKickOffMeetingDateDay = req.session.data['actualKickOffMeetingDate-day'];
-        masterProject.actualKickOffMeetingDateMonth = req.session.data['actualKickOffMeetingDate-month'];
-        masterProject.actualKickOffMeetingDateYear = req.session.data['actualKickOffMeetingDate-year'];
 
         // Update our current project with the latest changes
         req.session.data.currentProject = masterProject;
