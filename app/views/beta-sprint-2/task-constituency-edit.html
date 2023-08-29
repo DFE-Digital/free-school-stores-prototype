@@ -1,0 +1,66 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit constituency - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Constituency
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-constituency-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukInput({
+                id: "constituency",
+                name: "constituency",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Constituency name",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.constituency
+              }) }}
+
+              {{ govukInput({
+                id: "constituencyMp",
+                name: "constituencyMp",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Constituency MP",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.constituencyMp
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
