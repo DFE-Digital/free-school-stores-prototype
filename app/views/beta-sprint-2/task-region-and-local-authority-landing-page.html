@@ -29,14 +29,14 @@
               text: "Region"
             },
             value: {
-              html: currentProject.region | displayText
+              html: currentProject.geographicalRegion | displayText
             },
             actions: {
               items: [
                 {
                   href: "task-region-and-local-authority-edit",
                   text: "Change",
-                  visuallyHiddenText: "Trust name"
+                  visuallyHiddenText: "Region"
                 }
               ]
             }
@@ -44,34 +44,17 @@
           ,
           {
             key: {
-              text: "Trust type"
+              text: "Local authority"
             },
             value: {
-              html: currentProject.trustType | displayText
+              html: currentProject.localAuthority | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-trust-edit",
+                  href: "task-region-and-local-authority-edit",
                   text: "Change",
-                  visuallyHiddenText: "Trust type"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Trust ID"
-            },
-            value: {
-              html: currentProject.trustID | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-trust-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Trust ID"
+                  visuallyHiddenText: "Local authority"
                 }
               ]
             }
@@ -80,12 +63,12 @@
       }) }}
 
 
-      <form action="task-school-details-confirmation" method="post">
+      <form action="project-task-list" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-school-details-status",
-        name: "task-school-details-status",
-        values: currentProject.taskSchoolDetailsStatus,
+        idPrefix: "task-region-and-local-authority-status",
+        name: "task-region-and-local-authority-status",
+        values: currentProject.taskRegionAndLocalAuthority,
         items: [
         {
           value: "Complete",

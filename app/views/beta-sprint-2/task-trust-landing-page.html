@@ -80,12 +80,12 @@
       }) }}
 
 
-      <form action="task-school-details-confirmation" method="post">
+      <form action="project-task-list" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-school-details-status",
-        name: "task-school-details-status",
-        values: currentProject.taskSchoolDetailsStatus,
+        idPrefix: "task-trust-status",
+        name: "task-trust-status",
+        values: currentProject.taskTrustStatus,
         items: [
         {
           value: "Complete",
