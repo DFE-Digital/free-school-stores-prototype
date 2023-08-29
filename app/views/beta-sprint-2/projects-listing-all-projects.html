@@ -224,7 +224,8 @@ All free schools projects – {{ serviceName }}
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Provisional opening date</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
-            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Action</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Last updated</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-10">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -251,6 +252,18 @@ All free schools projects – {{ serviceName }}
               {% endif %}
             </td>
             <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
+            <td class="govuk-table__cell">
+              {% if project.lastUpdatedDay and 
+                project.lastUpdatedMonth and 
+                project.lastUpdatedYear %}
+  
+                {% set lastUpdatedDate = project.lastUpdatedYear + project.lastUpdatedMonth + project.lastUpdatedDay  %}
+  
+                {{ lastUpdatedDate | displayDate }}
+                {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </td>
             <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
           </tr>
           {% endif %}
@@ -271,7 +284,8 @@ All free schools projects – {{ serviceName }}
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-6">Delivery officer</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Provisional opening date</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
-            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Action</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Last updated</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-10">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -299,6 +313,18 @@ All free schools projects – {{ serviceName }}
                 {% endif %}
               </td>
               <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
+              <td class="govuk-table__cell">
+                {% if project.lastUpdatedDay and 
+                  project.lastUpdatedMonth and 
+                  project.lastUpdatedYear %}
+    
+                  {% set lastUpdatedDate = project.lastUpdatedYear + project.lastUpdatedMonth + project.lastUpdatedDay  %}
+    
+                  {{ lastUpdatedDate | displayDate }}
+                  {% else %} 
+                  <span class="empty">Empty</span>
+                {% endif %}
+              </td>
               <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
             </tr>
           {% endif %}
