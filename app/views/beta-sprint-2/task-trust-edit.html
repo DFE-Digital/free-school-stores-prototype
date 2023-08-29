@@ -60,6 +60,17 @@
                 value: currentProject.trustID
               }) }}
 
+              {{ govukInput({
+                id: "independentConverter",
+                name: "independentConverter",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Independent converter",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.independentConverter
+              }) }}
+
               <br><br>
               {{ govukButton({
                 text: "Save and continue"
