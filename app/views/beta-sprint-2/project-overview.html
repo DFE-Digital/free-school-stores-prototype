@@ -41,67 +41,12 @@
     <div class="govuk-grid-column-full govuk-!-margin-top-5 govuk-!-margin-bottom-5">
       <h2 class="govuk-heading-l">Key project information</h2>
     </div>
-    
-    <div class="govuk-grid-column-one-half">
 
-      <h3 class="govuk-heading-m">Project status</h3>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-m">Dates</h3>
 
       {{ govukSummaryList({
         rows: [
-          {
-            key: {
-              text: "Current free school name"
-            },
-            value: {
-              html: currentProject.projectTitle | displayText
-            }
-          }                 
-          ,
-          {
-            key: {
-              text: "Free schools application number"
-            },
-            value: {
-              html: currentProject.freeSchoolsApplicationNumber | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Project ID"
-            },
-            value: {
-              html: currentProject.projectID | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "URN"
-            },
-            value: {
-              html: "" | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Application wave"
-            },
-            value: {
-              html: currentProject.freeSchoolApplicationWave | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Realistic year of opening"
-            },
-            value: {
-              html: (currentProject.realisticYearOfOpeningStart + "/" + currentProject.realisticYearOfOpeningEnd) | displayText
-            }
-          }
-          ,
           {
             key: {
               text: "Date of entry into pre-opening"
@@ -122,60 +67,46 @@
           ,
           {
             key: {
-              text: "Actual opening date"
-            },
-            value: {
-              html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate | displayText
-            }
-          }
-          ,
-          {
-            key: {
               text: "Opening academic year"
             },
             value: {
               html: (currentProject.openingAcademicStart + "/" + currentProject.openingAcademicEnd) | displayText
             }
           }
+          ,
+          {
+            key: {
+              text: "Realistic year of opening"
+            },
+            value: {
+              html: (currentProject.realisticYearOfOpeningStart + "/" + currentProject.realisticYearOfOpeningEnd) | displayText
+            }
+          },
+          {
+            key: {
+              text: "Actual opening date"
+            },
+            value: {
+              html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate | displayText
+            }
+          }
         ]
       }) }}
-
-
     </div>
 
     <div class="govuk-grid-column-one-half">
-
-      <h3 class="govuk-heading-m">School details</h3>
+      <h3 class="govuk-heading-m">School</h3>
       {{ govukSummaryList({
         
         rows: [
           {
             key: {
-              text: "Local authority"
+              text: "Current free school name"
             },
             value: {
-              html: currentProject.localAuthority | displayText
+              html: currentProject.projectTitle | displayText
             }
-          }
-          ,
-          {
-            key: {
-              text: "Region"
-            },
-            value: {
-              html: currentProject.geographicalRegion | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Number of forms of entry"
-            },
-            value: {
-              text: currentProject.numberOfFormsOfEntry | displayText
-            }
-          }
-          ,
+          },
           {
             key: {
               text: "School type"
@@ -183,8 +114,7 @@
             value: {
               html: currentProject.schoolType | displayText
             }
-          }
-          ,
+          },
           {
             key: {
               text: "School phase"
@@ -192,44 +122,7 @@
             value: {
               html: currentProject.schoolPhase | displayText
             }
-          }
-          ,
-          {
-            key: {
-              text: "Age range"
-            },
-            value: {
-              html: currentProject.ageRange | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Gender"
-            },
-            value: {
-              html: currentProject.gender | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Nursery"
-            },
-            value: {
-              html: currentProject.nursery | displayText
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Sixth form"
-            },
-            value: {
-              html: currentProject.sixthForm | displayText
-            }
-          }
-          ,
+          },
           {
             key: {
               text: "Faith Status"
@@ -237,8 +130,7 @@
             value: {
               html: currentProject.faithStatus | displayText
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Faith type"
@@ -247,7 +139,18 @@
               html: currentProject.faithType | displayText
             }
           }
-          ,
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-m">Trust</h3>
+      {{ govukSummaryList({
+        
+        rows: [
           {
             key: {
               text: "Trust ID"
@@ -276,8 +179,83 @@
           }
         ]
       }) }}
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-m">Region and local authority</h3>
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              html: currentProject.localAuthority | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Region"
+            },
+            value: {
+              html: currentProject.geographicalRegion | displayText
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
 
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-m">Reference numbers</h3>
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Project ID"
+            },
+            value: {
+              html: currentProject.projectID | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "URN"
+            },
+            value: {
+              html: "" | displayText
+            }
+          },
+          {
+            key: {
+              text: "Free schools application number"
+            },
+            value: {
+              html: currentProject.freeSchoolsApplicationNumber | displayText
+            }
+          },
+          {
+            key: {
+              text: "Application wave"
+            },
+            value: {
+              html: currentProject.freeSchoolApplicationWave | displayText
+            }
+          },
+          {
+            key: {
+              text: "Number of forms of entry"
+            },
+            value: {
+              text: currentProject.numberOfFormsOfEntry | displayText
+            }
+          }
+        ]
+      }) }}
     </div>
   </div>
 
