@@ -1,0 +1,105 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Trust - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Trust
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Trust name"
+            },
+            value: {
+              html: currentProject.trustName | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-trust-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Trust type"
+            },
+            value: {
+              html: currentProject.trustType | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-trust-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust type"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Trust ID"
+            },
+            value: {
+              html: currentProject.trustID | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-trust-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust ID"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-school-details-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-school-details-status",
+        name: "task-school-details-status",
+        values: currentProject.taskSchoolDetailsStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

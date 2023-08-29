@@ -55,7 +55,8 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "gender": "mixed"
     },
     {
       "projectTitle" : "Bolton Spa Primary", 

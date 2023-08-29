@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Edit school details - {{currentProject.projectTitle}} – {{ serviceName }}
+  Edit school - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post"  action="task-school-details-landing-page">
+          <form method="post" action="task-school-details-landing-page">
             <div class="govuk-form-group">
 
               {{ govukInput({
@@ -38,64 +38,120 @@
                 value: currentProject.projectTitle
               }) }}
 
+              {{ govukInput({
+                id: "schoolType",
+                name: "schoolType",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "School type",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.schoolType
+              }) }}
+
+              {{ govukInput({
+                id: "schoolPhase",
+                name: "schoolPhase",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "School phase",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.schoolPhase
+              }) }}
+
+              {{ govukInput({
+                id: "ageRange",
+                name: "ageRange",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Age range",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.ageRange
+              }) }}
+
               {{ govukRadios({
-                name: "geographicalRegion",
+                name: "gender",
                 fieldset: {
                   legend: {
-                    text: "Region",
-                    isPageHeading: false,
-                    classes: "govuk-fieldset__legend--m"
+                    text: "Gender",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
                   }
                 },
                 items: [
                   {
-                    text: "East Midlands",
-                    value: "East Midlands",
-                    checked: checked("currentProject.geographicalRegion", "East Midlands")
+                    value: "mixed",
+                    text: "Mixed",
+                    checked: checked("currentProject.gender", "mixed")
                   },
                   {
-                    text: "East of England",
-                    value: "East of England",
-                    checked: checked("currentProject.geographicalRegion", "East of England")
+                    value: "boys",
+                    text: "Boys only",
+                    checked: checked("currentProject.gender", "boys")
                   },
                   {
-                    text: "London",
-                    value: "London",
-                    checked: checked("currentProject.geographicalRegion", "London")
-                  },
-                  {
-                    text: "North East",
-                    value: "North East",
-                    checked: checked("currentProject.geographicalRegion", "North East")
-                  },
-                  {
-                    text: "North West",
-                    value: "North West",
-                    checked: checked("currentProject.geographicalRegion", "North West")
-                  },
-                  {
-                    text: "South East",
-                    value: "South East",
-                    checked: checked("currentProject.geographicalRegion", "South East")
-                  },
-                  {
-                    text: "South West",
-                    value: "South West",
-                    checked: checked("currentProject.geographicalRegion", "South West")
-                  },
-                  {
-                    text: "West Midlands",
-                    value: "West Midlands",
-                    checked: checked("currentProject.geographicalRegion", "West Midlands")
-                  },
-                  {
-                    text: "Yorkshire and the Humber",
-                    value: "Yorkshire and the Humber",
-                    checked: checked("currentProject.geographicalRegion", "Yorkshire and the Humber")
+                    value: "girls",
+                    text: "Girls only",
+                    checked: checked("currentProject.gender", "girls")
                   }
                 ]
-              }) }} 
+              }) }}
 
+              {{ govukRadios({
+                name: "nursery",
+                fieldset: {
+                  legend: {
+                    text: "Nursery",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked("currentProject.nursery", "yes")
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked("currentProject.nursery", "no")
+                  }
+                ]
+              }) }}
+
+              {{ govukInput({
+                id: "sixthForm",
+                name: "sixthForm",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sixth form",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.sixthForm
+              }) }}
+
+              {{ govukInput({
+                id: "faithStatus",
+                name: "faithStatus",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Faith status",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.faithStatus
+              }) }}
+
+              {{ govukInput({
+                id: "faithType",
+                name: "faithType",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Faith type",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.faithType
+              }) }}
 
               <br><br>
               {{ govukButton({

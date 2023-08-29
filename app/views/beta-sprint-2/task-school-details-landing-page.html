@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  School details - {{currentProject.projectTitle}} – {{ serviceName }}
+  School - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        School details
+        School
       </h1>
 
       {{ govukSummaryList({
@@ -37,96 +37,6 @@
                   href: "task-school-details-edit",
                   text: "Change",
                   visuallyHiddenText: "Current free school name"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Local authority"
-            },
-            value: {
-              html: currentProject.localAuthority | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Local authority"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Region"
-            },
-            value: {
-              html: currentProject.geographicalRegion | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Region"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Constituency"
-            },
-            value: {
-              html: currentProject.constituency | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Constituency"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Constituency MP"
-            },
-            value: {
-              html: currentProject.constituencyMP | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Constituency MP"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Number of forms of entry"
-            },
-            value: {
-              text: currentProject.numberOfFormsOfEntry | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Number of forms of entry"
                 }
               ]
             }
@@ -242,42 +152,6 @@
           ,
           {
             key: {
-              text: "Independent converter"
-            },
-            value: {
-              html: currentProject.independentConverter | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Independent converter"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Specialist Resource Provision"
-            },
-            value: {
-              html: currentProject.specialistResourceProvision | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Specialist Resource Provision"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
               text: "Faith status"
             },
             value: {
@@ -307,60 +181,6 @@
                   href: "task-school-details-edit",
                   text: "Change",
                   visuallyHiddenText: "Faith type"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Trust ID"
-            },
-            value: {
-              html: currentProject.trustID | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Trust ID"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Trust name"
-            },
-            value: {
-              html: currentProject.trust | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Trust name"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Trust type"
-            },
-            value: {
-              html: currentProject.trustType | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-school-details-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Trust type"
                 }
               ]
             }

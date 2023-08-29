@@ -322,6 +322,16 @@ module.exports = function (router) {
         res.redirect("task-dates-landing-page");
     });
 
+    router.post('/' + version + '/task-dates-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskDatesStatus = req.session.data['task-dates-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-risk-appraisal-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
@@ -335,27 +345,6 @@ module.exports = function (router) {
         res.redirect("task-risk-appraisal-landing-page");
     });
 
-    router.post('/' + version + '/task-school-details-landing-page', function(req, res) {
-        var masterProject = getProject(req);
-
-        masterProject.projectTitle = req.session.data['projectTitle'];
-        masterProject.geographicalRegion = req.session.data['geographicalRegion'];
-
-        req.session.data.currentProject = masterProject;
-
-        res.redirect("task-school-details-landing-page");
-    });
-
-    router.post('/' + version + '/task-dates-confirmation', function(req, res) {
-        var masterProject = getProject(req);
-
-        masterProject.taskDatesStatus = req.session.data['task-dates-status'];
-
-        req.session.data.currentProject = masterProject;
-
-        res.redirect("project-task-list");
-    });
-
     router.post('/' + version + '/task-risk-appraisal-confirmation', function(req, res) {
         var masterProject = getProject(req);
 
@@ -364,6 +353,24 @@ module.exports = function (router) {
         req.session.data.currentProject = masterProject;
 
         res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-school-details-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.projectTitle = req.session.data['projectTitle'];
+        masterProject.schoolType = req.session.data['schoolType'];
+        masterProject.schoolPhase = req.session.data['schoolPhase'];
+        masterProject.ageRange = req.session.data['ageRange'];
+        masterProject.gender = req.session.data['gender'];
+        masterProject.nursery = req.session.data['nursery'];
+        masterProject.sixthForm = req.session.data['sixthForm'];
+        masterProject.faithStatus = req.session.data['faithStatus'];
+        masterProject.faithType = req.session.data['faithType'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-school-details-landing-page");
     });
 
     router.post('/' + version + '/task-school-details-confirmation', function(req, res) {
