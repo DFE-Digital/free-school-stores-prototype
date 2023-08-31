@@ -1,0 +1,119 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Risk appraisal - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Risk appraisal
+      </h1>
+      
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Risk appraisal form SharePoint link
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.riskAppraisalSharepointLink %}
+              <span>{{ currentProject.riskAppraisalSharepointLink }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-risk-appraisal-edit">
+              Change <span class="govuk-visually-hidden">Risk appraisal form SharePoint link</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What's the education risk rating?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.riskRatingEducation %}
+
+              {{ currentProject.riskRatingEducation }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-risk-appraisal-edit">
+              Change <span class="govuk-visually-hidden">What's the education risk rating?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What's the governance risk rating?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.riskRatingGovernance %}
+
+              {{ currentProject.riskRatingGovernance }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-risk-appraisal-edit">
+              Change <span class="govuk-visually-hidden">What's the governance risk rating?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What's the finance risk rating?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.riskRatingFinance %}
+              <span>{{ currentProject.riskRatingFinance }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-risk-appraisal-edit">
+              Change <span class="govuk-visually-hidden">What's the finance risk rating?</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="task-risk-appraisal-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-risk-appraisal-status",
+        name: "task-risk-appraisal-status",
+        values: currentProject.taskRiskAppraisalStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
