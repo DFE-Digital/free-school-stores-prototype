@@ -82,7 +82,7 @@
                   Trust
                 </a>
               </span>
-              {{ ""
+              {{ currentProject.taskTrustStatus
               | taskStatus([]) 
               | safe }}
             </li>
@@ -92,7 +92,7 @@
                   Region and local authority
                 </a>
               </span>
-              {{ ""
+              {{ currentProject.taskRegionAndLocalAuthority
               | taskStatus([]) 
               | safe }}
             </li>
@@ -102,7 +102,7 @@
                   Constituency
                 </a>
               </span>
-              {{ ""
+              {{ currentProject.taskConstituencyStatus
               | taskStatus([]) 
               | safe }}
             </li>
@@ -122,11 +122,9 @@
                   Project development grant (PDG) 
                 </a>
               </span>
-              {% if currentProject.taskPDGStatus == "Complete" %}
-              <strong class="govuk-tag app-task-list__tag" id="task-dates-status">Completed </strong>
-              {% else %}
-              <strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>
-              {% endif %}
+              {{ currentProject.taskPDGStatus
+                | taskStatus([currentProject.initialGrantAllocation]) 
+                | safe }}
             </li>
           </ul>
         </li>

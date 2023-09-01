@@ -19,7 +19,7 @@ module.exports = {
       "schoolPhase": "Primary",
       "faithStatus" : "None",
       "faithType" : "None",
-      "deliveryOfficer" : "",
+      "deliveryOfficer" : "Alex James",
       "status" : "Not started",
       "lastUpdatedDay" : "29",
       "lastUpdatedMonth" : "08",
@@ -117,7 +117,11 @@ module.exports = {
       "riskRatingGovernance" : "Low",
       "riskRatingFinance" : "High",
       "taskDatesStatus": ["Complete"],
-      "taskPDGStatus": ["Complete"]
+      "taskPDGStatus": ["In progress"],
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
