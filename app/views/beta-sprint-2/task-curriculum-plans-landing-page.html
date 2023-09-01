@@ -1,0 +1,160 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Curriculum plans - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Ciriculum plans
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Final version of detailed curriculum plans submitted"
+            },
+            value: {
+              html: currentProject.curriculumPlansSubmitted | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-curriculum-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Final version of detailed curriculum plans submitted"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject.curriculumPlansBaselineDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-curriculum-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject.curriculumPlansForecastDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-curriculum-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject.curriculumPlansActualDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-curriculum-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.curriculumPlansCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-curriculum-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.curriculumPlansSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-curriculum-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-curriculum-plans-status",
+        name: "task-curriculum-plans-status",
+        values: currentProject.taskCurriculumPlansStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
