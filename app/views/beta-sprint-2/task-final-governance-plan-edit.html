@@ -1,0 +1,184 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Final governance plan - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Final governance plan
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-final-governance-plan-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "finalGovernancePlanAgreed",
+                fieldset: {
+                  legend: {
+                    text: "Final governance plan agreed",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.finalGovernancePlanAgreed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.finalGovernancePlanAgreed", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "finalGovernancePlanBaselineDate",
+                namePrefix: "finalGovernancePlanBaselineDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Baseline date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.finalGovernancePlanBaselineDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.finalGovernancePlanBaselineDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.finalGovernancePlanBaselineDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "finalGovernancePlanForecastDate",
+                namePrefix: "finalGovernancePlanForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.finalGovernancePlanForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.finalGovernancePlanForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.finalGovernancePlanForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "finalGovernancePlanActualDate",
+                namePrefix: "finalGovernancePlanActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.finalGovernancePlanActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.finalGovernancePlanActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.finalGovernancePlanActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "finalGovernancePlanCommentsOnDecisionToApprove",
+                name: "finalGovernancePlanCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.finalGovernancePlanCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "finalGovernancePlanSharepointLink",
+                name: "finalGovernancePlanSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.finalGovernancePlanSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
