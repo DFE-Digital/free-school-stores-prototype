@@ -1,0 +1,206 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit readiness to open meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit readiness to open meeting
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-readiness-to-open-meeting-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "readinessToOpenMeetingCompleted",
+                fieldset: {
+                  legend: {
+                    text: "Readiness to open meeting (ROM) and follow-up actions completed",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.readinessToOpenMeetingCompleted", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.readinessToOpenMeetingCompleted", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukInput({
+                id: "readinessToOpenMeetingOutcome",
+                name: "readinessToOpenMeetingOutcome",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "ROM outcome",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.readinessToOpenMeetingOutcome
+              }) }}
+
+              {{ govukInput({
+                id: "readinessToOpenMeetingConditionsMet",
+                name: "readinessToOpenMeetingConditionsMet",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "ROM conditions met",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.readinessToOpenMeetingConditionsMet
+              }) }}
+
+              {{ govukDateInput({
+                id: "readinessToOpenMeetingBaselineDate",
+                namePrefix: "readinessToOpenMeetingBaselineDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Baseline date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.readinessToOpenMeetingBaselineDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.readinessToOpenMeetingBaselineDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.readinessToOpenMeetingBaselineDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "readinessToOpenMeetingForecastDate",
+                namePrefix: "readinessToOpenMeetingForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.readinessToOpenMeetingForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.readinessToOpenMeetingForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.readinessToOpenMeetingForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "readinessToOpenMeetingActualDate",
+                namePrefix: "readinessToOpenMeetingActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.readinessToOpenMeetingActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.readinessToOpenMeetingActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.readinessToOpenMeetingActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "readinessToOpenMeetingCommentsOnDecisionToApprove",
+                name: "readinessToOpenMeetingCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.readinessToOpenMeetingCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "readinessToOpenMeetingSharepointLink",
+                name: "readinessToOpenMeetingSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.readinessToOpenMeetingSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

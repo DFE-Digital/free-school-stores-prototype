@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Offsted pre-registration - {{currentProject.projectTitle}} – {{ serviceName }}
+  Ofsted pre-registration - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Offsted pre-registration
+        Ofsted pre-registration
       </h1>
 
       {{ govukSummaryList({
@@ -26,17 +26,17 @@
         rows: [
           {
             key: {
-              text: "Offsted pre-registration inspection conclusion"
+              text: "Ofsted pre-registration inspection conclusion"
             },
             value: {
-              html: currentProject.offstedPreRegistrationInspectionConclusion | displayText
+              html: currentProject.ofstedPreRegistrationInspectionConclusion | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
-                  visuallyHiddenText: "Offsted pre-registration inspection conclusion"
+                  visuallyHiddenText: "Ofsted pre-registration inspection conclusion"
                 }
               ]
             }
@@ -44,17 +44,17 @@
           ,
           {
             key: {
-              text: "Offsted inspection outcome"
+              text: "Ofsted inspection outcome"
             },
             value: {
-              html: currentProject.offstedPreRegistrationInspectionOutcome | displayText
+              html: currentProject.ofstedPreRegistrationInspectionOutcome | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
-                  visuallyHiddenText: "Offsted inspection outcome"
+                  visuallyHiddenText: "Ofsted inspection outcome"
                 }
               ]
             }
@@ -64,12 +64,12 @@
               text: "Inspection conditions met"
             },
             value: {
-              html: currentProject.offstedPreRegistrationInspectionConditionsMet | displayText
+              html: currentProject.ofstedPreRegistrationInspectionConditionsMet | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
                   visuallyHiddenText: "Inspection conditions met"
                 }
@@ -82,12 +82,12 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.offstedPreRegistrationBaselineDate | displayText
+              html: currentProject.ofstedPreRegistrationBaselineDate | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
                   visuallyHiddenText: "Baseline date"
                 }
@@ -100,12 +100,12 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.offstedPreRegistrationForecastDate | displayText
+              html: currentProject.ofstedPreRegistrationForecastDate | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
                   visuallyHiddenText: "Forecast date"
                 }
@@ -118,12 +118,12 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.offstedPreRegistrationActualDate | displayText
+              html: currentProject.ofstedPreRegistrationActualDate | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
                   visuallyHiddenText: "Actual date"
                 }
@@ -136,12 +136,12 @@
               text: "Comments on decision to approve (if applicable)"
             },
             value: {
-              html: currentProject.offstedPreRegistrationCommentsOnDecisionToApprove | displayText
+              html: currentProject.ofstedPreRegistrationCommentsOnDecisionToApprove | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
                   visuallyHiddenText: "Comments on decision to approve (if applicable)"
                 }
@@ -153,12 +153,12 @@
               text: "SharePoint link"
             },
             value: {
-              html: currentProject.offstedPreRegistrationSharepointLink | displayText
+              html: currentProject.ofstedPreRegistrationSharepointLink | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-offsted-pre-registration-edit",
+                  href: "task-ofsted-pre-registration-edit",
                   text: "Change",
                   visuallyHiddenText: "SharePoint link"
                 }
@@ -172,9 +172,9 @@
       <form action="project-task-list" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-offsted-pre-registration-edit-status",
-        name: "task-offsted-pre-registration-edit-status",
-        values: currentProject.taskOffstedPreRegistrationStatus,
+        idPrefix: "task-ofsted-pre-registration-edit-status",
+        name: "task-ofsted-pre-registration-edit-status",
+        values: currentProject.taskOfstedPreRegistrationStatus,
         items: [
         {
           value: "Complete",
