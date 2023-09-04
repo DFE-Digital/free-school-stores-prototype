@@ -26,15 +26,49 @@
         rows: [
           {
             key: {
-              text: "Baseline date"
+              text: "Information on GIAS application form completed by the trust is correct"
             },
             value: {
-              html: currentProject.giasBaselineDate | displayText
+              html: currentProject.giasApplicationFormCompletedByTrustCorrect | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-gias-edit",
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Information on GIAS application form completed by the trust is correct"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "GIAS application form sent to AOPU (Academies Operational Practice Unit)"
+            },
+            value: {
+              html: currentProject.giasApplicationFormSentToAopu | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "GIAS application form sent to AOPU (Academies Operational Practice Unit)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject.signOffPreparationGiasBaselineDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
                   text: "Change",
                   visuallyHiddenText: "Baseline date"
                 }
@@ -47,12 +81,12 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.giasForecastDate | displayText
+              html: currentProject.signOffPreparationGiasForecastDate | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-gias-edit",
+                  href: "task-sign-off-preparation-gias-edit",
                   text: "Change",
                   visuallyHiddenText: "Forecast date"
                 }
@@ -65,12 +99,12 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.giasActualDate | displayText
+              html: currentProject.signOffPreparationGiasActualDate | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-gias-edit",
+                  href: "task-sign-off-preparation-gias-edit",
                   text: "Change",
                   visuallyHiddenText: "Actual date"
                 }
@@ -83,12 +117,12 @@
               text: "Comments on decision to approve (if applicable)"
             },
             value: {
-              html: currentProject.giasCommentsOnDecisionToApprove | displayText
+              html: currentProject.signOffPreparationGiasCommentsOnDecisionToApprove | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-gias-edit",
+                  href: "task-sign-off-preparation-gias-edit",
                   text: "Change",
                   visuallyHiddenText: "Comments on decision to approve (if applicable)"
                 }
@@ -101,12 +135,12 @@
               text: "SharePoint link"
             },
             value: {
-              html: currentProject.giasSharepointLink | displayText
+              html: currentProject.signOffPreparationGiasSharepointLink | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-gias-edit",
+                  href: "task-sign-off-preparation-gias-edit",
                   text: "Change",
                   visuallyHiddenText: "SharePoint link"
                 }
@@ -119,9 +153,9 @@
       <form action="project-task-list" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-gias-status",
-        name: "task-gias-status",
-        values: currentProject.taskGiasStatus,
+        idPrefix: "task-sign-off-preparation-gias-status",
+        name: "task-sign-off-preparation-gias-status",
+        values: currentProject.taskSignOffPreparationGiasStatus,
         items: [
         {
           value: "Complete",

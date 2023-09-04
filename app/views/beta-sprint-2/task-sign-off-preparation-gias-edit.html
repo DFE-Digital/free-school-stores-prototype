@@ -24,11 +24,56 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" action="task-gias-landing-page">
+          <form method="post" action="task-sign-off-preparation-gias-landing-page">
             <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "giasApplicationFormCompletedByTrustCorrect",
+                fieldset: {
+                  legend: {
+                    text: "Information on GIAS application form completed by the trust is correct",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.giasApplicationFormCompletedByTrustCorrect", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.giasApplicationFormCompletedByTrustCorrect", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "giasApplicationFormSentToAopu",
+                fieldset: {
+                  legend: {
+                    text: "GIAS application form sent to AOPU (Academies Operational Practice Unit)",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.giasApplicationFormSentToAopu", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.giasApplicationFormSentToAopu", "No")
+                  }
+                ]
+              }) }}
+
               {{ govukDateInput({
-                id: "giasBaselineDate",
-                namePrefix: "giasBaselineDate",
+                id: "signOffPreparationGiasBaselineDate",
+                namePrefix: "signOffPreparationGiasBaselineDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -42,25 +87,25 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.giasBaselineDateDay,
+                  value: currentProject.signOffPreparationGiasBaselineDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.giasBaselineDateMonth,
+                  value: currentProject.signOffPreparationGiasBaselineDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.giasBaselineDateYear,
+                  value: currentProject.signOffPreparationGiasBaselineDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukDateInput({
-                id: "giasForecastDate",
-                namePrefix: "giasForecastDate",
+                id: "signOffPreparationGiasForecastDate",
+                namePrefix: "signOffPreparationGiasForecastDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -74,25 +119,25 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.giasForecastDateDay,
+                  value: currentProject.signOffPreparationGiasForecastDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.giasForecastDateMonth,
+                  value: currentProject.signOffPreparationGiasForecastDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.giasForecastDateYear,
+                  value: currentProject.signOffPreparationGiasForecastDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukDateInput({
-                id: "giasActualDate",
-                namePrefix: "giasActualDate",
+                id: "signOffPreparationGiasActualDate",
+                namePrefix: "signOffPreparationGiasActualDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -106,42 +151,42 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.giasActualDateDay,
+                  value: currentProject.signOffPreparationGiasActualDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.giasActualDateMonth,
+                  value: currentProject.signOffPreparationGiasActualDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.giasActualDateYear,
+                  value: currentProject.signOffPreparationGiasActualDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukInput({
-                id: "giasCommentsOnDecisionToApprove",
-                name: "giasCommentsOnDecisionToApprove",
+                id: "signOffPreparationGiasCommentsOnDecisionToApprove",
+                name: "signOffPreparationGiasCommentsOnDecisionToApprove",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Comments on decision to approve (if applicable)",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.giasCommentsOnDecisionToApprove
+                value: currentProject.signOffPreparationGiasCommentsOnDecisionToApprove
               }) }}
 
               {{ govukInput({
-                id: "giasSharepointLink",
-                name: "giasSharepointLink",
+                id: "signOffPreparationGiasSharepointLink",
+                name: "signOffPreparationGiasSharepointLink",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Sharepoint link",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.giasSharepointLink
+                value: currentProject.signOffPreparationGiasSharepointLink
               }) }}
 
               <br><br>

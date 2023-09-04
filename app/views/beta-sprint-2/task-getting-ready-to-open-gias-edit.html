@@ -27,6 +27,28 @@
           <form method="post" action="task-getting-ready-to-open-gias-landing-page">
             <div class="govuk-form-group">
 
+              {{ govukRadios({
+                name: "gettingReadyToOpenGiasEntryRequestedUpdate",
+                fieldset: {
+                  legend: {
+                    text: "Requested that GIAS entry is updated",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.gettingReadyToOpenGiasEntryRequestedUpdate", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.gettingReadyToOpenGiasEntryRequestedUpdate", "No")
+                  }
+                ]
+              }) }}
+
               {{ govukDateInput({
                 id: "gettingReadyToOpenGiasBaselineDate",
                 namePrefix: "gettingReadyToOpenGiasBaselineDate",

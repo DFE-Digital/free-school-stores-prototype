@@ -26,6 +26,23 @@
         rows: [
           {
             key: {
+              text: "Requested that GIAS entry is updated"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasEntryRequestedUpdate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Requested that GIAS entry is updated"
+                }
+              ]
+            }
+          },
+          {
+            key: {
               text: "Baseline date"
             },
             value: {
