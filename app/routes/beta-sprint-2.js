@@ -409,6 +409,56 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-curriculum-plans-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.curriculumPlansSubmitted = req.session.data['curriculumPlansSubmitted'];
+        applyDateFields(masterProject, req, 'curriculumPlansBaselineDate');
+        applyDateFields(masterProject, req, 'curriculumPlansForecastDate');
+        applyDateFields(masterProject, req, 'curriculumPlansActualDate');
+        masterProject.curriculumPlansCommentsOnDecisionToApprove = req.session.data['curriculumPlansCommentsOnDecisionToApprove'];
+        masterProject.curriculumPlansSharepointLink = req.session.data['curriculumPlansSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-curriculum-plans-landing-page");
+    });
+
+    router.post('/' + version + '/task-curriculum-plans-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskCurriculumPlansStatus = req.session.data['task-curriculum-plans-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-final-governance-plan-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.finalGovernancePlanAgreed = req.session.data['finalGovernancePlanAgreed'];
+        applyDateFields(masterProject, req, 'finalGovernancePlanBaselineDate');
+        applyDateFields(masterProject, req, 'finalGovernancePlanForecastDate');
+        applyDateFields(masterProject, req, 'finalGovernancePlanActualDate');
+        masterProject.finalGovernancePlanCommentsOnDecisionToApprove = req.session.data['finalGovernancePlanCommentsOnDecisionToApprove'];
+        masterProject.finalGovernancePlanSharepointLink = req.session.data['finalGovernancePlanSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-final-governance-plan-landing-page");
+    });
+
+    router.post('/' + version + '/task-final-governance-plan-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskFinalGovernancePlanStatus = req.session.data['task-final-governance-plan-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
     }

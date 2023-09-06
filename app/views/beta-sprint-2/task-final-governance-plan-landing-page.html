@@ -47,7 +47,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.finalGovernancePlanBaselineDate | displayText
+              html: currentProject | withDatePrefixed('finalGovernancePlanBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.finalGovernancePlanForecastDate | displayText
+              html: currentProject | withDatePrefixed('finalGovernancePlanForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +83,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.finalGovernancePlanActualDate | displayText
+              html: currentProject | withDatePrefixed('finalGovernancePlanActualDate') | displayDate
             },
             actions: {
               items: [
@@ -135,7 +135,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-final-governance-plan-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-final-governance-plan-status",

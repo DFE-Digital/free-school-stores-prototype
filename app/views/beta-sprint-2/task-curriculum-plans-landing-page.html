@@ -47,7 +47,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.curriculumPlansBaselineDate | displayText
+              html: currentProject | withDatePrefixed('curriculumPlansBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.curriculumPlansForecastDate | displayText
+              html: currentProject | withDatePrefixed('curriculumPlansForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +83,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.curriculumPlansActualDate | displayText
+              html: currentProject | withDatePrefixed('curriculumPlansActualDate') | displayDate
             },
             actions: {
               items: [
@@ -135,7 +135,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-curriculum-plans-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-curriculum-plans-status",
