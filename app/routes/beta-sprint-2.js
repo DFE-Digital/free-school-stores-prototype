@@ -383,7 +383,40 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.preFundingAgreementCheckpointMeetingCompleted = req.session.data['preFundingAgreementCheckpointMeetingCompleted'];
+        applyDateFields(masterProject, req, 'preFundingAgreementBaselineDate');
+        applyDateFields(masterProject, req, 'preFundingAgreementForecastDate');
+        applyDateFields(masterProject, req, 'preFundingAgreementActualDate');
+        masterProject.preFundingAgreementCommentsOnDecisionToApprove = req.session.data['preFundingAgreementCommentsOnDecisionToApprove'];
+        masterProject.preFundingAgreementReasonNotApplicable = req.session.data['preFundingAgreementReasonNotApplicable'];
+        masterProject.preFundingAgreementSharepointLink = req.session.data['preFundingAgreementSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-pre-funding-agreement-landing-page");
+    });
+
+    router.post('/' + version + '/task-pre-funding-agreement-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskPreFundingAgreementStatus = req.session.data['task-pre-funding-agreement-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
+    }
+
+    function applyDateFields(project, req, fieldPrefix)
+    {
+        project[fieldPrefix + "Day"] = req.session.data[fieldPrefix + "-day"];
+        project[fieldPrefix + "Month"] = req.session.data[fieldPrefix + "-month"];
+        project[fieldPrefix + "Year"] = req.session.data[fieldPrefix + "-year"];
     }
 }
