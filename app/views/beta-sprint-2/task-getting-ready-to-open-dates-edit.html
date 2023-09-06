@@ -1,0 +1,108 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Dates - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Dates
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-getting-ready-to-open-dates-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukDateInput({
+                id: "realisticYearOfOpening",
+                namePrefix: "realisticYearOfOpening",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Realistic year of opening",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.realisticYearOfOpeningDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.realisticYearOfOpeningMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.realisticYearOfOpeningYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "startOfTermDate",
+                namePrefix: "startOfTermDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Start of term date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.startOfTermDate,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.startOfTermDate,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.startOfTermDate,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
