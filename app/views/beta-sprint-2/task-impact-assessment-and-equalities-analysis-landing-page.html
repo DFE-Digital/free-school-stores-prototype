@@ -47,7 +47,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.impactAssessmentBaselineDate | displayText
+              html: currentProject | withDatePrefixed('impactAssessmentBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.impactAssessmentForecastDate | displayText
+              html: currentProject | withDatePrefixed('impactAssessmentForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +83,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.impactAssessmentActualDate | displayText
+              html: currentProject | withDatePrefixed('impactAssessmentActualDate') | displayDate
             },
             actions: {
               items: [
@@ -134,7 +134,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-impact-assessment-and-equalities-analysis-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-impact-assessment-and-equalities-analysis-status",

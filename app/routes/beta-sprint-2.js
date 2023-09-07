@@ -558,6 +558,31 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-impact-assessment-and-equalities-analysis-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.impactAssessmentCompleted = req.session.data['impactAssessmentCompleted'];
+        applyDateFields(masterProject, req, 'impactAssessmentBaselineDate');
+        applyDateFields(masterProject, req, 'impactAssessmentForecastDate');
+        applyDateFields(masterProject, req, 'impactAssessmentActualDate');
+        masterProject.impactAssessmentCommentsOnDecisionToApprove = req.session.data['impactAssessmentCommentsOnDecisionToApprove'];
+        masterProject.impactAssessmentSharepointLink = req.session.data['impactAssessmentSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-impact-assessment-and-equalities-analysis-landing-page");
+    });
+
+    router.post('/' + version + '/task-impact-assessment-and-equalities-analysis-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskImpactAssessmentStatus = req.session.data['task-impact-assessment-and-equalities-analysis-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
     }

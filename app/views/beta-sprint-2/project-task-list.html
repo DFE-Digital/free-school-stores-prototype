@@ -356,7 +356,9 @@
                   Impact assessment and equalities analysis
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {{ currentProject.taskImpactAssessmentStatus
+                | taskStatus([]) 
+                | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
