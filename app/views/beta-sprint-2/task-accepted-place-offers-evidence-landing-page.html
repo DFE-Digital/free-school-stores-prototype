@@ -47,7 +47,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.acceptedPlaceOffersBaselineDate | displayText
+              html: currentProject | withDatePrefixed('acceptedPlaceOffersBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.acceptedPlaceOffersForecastDate | displayText
+              html: currentProject | withDatePrefixed('acceptedPlaceOffersForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +83,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.acceptedPlaceOffersActualDate | displayText
+              html: currentProject | withDatePrefixed('acceptedPlaceOffersActualDate') | displayDate
             },
             actions: {
               items: [
@@ -151,7 +151,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-accepted-place-offers-evidence-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-accepted-place-offers-evidence-status",
