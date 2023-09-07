@@ -337,7 +337,7 @@
                 </a>
               </span>
               {{ currentProject.taskApplicationsEvidenceStatus
-                | taskStatus([]) 
+                | taskStatus([currentProject.taskApplicationsEvidenceStatus]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
