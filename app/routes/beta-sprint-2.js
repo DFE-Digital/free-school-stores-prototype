@@ -505,6 +505,34 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-applications-evidence-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.applicationsExceedBreakEvenPupilNumbers = req.session.data['applicationsExceedBreakEvenPupilNumbers'];
+        masterProject.applicationsWrittenReferralFromComissioners = req.session.data['applicationsWrittenReferralFromComissioners'];
+        applyDateFields(masterProject, req, 'applicationsEvidenceBaselineDate');
+        applyDateFields(masterProject, req, 'applicationsEvidenceForecastDate');
+        applyDateFields(masterProject, req, 'applicationsEvidenceActualDate');
+        masterProject.applicationsEvidenceCommentsOnDecisionToApprove = req.session.data['applicationsEvidenceCommentsOnDecisionToApprove'];
+        masterProject.applicationsEvidenceReasonNotApplicable = req.session.data['applicationsEvidenceReasonNotApplicable'];
+        masterProject.applicationsEvidenceSharepointLink = req.session.data['applicationsEvidenceSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-applications-evidence-landing-page");
+    });
+
+    router.post('/' + version + '/task-applications-evidence-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskApplicationsEvidenceStatus = req.session.data['task-applications-evidence-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
     }

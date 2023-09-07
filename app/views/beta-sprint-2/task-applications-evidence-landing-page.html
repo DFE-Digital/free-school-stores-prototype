@@ -64,7 +64,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.applicationsEvidenceBaselineDate | displayText
+              html: currentProject | withDatePrefixed('applicationsEvidenceBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -82,7 +82,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.applicationsEvidenceForecastDate | displayText
+              html: currentProject | withDatePrefixed('applicationsEvidenceForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -100,7 +100,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.applicationsEvidenceActualDate | displayText
+              html: currentProject | withDatePrefixed('applicationsEvidenceActualDate') | displayDate
             },
             actions: {
               items: [
@@ -168,7 +168,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-applications-evidence-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-applications-evidence-status",
