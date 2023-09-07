@@ -27,36 +27,16 @@
           <form method="post" action="task-getting-ready-to-open-dates-landing-page">
             <div class="govuk-form-group">
 
-              {{ govukDateInput({
+
+              {{ govukInput({
                 id: "realisticYearOfOpening",
-                namePrefix: "realisticYearOfOpening",
+                name: "realisticYearOfOpening",
                 classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
+                label: {
                     text: "Realistic year of opening",
-                    classes: "govuk-fieldset__legend--m"
-                  }
+                    classes: "govuk-heading-m"
                 },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.realisticYearOfOpeningDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.realisticYearOfOpeningMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.realisticYearOfOpeningYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
+                value: currentProject.realisticYearOfOpening
               }) }}
 
               {{ govukDateInput({
@@ -75,17 +55,17 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.startOfTermDate,
+                  value: currentProject.startOfTermDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.startOfTermDate,
+                  value: currentProject.startOfTermDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.startOfTermDate,
+                  value: currentProject.startOfTermDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]

@@ -459,6 +459,27 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-getting-ready-to-open-dates-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening'];
+        applyDateFields(masterProject, req, 'startOfTermDate');
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-getting-ready-to-open-dates-landing-page");
+    });
+
+    router.post('/' + version + '/task-getting-ready-to-open-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskGettingReadyToOpenDatesStatus = req.session.data['task-getting-ready-to-open-dates-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
     }

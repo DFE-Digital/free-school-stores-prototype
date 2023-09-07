@@ -626,7 +626,10 @@ module.exports = {
       "curriculumPlansActualDateMonth": "09",
       "curriculumPlansActualDateYear": "2023",
       "taskCurriculumPlansStatus": ["Complete"],
-      "finalGovernancePlanAgreed": "Yes"
+      "finalGovernancePlanAgreed": "Yes",
+      "taskFinalGovernancePlanStatus": ["Complete"],
+      "taskDraftEducationBriefStatus": ["Complete"],
+      "taskGettingReadyToOpenGiasStatus": ["Complete"]
     },
     {
       "projectTitle": "St James Catholic Primary School",

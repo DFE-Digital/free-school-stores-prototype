@@ -46,7 +46,7 @@
               text: "Start of term date"
             },
             value: {
-              html: currentProject.startOfTermDate | displayText
+              html: currentProject | withDatePrefixed('startOfTermDate') | displayDate
             },
             actions: {
               items: [
@@ -62,7 +62,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-getting-ready-to-open-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-getting-ready-to-open-dates-status",
