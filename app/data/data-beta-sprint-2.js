@@ -634,7 +634,20 @@ module.exports = {
       "startOfTermDateDay": "04",
       "startOfTermDateMonth": "09",
       "startOfTermDateYear": "2023",
-      "taskGettingReadyToOpenDatesStatus": ["Complete"]
+      "taskGettingReadyToOpenDatesStatus": ["Complete"], 
+      "fundingAgreementSigned" : "Yes",
+      "fundingAgreementBaselineDateDay" : "01",
+      "fundingAgreementBaselineDateMonth" : "05", 
+      "fundingAgreementBaselineDateYear" : "2023",
+      "fundingAgreementForecastDateDay" : "04", 
+      "fundingAgreementForecastDateMonth" : "05",
+      "fundingAgreementForecastDateYear" : "2023", 
+      "fundingAgreementActualDateDay" : "05", 
+      "fundingAgreementActualDateMonth" : "03", 
+      "fundingAgreementActualDateYear" : "2023", 
+      "fundingAgreementCommentsOnDecisionToApprove" : "No comments", 
+      "fundingAgreementSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true",
+      "taskFundingAgreementStatus" : ["Complete"]
     },
     {
       "projectTitle": "St James Catholic Primary School",
