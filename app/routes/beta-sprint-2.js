@@ -480,6 +480,31 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-funding-agreement-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.fundingAgreementSigned = req.session.data['fundingAgreementSigned'];
+        applyDateFields(masterProject, req, 'fundingAgreementBaselineDate');
+        applyDateFields(masterProject, req, 'fundingAgreementForecastDate');
+        applyDateFields(masterProject, req, 'fundingAgreementActualDate');
+        masterProject.fundingAgreementCommentsOnDecisionToApprove = req.session.data['fundingAgreementCommentsOnDecisionToApprove'];
+        masterProject.fundingAgreementSharepointLink = req.session.data['fundingAgreementSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-funding-agreement-landing-page");
+    });
+
+    router.post('/' + version + '/task-funding-agreement-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskFundingAgreementStatus = req.session.data['task-funding-agreement-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
     }

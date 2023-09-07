@@ -47,7 +47,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.fundingAgreementBaselineDate | displayText
+              html: currentProject | withDatePrefixed('fundingAgreementBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.fundingAgreementForecastDate | displayText
+              html: currentProject | withDatePrefixed('fundingAgreementForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +83,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.fundingAgreementActualDate | displayText
+              html: currentProject | withDatePrefixed('fundingAgreementActualDate') | displayDate
             },
             actions: {
               items: [
@@ -134,7 +134,7 @@
       }) }}
 
 
-      <form action="project-task-list" method="post">
+      <form action="task-funding-agreement-confirmation" method="post">
         
       {{ govukCheckboxes({
         idPrefix: "task-funding-agreement-status",
