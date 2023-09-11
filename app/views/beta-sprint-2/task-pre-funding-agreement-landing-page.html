@@ -1,0 +1,178 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Pre-funding agreement checkpoint meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Pre-funding agreement meeting checkpoint
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Pre-funding agreement checkpoint meeting completed"
+            },
+            value: {
+              html: currentProject.preFundingAgreementCheckpointMeetingCompleted | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Pre-funding agreement checkpoint meeting completed"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('preFundingAgreementBaselineDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('preFundingAgreementForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('preFundingAgreementActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.preFundingAgreementCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Reason not applicable"
+            },
+            value: {
+              html: currentProject.preFundingAgreementReasonNotApplicable | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Reason not applicable"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.preFundingAgreementSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pre-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-pre-funding-agreement-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-pre-funding-agreement-status",
+        name: "task-pre-funding-agreement-status",
+        values: currentProject.taskPreFundingAgreementStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

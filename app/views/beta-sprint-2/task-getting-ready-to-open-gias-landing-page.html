@@ -1,0 +1,158 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Gias (Get information about schools) - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Gias (Get information about schools)
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Requested that GIAS entry is updated"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasEntryRequestedUpdate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Requested that GIAS entry is updated"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasBaselineDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasForecastDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasActualDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.gettingReadyToOpenGiasSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-getting-ready-to-open-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-getting-ready-to-open-gias-status",
+        name: "task-getting-ready-to-open-gias-status",
+        values: currentProject.taskGettingReadyToOpenGiasStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

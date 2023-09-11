@@ -1,0 +1,193 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Readiness to open meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Readiness to open meeting
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Readiness to open meeting (ROM) and follow-up actions completed"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingCompleted | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Readiness to open meeting (ROM) and follow-up actions completed"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "ROM outcome"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingOutcome | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "ROM outcome"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "ROM conditions met"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingConditionsMet | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "ROM conditions met"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingBaselineDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingForecastDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingActualDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.readinessToOpenMeetingSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-readiness-to-open-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-readiness-to-open-meeting-status",
+        name: "task-readiness-to-open-meeting-status",
+        values: currentProject.taskReadinessToOpenMeetingStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

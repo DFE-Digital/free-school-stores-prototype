@@ -383,7 +383,214 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.preFundingAgreementCheckpointMeetingCompleted = req.session.data['preFundingAgreementCheckpointMeetingCompleted'];
+        applyDateFields(masterProject, req, 'preFundingAgreementBaselineDate');
+        applyDateFields(masterProject, req, 'preFundingAgreementForecastDate');
+        applyDateFields(masterProject, req, 'preFundingAgreementActualDate');
+        masterProject.preFundingAgreementCommentsOnDecisionToApprove = req.session.data['preFundingAgreementCommentsOnDecisionToApprove'];
+        masterProject.preFundingAgreementReasonNotApplicable = req.session.data['preFundingAgreementReasonNotApplicable'];
+        masterProject.preFundingAgreementSharepointLink = req.session.data['preFundingAgreementSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-pre-funding-agreement-landing-page");
+    });
+
+    router.post('/' + version + '/task-pre-funding-agreement-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskPreFundingAgreementStatus = req.session.data['task-pre-funding-agreement-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-curriculum-plans-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.curriculumPlansSubmitted = req.session.data['curriculumPlansSubmitted'];
+        applyDateFields(masterProject, req, 'curriculumPlansBaselineDate');
+        applyDateFields(masterProject, req, 'curriculumPlansForecastDate');
+        applyDateFields(masterProject, req, 'curriculumPlansActualDate');
+        masterProject.curriculumPlansCommentsOnDecisionToApprove = req.session.data['curriculumPlansCommentsOnDecisionToApprove'];
+        masterProject.curriculumPlansSharepointLink = req.session.data['curriculumPlansSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-curriculum-plans-landing-page");
+    });
+
+    router.post('/' + version + '/task-curriculum-plans-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskCurriculumPlansStatus = req.session.data['task-curriculum-plans-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-final-governance-plan-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.finalGovernancePlanAgreed = req.session.data['finalGovernancePlanAgreed'];
+        applyDateFields(masterProject, req, 'finalGovernancePlanBaselineDate');
+        applyDateFields(masterProject, req, 'finalGovernancePlanForecastDate');
+        applyDateFields(masterProject, req, 'finalGovernancePlanActualDate');
+        masterProject.finalGovernancePlanCommentsOnDecisionToApprove = req.session.data['finalGovernancePlanCommentsOnDecisionToApprove'];
+        masterProject.finalGovernancePlanSharepointLink = req.session.data['finalGovernancePlanSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-final-governance-plan-landing-page");
+    });
+
+    router.post('/' + version + '/task-final-governance-plan-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskFinalGovernancePlanStatus = req.session.data['task-final-governance-plan-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-getting-ready-to-open-dates-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening'];
+        applyDateFields(masterProject, req, 'startOfTermDate');
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-getting-ready-to-open-dates-landing-page");
+    });
+
+    router.post('/' + version + '/task-getting-ready-to-open-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskGettingReadyToOpenDatesStatus = req.session.data['task-getting-ready-to-open-dates-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-funding-agreement-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.fundingAgreementSigned = req.session.data['fundingAgreementSigned'];
+        applyDateFields(masterProject, req, 'fundingAgreementBaselineDate');
+        applyDateFields(masterProject, req, 'fundingAgreementForecastDate');
+        applyDateFields(masterProject, req, 'fundingAgreementActualDate');
+        masterProject.fundingAgreementCommentsOnDecisionToApprove = req.session.data['fundingAgreementCommentsOnDecisionToApprove'];
+        masterProject.fundingAgreementSharepointLink = req.session.data['fundingAgreementSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-funding-agreement-landing-page");
+    });
+
+    router.post('/' + version + '/task-funding-agreement-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskFundingAgreementStatus = req.session.data['task-funding-agreement-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-applications-evidence-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.applicationsExceedBreakEvenPupilNumbers = req.session.data['applicationsExceedBreakEvenPupilNumbers'];
+        masterProject.applicationsWrittenReferralFromComissioners = req.session.data['applicationsWrittenReferralFromComissioners'];
+        applyDateFields(masterProject, req, 'applicationsEvidenceBaselineDate');
+        applyDateFields(masterProject, req, 'applicationsEvidenceForecastDate');
+        applyDateFields(masterProject, req, 'applicationsEvidenceActualDate');
+        masterProject.applicationsEvidenceCommentsOnDecisionToApprove = req.session.data['applicationsEvidenceCommentsOnDecisionToApprove'];
+        masterProject.applicationsEvidenceReasonNotApplicable = req.session.data['applicationsEvidenceReasonNotApplicable'];
+        masterProject.applicationsEvidenceSharepointLink = req.session.data['applicationsEvidenceSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-applications-evidence-landing-page");
+    });
+
+    router.post('/' + version + '/task-applications-evidence-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskApplicationsEvidenceStatus = req.session.data['task-applications-evidence-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-accepted-place-offers-evidence-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.acceptedPlaceOffersExceedBreakEvenPupilNumbers = req.session.data['acceptedPlaceOffersExceedBreakEvenPupilNumbers'];
+        applyDateFields(masterProject, req, 'acceptedPlaceOffersBaselineDate');
+        applyDateFields(masterProject, req, 'acceptedPlaceOffersForecastDate');
+        applyDateFields(masterProject, req, 'acceptedPlaceOffersActualDate');
+        masterProject.acceptedPlaceOffersCommentsOnDecisionToApprove = req.session.data['acceptedPlaceOffersCommentsOnDecisionToApprove'];
+        masterProject.acceptedPlaceOffersReasonNotApplicable = req.session.data['acceptedPlaceOffersReasonNotApplicable'];
+        masterProject.acceptedPlaceOffersSharepointLink = req.session.data['acceptedPlaceOffersSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-applications-evidence-landing-page");
+    });
+
+    router.post('/' + version + '/task-accepted-place-offers-evidence-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskAcceptedPlaceOffersStatus = req.session.data['task-accepted-place-offers-evidence-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-impact-assessment-and-equalities-analysis-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.impactAssessmentCompleted = req.session.data['impactAssessmentCompleted'];
+        applyDateFields(masterProject, req, 'impactAssessmentBaselineDate');
+        applyDateFields(masterProject, req, 'impactAssessmentForecastDate');
+        applyDateFields(masterProject, req, 'impactAssessmentActualDate');
+        masterProject.impactAssessmentCommentsOnDecisionToApprove = req.session.data['impactAssessmentCommentsOnDecisionToApprove'];
+        masterProject.impactAssessmentSharepointLink = req.session.data['impactAssessmentSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-impact-assessment-and-equalities-analysis-landing-page");
+    });
+
+    router.post('/' + version + '/task-impact-assessment-and-equalities-analysis-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskImpactAssessmentStatus = req.session.data['task-impact-assessment-and-equalities-analysis-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
+    }
+
+    function applyDateFields(project, req, fieldPrefix)
+    {
+        project[fieldPrefix + "Day"] = req.session.data[fieldPrefix + "-day"];
+        project[fieldPrefix + "Month"] = req.session.data[fieldPrefix + "-month"];
+        project[fieldPrefix + "Year"] = req.session.data[fieldPrefix + "-year"];
     }
 }

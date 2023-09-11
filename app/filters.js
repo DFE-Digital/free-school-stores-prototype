@@ -14,6 +14,11 @@ addFilter("displayDate", (dateString) =>
     return date.toLocaleString(DateTime.DATE_FULL);
 });
 
+addFilter("withDatePrefixed", (project, prefix) =>
+{
+    return (project[prefix + "Year"] + project[prefix + "Month"] + project[prefix + "Day"]);
+});
+
 addFilter("displayText", value =>
 {
     if (!value || value === "")

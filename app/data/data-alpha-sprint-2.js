@@ -134,7 +134,7 @@ module.exports = {
         "leadApplicant": "UNITED LEARNING TRUST",
         "geographicalRegion": "North West",
         "localAuthority": "Manchester City Council",
-        "openingDate": "10 August 2022",
+        "openingDate": "1 September 2023",
         "constituency": "Manchester City Council",
         "constituencyMP": "",
         "numberOfFormsOfEntry" : 9,
