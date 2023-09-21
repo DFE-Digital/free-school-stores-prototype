@@ -28,9 +28,7 @@
             key: {
               text: "DfE education adviser is content with"
             },
-            value: {
-              html: currentProject.educationAdviserAgreement | displayText
-            },
+            value: currentProject.educationAdviserAgreement,
             actions: {
               items: [
                 {
@@ -47,7 +45,7 @@
               text: "Baseline date"
             },
             value: {
-              html: currentProject.educationBriefBaselineDate | displayText
+              html: currentProject | withDatePrefixed('educationBriefBaselineDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +63,7 @@
               text: "Forecast date"
             },
             value: {
-              html: currentProject.educationBriefForecastDate | displayText
+              html: currentProject | withDatePrefixed('educationBriefForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +81,7 @@
               text: "Actual date"
             },
             value: {
-              html: currentProject.educationBriefActualDate | displayText
+              html: currentProject | withDatePrefixed('educationBriefActualDate') | displayDate
             },
             actions: {
               items: [

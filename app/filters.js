@@ -14,6 +14,23 @@ addFilter("displayDate", (dateString) =>
     return date.toLocaleString(DateTime.DATE_FULL);
 });
 
+addFilter("displayCheckboxValues", (checkboxValues) =>
+{
+    if (!checkboxValues || checkboxValues === "")
+    {
+        return "<span class='empty'>Empty</span>";
+    }
+
+    /*
+    for item in checkboxValues 
+    {
+        return "<div>" + item + "</div>"
+    }
+    endfor
+    */
+
+});
+
 addFilter("withDatePrefixed", (project, prefix) =>
 {
     return (project[prefix + "Year"] + project[prefix + "Month"] + project[prefix + "Day"]);

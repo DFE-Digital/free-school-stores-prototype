@@ -459,6 +459,31 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-education-brief-and-policies-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.educationAdviserAgreement = req.session.data['educationAdviserAgreement'];
+        applyDateFields(masterProject, req, 'educationBriefBaselineDate');
+        applyDateFields(masterProject, req, 'educationBriefForecastDate');
+        applyDateFields(masterProject, req, 'educationBriefActualDate');
+        masterProject.educationBriefCommentsOnDecisionToApprove = req.session.data['educationBriefCommentsOnDecisionToApprove'];
+        masterProject.educationBriefSharepointLink = req.session.data['educationBriefSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-education-brief-and-policies-landing-page");
+    });
+
+    router.post('/' + version + '/task-education-brief-and-policies-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskeducationBriefStatus = req.session.data['task-education-brief-and-policies-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+    
     router.post('/' + version + '/task-getting-ready-to-open-dates-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
