@@ -1,0 +1,175 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  GIAS (Get information about schools) - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        GIAS (Get information about schools)
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Information on GIAS application form completed by the trust is correct"
+            },
+            value: {
+              html: currentProject.giasApplicationFormCompletedByTrustCorrect | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Information on GIAS application form completed by the trust is correct"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Application form sent to AOPU (Academies Operational Practice Unit)"
+            },
+            value: {
+              html: currentProject.giasApplicationFormSentToAopu | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Application form sent to AOPU (Academies Operational Practice Unit)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject.signOffPreparationGiasBaselineDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject.signOffPreparationGiasForecastDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject.signOffPreparationGiasActualDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.signOffPreparationGiasCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.signOffPreparationGiasSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-sign-off-preparation-gias-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-sign-off-preparation-gias-status",
+        name: "task-sign-off-preparation-gias-status",
+        values: currentProject.taskSignOffPreparationGiasStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Ofsted pre-registration - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Ofsted pre-registration
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-ofsted-pre-registration-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "ofstedPreRegistrationInspectionConclusion",
+                fieldset: {
+                  legend: {
+                    text: "Ofsted pre-registration inspection conclusion",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.ofstedPreRegistrationInspectionConclusion", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.ofstedPreRegistrationInspectionConclusion", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "ofstedPreRegistrationInspectionOutcome",
+                fieldset: {
+                  legend: {
+                    text: "Ofsted inspection outcome",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.ofstedPreRegistrationInspectionOutcome", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.ofstedPreRegistrationInspectionOutcome", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "ofstedPreRegistrationInspectionConditionsMet",
+                fieldset: {
+                  legend: {
+                    text: "Inspection conditions met",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.ofstedPreRegistrationInspectionConditionsMet", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.ofstedPreRegistrationInspectionConditionsMet", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "ofstedPreRegistrationBaselineDate",
+                namePrefix: "ofstedPreRegistrationBaselineDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Baseline date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.ofstedPreRegistrationBaselineDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.ofstedPreRegistrationBaselineDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.ofstedPreRegistrationBaselineDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "ofstedPreRegistrationForecastDate",
+                namePrefix: "ofstedPreRegistrationForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.ofstedPreRegistrationForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.ofstedPreRegistrationForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.ofstedPreRegistrationForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "ofstedPreRegistrationActualDate",
+                namePrefix: "ofstedPreRegistrationActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.ofstedPreRegistrationActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.ofstedPreRegistrationActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.ofstedPreRegistrationActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "ofstedPreRegistrationCommentsOnDecisionToApprove",
+                name: "ofstedPreRegistrationCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.ofstedPreRegistrationCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "ofstedPreRegistrationSharepointLink",
+                name: "ofstedPreRegistrationSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.ofstedPreRegistrationSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

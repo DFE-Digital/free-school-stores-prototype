@@ -1,0 +1,176 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Accepted place offers evidence - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Accepted place offers evidence
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Evidence of accepted place offers exceeding the school's break-even pupil numbers"
+            },
+            value: {
+              html: currentProject.acceptedPlaceOffersExceedBreakEvenPupilNumbers | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Evidence of accepted place offers exceeding the school's break-even pupil numbers"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('acceptedPlaceOffersBaselineDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('acceptedPlaceOffersForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('acceptedPlaceOffersActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.acceptedPlaceOffersCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Reason not applicable"
+            },
+            value: {
+              html: currentProject.acceptedPlaceOffersReasonNotApplicable | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Reason not applicable"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.acceptedPlaceOffersSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-accepted-place-offers-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-accepted-place-offers-evidence-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-accepted-place-offers-evidence-status",
+        name: "task-accepted-place-offers-evidence-status",
+        values: currentProject.taskAcceptedPlaceOffersStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
