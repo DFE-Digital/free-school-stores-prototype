@@ -50,6 +50,19 @@ module.exports = function (router) {
 
     })
 
+    router.post('/' + version + '/validate-trust-result', function (req, res) { 
+        var Task = req.session.data['confirm-trust-result']
+
+        // Check whether the variable matches a condition
+        if (Task == "Yes") { 
+            res.redirect('task-trust-landing-page')
+        }   
+        else if (Task == "No") {
+            res.redirect('task-trust-edit')
+        }
+
+    })
+    
     router.get('/' + version + '/p-o', function (req, res) {
         var project = req.session.data['project-list'].find(x => x.projectID == req.query.id)
         req.session.data.currentProject = project;

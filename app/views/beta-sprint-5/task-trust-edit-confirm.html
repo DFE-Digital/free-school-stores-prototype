@@ -1,0 +1,101 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Confirm the trust - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Confirm the trust
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="validate-trust-result">
+            <div class="govuk-form-group">
+
+              {{ govukSummaryList({
+
+                classes: "govuk-summary-list--no-border",
+                rows: [
+                  {
+                    key: {
+                      text: "Trust ID"
+                    },
+                    value: {
+                      html: currentProject.trustID | displayText
+                    }
+                  },        
+                  {
+                    key: {
+                      text: "Trust name"
+                    },
+                    value: {
+                      html: "United Learning Trust"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Trust type"
+                    },
+                    value: {
+                      html: "Multi-academy trust"
+                    }
+                  }
+                ]
+              }) }}
+              
+              {{ govukRadios({
+                idPrefix: "confirm-trust-result",
+                name: "confirm-trust-result",
+                fieldset: {
+                  legend: {
+                    text: "Is this the correct trust?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    checked: checked("confirm-trust-result", "Yes"),
+                    text: "Yes"
+                  },
+                  {
+                    value: "No",
+                    checked: checked("confirm-trust-result", "No"),
+                    text: "No, search again"
+                  }
+    
+                ]
+              }) }}
+
+
+              <br><br>
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
