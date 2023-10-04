@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Edit trust - {{currentProject.projectTitle}} – {{ serviceName }}
+  Search for a trust by trust ID - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,36 +18,14 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Edit trust details
+        Search for a trust by trust ID
       </h1>
       
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" action="task-trust-landing-page">
+          <form method="post" action="task-trust-edit-confirm">
             <div class="govuk-form-group">
-
-              {{ govukInput({
-                id: "trustName",
-                name: "trustName",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Trust name",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.trustName
-              }) }}
-
-              {{ govukInput({
-                id: "trustType",
-                name: "trustType",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Trust type",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.trustType
-              }) }}
 
               {{ govukInput({
                 id: "trustID",
@@ -57,23 +35,16 @@
                     text: "Trust ID",
                     classes: "govuk-heading-m"
                 },
+                hint: {
+                  text: "For example, TR00036"
+                },
                 value: currentProject.trustID
               }) }}
-
-              {{ govukInput({
-                id: "independentConverter",
-                name: "independentConverter",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Independent converter",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.independentConverter
-              }) }}
+              
 
               <br><br>
               {{ govukButton({
-                text: "Save and continue"
+                text: "Continue"
               }) }}
 
             </div>
