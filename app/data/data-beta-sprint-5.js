@@ -59,6 +59,10 @@ module.exports = {
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
       "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test",
       "gender": "mixed"
     },
     {
@@ -179,7 +183,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -237,7 +245,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -295,7 +307,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -353,7 +369,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -411,7 +431,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -469,7 +493,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -527,7 +555,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -709,7 +741,11 @@ module.exports = {
       "riskRatingGovernance" : "",
       "riskRatingFinance" : "",
       "taskDatesStatus": "",
-      "taskPDGStatus": ""
+      "taskPDGStatus": "",
+      "taskTrustStatus": ["Complete"],
+      "taskRegionAndLocalAuthority": ["Complete"],
+      "taskConstituencyStatus": ["Complete"],
+      "initialGrantAllocation": "Test"
     }
   ]
 }
