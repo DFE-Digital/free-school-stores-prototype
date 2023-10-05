@@ -108,13 +108,17 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-risk-appraisal-landing-page" aria-describedby="">
-                  Risk appraisal
+                <a href="task-risk-appraisal-meeting-landing-page" aria-describedby="">
+                  Risk appraisal meeting
                 </a>
               </span>
-              {{ currentProject.taskRiskAppraisalStatus 
-              | taskStatus([currentProject.riskAppraisalSharepointLink, currentProject.riskRatingEducation, currentProject.riskRatingGovernance, currentProject.riskRatingFinance]) 
-              | safe }}
+              {{ currentProject.taskRiskAppraisalMeetingStatus 
+                | taskStatus([currentProject.riskAppraisalMeetingCompleted, currentProject | withDatePrefixed('riskAppraisalMeetingBaselineDate'),
+                currentProject | withDatePrefixed('riskAppraisalMeetingForecastDate'),
+                currentProject | withDatePrefixed('riskAppraisalMeetingActualDate'),
+                currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove,
+                currentProject.riskAppraisalMeetingReasonNotApplicable]) 
+                | safe }}  
             </li>
           </ul>
         </li>

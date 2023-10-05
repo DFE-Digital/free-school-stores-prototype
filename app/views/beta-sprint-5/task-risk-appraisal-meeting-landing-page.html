@@ -1,0 +1,159 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Risk appraisal meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Risk appraisal meeting
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Initial risk appraisal meeting completed"
+            },
+            value: {
+              html: currentProject.riskAppraisalMeetingCompleted | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Risk appraisal meeting completed"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Baseline date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('riskAppraisalMeetingBaselineDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Baseline date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('riskAppraisalMeetingForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('riskAppraisalMeetingActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Reason not applicable"
+            },
+            value: {
+              html: currentProject.riskAppraisalMeetingReasonNotApplicable | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Reason not applicable"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="task-risk-appraisal-meeting-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-risk-appraisal-meeting-status",
+        name: "task-risk-appraisal-meeting-status",
+        values: currentProject.taskRiskAppraisalMeetingStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
