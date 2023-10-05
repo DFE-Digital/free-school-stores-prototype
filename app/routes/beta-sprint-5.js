@@ -55,6 +55,9 @@ module.exports = function (router) {
 
         // Check whether the variable matches a condition
         if (Task == "Yes") { 
+            var masterProject = getProject(req);
+            masterProject.trustID = req.session.data['trustID'];
+            req.session.data.currentProject = masterProject;    
             res.redirect('task-trust-landing-page')
         }   
         else if (Task == "No") {
@@ -339,6 +342,16 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.taskDatesStatus = req.session.data['task-dates-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-trust-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskTrustStatus = req.session.data['task-trust-status'];
 
         req.session.data.currentProject = masterProject;
 
