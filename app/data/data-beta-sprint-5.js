@@ -63,7 +63,20 @@ module.exports = {
       "taskRegionAndLocalAuthority": ["Complete"],
       "taskConstituencyStatus": ["Complete"],
       "initialGrantAllocation": "Test",
-      "gender": "mixed"
+      "gender": "mixed",
+      "preFundingAgreementCheckpointMeetingCompleted": "",
+      "preFundingAgreementBaselineDateDay": "",
+      "preFundingAgreementBaselineDateMonth": "",
+      "preFundingAgreementBaselineDateYear": "",
+      "preFundingAgreementForecastDateDay": "",
+      "preFundingAgreementForecastDateMonth": "",
+      "preFundingAgreementForecastDateYear": "",
+      "preFundingAgreementActualDateDay": "",
+      "preFundingAgreementActualDateMonth": "",
+      "preFundingAgreementActualDateYear": "",
+      "preFundingAgreementCommentsOnDecisionToApprove": "",
+      "preFundingAgreementSharepointLink": "",
+      "taskPreFundingAgreementStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 

@@ -258,9 +258,14 @@
                   Pre-funding agreement checkpoint meeting
                 </a>
               </span>
-              {{ currentProject.taskPreFundingAgreementStatus
-                | taskStatus([]) 
-                | safe }}
+              {{ currentProject.taskPreFundingAgreementStatus 
+                | taskStatus([currentProject.preFundingAgreementCheckpointMeetingCompleted, currentProject | withDatePrefixed('preFundingAgreementBaselineDate'),
+                currentProject | withDatePrefixed('preFundingAgreementForecastDate'),
+                currentProject | withDatePrefixed('preFundingAgreementActualDate'),
+                currentProject.preFundingAgreementCommentsOnDecisionToApprove,
+                currentProject.preFundingAgreementReasonNotApplicable,
+                currentProject.preFundingAgreementSharepointLink]) 
+                | safe }}  
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
