@@ -1,0 +1,193 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  8 February 2023 - past RAG ratings - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to project overview",
+    href: "project-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        8 February 2023 - past RAG ratings
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Overall RAG rating"
+            },
+            value: {
+              html: "Amber Red" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Overall RAG summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Governance and suitability RAG rating"
+            },
+            value: {
+              html: "Amber Green" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Governance and suitability RAG summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Education RAG rating"
+            },
+            value: {
+              html: "Amber Green" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Education RAG summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Finances RAG rating"
+            },
+            value: {
+              html: "Amber Red" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Finances RAG summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "RAF (risk appraisal form) SharePoint link"
+            },
+            value: {
+              html: currentProject.RAFCurrentSharepointLink | displayText
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="other-info-new-rag-rating-governance" method="post">
+      
+      {{ govukButton({
+        text: "Add a new RAG rating entry"
+      }) }}
+        
+      </form>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukTable({
+      caption: "RAG ratings history",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Date",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Overall RAG rating",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Action",
+          classes: "app-custom-class"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "21 March 2023"
+          },
+          {
+            html: "Amber Green" | displayRAGRating
+          },
+          {
+            html: '<a href="other-info-rag-rating-current">View</a>'
+          }
+        ],
+        [
+          {
+            html: "8 February 2023"
+          },
+          {
+            html: "Amber Red" | displayRAGRating
+          },
+          {
+            html: ''
+          }
+        ],
+        [
+          {
+            html: "12 January 2023"
+          },
+          {
+            html: "Amber Red" | displayRAGRating
+          },
+          {
+            html: '<a href="#">View</a>'
+          }
+        ],
+        [
+          {
+            html: "23 November 2022"
+          },
+          {
+            html: "Red" | displayRAGRating
+          },
+          {
+            html: '<a href="#">View</a>'
+          }
+        ]
+      ]
+    }) }}
+
+
+  </div>
+</div>
+{% endblock %}
