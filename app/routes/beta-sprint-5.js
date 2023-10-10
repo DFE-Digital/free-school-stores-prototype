@@ -358,23 +358,25 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
-    router.post('/' + version + '/task-risk-appraisal-landing-page', function(req, res) {
+    router.post('/' + version + '/task-risk-appraisal-meeting-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.riskAppraisalSharepointLink = req.session.data['riskAppraisalSharepointLink'];
-        masterProject.riskRatingEducation = req.session.data['riskRatingEducation'];
-        masterProject.riskRatingGovernance = req.session.data['riskRatingGovernance'];
-        masterProject.riskRatingFinance = req.session.data['riskRatingFinance'];
+        masterProject.riskAppraisalMeetingCompleted = req.session.data['riskAppraisalMeetingCompleted'];
+        applyDateFields(masterProject, req, 'riskAppraisalMeetingBaselineDate');
+        applyDateFields(masterProject, req, 'riskAppraisalMeetingForecastDate');
+        applyDateFields(masterProject, req, 'riskAppraisalMeetingActualDate');
+        masterProject.riskAppraisalMeetingCommentsOnDecisionToApprove = req.session.data['riskAppraisalMeetingCommentsOnDecisionToApprove'];
+        masterProject.riskAppraisalMeetingReasonNotApplicable = req.session.data['riskAppraisalMeetingReasonNotApplicable'];
 
         req.session.data.currentProject = masterProject;
 
-        res.redirect("task-risk-appraisal-landing-page");
+        res.redirect("task-risk-appraisal-meeting-landing-page");
     });
 
-    router.post('/' + version + '/task-risk-appraisal-confirmation', function(req, res) {
+    router.post('/' + version + '/task-risk-appraisal-meeting-confirmation', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.taskRiskAppraisalStatus = req.session.data['task-risk-appraisal-status'];
+        masterProject.taskRiskAppraisalMeetingStatus = req.session.data['task-risk-appraisal-meeting-status'];
 
         req.session.data.currentProject = masterProject;
 

@@ -80,3 +80,30 @@ addFilter('projectStatus', (projectStatus) =>
 
     return '<strong class="govuk-tag govuk-tag--grey" id="eligibility-status">Not started</strong>';
 });
+
+addFilter("displayRAGRating", (ragValue) =>
+{
+    if (!ragValue || ragValue === "")
+    {
+        return "<span class='empty'>Empty</span>";
+    }
+
+    switch(ragValue) {
+        case "Green":
+            return '<strong class="govuk-tag govuk-tag--green">Green</strong>';
+            break;
+        case "Amber Green":
+            return '<strong class="govuk-tag govuk-tag--yellow">Amber</strong>&nbsp;<strong class="govuk-tag govuk-tag--green">Green</strong>';
+            break;
+        case "Amber Red":
+            return '<strong class="govuk-tag govuk-tag--yellow">Amber</strong>&nbsp;<strong class="govuk-tag govuk-tag--red">Red</strong>';
+            break;
+        case "Red":
+            return '<strong class="govuk-tag govuk-tag--red">Red</strong>';
+            break;
+        default:
+          // code block
+      };
+
+    return ragValue;
+});
