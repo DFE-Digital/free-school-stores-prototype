@@ -83,7 +83,8 @@ module.exports = {
       "preFundingAgreementActualDateYear": "",
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
-      "taskPreFundingAgreementStatus": ""
+      "taskPreFundingAgreementStatus": "",
+      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
     },
     {
       "projectTitle" : "Bolton Spa Primary", 

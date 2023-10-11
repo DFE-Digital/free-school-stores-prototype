@@ -143,7 +143,7 @@ New RAG rating entry - Check your answers - {{currentProject.projectTitle}} – 
             text: "RAF (risk appraisal form) Sharepoint link"
           },
           value: {
-            text: data["createNewRAGRatingRAFSharepointLink"]
+            html: data["createNewRAGRatingRAFSharepointLink"] | displaySharepointLink
           },
           actions: {
             items: [
