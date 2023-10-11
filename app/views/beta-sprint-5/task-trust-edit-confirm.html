@@ -21,6 +21,28 @@
         Confirm the trust
       </h1>
       
+
+      {% if data["trustID"] == "123456" %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">0 result for "123456"</h2>
+
+          <p class="govuk-body">
+            Check the spelling of the trust name.
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>TRN (trust reference number) or Group ID - TR00036</li>
+          </ul>
+          <p class="govuk-body">
+            Search the trust again by going back to <a href="task-trust-edit">the previous page</a>. 
+          </p>
+        </div>
+      </div>
+      
+      
+      {% else %}
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
@@ -95,6 +117,7 @@
         </div>
       </div>
 
+      {% endif %}
 
     </div>
   </div>
