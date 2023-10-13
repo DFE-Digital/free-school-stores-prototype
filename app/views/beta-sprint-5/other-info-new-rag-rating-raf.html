@@ -60,7 +60,7 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
-      Current RAG rating and summary
+      Current RAF
     </h2>
 
     {{ govukSummaryList({
@@ -77,7 +77,7 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
         ,
         {
           key: {
-            text: "RAF (risk appraisal form) SharePoint link"
+            text: "RAF SharePoint link"
           },
           value: {
             html: currentProject.RAFCurrentSharepointLink | displaySharepointLink
