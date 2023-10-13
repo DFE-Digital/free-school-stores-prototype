@@ -196,7 +196,8 @@ All free schools projects – {{ serviceName }}
                 <div class="govuk-form-group">
                   <h2 class="govuk-label-wrapper">
                     <label class="govuk-label govuk-label--m" for="delivery-officer-filter">
-                      Delivery officer
+                      Project managed by
+
                     </label>
                   </h2>
                   <div id="delivery-officer-filter-hint" class="govuk-hint">
@@ -229,12 +230,12 @@ All free schools projects – {{ serviceName }}
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-1">Project title</th>
-            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-2">Project ID</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-1">Title</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-2">ID</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-3">Trust</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-4">Region</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
-            {% if not isSpaTeamMember %} <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-6">Delivery officer</th> {% endif %}
+            {% if not isSpaTeamMember %} <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-6">Project managed by</th> {% endif %}
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Provisional opening date</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
             <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Last updated</th>
