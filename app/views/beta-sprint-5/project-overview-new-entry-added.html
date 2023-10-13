@@ -1,10 +1,10 @@
 {% extends "./layouts/main-mfsp-project-overview.html" %}
 {% set currentProject = data['currentProject'] %}
-{% set fssPageDesc = "Project overview" %}
+{% set fssPageDesc = "About the project" %}
 {% set bodyClasses = "mfsp-project-overview mfsp-wider-page" %}
 
 {% block pageTitle %}
-  {{currentProject.projectTitle}} - key project information - {{serviceName}}
+  {{currentProject.projectTitle}} - project details - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
