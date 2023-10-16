@@ -2,7 +2,11 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Confirm the trust - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% if data["trustID"] == "123456" %}
+    0 results for {{data["trustID"]}} - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% else %}
+    Search for a trust by TRN - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% endif %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +22,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Search for a trust by TRN
+        0 results for {{data["trustID"]}}
       </h1>
       
 
@@ -26,13 +30,15 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-m">0 results for "123456"</h2>
-
           <p class="govuk-body">
-            Enter a TRN (trust reference number) in the right format. For example, TR00036.
+            Improve your results by:
           </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>checking you have entered the TRN (trust reference number) in the right format. For example, TR00036</li>
+            <li>searching with a different TRN</li>
+          </ul>
           <p class="govuk-body">
-            <a href="task-trust-edit">Search for a trust using a different TRN</a>. 
+            <a href="task-trust-edit">Search again for a trust</a> 
           </p>
         </div>
       </div>
