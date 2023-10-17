@@ -54,39 +54,6 @@
                 ]
               }) }}
 
-
-              {{ govukDateInput({
-                id: "acceptedPlaceOffersBaselineDate",
-                namePrefix: "acceptedPlaceOffersBaselineDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Baseline date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.acceptedPlaceOffersBaselineDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.acceptedPlaceOffersBaselineDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.acceptedPlaceOffersBaselineDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
               {{ govukDateInput({
                 id: "acceptedPlaceOffersForecastDate",
                 namePrefix: "acceptedPlaceOffersForecastDate",

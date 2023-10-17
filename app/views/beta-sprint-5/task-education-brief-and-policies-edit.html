@@ -55,38 +55,6 @@
               }) }}
 
               {{ govukDateInput({
-                id: "educationBriefBaselineDate",
-                namePrefix: "educationBriefBaselineDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Baseline date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.educationBriefBaselineDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.educationBriefBaselineDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.educationBriefBaselineDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
                 id: "educationBriefForecastDate",
                 namePrefix: "educationBriefForecastDate",
                 classes: "govuk-!-margin-bottom-6",

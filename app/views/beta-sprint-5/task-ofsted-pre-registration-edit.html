@@ -94,38 +94,6 @@
               }) }}
 
               {{ govukDateInput({
-                id: "ofstedPreRegistrationBaselineDate",
-                namePrefix: "ofstedPreRegistrationBaselineDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Baseline date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.ofstedPreRegistrationBaselineDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.ofstedPreRegistrationBaselineDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.ofstedPreRegistrationBaselineDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
                 id: "ofstedPreRegistrationForecastDate",
                 namePrefix: "ofstedPreRegistrationForecastDate",
                 classes: "govuk-!-margin-bottom-6",

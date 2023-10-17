@@ -362,7 +362,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.riskAppraisalMeetingCompleted = req.session.data['riskAppraisalMeetingCompleted'];
-        applyDateFields(masterProject, req, 'riskAppraisalMeetingBaselineDate');
         applyDateFields(masterProject, req, 'riskAppraisalMeetingForecastDate');
         applyDateFields(masterProject, req, 'riskAppraisalMeetingActualDate');
         masterProject.riskAppraisalMeetingCommentsOnDecisionToApprove = req.session.data['riskAppraisalMeetingCommentsOnDecisionToApprove'];
@@ -415,7 +414,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.preFundingAgreementCheckpointMeetingCompleted = req.session.data['preFundingAgreementCheckpointMeetingCompleted'];
-        applyDateFields(masterProject, req, 'preFundingAgreementBaselineDate');
         applyDateFields(masterProject, req, 'preFundingAgreementForecastDate');
         applyDateFields(masterProject, req, 'preFundingAgreementActualDate');
         masterProject.preFundingAgreementCommentsOnDecisionToApprove = req.session.data['preFundingAgreementCommentsOnDecisionToApprove'];
@@ -441,7 +439,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.curriculumPlansSubmitted = req.session.data['curriculumPlansSubmitted'];
-        applyDateFields(masterProject, req, 'curriculumPlansBaselineDate');
         applyDateFields(masterProject, req, 'curriculumPlansForecastDate');
         applyDateFields(masterProject, req, 'curriculumPlansActualDate');
         masterProject.curriculumPlansCommentsOnDecisionToApprove = req.session.data['curriculumPlansCommentsOnDecisionToApprove'];
@@ -466,7 +463,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.finalGovernancePlanAgreed = req.session.data['finalGovernancePlanAgreed'];
-        applyDateFields(masterProject, req, 'finalGovernancePlanBaselineDate');
         applyDateFields(masterProject, req, 'finalGovernancePlanForecastDate');
         applyDateFields(masterProject, req, 'finalGovernancePlanActualDate');
         masterProject.finalGovernancePlanCommentsOnDecisionToApprove = req.session.data['finalGovernancePlanCommentsOnDecisionToApprove'];
@@ -491,7 +487,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.educationAdviserAgreement = req.session.data['educationAdviserAgreement'];
-        applyDateFields(masterProject, req, 'educationBriefBaselineDate');
         applyDateFields(masterProject, req, 'educationBriefForecastDate');
         applyDateFields(masterProject, req, 'educationBriefActualDate');
         masterProject.educationBriefCommentsOnDecisionToApprove = req.session.data['educationBriefCommentsOnDecisionToApprove'];
@@ -537,7 +532,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.fundingAgreementSigned = req.session.data['fundingAgreementSigned'];
-        applyDateFields(masterProject, req, 'fundingAgreementBaselineDate');
         applyDateFields(masterProject, req, 'fundingAgreementForecastDate');
         applyDateFields(masterProject, req, 'fundingAgreementActualDate');
         masterProject.fundingAgreementCommentsOnDecisionToApprove = req.session.data['fundingAgreementCommentsOnDecisionToApprove'];
@@ -563,7 +557,6 @@ module.exports = function (router) {
 
         masterProject.applicationsExceedBreakEvenPupilNumbers = req.session.data['applicationsExceedBreakEvenPupilNumbers'];
         masterProject.applicationsWrittenReferralFromComissioners = req.session.data['applicationsWrittenReferralFromComissioners'];
-        applyDateFields(masterProject, req, 'applicationsEvidenceBaselineDate');
         applyDateFields(masterProject, req, 'applicationsEvidenceForecastDate');
         applyDateFields(masterProject, req, 'applicationsEvidenceActualDate');
         masterProject.applicationsEvidenceCommentsOnDecisionToApprove = req.session.data['applicationsEvidenceCommentsOnDecisionToApprove'];
@@ -589,7 +582,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.acceptedPlaceOffersExceedBreakEvenPupilNumbers = req.session.data['acceptedPlaceOffersExceedBreakEvenPupilNumbers'];
-        applyDateFields(masterProject, req, 'acceptedPlaceOffersBaselineDate');
         applyDateFields(masterProject, req, 'acceptedPlaceOffersForecastDate');
         applyDateFields(masterProject, req, 'acceptedPlaceOffersActualDate');
         masterProject.acceptedPlaceOffersCommentsOnDecisionToApprove = req.session.data['acceptedPlaceOffersCommentsOnDecisionToApprove'];
@@ -598,7 +590,7 @@ module.exports = function (router) {
 
         req.session.data.currentProject = masterProject;
 
-        res.redirect("task-applications-evidence-landing-page");
+        res.redirect("task-accepted-place-offers-evidence-landing-page");
     });
 
     router.post('/' + version + '/task-accepted-place-offers-evidence-confirmation', function(req, res) {
@@ -615,7 +607,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.impactAssessmentCompleted = req.session.data['impactAssessmentCompleted'];
-        applyDateFields(masterProject, req, 'impactAssessmentBaselineDate');
         applyDateFields(masterProject, req, 'impactAssessmentForecastDate');
         applyDateFields(masterProject, req, 'impactAssessmentActualDate');
         masterProject.impactAssessmentCommentsOnDecisionToApprove = req.session.data['impactAssessmentCommentsOnDecisionToApprove'];

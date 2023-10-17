@@ -72,38 +72,6 @@
               }) }}
 
               {{ govukDateInput({
-                id: "readinessToOpenMeetingBaselineDate",
-                namePrefix: "readinessToOpenMeetingBaselineDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Baseline date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.readinessToOpenMeetingBaselineDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.readinessToOpenMeetingBaselineDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.readinessToOpenMeetingBaselineDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
                 id: "readinessToOpenMeetingForecastDate",
                 namePrefix: "readinessToOpenMeetingForecastDate",
                 classes: "govuk-!-margin-bottom-6",

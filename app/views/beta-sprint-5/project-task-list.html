@@ -113,7 +113,7 @@
                 </a>
               </span>
               {{ currentProject.taskRiskAppraisalMeetingStatus 
-                | taskStatus([currentProject.riskAppraisalMeetingCompleted, currentProject | withDatePrefixed('riskAppraisalMeetingBaselineDate'),
+                | taskStatus([currentProject.riskAppraisalMeetingCompleted,
                 currentProject | withDatePrefixed('riskAppraisalMeetingForecastDate'),
                 currentProject | withDatePrefixed('riskAppraisalMeetingActualDate'),
                 currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove,
@@ -263,7 +263,7 @@
                 </a>
               </span>
               {{ currentProject.taskPreFundingAgreementStatus 
-                | taskStatus([currentProject.preFundingAgreementCheckpointMeetingCompleted, currentProject | withDatePrefixed('preFundingAgreementBaselineDate'),
+                | taskStatus([currentProject.preFundingAgreementCheckpointMeetingCompleted,
                 currentProject | withDatePrefixed('preFundingAgreementForecastDate'),
                 currentProject | withDatePrefixed('preFundingAgreementActualDate'),
                 currentProject.preFundingAgreementCommentsOnDecisionToApprove,
@@ -407,7 +407,9 @@
                   Final revenue funding plan
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+              {{ currentProject.taskFinalRevenueFundingPlanStatus
+                | taskStatus([]) 
+                | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
