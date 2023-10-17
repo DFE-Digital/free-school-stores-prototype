@@ -563,7 +563,6 @@ module.exports = function (router) {
 
         masterProject.applicationsExceedBreakEvenPupilNumbers = req.session.data['applicationsExceedBreakEvenPupilNumbers'];
         masterProject.applicationsWrittenReferralFromComissioners = req.session.data['applicationsWrittenReferralFromComissioners'];
-        applyDateFields(masterProject, req, 'applicationsEvidenceBaselineDate');
         applyDateFields(masterProject, req, 'applicationsEvidenceForecastDate');
         applyDateFields(masterProject, req, 'applicationsEvidenceActualDate');
         masterProject.applicationsEvidenceCommentsOnDecisionToApprove = req.session.data['applicationsEvidenceCommentsOnDecisionToApprove'];
