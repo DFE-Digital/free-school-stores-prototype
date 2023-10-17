@@ -609,7 +609,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.impactAssessmentCompleted = req.session.data['impactAssessmentCompleted'];
-        applyDateFields(masterProject, req, 'impactAssessmentBaselineDate');
         applyDateFields(masterProject, req, 'impactAssessmentForecastDate');
         applyDateFields(masterProject, req, 'impactAssessmentActualDate');
         masterProject.impactAssessmentCommentsOnDecisionToApprove = req.session.data['impactAssessmentCommentsOnDecisionToApprove'];
