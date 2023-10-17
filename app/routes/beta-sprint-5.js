@@ -415,7 +415,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.preFundingAgreementCheckpointMeetingCompleted = req.session.data['preFundingAgreementCheckpointMeetingCompleted'];
-        applyDateFields(masterProject, req, 'preFundingAgreementBaselineDate');
         applyDateFields(masterProject, req, 'preFundingAgreementForecastDate');
         applyDateFields(masterProject, req, 'preFundingAgreementActualDate');
         masterProject.preFundingAgreementCommentsOnDecisionToApprove = req.session.data['preFundingAgreementCommentsOnDecisionToApprove'];
