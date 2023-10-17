@@ -72,38 +72,6 @@
               }) }}
 
               {{ govukDateInput({
-                id: "signOffPreparationGiasBaselineDate",
-                namePrefix: "signOffPreparationGiasBaselineDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Baseline date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.signOffPreparationGiasBaselineDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.signOffPreparationGiasBaselineDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.signOffPreparationGiasBaselineDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
                 id: "signOffPreparationGiasForecastDate",
                 namePrefix: "signOffPreparationGiasForecastDate",
                 classes: "govuk-!-margin-bottom-6",
