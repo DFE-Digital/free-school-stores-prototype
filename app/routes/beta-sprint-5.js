@@ -534,7 +534,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.fundingAgreementSigned = req.session.data['fundingAgreementSigned'];
-        applyDateFields(masterProject, req, 'fundingAgreementBaselineDate');
         applyDateFields(masterProject, req, 'fundingAgreementForecastDate');
         applyDateFields(masterProject, req, 'fundingAgreementActualDate');
         masterProject.fundingAgreementCommentsOnDecisionToApprove = req.session.data['fundingAgreementCommentsOnDecisionToApprove'];
