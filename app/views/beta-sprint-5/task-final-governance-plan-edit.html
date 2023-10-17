@@ -50,38 +50,6 @@
               }) }}
 
               {{ govukDateInput({
-                id: "finalGovernancePlanBaselineDate",
-                namePrefix: "finalGovernancePlanBaselineDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Baseline date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.finalGovernancePlanBaselineDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.finalGovernancePlanBaselineDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.finalGovernancePlanBaselineDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
                 id: "finalGovernancePlanForecastDate",
                 namePrefix: "finalGovernancePlanForecastDate",
                 classes: "govuk-!-margin-bottom-6",

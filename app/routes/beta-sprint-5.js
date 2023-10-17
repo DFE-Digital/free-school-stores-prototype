@@ -465,7 +465,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.finalGovernancePlanAgreed = req.session.data['finalGovernancePlanAgreed'];
-        applyDateFields(masterProject, req, 'finalGovernancePlanBaselineDate');
         applyDateFields(masterProject, req, 'finalGovernancePlanForecastDate');
         applyDateFields(masterProject, req, 'finalGovernancePlanActualDate');
         masterProject.finalGovernancePlanCommentsOnDecisionToApprove = req.session.data['finalGovernancePlanCommentsOnDecisionToApprove'];
