@@ -490,7 +490,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.educationAdviserAgreement = req.session.data['educationAdviserAgreement'];
-        applyDateFields(masterProject, req, 'educationBriefBaselineDate');
         applyDateFields(masterProject, req, 'educationBriefForecastDate');
         applyDateFields(masterProject, req, 'educationBriefActualDate');
         masterProject.educationBriefCommentsOnDecisionToApprove = req.session.data['educationBriefCommentsOnDecisionToApprove'];
