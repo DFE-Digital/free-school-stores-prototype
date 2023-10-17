@@ -108,12 +108,13 @@ addFilter("displayRAGRating", (ragValue) =>
     return ragValue;
 });
 
-addFilter("displaySharepointLink", (sharepointLink) =>
+
+addFilter("displaySharepointLink", (sharepointLink, linkText) =>
 {
     if (!sharepointLink || sharepointLink === "")
     {
         return "<span class='empty'>Empty</span>";
     }
 
-    return '<a class="govuk-link" target="_blank" href="' + sharepointLink + '">SharePoint folder (open in new tab)</a>';
+    return '<a class="govuk-link" target="_blank" href="' + sharepointLink + '">' + linkText + '</a>';
 });
