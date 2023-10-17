@@ -589,7 +589,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.acceptedPlaceOffersExceedBreakEvenPupilNumbers = req.session.data['acceptedPlaceOffersExceedBreakEvenPupilNumbers'];
-        applyDateFields(masterProject, req, 'acceptedPlaceOffersBaselineDate');
         applyDateFields(masterProject, req, 'acceptedPlaceOffersForecastDate');
         applyDateFields(masterProject, req, 'acceptedPlaceOffersActualDate');
         masterProject.acceptedPlaceOffersCommentsOnDecisionToApprove = req.session.data['acceptedPlaceOffersCommentsOnDecisionToApprove'];
@@ -598,7 +597,7 @@ module.exports = function (router) {
 
         req.session.data.currentProject = masterProject;
 
-        res.redirect("task-applications-evidence-landing-page");
+        res.redirect("task-accepted-place-offers-evidence-landing-page");
     });
 
     router.post('/' + version + '/task-accepted-place-offers-evidence-confirmation', function(req, res) {

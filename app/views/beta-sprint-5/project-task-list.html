@@ -113,7 +113,7 @@
                 </a>
               </span>
               {{ currentProject.taskRiskAppraisalMeetingStatus 
-                | taskStatus([currentProject.riskAppraisalMeetingCompleted, currentProject | withDatePrefixed('riskAppraisalMeetingBaselineDate'),
+                | taskStatus([currentProject.riskAppraisalMeetingCompleted,
                 currentProject | withDatePrefixed('riskAppraisalMeetingForecastDate'),
                 currentProject | withDatePrefixed('riskAppraisalMeetingActualDate'),
                 currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove,
@@ -263,7 +263,7 @@
                 </a>
               </span>
               {{ currentProject.taskPreFundingAgreementStatus 
-                | taskStatus([currentProject.preFundingAgreementCheckpointMeetingCompleted, currentProject | withDatePrefixed('preFundingAgreementBaselineDate'),
+                | taskStatus([currentProject.preFundingAgreementCheckpointMeetingCompleted,
                 currentProject | withDatePrefixed('preFundingAgreementForecastDate'),
                 currentProject | withDatePrefixed('preFundingAgreementActualDate'),
                 currentProject.preFundingAgreementCommentsOnDecisionToApprove,
