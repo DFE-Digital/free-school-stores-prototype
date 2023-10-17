@@ -441,7 +441,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.curriculumPlansSubmitted = req.session.data['curriculumPlansSubmitted'];
-        applyDateFields(masterProject, req, 'curriculumPlansBaselineDate');
         applyDateFields(masterProject, req, 'curriculumPlansForecastDate');
         applyDateFields(masterProject, req, 'curriculumPlansActualDate');
         masterProject.curriculumPlansCommentsOnDecisionToApprove = req.session.data['curriculumPlansCommentsOnDecisionToApprove'];
