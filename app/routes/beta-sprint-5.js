@@ -362,7 +362,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.riskAppraisalMeetingCompleted = req.session.data['riskAppraisalMeetingCompleted'];
-        applyDateFields(masterProject, req, 'riskAppraisalMeetingBaselineDate');
         applyDateFields(masterProject, req, 'riskAppraisalMeetingForecastDate');
         applyDateFields(masterProject, req, 'riskAppraisalMeetingActualDate');
         masterProject.riskAppraisalMeetingCommentsOnDecisionToApprove = req.session.data['riskAppraisalMeetingCommentsOnDecisionToApprove'];
