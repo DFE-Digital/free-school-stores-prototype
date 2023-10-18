@@ -94,7 +94,11 @@ New RAG rating entry - Overall - {{currentProject.projectTitle}} – {{ serviceN
     </h2>
 
     {{ govukSummaryList({
-        
+      card: {
+        title: {
+          text: "RAG rating and summary"
+        }
+      },
       rows: [
         {
           key: {
@@ -103,8 +107,7 @@ New RAG rating entry - Overall - {{currentProject.projectTitle}} – {{ serviceN
           value: {
             html: "21 March 2023"
           }
-        }
-        ,
+        },
         {
           key: {
             text: "Overall RAG rating"
@@ -112,8 +115,7 @@ New RAG rating entry - Overall - {{currentProject.projectTitle}} – {{ serviceN
           value: {
             html: "Amber Green" | displayRAGRating
           }
-        }
-        ,
+        },
         {
           key: {
             text: "Overall RAG summary"
