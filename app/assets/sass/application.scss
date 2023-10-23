@@ -334,4 +334,20 @@ h1.govuk-fieldset__heading {
     padding-left: 8px;
     margin-right: 8px;
 }
+.app-sticky-element {
+    position: sticky;
+    top: 0;
+}
 
+.page-contents {
+    .section-heading {
+        color: $govuk-secondary-text-colour;
+        font-weight: normal;
+    }
+    .govuk-list {
+        margin-bottom: 30px;
+    }
+    .govuk-list li {
+        margin-bottom: 10px;
+    }
+}
