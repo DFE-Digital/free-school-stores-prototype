@@ -98,7 +98,11 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
     </h2>
 
     {{ govukSummaryList({
-        
+      card: {
+        title: {
+          text: "RAG rating and summary"
+        }
+      },
       rows: [
         {
           key: {
@@ -107,8 +111,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
           value: {
             html: "21 March 2023"
           }
-        }
-        ,
+        },
         {
           key: {
             text: "Education RAG rating"
@@ -116,8 +119,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
           value: {
             html: "Amber Green" | displayRAGRating
           }
-        }
-        ,
+        },
         {
           key: {
             text: "Education RAG summary"

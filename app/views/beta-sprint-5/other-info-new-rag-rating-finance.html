@@ -98,7 +98,11 @@ New RAG rating entry - Finance - {{currentProject.projectTitle}} – {{ serviceN
     </h2>
 
     {{ govukSummaryList({
-        
+      card: {
+        title: {
+          text: "RAG rating and summary"
+        }
+      },
       rows: [
         {
           key: {
@@ -107,17 +111,15 @@ New RAG rating entry - Finance - {{currentProject.projectTitle}} – {{ serviceN
           value: {
             html: "21 March 2023"
           }
-        }
-        ,
+        },
         {
           key: {
             text: "Finance RAG rating"
           },
           value: {
-            html: "Amber Green" | displayRAGRating
+            html: "Amber Red" | displayRAGRating
           }
-        }
-        ,
+        },
         {
           key: {
             text: "Finance RAG summary"

@@ -60,11 +60,15 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
-      Current RAF
+      Current RAG rating and summary
     </h2>
 
     {{ govukSummaryList({
-        
+      card: {
+        title: {
+          text: "Current RAF"
+        }
+      },
       rows: [
         {
           key: {
@@ -73,8 +77,7 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
           value: {
             html: "21 March 2023"
           }
-        }
-        ,
+        },
         {
           key: {
             text: "RAF SharePoint link"
@@ -85,7 +88,6 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
         }
       ]
     }) }}
-
 
   </div>
 </div>
