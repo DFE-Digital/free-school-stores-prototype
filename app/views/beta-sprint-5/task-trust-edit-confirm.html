@@ -18,15 +18,14 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-full">      
 
+      {% if data["trustID"] == "123456" %}
+      
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
         0 results for {{data["trustID"]}}
       </h1>
-      
-
-      {% if data["trustID"] == "123456" %}
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -45,6 +44,11 @@
       
       
       {% else %}
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Confirm the trust
+      </h1>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
