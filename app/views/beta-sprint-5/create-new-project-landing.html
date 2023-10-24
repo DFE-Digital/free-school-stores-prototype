@@ -28,7 +28,7 @@
             name: "create-new-project-methods",
             fieldset: {
               legend: {
-                text: "Which method do you want to use?",
+                text: "What do you want to do?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
               }
@@ -37,17 +37,17 @@
               {
                 value: "individual",
                 checked: checked("create-new-project-methods", "individual"),
-                text: "Creating individual project",
+                text: "Create one project",
                 hint: {
-                  text: "This is where you create projects for the presumption route."
+                  text: "Presumption or wave route."
                 }
               },
               {
                 value: "bulk",
                 checked: checked("create-new-project-methods", "bulk"),
-                text: "Bulk upload",
+                text: "Upload multiple projects",
                 hint: {
-                  text: "This is where you create projects for the wave route."
+                  text: "Wave route only."
                 }
               }
 
