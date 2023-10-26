@@ -93,10 +93,10 @@ addFilter("displayRAGRating", (ragValue) =>
             return '<strong class="govuk-tag govuk-tag--green">Green</strong>';
             break;
         case "Amber Green":
-            return '<strong class="govuk-tag govuk-tag--yellow">Amber</strong>&nbsp;<strong class="govuk-tag govuk-tag--green">Green</strong>';
+            return '<strong class="govuk-tag dfe-tag--amber">Amber</strong>&nbsp;<strong class="govuk-tag govuk-tag--green">Green</strong>';
             break;
         case "Amber Red":
-            return '<strong class="govuk-tag govuk-tag--yellow">Amber</strong>&nbsp;<strong class="govuk-tag govuk-tag--red">Red</strong>';
+            return '<strong class="govuk-tag dfe-tag--amber">Amber</strong>&nbsp;<strong class="govuk-tag govuk-tag--red">Red</strong>';
             break;
         case "Red":
             return '<strong class="govuk-tag govuk-tag--red">Red</strong>';
