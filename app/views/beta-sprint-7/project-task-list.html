@@ -1,0 +1,444 @@
+{% extends "./layouts/main-mfsp-project-overview.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set fssPageDesc = "Task list" %}
+{% set bodyClasses = "mfsp-project-overview" %}
+
+{% block pageTitle %}
+  {{currentProject.projectTitle}} - project details - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageContent %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+  
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="p-o?id={{currentProject.projectID}}">About the project</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" aria-current="page" href="#">Task list</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="#">Project notes</a>
+        </li>
+      </ul>
+  
+    </nav>
+  </div>
+</div>
+
+  <div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Project progress</h2>
+      {% if currentProject.projectID == "W3456" %}
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 36 sections.</p>
+      {% else %}
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 15 of 36 sections.</p>
+      {% endif %}
+      
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Setting-up
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-dates-landing-page" aria-describedby="">
+                  Dates
+                </a>
+              </span>
+              {{ currentProject.taskDatesStatus 
+                | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
+                currentProject.provisionalOpeningDateDay,
+                currentProject.openingAcademicStart])
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-school-details-landing-page" aria-describedby="">
+                  School
+                </a>
+              </span>
+              {{ currentProject.taskSchoolDetailsStatus 
+              | taskStatus([currentProject.projectTitle, currentProject.schoolType]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-trust-landing-page" aria-describedby="">
+                  Trust
+                </a>
+              </span>
+              {{ currentProject.taskTrustStatus
+              | taskStatus([]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-region-and-local-authority-landing-page" aria-describedby="">
+                  Region and local authority
+                </a>
+              </span>
+              {{ currentProject.taskRegionAndLocalAuthority
+              | taskStatus([]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-constituency-landing-page" aria-describedby="">
+                  Constituency
+                </a>
+              </span>
+              {{ currentProject.taskConstituencyStatus
+              | taskStatus([]) 
+              | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-risk-appraisal-meeting-landing-page" aria-describedby="">
+                  Risk appraisal meeting
+                </a>
+              </span>
+              {{ currentProject.taskRiskAppraisalMeetingStatus 
+                | taskStatus([currentProject.riskAppraisalMeetingCompleted,
+                currentProject | withDatePrefixed('riskAppraisalMeetingForecastDate'),
+                currentProject | withDatePrefixed('riskAppraisalMeetingActualDate'),
+                currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove,
+                currentProject.riskAppraisalMeetingReasonNotApplicable]) 
+                | safe }}  
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Pre-opening
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="">
+                  Project development grant (PDG) 
+                </a>
+              </span>
+              {{ currentProject.taskPDGStatus
+                | taskStatus([currentProject.initialGrantAllocation]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Model funding agreement
+                </a>
+              </span>
+              {{ currentProject.taskModelFundingAgreementStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-status">
+                  Contingent liabilities
+                </a>
+              </span>
+              {{ currentProject.taskContigentLiabilitiesStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  Principal designate
+                </a>
+              </span>
+              {{ currentProject.taskPrincipalDesignateStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Statutory consultation
+                </a>
+              </span>
+              {{ currentProject.taskStatutoryConsultationStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Chair of governors
+                </a>
+              </span>
+              {{ currentProject.taskChairOfGovernorsStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Model articles of association
+                </a>
+              </span>
+              {{ currentProject.taskModelArticlesOfAssociationStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>           
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Section 9 letter
+                </a>
+              </span>
+              {{ currentProject.taskSectionNineLetterStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Draft governance plans
+                </a>
+              </span>
+              {{ currentProject.taskDraftGovernancePlansStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  School admissions policy
+                </a>
+              </span>
+              {{ currentProject.taskSchoolAdmissionsPolicyStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Financial plan
+                </a>
+              </span>
+              {{ currentProject.taskFinancialPlanStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  DBS checks
+                </a>
+              </span>
+              {{ currentProject.taskDbsChecksStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Sign-off preparation
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-pre-funding-agreement-landing-page" aria-describedby="company-information-status">
+                  Pre-funding agreement checkpoint meeting
+                </a>
+              </span>
+              {{ currentProject.taskPreFundingAgreementStatus 
+                | taskStatus([currentProject.preFundingAgreementCheckpointMeetingCompleted,
+                currentProject | withDatePrefixed('preFundingAgreementForecastDate'),
+                currentProject | withDatePrefixed('preFundingAgreementActualDate'),
+                currentProject.preFundingAgreementCommentsOnDecisionToApprove,
+                currentProject.preFundingAgreementReasonNotApplicable,
+                currentProject.preFundingAgreementSharepointLink]) 
+                | safe }}  
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-curriculum-plans-landing-page" aria-describedby="contact-details-status">
+                  Curriculum plans
+                </a>
+              </span>
+              {{ currentProject.taskCurriculumPlansStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-final-governance-plan-landing-page" aria-describedby="list-convictions-status">
+                  Final governance plan
+                </a>
+              </span>
+              {{ currentProject.taskFinalGovernancePlanStatus
+                | taskStatus([currentProject.finalGovernancePlanAgreed]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-education-brief-and-policies-landing-page" aria-describedby="list-convictions-status">
+                  Education brief and policies
+                </a>
+              </span>
+              {{ currentProject.taskDraftEducationBriefStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-sign-off-preparation-gias-landing-page" aria-describedby="list-convictions-status">
+                  GIAS (Get Information about Schools)
+                </a>
+              </span>
+              {{ currentProject.taskGettingReadyToOpenGiasStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Getting ready to open
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-getting-ready-to-open-dates-landing-page" aria-describedby="company-information-status">
+                  Dates
+                </a>
+              </span>
+              {{ currentProject.taskGettingReadyToOpenDatesStatus
+                | taskStatus([])
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-funding-agreement-landing-page" aria-describedby="company-information-status">
+                  Funding agreement
+                </a>
+              </span>
+              {{ currentProject.taskFundingAgreementStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-applications-evidence-landing-page" aria-describedby="contact-details-status">
+                  Applications evidence
+                </a>
+              </span>
+              {{ currentProject.taskApplicationsEvidenceStatus
+                | taskStatus([currentProject.taskApplicationsEvidenceStatus]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-accepted-place-offers-evidence-landing-page" aria-describedby="contact-details-status">
+                  Accepted place offers evidence
+                </a>
+              </span>
+              {{ currentProject.taskAcceptedPlaceOffersStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-impact-assessment-and-equalities-analysis-landing-page" aria-describedby="list-convictions-status">
+                  Impact assessment and equalities analysis
+                </a>
+              </span>
+              {{ currentProject.taskImpactAssessmentStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-ofsted-pre-registration-landing-page" aria-describedby="list-convictions-status">
+                  Ofsted pre-registration
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-getting-ready-to-open-gias-landing-page" aria-describedby="list-convictions-status">
+                  GIAS (Get Information about Schools)
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-suitability-and-dbs-checks-landing-page" aria-describedby="list-convictions-status">
+                  Suitability and DBS checks
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-draft-education-brief-landing-page" aria-describedby="list-convictions-status">
+                  Draft education brief
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-final-revenue-funding-plan-landing-page" aria-describedby="list-convictions-status">
+                  Final revenue funding plan
+                </a>
+              </span>
+              {{ currentProject.taskFinalRevenueFundingPlanStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="task-readiness-to-open-meeting-landing-page" aria-describedby="list-convictions-status">
+                  Readiness to open meeting
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Finish the project
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Submit and close file
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+
+  </div>
+
+{% endblock %}

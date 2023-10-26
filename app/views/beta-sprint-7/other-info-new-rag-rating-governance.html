@@ -1,0 +1,137 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+New RAG rating entry - Governance and suitability - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to about the project",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new RAG rating entry</span>
+        Governance and suitability
+      </h1>
+
+
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="other-info-new-rag-rating-check-your-answers" method="post">
+      {% else %}
+        <form class="form" action="other-info-new-rag-rating-education" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          {{ govukRadios({
+            idPrefix: "create-new-rag-rating-governance",
+            name: "create-new-rag-rating-governance",
+            fieldset: {
+              legend: {
+                html: 'What is the updated RAG rating for governance and suitability?',
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Green",
+                checked: checked("create-new-rag-rating-governance", "Green"),
+                html: "Green" | displayRAGRating
+              },
+              {
+                value: "Amber Green",
+                checked: checked("create-new-rag-rating-governance", "Amber Green"),
+                html: "Amber Green" | displayRAGRating
+              },
+              {
+                value: "Amber Red",
+                checked: checked("create-new-rag-rating-governance", "Amber Red"),
+                html: "Amber Red" | displayRAGRating
+              },
+              {
+                value: "Red",
+                checked: checked("create-new-rag-rating-governance", "Red"),
+                html: "Red" | displayRAGRating
+              }
+
+            ]
+          }) }} 
+
+          {{ govukTextarea({
+            name: "create-new-rag-summary-governance",
+            id: "create-new-rag-summary-governance",
+            label: {
+                text: "What is the updated RAG summary for governance and suitability?",
+                classes: "govuk-label--m",
+                isPageHeading: false
+            },
+            value: data['create-new-rag-summary-governance']
+          }) }}
+        
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Current RAG rating and summary
+    </h2>
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          text: "RAG rating and summary"
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "21 March 2023"
+          }
+        },
+        {
+          key: {
+            text: "Governance and suitability RAG rating"
+          },
+          value: {
+            html: "Amber Green" | displayRAGRating
+          }
+        },
+        {
+          key: {
+            text: "Governance and suitability RAG summary"
+          },
+          value: {
+            html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+          }
+        }
+      ]
+    }) }}
+
+
+  </div>
+</div>
+{% endblock %}

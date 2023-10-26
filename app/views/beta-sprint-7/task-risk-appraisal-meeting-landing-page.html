@@ -1,0 +1,196 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Risk appraisal meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Risk appraisal meeting
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Initial risk appraisal meeting completed"
+            },
+            value: {
+              html: currentProject.riskAppraisalMeetingCompleted | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Risk appraisal meeting completed"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('riskAppraisalMeetingForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('riskAppraisalMeetingActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Reason not applicable"
+            },
+            value: {
+              html: currentProject.riskAppraisalMeetingReasonNotApplicable | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-risk-appraisal-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Reason not applicable"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="task-risk-appraisal-meeting-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-risk-appraisal-meeting-status",
+        name: "task-risk-appraisal-meeting-status",
+        values: currentProject.taskRiskAppraisalMeetingStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <h2 class="govuk-heading-m">
+        Review RAG rating
+      </h2>
+      
+      <p class="govuk-body">You may want to update the RAG rating after the risk appraisal meeting.</p>
+  
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "RAG rating and summary"
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-rag-rating-current",
+                text: "Change",
+                visuallyHiddenText: "RAG rating and summary"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "21 March 2023"
+            }
+          },
+          {
+            key: {
+              text: "Overall RAG rating"
+            },
+            value: {
+              html: "Amber Green" | displayRAGRating
+            }
+          },
+          {
+            key: {
+              text: "Overall RAG summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+        ]
+      }) }}
+  
+    </div>
+  </div>
+{% endblock %}

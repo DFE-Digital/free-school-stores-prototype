@@ -1,0 +1,306 @@
+{% extends "./layouts/main-mfsp-internal.html" %}
+{% set fssPageTitle = "All projects" %}
+{% set bodyClasses = "mfsp-wider-page" %}
+
+{% block pageTitle %}
+All projects – {{ serviceName }}
+{% endblock %}
+
+{% if data['userRole'] == "School places analysis team" %}
+  {% set pLinks =  [
+    {
+      "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
+      "label" : "All projects"
+    }
+  ] %}
+{% else %}
+  {% set pLinks =  [
+    {
+      "url"  : "projects-listing-your-projects?dashboardSearch=&filter-regions&filter-la",
+      "label" : "Your projects"
+    }, {
+      "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
+      "label" : "All projects"
+    }
+  ] %}
+{% endif %}
+
+{% block header %}
+  {{ header({
+    "showNav": "true",
+    "showSearch": "false",
+    "showUserName": "true",
+    "userName": "Sign out",
+    "userNameURL": "",
+    "selectedNav": "All projects",
+    "logoPath": "public/images",
+    "homeHref": "/",
+    "service": {
+      "name": serviceName
+    },
+    "primaryLinks": pLinks
+  }) }}
+{% endblock %}
+
+
+
+{% block pageContent %}
+
+{% macro tag(status) %}
+  {% if status == "In progress" %}
+    govuk-tag--blue
+  {% elif status == "Not started" %}
+    govuk-tag--grey
+  {% elif status == "Completed" %}
+    govuk-tag--green
+  {% elif status == "Withdrawn" %}
+    govuk-tag--orange
+  {% elif status == "Cancelled" %}
+    govuk-tag--red
+  {% elif status == "Deferred" %}
+    govuk-tag--yellow
+  {% else %}
+  {% endif %}
+{% endmacro%}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% if data['userRole'] == "School places analysis team" %}
+      <p class="govuk-body govuk-!-margin-top-3">You can add new projects by using the button below.</p>
+      {{ govukButton({
+        text: "Create new projects",
+        classes: "govuk-!-margin-bottom-6",
+        href: "create-new-project",
+        isStartButton: false
+      }) }}
+      {% endif %}
+
+      {% if (data['dashboardSearch'] or data['filter-regions']) %}
+      <details class="govuk-details mfsp-project-listing__filters-container" data-module="govuk-details" open>
+      {% else %}
+      <details class="govuk-details mfsp-project-listing__filters-container" data-module="govuk-details">
+      {% endif %}
+        <summary class="govuk-details__summary mfsp-project-listing__fitlers-details-summary">
+          <span class="govuk-details__summary-text govuk-button govuk-button--secondary mfsp-project-listing__button--main">
+            Filter projects
+          </span>
+        </summary>
+        <div class="govuk-details__text mfsp-project-listing__filters-details">
+          <form method="get" class="form">
+  
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+                  <div class="govuk-form-group">
+                    <h2 class="govuk-label-wrapper">
+                      <label class="govuk-label govuk-label--m" for="dashboardSearch">
+                        Project title or ID
+                      </label>
+                    </h2>
+                    <div id="dashboardSearch-hint" class="govuk-hint">
+                      For example, St George’s Primary School or 193323.
+                    </div>
+                    <input class="govuk-input" id="dashboardSearch" name="dashboardSearch" type="text" value="{{ data['dashboardSearch'] }}">
+                  </div>
+              </div>
+  
+              <div class="govuk-grid-column-one-quarter">
+                {{ govukCheckboxes({
+                  idPrefix: "filter-regions",
+                  name: "filter-regions",
+                  classes: "govuk-checkboxes--small mfsp-project-listing__filter",
+                  fieldset: {
+                    legend: {
+                      text: "Regions",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "Select all that apply."
+                  },
+                  items: [
+                    {
+                      value: "East Midlands",
+                      text: "East Midlands",
+                      checked: checked("filter-regions", "East Midlands")
+                    },
+                    {
+                      value: "East of England",
+                      text: "East of England",
+                      checked: checked("filter-regions", "East of England")
+                    },
+                    {
+                      value: "London",
+                      text: "London",
+                      checked: checked("filter-regions", "London")
+                    },
+                    {
+                      value: "North East",
+                      text: "North East",
+                      checked: checked("filter-regions", "North East")
+                    },
+                    {
+                      value: "North West",
+                      text: "North West",
+                      checked: checked("filter-regions", "North West")
+                    },
+                    {
+                      value: "South East",
+                      text: "South East",
+                      checked: checked("filter-regions", "South East")
+                    },
+                    {
+                      value: "South West",
+                      text: "South West",
+                      checked: checked("filter-regions", "South West")
+                    },
+                    {
+                      value: "West Midlands",
+                      text: "West Midlands",
+                      checked: checked("filter-regions", "West Midlands")
+                    },
+                    {
+                      value: "Yorkshire and the Humber",
+                      text: "Yorkshire and the Humber",
+                      checked: checked("filter-regions", "Yorkshire and the Humber")
+                    }
+                  ]
+                }) }}
+              </div>
+  
+              <div class="govuk-grid-column-one-quarter">
+                {{ govukCheckboxes({
+                  idPrefix: "filter-la",
+                  name: "filter-la",
+                  classes: "govuk-checkboxes--small mfsp-project-listing__filter id-filter-la",
+                  fieldset: {
+                    legend: {
+                      text: "Local authority",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "Select all that apply."
+                  },
+                  items: [
+                    {
+                      divider: "Please select Region"
+                    }
+                  ]
+                }) }}
+              </div>
+  
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <h2 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--m" for="delivery-officer-filter">
+                      Project managed by
+
+                    </label>
+                  </h2>
+                  <div id="delivery-officer-filter-hint" class="govuk-hint">
+                    For example, Joe Bloggs.
+                  </div>
+                  <input class="govuk-input" id="delivery-officer-filter" name="delivery-officer-filter" type="text" value="{{ data['delivery-officer-filter'] }}">
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <div class="govuk-button-group">
+                  <button class="govuk-button govuk-button--secondary mfsp-project-listing__button--apply" data-module="govuk-button ">
+                    Apply filters
+                  </button>
+                
+                  <a class="govuk-link" href="projects-listing-all-projects?dashboardSearch=&filter-regions=&filter-la">Clear filters</a>
+                </div>
+              </div>
+            </div>
+  
+          </form>
+        </div>
+      </details>
+
+      {% set isSpaTeamMember = data['userRole'] == "School places analysis team"  %}
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-1">Project title</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-2">Project ID</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-3">Trust</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-4">Region</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-5">Local authority</th>
+            {% if not isSpaTeamMember %} <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-6">Project managed by</th> {% endif %}
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-7">Provisional opening date</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-8">Status</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-9">Last updated</th>
+            <th scope="col" class="govuk-table__header mfsp-dashboard-table__col-10">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for project in data['project-list'] %}
+          {% if data['dashboardSearch'].toLowerCase() in project.projectTitle.toLowerCase() or data['dashboardSearch'].toLowerCase() in project.projectID.toLowerCase() %}
+          {% if not data['filter-regions'] or project.geographicalRegion in data['filter-regions'] %}
+          {% if not data['filter-la'] or project.localAuthority in data['filter-la'] %}
+          {% if not data['delivery-officer-filter'] or data['delivery-officer-filter'].toLowerCase() in project.deliveryOfficer.toLowerCase() %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{project.projectTitle}}</th>
+              <td class="govuk-table__cell">{{project.projectID}}</td>
+              <td class="govuk-table__cell">{{project.trust}}</td>
+              <td class="govuk-table__cell">{{project.geographicalRegion}}</td>
+              <td class="govuk-table__cell">{{project.localAuthority}}</td>
+              {% if not isSpaTeamMember %}<td class="govuk-table__cell">{{project.deliveryOfficer}}</td>{% endif %}
+              <td class="govuk-table__cell">
+                {% if project.provisionalOpeningDateDay and 
+                  project.provisionalOpeningDateMonth and 
+                  project.provisionalOpeningDateYear %}
+    
+                  {% set provisionalOpeningDate = project.provisionalOpeningDateYear + project.provisionalOpeningDateMonth + project.provisionalOpeningDateDay  %}
+    
+                  {{ provisionalOpeningDate | displayDate }}
+                  {% else %} 
+                  <span class="empty">Empty</span>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag {{ tag(project.status) }}">{{project.status}}</strong></td>
+              <td class="govuk-table__cell">
+                {% if project.lastUpdatedDay and 
+                  project.lastUpdatedMonth and 
+                  project.lastUpdatedYear %}
+    
+                  {% set lastUpdatedDate = project.lastUpdatedYear + project.lastUpdatedMonth + project.lastUpdatedDay  %}
+    
+                  {{ lastUpdatedDate | displayDate }}
+                  {% else %} 
+                  <span class="empty">Empty</span>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell"><a href="p-o?id={{project.projectID}}" class="govuk-link">View</a></td>
+            </tr>
+          {% endif %}
+          {% endif %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div name="hiddenData" hidden>
+        {% for la in data['filter-la'] %}
+          <ul>
+            <li class="data-selected-la">{{la}}</li>
+          </ul>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+  {% block pageScripts %}
+      <script src="/public/javascripts/regionfilter.js"></script>
+  {% endblock %}
+{% endblock %}
