@@ -45,6 +45,13 @@ h1.govuk-fieldset__heading {
     line-height: inherit !important;
 }
 
+$color_dfe-amber: #FFA621;
+
+.dfe-tag--amber {
+    color: govuk-shade($color_dfe-amber, 60);
+    background: govuk-tint($color_dfe-amber, 70);
+}
+
 .dfe-content-page--header {
     background: #ebf2f6
 }
