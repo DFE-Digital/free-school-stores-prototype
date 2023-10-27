@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle}} – {{ serviceName }}
+New risk rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new RAG rating entry</span>
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
         RAF (risk appraisal form)
       </h1>
 
@@ -36,15 +36,15 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
           <input hidden type="text" name="returnToSummary" value="no"/>
 
         {{ govukInput({
-          id: "createNewRAGRatingRAFSharepointLink",
-          name: "createNewRAGRatingRAFSharepointLink",
+          id: "createNewriskRatingRAFSharepointLink",
+          name: "createNewriskRatingRAFSharepointLink",
           classes: "govuk-!-margin-bottom-6",
           label: {
               text: "RAF Sharepoint link",
               classes: "govuk-heading-m",
               isPageHeading: false
           },
-          value: data['createNewRAGRatingRAFSharepointLink']
+          value: data['createNewriskRatingRAFSharepointLink']
         }) }}
       
         {{ govukButton({
@@ -60,7 +60,7 @@ New RAG rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
-      Current RAG rating and summary
+      Current risk rating and summary
     </h2>
 
     {{ govukSummaryList({

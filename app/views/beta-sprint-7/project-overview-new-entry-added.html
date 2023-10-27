@@ -268,14 +268,14 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: "RAG rating and summary"
+            text: "Risk rating and summary"
           },
           actions: {
             items: [
               {
                 href: "other-info-rag-rating-current-new-entry-added",
                 text: "Change",
-                visuallyHiddenText: "RAG (red, amber, green) rating and summary"
+                visuallyHiddenText: "risk (red, amber, green) rating and summary"
               }
             ]
           }
@@ -291,7 +291,7 @@
           },
           {
             key: {
-              text: "Overall RAG rating"
+              text: "Overall risk rating"
             },
             value: {
               html: data['create-new-rag-rating-overall'] | displayRAGRating
@@ -299,7 +299,7 @@
           },
           {
             key: {
-              text: "Overall RAG summary"
+              text: "Overall risk summary"
             },
             value: {
               html: data['create-new-rag-summary-overall']

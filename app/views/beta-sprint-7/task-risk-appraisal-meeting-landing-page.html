@@ -143,22 +143,22 @@
     <div class="govuk-grid-column-two-thirds">
   
       <h2 class="govuk-heading-m">
-        Review RAG rating
+        Review risk rating
       </h2>
       
-      <p class="govuk-body">You may want to update the RAG rating after the risk appraisal meeting.</p>
+      <p class="govuk-body">You may want to update the risk rating after the risk appraisal meeting.</p>
   
       {{ govukSummaryList({
         card: {
           title: {
-            text: "RAG rating and summary"
+            text: "Risk rating and summary"
           },
           actions: {
             items: [
               {
                 href: "other-info-rag-rating-current",
                 text: "Change",
-                visuallyHiddenText: "RAG rating and summary"
+                visuallyHiddenText: "Risk rating and summary"
               }
             ]
           }
@@ -174,7 +174,7 @@
           },
           {
             key: {
-              text: "Overall RAG rating"
+              text: "Overall risk rating"
             },
             value: {
               html: "Amber Green" | displayRAGRating
@@ -182,7 +182,7 @@
           },
           {
             key: {
-              text: "Overall RAG summary"
+              text: "Overall risk summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "

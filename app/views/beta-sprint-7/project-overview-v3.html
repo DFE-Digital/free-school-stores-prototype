@@ -71,7 +71,7 @@
                     <h3 class="govuk-heading-s section-heading govuk-!-margin-bottom-1">Other information</h3>
                     <ul class="govuk-list">
                         <li class="govuk-body">
-                            <a class="govuk-link" href="#rag-rating" data-ga4-index="{&quot;index_link&quot;: 6}">RAG rating and summary</a>
+                            <a class="govuk-link" href="#rag-rating" data-ga4-index="{&quot;index_link&quot;: 6}">risk rating and summary</a>
                         </li>
                         <li class="govuk-body">
                             <a class="govuk-link" href="#contacts" data-ga4-index="{&quot;index_link&quot;: 7}">Contacts</a>
@@ -311,14 +311,14 @@
         {{ govukSummaryList({
             card: {
                 title: {
-                    text: "RAG rating and summary"
+                    text: "Risk rating and summary"
                 },
                 actions: {
                     items: [
                         {
                             href: "other-info-rag-rating-current",
                             text: "Change",
-                            visuallyHiddenText: "RAG rating and summary"
+                            visuallyHiddenText: "Risk rating and summary"
                         }
                     ]
                 }
@@ -334,7 +334,7 @@
                 },
                 {
                 key: {
-                    text: "Overall RAG rating"
+                    text: "Overall risk rating"
                 },
                 value: {
                     html: "Amber Green" | displayRAGRating
@@ -342,7 +342,7 @@
                 },
                 {
                 key: {
-                    text: "Overall RAG summary"
+                    text: "Overall risk summary"
                 },
                 value: {
                     html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
