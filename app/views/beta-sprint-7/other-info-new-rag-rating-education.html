@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ serviceName }}
+New risk rating entry - Education - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new RAG rating entry</span>
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
         Education
       </h1>
 
@@ -40,7 +40,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
             name: "create-new-rag-rating-education",
             fieldset: {
               legend: {
-                html: 'What is the updated RAG rating for education?',
+                html: 'What is the updated risk rating for education?',
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
               }
@@ -74,7 +74,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
             name: "create-new-rag-summary-education",
             id: "create-new-rag-summary-education",
             label: {
-                text: "What is the updated RAG summary for education?",
+                text: "What is the updated risk summary for education?",
                 classes: "govuk-label--m",
                 isPageHeading: false
             },
@@ -94,13 +94,13 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
-      Current RAG rating and summary
+      Current risk rating and summary
     </h2>
 
     {{ govukSummaryList({
       card: {
         title: {
-          text: "RAG rating and summary"
+          text: "Risk rating and summary"
         }
       },
       rows: [
@@ -114,7 +114,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
         },
         {
           key: {
-            text: "Education RAG rating"
+            text: "Education risk rating"
           },
           value: {
             html: "Amber Green" | displayRAGRating
@@ -122,7 +122,7 @@ New RAG rating entry - Education - {{currentProject.projectTitle}} – {{ servic
         },
         {
           key: {
-            text: "Education RAG summary"
+            text: "Education risk summary"
           },
           value: {
             html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "

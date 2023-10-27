@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  8 February 2023 - past RAG ratings - {{currentProject.projectTitle}} – {{ serviceName }}
+  8 February 2023 - past risk ratings - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        8 February 2023 - past RAG ratings
+        8 February 2023 - past risk ratings
       </h1>
 
       {{ govukSummaryList({
@@ -26,7 +26,7 @@
         rows: [
           {
             key: {
-              text: "Overall RAG rating"
+              text: "Overall risk rating"
             },
             value: {
               html: "Amber Red" | displayRAGRating
@@ -35,7 +35,7 @@
           ,
           {
             key: {
-              text: "Overall RAG summary"
+              text: "Overall risk summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -44,7 +44,7 @@
           ,
           {
             key: {
-              text: "Governance and suitability RAG rating"
+              text: "Governance and suitability risk rating"
             },
             value: {
               html: "Amber Green" | displayRAGRating
@@ -53,7 +53,7 @@
           ,
           {
             key: {
-              text: "Governance and suitability RAG summary"
+              text: "Governance and suitability risk summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -62,7 +62,7 @@
           ,
           {
             key: {
-              text: "Education RAG rating"
+              text: "Education risk rating"
             },
             value: {
               html: "Amber Green" | displayRAGRating
@@ -71,7 +71,7 @@
           ,
           {
             key: {
-              text: "Education RAG summary"
+              text: "Education risk summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -80,7 +80,7 @@
           ,
           {
             key: {
-              text: "Finances RAG rating"
+              text: "Finances risk rating"
             },
             value: {
               html: "Amber Red" | displayRAGRating
@@ -89,7 +89,7 @@
           ,
           {
             key: {
-              text: "Finances RAG summary"
+              text: "Finances risk summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -111,7 +111,7 @@
       <form action="other-info-new-rag-rating-governance" method="post">
       
       {{ govukButton({
-        text: "Add a new RAG rating entry"
+        text: "Add a risk rating entry"
       }) }}
         
       </form>
@@ -122,7 +122,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     {{ govukTable({
-      caption: "RAG ratings history",
+      caption: "Risk ratings history",
       captionClasses: "govuk-table__caption--m",
       firstCellIsHeader: false,
       head: [
@@ -131,7 +131,7 @@
           classes: "app-custom-class"
         },
         {
-          text: "Overall RAG rating",
+          text: "Overall risk rating",
           classes: "app-custom-class"
         },
         {
