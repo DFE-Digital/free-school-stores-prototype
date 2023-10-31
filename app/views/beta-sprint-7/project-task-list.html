@@ -131,6 +131,16 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="">
+                  Kick-off meeting 
+                </a>
+              </span>
+              {{ currentProject.taskKickOffMeetingStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="">
                   Project development grant (PDG) 
                 </a>
               </span>
@@ -145,16 +155,6 @@
                 </a>
               </span>
               {{ currentProject.taskModelFundingAgreementStatus
-                | taskStatus([]) 
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                  Contingent liabilities
-                </a>
-              </span>
-              {{ currentProject.taskContigentLiabilitiesStatus
                 | taskStatus([]) 
                 | safe }}
             </li>
@@ -175,6 +175,16 @@
                 </a>
               </span>
               {{ currentProject.taskStatutoryConsultationStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Statutory consultation report
+                </a>
+              </span>
+              {{ currentProject.taskStatutoryConsultationReportStatus
                 | taskStatus([]) 
                 | safe }}
             </li>
