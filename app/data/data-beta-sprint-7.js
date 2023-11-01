@@ -78,7 +78,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -156,7 +156,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : ""
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -234,7 +234,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : ""
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -312,7 +312,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -390,7 +390,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -468,7 +468,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -546,7 +546,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -624,7 +624,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -702,7 +702,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -780,7 +780,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "Meeting happened as forecasted.",
       "preFundingAgreementSharepointLink": "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true",
       "taskPreFundingAgreementStatus": ["Complete"],
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true",
+      "RAFCurrentSharepointLink" : "#",
       "taskSchoolDetailsStatus": ["Complete"],
       "taskModelFundingAgreementStatus": ["Complete"],
       "taskContigentLiabilitiesStatus": ["Complete"],
@@ -818,8 +818,9 @@ module.exports = {
       "fundingAgreementActualDateMonth" : "03", 
       "fundingAgreementActualDateYear" : "2023", 
       "fundingAgreementCommentsOnDecisionToApprove" : "No comments", 
-      "fundingAgreementSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true",
+      "fundingAgreementSharepointLink" : "",
       "taskFundingAgreementStatus" : ["Complete"], 
+      "RAFCurrentSharepointLink" : "#",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
       "taskApplicationsEvidenceStatus" : ["In progress"]
@@ -900,7 +901,7 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "https://educationgovuk.sharepoint.com/:w:/r/sites/ServiceDeliveryDirectorate/_layouts/15/Doc.aspx?sourcedoc=%7B038A1964-EF3C-4935-AC12-9441C75938AA%7D&file=Risk_Appraisal_Form_V2.docx&action=default&mobileredirect=true"
+      "RAFCurrentSharepointLink" : "#"
     }
   ]
 }
