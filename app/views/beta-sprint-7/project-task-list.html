@@ -130,12 +130,16 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="">
+                <a href="task-kick-off-meeting-landing-page" aria-describedby="">
                   Kick-off meeting 
                 </a>
               </span>
               {{ currentProject.taskKickOffMeetingStatus
-                | taskStatus([]) 
+                | taskStatus([currentProject.kickOffMeetingFundingArrangementDetailsAgreed,
+                  currentProject | withDatePrefixed('kickOffMettingForecastDate'),
+                  currentProject | withDatePrefixed('kickOffMeetingActualDate'),
+                  currentProject.kickOffMeetingCommentsOnDecisionToApprove,
+                  currentProject.kickOffMeetingSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">

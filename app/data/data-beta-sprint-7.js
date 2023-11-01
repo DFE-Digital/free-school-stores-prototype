@@ -78,7 +78,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -156,7 +166,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -234,7 +254,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -312,7 +342,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -390,7 +430,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -468,7 +518,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -546,7 +606,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -624,7 +694,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -702,7 +782,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -821,6 +911,16 @@ module.exports = {
       "fundingAgreementSharepointLink" : "",
       "taskFundingAgreementStatus" : ["Complete"], 
       "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
       "taskApplicationsEvidenceStatus" : ["In progress"]
@@ -901,7 +1001,17 @@ module.exports = {
       "preFundingAgreementCommentsOnDecisionToApprove": "",
       "preFundingAgreementSharepointLink": "",
       "taskPreFundingAgreementStatus": "",
-      "RAFCurrentSharepointLink" : "#"
+      "RAFCurrentSharepointLink" : "#",
+      "kickOffMeetingFundingArrangementDetailsAgreed" : "",
+      "kickOffMeetingForecastDateDay": "",
+      "kickOffMeetingForecastDateMonth": "",
+      "kickOffMeetingForecastDateYear": "",
+      "kickOffMeetingActualDateDay": "",
+      "kickOffMeetingActualDateMonth": "",
+      "kickOffMeetingActualDateYear": "",
+      "kickOffMeetingCommentsOnDecisionToApprove": "",
+      "kickOffMeetingSharepointLink": "",
+      "taskKickOffMeetingStatus": ""
     }
   ]
 }

@@ -479,6 +479,30 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-kick-off-meeting-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.kickOffMeetingFundingArrangementDetailsAgreed = req.session.data['kickOffMeetingFundingArrangementDetailsAgreed'];
+        applyDateFields(masterProject, req, 'kickOffMeetingForecastDate');
+        applyDateFields(masterProject, req, 'kickOffMeetingActualDate');
+        masterProject.kickOffMeetingCommentsOnDecisionToApprove = req.session.data['kickOffMeetingCommentsOnDecisionToApprove'];
+        masterProject.kickOffMeetingSharepointLink = req.session.data['kickOffMeetingSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-kick-off-meeting-landing-page");
+    });
+
+    router.post('/' + version + '/task-kick-off-meeting-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskKickOffMeetingStatus = req.session.data['task-kick-off-meeting-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
