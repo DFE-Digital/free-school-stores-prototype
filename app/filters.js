@@ -116,5 +116,9 @@ addFilter("displaySharepointLink", (sharepointLink, linkText) =>
         return "<span class='empty'>Empty</span>";
     }
 
-    return '<a class="govuk-link" target="_blank" href="' + sharepointLink + '">' + linkText + '</a>';
+    if (sharepointLink == "#") {
+        return '<a class="govuk-link" href="#">' + linkText + '</a>';
+    } else {
+        return '<a class="govuk-link" target="_blank" href="' + sharepointLink + '">' + linkText + '</a>';
+    }
 });

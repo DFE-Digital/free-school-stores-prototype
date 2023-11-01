@@ -161,6 +161,9 @@ module.exports = function (router) {
             "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
+            "lastUpdatedDay" : "",
+            "lastUpdatedMonth" : "",
+            "lastUpdatedYear" : "",
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
@@ -189,13 +192,33 @@ module.exports = function (router) {
             "ageRange" : "",
             "sixthForm" : "",
             "taskSchoolDetailsStatus" : "",
-            "taskRiskAppraisalStatus" : "",
-            "riskAppraisalSharepointLink" : "",
-            "riskRatingEducation" : "",
-            "riskRatingGovernance" : "",
-            "riskRatingFinance" : "",
+            "riskAppraisalMeetingCompleted": "",
+            "riskAppraisalMeetingForecastDateDay": "",
+            "riskAppraisalMeetingForecastDateMonth": "",
+            "riskAppraisalMeetingForecastDateYear": "",
+            "riskAppraisalMeetingActualDateDay": "",
+            "riskAppraisalMeetingActualDateMonth": "",
+            "riskAppraisalMeetingActualDateYear": "",
+            "riskAppraisalMeetingCommentsOnDecisionToApprove": "",
+            "taskRiskAppraisalMeetingStatus": "",
             "taskDatesStatus": "",
-            "taskPDGStatus": ""
+            "taskPDGStatus": "",
+            "taskTrustStatus": "",
+            "taskRegionAndLocalAuthority": "",
+            "taskConstituencyStatus": "",
+            "initialGrantAllocation": "",
+            "gender": "",
+            "preFundingAgreementCheckpointMeetingCompleted": "",
+            "preFundingAgreementForecastDateDay": "",
+            "preFundingAgreementForecastDateMonth": "",
+            "preFundingAgreementForecastDateYear": "",
+            "preFundingAgreementActualDateDay": "",
+            "preFundingAgreementActualDateMonth": "",
+            "preFundingAgreementActualDateYear": "",
+            "preFundingAgreementCommentsOnDecisionToApprove": "",
+            "preFundingAgreementSharepointLink": "",
+            "taskPreFundingAgreementStatus": "",
+            "RAFCurrentSharepointLink" : ""
         }
         console.log(newProject1);
         req.session.data['project-list'].unshift(newProject1);
@@ -219,6 +242,9 @@ module.exports = function (router) {
             "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
+            "lastUpdatedDay" : "",
+            "lastUpdatedMonth" : "",
+            "lastUpdatedYear" : "",
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
@@ -247,13 +273,33 @@ module.exports = function (router) {
             "ageRange" : "",
             "sixthForm" : "",
             "taskSchoolDetailsStatus" : "",
-            "taskRiskAppraisalStatus" : "",
-            "riskAppraisalSharepointLink" : "",
-            "riskRatingEducation" : "",
-            "riskRatingGovernance" : "",
-            "riskRatingFinance" : "",
+            "riskAppraisalMeetingCompleted": "",
+            "riskAppraisalMeetingForecastDateDay": "",
+            "riskAppraisalMeetingForecastDateMonth": "",
+            "riskAppraisalMeetingForecastDateYear": "",
+            "riskAppraisalMeetingActualDateDay": "",
+            "riskAppraisalMeetingActualDateMonth": "",
+            "riskAppraisalMeetingActualDateYear": "",
+            "riskAppraisalMeetingCommentsOnDecisionToApprove": "",
+            "taskRiskAppraisalMeetingStatus": "",
             "taskDatesStatus": "",
-            "taskPDGStatus": ""
+            "taskPDGStatus": "",
+            "taskTrustStatus": "",
+            "taskRegionAndLocalAuthority": "",
+            "taskConstituencyStatus": "",
+            "initialGrantAllocation": "",
+            "gender": "",
+            "preFundingAgreementCheckpointMeetingCompleted": "",
+            "preFundingAgreementForecastDateDay": "",
+            "preFundingAgreementForecastDateMonth": "",
+            "preFundingAgreementForecastDateYear": "",
+            "preFundingAgreementActualDateDay": "",
+            "preFundingAgreementActualDateMonth": "",
+            "preFundingAgreementActualDateYear": "",
+            "preFundingAgreementCommentsOnDecisionToApprove": "",
+            "preFundingAgreementSharepointLink": "",
+            "taskPreFundingAgreementStatus": "",
+            "RAFCurrentSharepointLink" : ""
         }
         console.log(newProject2);
         req.session.data['project-list'].unshift(newProject2);
@@ -277,6 +323,9 @@ module.exports = function (router) {
             "faithType" : "None",
             "deliveryOfficer": "",
             "status": "Not started",
+            "lastUpdatedDay" : "",
+            "lastUpdatedMonth" : "",
+            "lastUpdatedYear" : "",
             "dateOfEntryIntoPreOpeningDay" : "",
             "dateOfEntryIntoPreOpeningMonth" : "",
             "dateOfEntryIntoPreOpeningYear" : "",
@@ -305,13 +354,33 @@ module.exports = function (router) {
             "ageRange" : "",
             "sixthForm" : "",
             "taskSchoolDetailsStatus" : "",
-            "taskRiskAppraisalStatus" : "",
-            "riskAppraisalSharepointLink" : "",
-            "riskRatingEducation" : "",
-            "riskRatingGovernance" : "",
-            "riskRatingFinance" : "",
+            "riskAppraisalMeetingCompleted": "",
+            "riskAppraisalMeetingForecastDateDay": "",
+            "riskAppraisalMeetingForecastDateMonth": "",
+            "riskAppraisalMeetingForecastDateYear": "",
+            "riskAppraisalMeetingActualDateDay": "",
+            "riskAppraisalMeetingActualDateMonth": "",
+            "riskAppraisalMeetingActualDateYear": "",
+            "riskAppraisalMeetingCommentsOnDecisionToApprove": "",
+            "taskRiskAppraisalMeetingStatus": "",
             "taskDatesStatus": "",
-            "taskPDGStatus": ""
+            "taskPDGStatus": "",
+            "taskTrustStatus": "",
+            "taskRegionAndLocalAuthority": "",
+            "taskConstituencyStatus": "",
+            "initialGrantAllocation": "",
+            "gender": "",
+            "preFundingAgreementCheckpointMeetingCompleted": "",
+            "preFundingAgreementForecastDateDay": "",
+            "preFundingAgreementForecastDateMonth": "",
+            "preFundingAgreementForecastDateYear": "",
+            "preFundingAgreementActualDateDay": "",
+            "preFundingAgreementActualDateMonth": "",
+            "preFundingAgreementActualDateYear": "",
+            "preFundingAgreementCommentsOnDecisionToApprove": "",
+            "preFundingAgreementSharepointLink": "",
+            "taskPreFundingAgreementStatus": "",
+            "RAFCurrentSharepointLink" : ""
         }
         console.log(newProject3);
         req.session.data['project-list'].unshift(newProject3);
@@ -404,6 +473,30 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.taskSchoolDetailsStatus = req.session.data['task-school-details-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
+    router.post('/' + version + '/task-kick-off-meeting-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.kickOffMeetingFundingArrangementDetailsAgreed = req.session.data['kickOffMeetingFundingArrangementDetailsAgreed'];
+        applyDateFields(masterProject, req, 'kickOffMeetingForecastDate');
+        applyDateFields(masterProject, req, 'kickOffMeetingActualDate');
+        masterProject.kickOffMeetingCommentsOnDecisionToApprove = req.session.data['kickOffMeetingCommentsOnDecisionToApprove'];
+        masterProject.kickOffMeetingSharepointLink = req.session.data['kickOffMeetingSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-kick-off-meeting-landing-page");
+    });
+
+    router.post('/' + version + '/task-kick-off-meeting-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskKickOffMeetingStatus = req.session.data['task-kick-off-meeting-status'];
 
         req.session.data.currentProject = masterProject;
 

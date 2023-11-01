@@ -130,6 +130,20 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
+                <a href="task-kick-off-meeting-landing-page" aria-describedby="">
+                  Kick-off meeting 
+                </a>
+              </span>
+              {{ currentProject.taskKickOffMeetingStatus
+                | taskStatus([currentProject.kickOffMeetingFundingArrangementDetailsAgreed,
+                  currentProject | withDatePrefixed('kickOffMettingForecastDate'),
+                  currentProject | withDatePrefixed('kickOffMeetingActualDate'),
+                  currentProject.kickOffMeetingCommentsOnDecisionToApprove,
+                  currentProject.kickOffMeetingSharepointLink]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="">
                   Project development grant (PDG) 
                 </a>
@@ -150,16 +164,6 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                  Contingent liabilities
-                </a>
-              </span>
-              {{ currentProject.taskContigentLiabilitiesStatus
-                | taskStatus([]) 
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="list-convictions-status">
                   Principal designate
                 </a>
@@ -175,6 +179,16 @@
                 </a>
               </span>
               {{ currentProject.taskStatutoryConsultationStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Statutory consultation report
+                </a>
+              </span>
+              {{ currentProject.taskStatutoryConsultationReportStatus
                 | taskStatus([]) 
                 | safe }}
             </li>
