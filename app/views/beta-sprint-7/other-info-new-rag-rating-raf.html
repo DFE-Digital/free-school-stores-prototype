@@ -40,7 +40,7 @@ New risk rating entry - RAF (risk appraisal form) - {{currentProject.projectTitl
           name: "createNewriskRatingRAFSharepointLink",
           classes: "govuk-!-margin-bottom-6",
           label: {
-              text: "RAF SharePoint link",
+              text: "SharePoint link",
               classes: "govuk-heading-m",
               isPageHeading: false
           },
@@ -63,13 +63,13 @@ New risk rating entry - RAF (risk appraisal form) - {{currentProject.projectTitl
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
-      Current risk rating and summary
+      Current RAF
     </h2>
 
     {{ govukSummaryList({
       card: {
         title: {
-          text: "Current RAF"
+          text: "RAF"
         }
       },
       rows: [
@@ -83,7 +83,7 @@ New risk rating entry - RAF (risk appraisal form) - {{currentProject.projectTitl
         },
         {
           key: {
-            text: "RAF SharePoint link"
+            text: "SharePoint link"
           },
           value: {
             html: currentProject.RAFCurrentSharepointLink | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
