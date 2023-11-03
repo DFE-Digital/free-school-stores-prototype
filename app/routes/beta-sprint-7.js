@@ -527,6 +527,30 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-principal-designate-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.principalDesignateAppointed = req.session.data['principalDesignateAppointed'];
+        applyDateFields(masterProject, req, 'principalDesignateForecastDate');
+        applyDateFields(masterProject, req, 'principalDesignateActualDate');
+        masterProject.principalDesignateCommentsOnDecisionToApprove = req.session.data['principalDesignateCommentsOnDecisionToApprove'];
+        masterProject.principalDesignateSharepointLink = req.session.data['principalDesignateSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-principal-designate-landing-page");
+    });
+
+    router.post('/' + version + '/task-principal-designate-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskPrincipalDesignateStatus = req.session.data['task-principal-designate-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 

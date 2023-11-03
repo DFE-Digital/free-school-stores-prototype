@@ -168,12 +168,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="list-convictions-status">
+                <a href="task-principal-designate-landing-page" aria-describedby="list-convictions-status">
                   Principal designate
                 </a>
               </span>
               {{ currentProject.taskPrincipalDesignateStatus
-                | taskStatus([]) 
+                | taskStatus([currentProject.principalDesignateAppointed,
+                currentProject | withDatePrefixed('principalDesignateForecastDate'),
+                currentProject | withDatePrefixed('principalDesignateActualDate'),
+                currentProject.principalDesignateCommentsOnDecisionToApprove,
+                currentProject.principalDesignateSharepointLink])
                 | safe }}
             </li>
             <li class="app-task-list__item">

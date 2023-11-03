@@ -1,0 +1,152 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Principal designate - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Principal designate
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-principal-designate-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "principalDesignateAppointed",
+                fieldset: {
+                  legend: {
+                    text: "High-quality principal designate appointed",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.principalDesignateAppointed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.principalDesignateAppointed", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "principalDesignateForecastDate",
+                namePrefix: "principalDesignateForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.principalDesignateForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.principalDesignateForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.principalDesignateForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "principalDesignateActualDate",
+                namePrefix: "principalDesignateActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.principalDesignateActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.principalDesignateActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.principalDesignateActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "principalDesignateCommentsOnDecisionToApprove",
+                name: "principalDesignateCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.principalDesignateCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "principalDesignateSharepointLink",
+                name: "principalDesignateSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.principalDesignateSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
