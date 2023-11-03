@@ -503,6 +503,30 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-model-funding-agreement-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.modelFundingAgreementTrustAgrees = req.session.data['modelFundingAgreementTrustAgrees'];
+        applyDateFields(masterProject, req, 'modelFundingAgreementForecastDate');
+        applyDateFields(masterProject, req, 'modelFundingAgreementActualDate');
+        masterProject.modelFundingAgreementCommentsOnDecisionToApprove = req.session.data['modelFundingAgreementCommentsOnDecisionToApprove'];
+        masterProject.modelFundingAgreementSharepointLink = req.session.data['modelFundingAgreementSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-model-funding-agreement-landing-page");
+    });
+
+    router.post('/' + version + '/task-model-funding-agreement-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskModelFundingAgreementStatus = req.session.data['task-model-funding-agreement-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 

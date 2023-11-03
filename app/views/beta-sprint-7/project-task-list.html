@@ -136,7 +136,7 @@
               </span>
               {{ currentProject.taskKickOffMeetingStatus
                 | taskStatus([currentProject.kickOffMeetingFundingArrangementDetailsAgreed,
-                  currentProject | withDatePrefixed('kickOffMettingForecastDate'),
+                  currentProject | withDatePrefixed('kickOffMeetingForecastDate'),
                   currentProject | withDatePrefixed('kickOffMeetingActualDate'),
                   currentProject.kickOffMeetingCommentsOnDecisionToApprove,
                   currentProject.kickOffMeetingSharepointLink]) 
@@ -154,13 +154,17 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-model-funding-agreement-landing-page" aria-describedby="company-information-status">
                   Model funding agreement
                 </a>
               </span>
               {{ currentProject.taskModelFundingAgreementStatus
-                | taskStatus([]) 
-                | safe }}
+                | taskStatus([currentProject.modelFundingAgreementTrustAgrees,
+                currentProject | withDatePrefixed('modelFundingAgreementForecastDate'),
+                currentProject | withDatePrefixed('modelFundingAgreementActualDate'),
+                currentProject.modelFundingAgreementCommentsOnDecisionToApprove,
+                currentProject.modelFundingAgreementSharepointLink]) 
+              | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">

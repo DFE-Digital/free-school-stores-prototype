@@ -88,7 +88,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -176,7 +186,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -264,7 +284,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -352,7 +382,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -440,7 +480,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -528,7 +578,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -616,7 +676,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -704,7 +774,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -792,7 +872,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -920,6 +1010,16 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": "",
       "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
@@ -1011,7 +1111,17 @@ module.exports = {
       "kickOffMeetingActualDateYear": "",
       "kickOffMeetingCommentsOnDecisionToApprove": "",
       "kickOffMeetingSharepointLink": "",
-      "taskKickOffMeetingStatus": ""
+      "taskKickOffMeetingStatus": "",
+      "modelFundingAgreementTrustAgrees": "",
+      "modelFundingAgreementForecastDateDay": "",
+      "modelFundingAgreementForecastDateMonth": "",
+      "modelFundingAgreementForecastDateYear": "",
+      "modelFundingAgreementActualDateDay": "",
+      "modelFundingAgreementActualDateMonth": "",
+      "modelFundingAgreementActualDateYear": "",
+      "modelFundingAgreementCommentsOnDecisionToApprove": "",
+      "modelFundingAgreementSharepointLink": "",
+      "taskModelFundingAgreementStatus": ""
     }
   ]
 }
