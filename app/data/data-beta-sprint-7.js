@@ -135,7 +135,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -270,7 +279,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -405,7 +423,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -540,7 +567,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -675,7 +711,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -810,7 +855,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -945,7 +999,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -1080,7 +1143,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -1215,7 +1287,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -1389,6 +1470,15 @@ module.exports = {
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
       "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": "",
       "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
@@ -1527,7 +1617,16 @@ module.exports = {
       "modelArticlesOfAssociationActualDateYear": "",
       "modelArticlesOfAssociationCommentsOnDecisionToApprove": "",
       "modelArticlesOfAssociationSharepointLink": "",
-      "taskModelArticlesOfAssociationStatus": ""
+      "taskModelArticlesOfAssociationStatus": "",
+      "sectionNineLetterForecastDateDay": "",
+      "sectionNineLetterForecastDateMonth": "",
+      "sectionNineLetterForecastDateYear": "",
+      "sectionNineLetterActualDateDay": "",
+      "sectionNineLetterActualDateMonth": "",
+      "sectionNineLetterActualDateYear": "",
+      "sectionNineLetterCommentsOnDecisionToApprove": "",
+      "sectionNineLetterSharepointLink": "",
+      "taskSectionNineLetterStatus": ""
     }
   ]
 }

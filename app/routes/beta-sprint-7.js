@@ -621,6 +621,29 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-section-nine-letter-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        applyDateFields(masterProject, req, 'sectionNineLetterForecastDate');
+        applyDateFields(masterProject, req, 'sectionNineLetterActualDate');
+        masterProject.sectionNineLetterCommentsOnDecisionToApprove = req.session.data['sectionNineLetterCommentsOnDecisionToApprove'];
+        masterProject.sectionNineLetterSharepointLink = req.session.data['sectionNineLetterSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-section-nine-letter-landing-page");
+    });
+
+    router.post('/' + version + '/task-section-nine-letter-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskSectionNineLetterStatus = req.session.data['task-section-nine-letter-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
