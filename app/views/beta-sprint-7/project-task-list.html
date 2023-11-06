@@ -182,12 +182,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-statutory-consultation-landing-page" aria-describedby="company-information-status">
                   Statutory consultation
                 </a>
               </span>
               {{ currentProject.taskStatutoryConsultationStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('statutoryConsultationForecastDate'),
+                currentProject | withDatePrefixed('statutoryConsultationActualDate'),
+                currentProject.statutoryConsultationCommentsOnDecisionToApprove,
+                currentProject.statutoryConsultationSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">

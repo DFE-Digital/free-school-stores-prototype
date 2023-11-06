@@ -551,6 +551,29 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-statutory-consultation-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        applyDateFields(masterProject, req, 'statutoryConsultationForecastDate');
+        applyDateFields(masterProject, req, 'statutoryConsultationActualDate');
+        masterProject.statutoryConsultationCommentsOnDecisionToApprove = req.session.data['statutoryConsultationCommentsOnDecisionToApprove'];
+        masterProject.statutoryConsultationSharepointLink = req.session.data['statutoryConsultationSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-statutory-consultation-landing-page");
+    });
+
+    router.post('/' + version + '/task-statutory-consultation-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskStatutoryConsultationStatus = req.session.data['task-statutory-consultation-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
