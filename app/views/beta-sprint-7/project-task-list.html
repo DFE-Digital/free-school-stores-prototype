@@ -248,12 +248,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-draft-governance-plans-landing-page" aria-describedby="company-information-status">
                   Draft governance plans
                 </a>
               </span>
               {{ currentProject.taskDraftGovernancePlansStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('draftGovernancePlansForecastDate'),
+                currentProject | withDatePrefixed('draftGovernancePlansActualDate'),
+                currentProject.draftGovernancePlansCommentsOnDecisionToApprove,
+                currentProject.draftGovernancePlansSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">

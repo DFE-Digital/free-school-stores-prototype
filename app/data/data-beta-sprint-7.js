@@ -144,7 +144,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -288,7 +297,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -432,7 +450,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -576,7 +603,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -720,7 +756,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -864,7 +909,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -1008,7 +1062,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -1152,7 +1215,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -1296,7 +1368,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -1479,6 +1560,15 @@ module.exports = {
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
       "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": "",
       "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
@@ -1626,7 +1716,16 @@ module.exports = {
       "sectionNineLetterActualDateYear": "",
       "sectionNineLetterCommentsOnDecisionToApprove": "",
       "sectionNineLetterSharepointLink": "",
-      "taskSectionNineLetterStatus": ""
+      "taskSectionNineLetterStatus": "",
+      "draftGovernancePlansForecastDateDay": "",
+      "draftGovernancePlansForecastDateMonth": "",
+      "draftGovernancePlansForecastDateYear": "",
+      "draftGovernancePlansActualDateDay": "",
+      "draftGovernancePlansActualDateMonth": "",
+      "draftGovernancePlansActualDateYear": "",
+      "draftGovernancePlansCommentsOnDecisionToApprove": "",
+      "draftGovernancePlansSharepointLink": "",
+      "taskDraftGovernancePlansStatus": ""
     }
   ]
 }
