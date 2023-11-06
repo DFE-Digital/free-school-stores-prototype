@@ -117,7 +117,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -234,7 +243,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -351,7 +369,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -468,7 +495,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -585,7 +621,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -702,7 +747,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -819,7 +873,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -936,7 +999,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -1053,7 +1125,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -1209,6 +1290,15 @@ module.exports = {
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
       "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": "",
       "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
@@ -1329,7 +1419,16 @@ module.exports = {
       "statutoryConsultationActualDateYear": "",
       "statutoryConsultationCommentsOnDecisionToApprove": "",
       "statutoryConsultationSharepointLink": "",
-      "taskStatutoryConsultationStatus": ""
+      "taskStatutoryConsultationStatus": "",
+      "statutoryConsultationReportForecastDateDay": "",
+      "statutoryConsultationReportForecastDateMonth": "",
+      "statutoryConsultationReportForecastDateYear": "",
+      "statutoryConsultationReportActualDateDay": "",
+      "statutoryConsultationReportActualDateMonth": "",
+      "statutoryConsultationReportActualDateYear": "",
+      "statutoryConsultationReportCommentsOnDecisionToApprove": "",
+      "statutoryConsultationReportSharepointLink": "",
+      "taskStatutoryConsultationReportStatus": ""
     }
   ]
 }
