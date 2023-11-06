@@ -136,7 +136,7 @@
               </span>
               {{ currentProject.taskKickOffMeetingStatus
                 | taskStatus([currentProject.kickOffMeetingFundingArrangementDetailsAgreed,
-                  currentProject | withDatePrefixed('kickOffMettingForecastDate'),
+                  currentProject | withDatePrefixed('kickOffMeetingForecastDate'),
                   currentProject | withDatePrefixed('kickOffMeetingActualDate'),
                   currentProject.kickOffMeetingCommentsOnDecisionToApprove,
                   currentProject.kickOffMeetingSharepointLink]) 
@@ -154,42 +154,58 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-model-funding-agreement-landing-page" aria-describedby="company-information-status">
                   Model funding agreement
                 </a>
               </span>
               {{ currentProject.taskModelFundingAgreementStatus
-                | taskStatus([]) 
-                | safe }}
+                | taskStatus([currentProject.modelFundingAgreementTrustAgrees,
+                currentProject | withDatePrefixed('modelFundingAgreementForecastDate'),
+                currentProject | withDatePrefixed('modelFundingAgreementActualDate'),
+                currentProject.modelFundingAgreementCommentsOnDecisionToApprove,
+                currentProject.modelFundingAgreementSharepointLink]) 
+              | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="list-convictions-status">
+                <a href="task-principal-designate-landing-page" aria-describedby="list-convictions-status">
                   Principal designate
                 </a>
               </span>
               {{ currentProject.taskPrincipalDesignateStatus
-                | taskStatus([]) 
+                | taskStatus([currentProject.principalDesignateAppointed,
+                currentProject | withDatePrefixed('principalDesignateForecastDate'),
+                currentProject | withDatePrefixed('principalDesignateActualDate'),
+                currentProject.principalDesignateCommentsOnDecisionToApprove,
+                currentProject.principalDesignateSharepointLink])
                 | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-statutory-consultation-landing-page" aria-describedby="company-information-status">
                   Statutory consultation
                 </a>
               </span>
               {{ currentProject.taskStatutoryConsultationStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('statutoryConsultationForecastDate'),
+                currentProject | withDatePrefixed('statutoryConsultationActualDate'),
+                currentProject.statutoryConsultationCommentsOnDecisionToApprove,
+                currentProject.statutoryConsultationSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-statutory-consultation-report-landing-page" aria-describedby="company-information-status">
                   Statutory consultation report
                 </a>
               </span>
               {{ currentProject.taskStatutoryConsultationReportStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('statutoryConsultationReportForecastDate'),
+                currentProject | withDatePrefixed('statutoryConsultationReportActualDate'),
+                currentProject.statutoryConsultationReportCommentsOnDecisionToApprove,
+                currentProject.statutoryConsultationReportSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
@@ -204,42 +220,58 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-model-articles-of-association-landing-page" aria-describedby="company-information-status">
                   Model articles of association
                 </a>
               </span>
               {{ currentProject.taskModelArticlesOfAssociationStatus
-                | taskStatus([]) 
-                | safe }}
+                  | taskStatus([currentProject.modelArticlesOfAssociationTrustAgrees,
+                  currentProject | withDatePrefixed('modelArticlesOfAssociationForecastDate'),
+                  currentProject | withDatePrefixed('modelArticlesOfAssociationActualDate'),
+                  currentProject.modelArticlesOfAssociationCommentsOnDecisionToApprove,
+                  currentProject.modelArticlesOfAssociationSharepointLink])
+                  | safe }}
             </li>           
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-section-nine-letter-landing-page" aria-describedby="company-information-status">
                   Section 9 letter
                 </a>
               </span>
               {{ currentProject.taskSectionNineLetterStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('sectionNineLetterForecastDate'),
+                currentProject | withDatePrefixed('sectionNineLetterActualDate'),
+                currentProject.sectionNineLetterCommentsOnDecisionToApprove,
+                currentProject.sectionNineLetterSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-draft-governance-plans-landing-page" aria-describedby="company-information-status">
                   Draft governance plans
                 </a>
               </span>
               {{ currentProject.taskDraftGovernancePlansStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('draftGovernancePlansForecastDate'),
+                currentProject | withDatePrefixed('draftGovernancePlansActualDate'),
+                currentProject.draftGovernancePlansCommentsOnDecisionToApprove,
+                currentProject.draftGovernancePlansSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-school-admissions-policy-landing-page" aria-describedby="company-information-status">
                   School admissions policy
                 </a>
               </span>
               {{ currentProject.taskSchoolAdmissionsPolicyStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('schoolAdmissionsPolicyForecastDate'),
+                currentProject | withDatePrefixed('schoolAdmissionsPolicyActualDate'),
+                currentProject.schoolAdmissionsPolicyCommentsOnDecisionToApprove,
+                currentProject.schoolAdmissionsPolicySharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
@@ -254,12 +286,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-dbs-checks-landing-page" aria-describedby="company-information-status">
                   DBS checks
                 </a>
               </span>
               {{ currentProject.taskDbsChecksStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('dbsChecksForecastDate'),
+                currentProject | withDatePrefixed('dbsChecksActualDate'),
+                currentProject.dbsChecksCommentsOnDecisionToApprove,
+                currentProject.dbsChecksSharepointLink]) 
                 | safe }}
             </li>
           </ul>
