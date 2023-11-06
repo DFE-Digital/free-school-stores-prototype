@@ -690,6 +690,29 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-dbs-checks-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        applyDateFields(masterProject, req, 'dbsChecksForecastDate');
+        applyDateFields(masterProject, req, 'dbsChecksActualDate');
+        masterProject.dbsChecksCommentsOnDecisionToApprove = req.session.data['dbsChecksCommentsOnDecisionToApprove'];
+        masterProject.dbsChecksSharepointLink = req.session.data['dbsChecksSharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-dbs-checks-landing-page");
+    });
+
+    router.post('/' + version + '/task-dbs-checks-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskDbsChecksStatus = req.session.data['task-dbs-checks-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 

@@ -286,12 +286,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-dbs-checks-landing-page" aria-describedby="company-information-status">
                   DBS checks
                 </a>
               </span>
               {{ currentProject.taskDbsChecksStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('dbsChecksForecastDate'),
+                currentProject | withDatePrefixed('dbsChecksActualDate'),
+                currentProject.dbsChecksCommentsOnDecisionToApprove,
+                currentProject.dbsChecksSharepointLink]) 
                 | safe }}
             </li>
           </ul>
