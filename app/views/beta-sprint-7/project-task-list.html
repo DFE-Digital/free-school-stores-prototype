@@ -262,12 +262,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="task-school-admissions-policy-landing-page" aria-describedby="company-information-status">
                   School admissions policy
                 </a>
               </span>
               {{ currentProject.taskSchoolAdmissionsPolicyStatus
-                | taskStatus([]) 
+                | taskStatus([
+                currentProject | withDatePrefixed('schoolAdmissionsPolicyForecastDate'),
+                currentProject | withDatePrefixed('schoolAdmissionsPolicyActualDate'),
+                currentProject.schoolAdmissionsPolicyCommentsOnDecisionToApprove,
+                currentProject.schoolAdmissionsPolicySharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">

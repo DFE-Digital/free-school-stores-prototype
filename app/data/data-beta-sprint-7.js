@@ -153,7 +153,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -306,7 +315,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -459,7 +477,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -612,7 +639,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -765,7 +801,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -918,7 +963,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -1071,7 +1125,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -1224,7 +1287,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -1377,7 +1449,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -1569,6 +1650,15 @@ module.exports = {
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
       "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": "",
       "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
@@ -1725,7 +1815,16 @@ module.exports = {
       "draftGovernancePlansActualDateYear": "",
       "draftGovernancePlansCommentsOnDecisionToApprove": "",
       "draftGovernancePlansSharepointLink": "",
-      "taskDraftGovernancePlansStatus": ""
+      "taskDraftGovernancePlansStatus": "",
+      "schoolAdmissionsPolicyForecastDateDay": "",
+      "schoolAdmissionsPolicyForecastDateMonth": "",
+      "schoolAdmissionsPolicyForecastDateYear": "",
+      "schoolAdmissionsPolicyActualDateDay": "",
+      "schoolAdmissionsPolicyActualDateMonth": "",
+      "schoolAdmissionsPolicyActualDateYear": "",
+      "schoolAdmissionsPolicyCommentsOnDecisionToApprove": "",
+      "schoolAdmissionsPolicySharepointLink": "",
+      "taskSchoolAdmissionsPolicyStatus": ""
     }
   ]
 }

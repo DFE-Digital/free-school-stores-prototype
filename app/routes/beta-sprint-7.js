@@ -667,6 +667,29 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/task-school-admissions-policy-landing-page', function(req, res) {
+        var masterProject = getProject(req);
+
+        applyDateFields(masterProject, req, 'schoolAdmissionsPolicyForecastDate');
+        applyDateFields(masterProject, req, 'schoolAdmissionsPolicyActualDate');
+        masterProject.schoolAdmissionsPolicyCommentsOnDecisionToApprove = req.session.data['schoolAdmissionsPolicyCommentsOnDecisionToApprove'];
+        masterProject.schoolAdmissionsPolicySharepointLink = req.session.data['schoolAdmissionsPolicySharepointLink'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("task-school-admissions-policy-landing-page");
+    });
+
+    router.post('/' + version + '/task-school-admissions-policy-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskSchoolAdmissionsPolicyStatus = req.session.data['task-school-admissions-policy-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/task-pre-funding-agreement-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
