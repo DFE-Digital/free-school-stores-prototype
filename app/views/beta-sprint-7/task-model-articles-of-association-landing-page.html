@@ -1,0 +1,144 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Model articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Model articles of association
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Trust agrees with the department's model articles of association"
+            },
+            value: {
+              html: currentProject.modelArticlesOfAssociationTrustAgrees | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust agrees with the department's model articles of association"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('modelArticlesOfAssociationForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('modelArticlesOfAssociationActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.modelArticlesOfAssociationCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.modelArticlesOfAssociationSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-model-articles-of-association-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-model-articles-of-association-status",
+        name: "task-model-articles-of-association-status",
+        values: currentProject.taskModelArticlesOfAssociationStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
