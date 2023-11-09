@@ -66,6 +66,42 @@ module.exports = function (router) {
 
     })
     
+    router.post('/' + version + '/validate-constituency-result', function (req, res) { 
+        var Task = req.session.data['confirm-constitency-result']
+
+        // Check whether the variable matches a condition
+        
+        var masterProject = getProject(req);
+        
+        switch(req.session.data['confirm-constituency-result']) {
+            case "South Northamptonshire":
+                masterProject.constituency = req.session.data['confirm-constituency-result'];
+                masterProject.constituencyMP = "Rt Hon Andrea Leadsom MP";
+                masterProject.constituencyParty = "Conservative";
+                req.session.data.currentProject = masterProject;    
+                res.redirect('task-constituency-landing-page')
+                break;
+            case "South Leicestershire":
+                masterProject.constituency = req.session.data['confirm-constituency-result'];
+                masterProject.constituencyMP = "Alberto Costa";
+                masterProject.constituencyParty = "Conservative";
+                req.session.data.currentProject = masterProject;    
+                res.redirect('task-constituency-landing-page')
+                break;
+            case "South Derbyshire":
+                masterProject.constituency = req.session.data['confirm-constituency-result'];
+                masterProject.constituencyMP = "Heather Wheeler MP";
+                masterProject.constituencyParty = "Conservative";
+                req.session.data.currentProject = masterProject;    
+                res.redirect('task-constituency-landing-page')
+                break;
+            case "None of the above":
+                res.redirect('task-constituency-edit')
+                break;
+        }
+
+    })
+
     router.get('/' + version + '/p-o', function (req, res) {
         var project = req.session.data['project-list'].find(x => x.projectID == req.query.id)
         req.session.data.currentProject = project;
