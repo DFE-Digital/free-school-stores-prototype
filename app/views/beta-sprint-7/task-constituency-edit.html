@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Edit constituency - {{currentProject.projectTitle}} – {{ serviceName }}
+Search for a constituency - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,54 +13,36 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Edit Constituency
-      </h1>
-      
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" action="task-constituency-landing-page">
-            <div class="govuk-form-group">
+    <form method="post" action="task-constituency-edit-confirm">
+      <div class="govuk-form-group">
 
-              {{ govukInput({
-                id: "constituency",
-                name: "constituency",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Name",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.constituency
-              }) }}
+        {{ govukInput({
+          id: "constituency",
+          name: "constituency",
+          classes: "govuk-!-margin-bottom-6",
+          label: {
+            html: '<span class="govuk-caption-l">' + currentProject.projectTitle + '</span>Search for a constituency',
+            classes: "govuk-label--xl govuk-!-margin-bottom-9",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter a name or postcode"
+          },
+          value: constituency
+        }) }}              
 
-              {{ govukInput({
-                id: "constituencyMp",
-                name: "constituencyMp",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "MP",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.constituencyMp
-              }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
-              <br><br>
-              {{ govukButton({
-                text: "Save and continue"
-              }) }}
-
-            </div>
-          </form>
-
-        </div>
       </div>
+    </form>
 
-
-    </div>
   </div>
+</div>
+
 {% endblock %}

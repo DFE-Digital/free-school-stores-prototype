@@ -47,16 +47,16 @@
               text: "MP"
             },
             value: {
-              html: currentProject.constituencyMp | displayText
+              html: currentProject.constituencyMP | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Political party"
             },
-            actions: {
-              items: [
-                {
-                  href: "task-constituency-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Constituency MP"
-                }
-              ]
+            value: {
+              html: currentProject.constituencyParty | displayText
             }
           }
         ]
