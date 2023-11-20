@@ -1,0 +1,153 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers - Create new free school projects – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">Creating a new free school project</span>
+        Check your answers
+      </h1>
+      
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Current free school name"
+            },
+            value: {
+              text: data["create-new-project-school-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-new-project-school-name",
+                  text: "Change",
+                  visuallyHiddenText: "School name"
+                }
+              ]
+            }
+          }          
+          ,
+          {
+            key: {
+              text: "Region"
+            },
+            value: {
+              text: data["create-new-project-region"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-new-project-regions",
+                  text: "Change",
+                  visuallyHiddenText: "Geographical region"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              text: data["create-new-project-local-authority"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-new-project-local-authority",
+                  text: "Change",
+                  visuallyHiddenText: "Local authority"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Provisional opening date agreed with trust"
+            },
+            value: {
+              text: data["create-new-project-provisional-opening-date"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Provisional opening date agreed with trust"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Number of forms of entry"
+            },
+            value: {
+              text: data["create-new-project-number-of-forms-of-entry"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Number of forms of entry"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School type"
+            },
+            value: {
+              text: data["create-new-project-school-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "School type"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Now create your project
+      </h2>
+
+      <p>
+        By selecting the Create project button, you are confirming that you have approval to create projects.
+      </p>
+
+      <form action="add-project" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Create project"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

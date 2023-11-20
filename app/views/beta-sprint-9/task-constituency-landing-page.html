@@ -1,0 +1,88 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Constituency - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Constituency
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              html: currentProject.constituency | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-constituency-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Constituency"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "MP"
+            },
+            value: {
+              html: currentProject.constituencyMP | displayText
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Political party"
+            },
+            value: {
+              html: currentProject.constituencyParty | displayText
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-constituency-status",
+        name: "task-constituency-status",
+        values: currentProject.taskConstituencyStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

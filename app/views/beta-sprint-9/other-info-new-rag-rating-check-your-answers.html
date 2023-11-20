@@ -1,0 +1,209 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+New risk rating entry - Check your answers - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
+        Check your answers
+      </h1>
+
+
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Governance and suitability risk rating"
+          },
+          value: {
+            html: data["create-new-rag-rating-governance"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-governance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Governance and suitability risk rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Governance and suitability risk summary"
+          },
+          value: {
+            text: data["create-new-rag-summary-governance"]
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-governance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Governance and suitability risk summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Education risk rating"
+          },
+          value: {
+            html: data["create-new-rag-rating-education"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-education?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Education risk rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Education risk summary"
+          },
+          value: {
+            text: data["create-new-rag-summary-education"]
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-education?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Education risk summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Finance risk rating"
+          },
+          value: {
+            html: data["create-new-rag-rating-finance"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-finance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Finance risk rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Finance risk summary"
+          },
+          value: {
+            text: data["create-new-rag-summary-finance"]
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-finance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Finance risk summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "RAF SharePoint link"
+          },
+          value: {
+            html: data["createNewriskRatingRAFSharepointLink"] | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-raf?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "RAF SharePoint link"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Overall risk rating"
+          },
+          value: {
+            html: data["create-new-rag-rating-overall"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-overall?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Overall risk rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Overall risk summary"
+          },
+          value: {
+            text: data["create-new-rag-summary-overall"]
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-overall?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Overall risk summary"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form action="other-info-new-rag-rating-confirmation" method="post" novalidate>
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+    </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
