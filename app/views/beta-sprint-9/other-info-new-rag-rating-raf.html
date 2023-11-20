@@ -1,0 +1,97 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+New risk rating entry - RAF (risk appraisal form) - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
+        RAF (risk appraisal form)
+      </h1>
+
+
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="other-info-new-rag-rating-check-your-answers" method="post">
+      {% else %}
+        <form class="form" action="other-info-new-rag-rating-overall" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+        {{ govukInput({
+          id: "createNewriskRatingRAFSharepointLink",
+          name: "createNewriskRatingRAFSharepointLink",
+          classes: "govuk-!-margin-bottom-6",
+          label: {
+              text: "SharePoint link",
+              classes: "govuk-heading-m",
+              isPageHeading: false
+          },
+          hint: {
+            text: "If you have not filled in a RAF, you do not need to enter a link."
+          },
+          value: data['createNewriskRatingRAFSharepointLink']
+        }) }}
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Current RAF
+    </h2>
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          text: "RAF"
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "21 March 2023"
+          }
+        },
+        {
+          key: {
+            text: "SharePoint link"
+          },
+          value: {
+            html: currentProject.RAFCurrentSharepointLink | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
+          }
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+{% endblock %}

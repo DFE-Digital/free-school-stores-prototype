@@ -1,0 +1,126 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+School admissions policy - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        School admissions policy
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('schoolAdmissionsPolicyForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-admissions-policy-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('schoolAdmissionsPolicyActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-admissions-policy-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.schoolAdmissionsPolicyCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-admissions-policy-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.schoolAdmissionsPolicySharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-admissions-policy-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-school-admissions-policy-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-school-admissions-policy-status",
+        name: "task-school-admissions-policy-status",
+        values: currentProject.taskSchoolAdmissionsPolicyStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

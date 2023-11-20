@@ -1,0 +1,86 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Trust - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Trust
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "TRN (trust reference number)"
+            },
+            value: {
+              html: currentProject.trustID | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-trust-edit",
+                  text: "Change",
+                  visuallyHiddenText: "TRN (trust reference number)"
+                }
+              ]
+            }
+          },        
+          {
+            key: {
+              text: "Trust name"
+            },
+            value: {
+              html: currentProject.trustName | displayText
+            }
+          },
+          {
+            key: {
+              text: "Trust type"
+            },
+            value: {
+              html: currentProject.trustType | displayText
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-trust-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-trust-status",
+        name: "task-trust-status",
+        values: currentProject.taskTrustStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

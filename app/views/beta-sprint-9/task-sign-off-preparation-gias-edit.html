@@ -1,0 +1,174 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit GIAS - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit GIAS
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-sign-off-preparation-gias-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "giasApplicationFormCompletedByTrustCorrect",
+                fieldset: {
+                  legend: {
+                    text: "Information on GIAS application form completed by the trust is correct",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.giasApplicationFormCompletedByTrustCorrect", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.giasApplicationFormCompletedByTrustCorrect", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "giasApplicationFormSentToAopu",
+                fieldset: {
+                  legend: {
+                    text: "Application form sent to AOPU (Academies Operational Practice Unit)",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.giasApplicationFormSentToAopu", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.giasApplicationFormSentToAopu", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "signOffPreparationGiasForecastDate",
+                namePrefix: "signOffPreparationGiasForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.signOffPreparationGiasForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.signOffPreparationGiasForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.signOffPreparationGiasForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "signOffPreparationGiasActualDate",
+                namePrefix: "signOffPreparationGiasActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.signOffPreparationGiasActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.signOffPreparationGiasActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.signOffPreparationGiasActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "signOffPreparationGiasCommentsOnDecisionToApprove",
+                name: "signOffPreparationGiasCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.signOffPreparationGiasCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "signOffPreparationGiasSharepointLink",
+                name: "signOffPreparationGiasSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.signOffPreparationGiasSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

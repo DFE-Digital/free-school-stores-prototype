@@ -1,0 +1,163 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Pre-funding agreement checkpoint meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Pre-funding agreement checkpoint meeting
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-pre-funding-agreement-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "preFundingAgreementCheckpointMeetingCompleted",
+                fieldset: {
+                  legend: {
+                    text: "Pre-funding agreement checkpoint meeting completed",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.preFundingAgreementCheckpointMeetingCompleted", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.preFundingAgreementCheckpointMeetingCompleted", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "preFundingAgreementForecastDate",
+                namePrefix: "preFundingAgreementForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.preFundingAgreementForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.preFundingAgreementForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.preFundingAgreementForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "preFundingAgreementActualDate",
+                namePrefix: "preFundingAgreementActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.preFundingAgreementActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.preFundingAgreementActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.preFundingAgreementActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "preFundingAgreementCommentsOnDecisionToApprove",
+                name: "preFundingAgreementCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.preFundingAgreementCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "preFundingAgreementReasonNotApplicable",
+                name: "preFundingAgreementReasonNotApplicable",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Reason not applicable",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.preFundingAgreementReasonNotApplicable
+              }) }}
+
+              {{ govukInput({
+                id: "preFundingAgreementSharepointLink",
+                name: "preFundingAgreementSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.preFundingAgreementSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
