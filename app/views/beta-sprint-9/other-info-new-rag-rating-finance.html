@@ -18,7 +18,7 @@ New risk rating entry - Finance - {{currentProject.projectTitle}} – {{ service
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
-        Finance
+        Finance (optional)
       </h1>
 
 
@@ -28,110 +28,64 @@ New risk rating entry - Finance - {{currentProject.projectTitle}} – {{ service
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['returnToSummary'] == 'yes' %}
-        <form class="form" action="other-info-new-rag-rating-check-your-answers" method="post">
-      {% else %}
-        <form class="form" action="other-info-new-rag-rating-raf" method="post">
-      {% endif %}
-          <input hidden type="text" name="returnToSummary" value="no"/>
+      
+      <form class="form" action="other-info-new-rag-rating-check-your-answers" method="post">
+        <input hidden type="text" name="returnToSummary" value="no"/>
 
-          {{ govukRadios({
-            idPrefix: "create-new-rag-rating-finance",
-            name: "create-new-rag-rating-finance",
-            fieldset: {
-              legend: {
-                html: 'What is the updated risk rating for finance?',
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
-              }
+        {{ govukRadios({
+          idPrefix: "newRiskRatingFinance",
+          name: "newRiskRatingFinance",
+          classes: "govuk-!-margin-bottom-6",
+          fieldset: {
+            legend: {
+              html: 'Risk rating',
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l govuk-!-font-size-27 govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "Green",
+              checked: checked("newRiskRatingFinance", "Green"),
+              html: "Green" | displayRAGRating
             },
-            items: [
-              {
-                value: "Green",
-                checked: checked("create-new-rag-rating-finance", "Green"),
-                html: "Green" | displayRAGRating
-              },
-              {
-                value: "Amber Green",
-                checked: checked("create-new-rag-rating-finance", "Amber Green"),
-                html: "Amber Green" | displayRAGRating
-              },
-              {
-                value: "Amber Red",
-                checked: checked("create-new-rag-rating-finance", "Amber Red"),
-                html: "Amber Red" | displayRAGRating
-              },
-              {
-                value: "Red",
-                checked: checked("create-new-rag-rating-finance", "Red"),
-                html: "Red" | displayRAGRating
-              }
-
-            ]
-          }) }} 
-
-          {{ govukTextarea({
-            name: "create-new-rag-summary-finance",
-            id: "create-new-rag-summary-finance",
-            label: {
-                text: "What is the updated risk summary for finance?",
-                classes: "govuk-label--m",
-                isPageHeading: false
+            {
+              value: "Amber Green",
+              checked: checked("newRiskRatingFinance", "Amber Green"),
+              html: "Amber Green" | displayRAGRating
             },
-            value: data['create-new-rag-summary-finance']
-          }) }}
-        
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+            {
+              value: "Amber Red",
+              checked: checked("newRiskRatingFinance", "Amber Red"),
+              html: "Amber Red" | displayRAGRating
+            },
+            {
+              value: "Red",
+              checked: checked("newRiskRatingFinance", "Red"),
+              html: "Red" | displayRAGRating
+            }
 
-        </form>
+          ]
+        }) }} 
+
+        {{ govukTextarea({
+          name: "newRiskRatingFinanceSummary",
+          id: "newRiskRatingFinanceSummary",
+          label: {
+              text: "Risk summary",
+              classes: "govuk-heading-l govuk-!-font-size-27 govuk-!-margin-bottom-6",
+              isPageHeading: false
+          },
+          value: data['newRiskRatingFinanceSummary']
+        }) }}
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
 
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <h2 class="govuk-heading-m">
-      Current risk rating and summary
-    </h2>
-
-    {{ govukSummaryList({
-      card: {
-        title: {
-          text: "Risk rating and summary"
-        }
-      },
-      rows: [
-        {
-          key: {
-            text: "Date"
-          },
-          value: {
-            html: "21 March 2023"
-          }
-        },
-        {
-          key: {
-            text: "Finance risk rating"
-          },
-          value: {
-            html: "Amber Red" | displayRAGRating
-          }
-        },
-        {
-          key: {
-            text: "Finance risk summary"
-          },
-          value: {
-            html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
-          }
-        }
-      ]
-    }) }}
-
-
-  </div>
-</div>
 {% endblock %}

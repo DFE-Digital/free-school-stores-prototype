@@ -8,7 +8,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to about the project",
-    href: "project-overview"
+    href: "project-overView details"
   }) }}
 {% endblock %}
 
@@ -21,6 +21,13 @@
         8 February 2023 - past risk ratings
       </h1>
 
+      <div class="risk-rating-landing-page--overall-box">
+        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall risk rating and summary</h2>
+        <p class="govuk-body">{{ "Amber Red" | displayRAGRating | safe }} </p>
+        <p class="govuk-body-l">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-font-size-27">Individual risks</h2>
       {{ govukSummaryList({
         
         rows: [
@@ -108,10 +115,10 @@
       }) }}
 
 
-      <form action="other-info-new-rag-rating-governance" method="post">
+      <form action="other-info-new-rag-rating-check-your-answers" method="post">
       
       {{ govukButton({
-        text: "Add a risk rating entry"
+        text: "Edit risk rating"
       }) }}
         
       </form>
@@ -148,7 +155,7 @@
             html: "Amber Green" | displayRAGRating
           },
           {
-            html: '<a href="other-info-rag-rating-current">View</a>'
+            html: '<a href="other-info-rag-rating-current">View details</a>'
           }
         ],
         [
@@ -170,7 +177,7 @@
             html: "Amber Red" | displayRAGRating
           },
           {
-            html: '<a href="#">View</a>'
+            html: '<a href="#">View details</a>'
           }
         ],
         [
@@ -181,7 +188,7 @@
             html: "Red" | displayRAGRating
           },
           {
-            html: '<a href="#">View</a>'
+            html: '<a href="#">View details</a>'
           }
         ]
       ]
