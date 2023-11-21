@@ -18,7 +18,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
-        Check your answers
+        Review ratings and summaries
       </h1>
 
 
@@ -68,7 +68,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         ,
         {
           key: {
-            text: "Governance and suitability risk rating"
+            text: "Governance and suitability rating"
           },
           value: {
             html: data["newRiskRatingGovernance"] | displayRAGRating
@@ -78,7 +78,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
               {
                 href: "other-info-new-rag-rating-governance?returnToSummary=yes",
                 text: "Change",
-                visuallyHiddenText: "Governance and suitability risk rating"
+                visuallyHiddenText: "Governance and suitability rating"
               }
             ]
           }
@@ -86,7 +86,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         ,
         {
           key: {
-            text: "Governance and suitability risk summary"
+            text: "Governance and suitability summary"
           },
           value: {
             text: data["newRiskRatingGovernanceSummary"] | displayText
@@ -96,7 +96,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
               {
                 href: "other-info-new-rag-rating-governance?returnToSummary=yes",
                 text: "Change",
-                visuallyHiddenText: "Governance and suitability risk summary"
+                visuallyHiddenText: "Governance and suitability summary"
               }
             ]
           }
@@ -104,7 +104,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         ,
         {
           key: {
-            text: "Education risk rating"
+            text: "Education rating"
           },
           value: {
             html: data["newRiskRatingEducation"] | displayRAGRating
@@ -114,7 +114,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
               {
                 href: "other-info-new-rag-rating-education?returnToSummary=yes",
                 text: "Change",
-                visuallyHiddenText: "Education risk rating"
+                visuallyHiddenText: "Education rating"
               }
             ]
           }
@@ -122,7 +122,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         ,
         {
           key: {
-            text: "Education risk summary"
+            text: "Education summary"
           },
           value: {
             text: data["newRiskRatingEducationSummary"] | displayText
@@ -132,7 +132,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
               {
                 href: "other-info-new-rag-rating-education?returnToSummary=yes",
                 text: "Change",
-                visuallyHiddenText: "Education risk summary"
+                visuallyHiddenText: "Education summary"
               }
             ]
           }
@@ -140,7 +140,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         ,
         {
           key: {
-            text: "Finance risk rating"
+            text: "Finance rating"
           },
           value: {
             html: data["newRiskRatingFinance"] | displayRAGRating
@@ -150,7 +150,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
               {
                 href: "other-info-new-rag-rating-finance?returnToSummary=yes",
                 text: "Change",
-                visuallyHiddenText: "Finance risk rating"
+                visuallyHiddenText: "Finance rating"
               }
             ]
           }
@@ -158,7 +158,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         ,
         {
           key: {
-            text: "Finance risk summary"
+            text: "Finance summary"
           },
           value: {
             text: data["newRiskRatingFinanceSummary"] | displayText
@@ -168,7 +168,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
               {
                 href: "other-info-new-rag-rating-finance?returnToSummary=yes",
                 text: "Change",
-                visuallyHiddenText: "Finance risk summary"
+                visuallyHiddenText: "Finance summary"
               }
             ]
           }
@@ -203,7 +203,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
         items: [
         {
           value: "Complete",
-          text: "Mark this section as complete"
+          text: "Ratings and summaries reviewed"
           }
         ]
       }) }}

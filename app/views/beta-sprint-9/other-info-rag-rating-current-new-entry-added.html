@@ -22,7 +22,7 @@
       </h1>
 
       <div class="risk-rating-landing-page--overall-box">
-        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall risk rating and summary</h2>
+        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall rating and summary</h2>
         <p class="govuk-body">{{ data['newRiskRatingOverall'] | displayRAGRating | safe }} </p>
         <p class="govuk-body-l">{{ data['newRiskRatingOverallSummary'] }}</p>
       </div>
@@ -33,7 +33,7 @@
         rows: [
           {
             key: {
-              text: "Governance and suitability risk rating"
+              text: "Governance and suitability rating"
             },
             value: {
               html: data['newRiskRatingGovernance'] | displayRAGRating
@@ -42,7 +42,7 @@
           ,
           {
             key: {
-              text: "Governance and suitability risk summary"
+              text: "Governance and suitability summary"
             },
             value: {
               html: data['newRiskRatingGovernanceSummary'] | displayText
@@ -51,7 +51,7 @@
           ,
           {
             key: {
-              text: "Education risk rating"
+              text: "Education rating"
             },
             value: {
               html: data['newRiskRatingEducation'] | displayRAGRating
@@ -60,7 +60,7 @@
           ,
           {
             key: {
-              text: "Education risk summary"
+              text: "Education summary"
             },
             value: {
               html: data['newRiskRatingEducationSummary'] | displayText
@@ -69,7 +69,7 @@
           ,
           {
             key: {
-              text: "Finances risk rating"
+              text: "Finances rating"
             },
             value: {
               html: data['newRiskRatingFinance'] | displayRAGRating
@@ -78,7 +78,7 @@
           ,
           {
             key: {
-              text: "Finances risk summary"
+              text: "Finances summary"
             },
             value: {
               html: data['newRiskRatingFinanceSummary'] | displayText
@@ -100,7 +100,7 @@
       <form action="edit-risk-rating-start" method="post">
 
         {{ govukButton({
-          text: "Edit risk rating"
+          text: "Update risk rating and summary"
         }) }}
           
       </form>
