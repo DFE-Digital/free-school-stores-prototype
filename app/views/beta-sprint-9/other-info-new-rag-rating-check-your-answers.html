@@ -53,7 +53,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
             text: "Overall risk summary"
           },
           value: {
-            text: data["newRiskRatingOverallSummary"]
+            text: data["newRiskRatingOverallSummary"] | displayText
           },
           actions: {
             items: [
@@ -89,7 +89,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
             text: "Governance and suitability risk summary"
           },
           value: {
-            text: data["newRiskRatingGovernanceSummary"]
+            text: data["newRiskRatingGovernanceSummary"] | displayText
           },
           actions: {
             items: [
@@ -125,7 +125,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
             text: "Education risk summary"
           },
           value: {
-            text: data["newRiskRatingEducationSummary"]
+            text: data["newRiskRatingEducationSummary"] | displayText
           },
           actions: {
             items: [
@@ -161,7 +161,7 @@ New risk rating entry - Check your answers - {{currentProject.projectTitle}} –
             text: "Finance risk summary"
           },
           value: {
-            text: data["newRiskRatingFinanceSummary"]
+            text: data["newRiskRatingFinanceSummary"] | displayText
           },
           actions: {
             items: [
