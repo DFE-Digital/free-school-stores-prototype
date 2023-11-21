@@ -8,46 +8,35 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to about the project",
-    href: "project-overview"
+    href: "project-overView details"
   }) }}
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
         15 November 2023 - current risk ratings
       </h1>
 
+      <div class="risk-rating-landing-page--overall-box">
+        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall risk rating and summary</h2>
+        <p class="govuk-body">{{ data['newRiskRatingOverall'] | displayRAGRating | safe }} </p>
+        <p class="govuk-body-l">{{ data['newRiskRatingOverallSummary'] }}</p>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-font-size-27">Individual risks</h2>
       {{ govukSummaryList({
         
         rows: [
           {
             key: {
-              text: "Overall risk rating"
-            },
-            value: {
-              html: data['create-new-rag-rating-overall'] | displayRAGRating
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Overall risk summary"
-            },
-            value: {
-              html: data['create-new-rag-summary-overall']
-            }
-          }
-          ,
-          {
-            key: {
               text: "Governance and suitability risk rating"
             },
             value: {
-              html: data['create-new-rag-rating-governance'] | displayRAGRating
+              html: data['newRiskRatingGovernance'] | displayRAGRating
             }
           }
           ,
@@ -56,7 +45,7 @@
               text: "Governance and suitability risk summary"
             },
             value: {
-              html: data['create-new-rag-summary-governance']
+              html: data['newRiskRatingGovernanceSummary'] | displayText
             }
           }
           ,
@@ -65,7 +54,7 @@
               text: "Education risk rating"
             },
             value: {
-              html: data['create-new-rag-rating-education'] | displayRAGRating
+              html: data['newRiskRatingEducation'] | displayRAGRating
             }
           }
           ,
@@ -74,7 +63,7 @@
               text: "Education risk summary"
             },
             value: {
-              html: data['create-new-rag-summary-education']
+              html: data['newRiskRatingEducationSummary'] | displayText
             }
           }
           ,
@@ -83,7 +72,7 @@
               text: "Finances risk rating"
             },
             value: {
-              html: data['create-new-rag-rating-finance'] | displayRAGRating
+              html: data['newRiskRatingFinance'] | displayRAGRating
             }
           }
           ,
@@ -92,7 +81,7 @@
               text: "Finances risk summary"
             },
             value: {
-              html: data['create-new-rag-summary-finance']
+              html: data['newRiskRatingFinanceSummary'] | displayText
             }
           }
           ,
@@ -101,19 +90,19 @@
               text: "RAF (risk appraisal form) SharePoint link"
             },
             value: {
-              html: data['createNewriskRatingRAFSharepointLink'] | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
+              html: data['newRiskRatingSharePointLink'] | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
             }
           }
         ]
       }) }}
 
 
-      <form action="other-info-new-rag-rating-governance" method="post">
-      
-      {{ govukButton({
-        text: "Add a risk rating entry"
-      }) }}
-        
+      <form action="edit-risk-rating-start" method="post">
+
+        {{ govukButton({
+          text: "Edit risk rating"
+        }) }}
+          
       </form>
   </div>
 </div>
@@ -145,7 +134,7 @@
             html: "15 November 2023"
           },
           {
-            html: data['create-new-rag-rating-overall'] | displayRAGRating
+            html: data['newRiskRatingOverall'] | displayRAGRating
           },
           {
             html: ''
@@ -159,7 +148,7 @@
             html: "Amber Green" | displayRAGRating
           },
           {
-            html: '<a href="other-info-rag-rating-current">View</a>'
+            html: '<a href="other-info-rag-rating-current">View details</a>'
           }
         ],
         [
@@ -170,7 +159,7 @@
             html: "Amber Red" | displayRAGRating
           },
           {
-            html: '<a href="other-info-rag-rating-20230208">View</a>'
+            html: '<a href="other-info-rag-rating-20230208">View details</a>'
           }
         ],
         [
@@ -181,7 +170,7 @@
             html: "Amber Red" | displayRAGRating
           },
           {
-            html: '<a href="#">View</a>'
+            html: '<a href="#">View details</a>'
           }
         ],
         [
@@ -192,7 +181,7 @@
             html: "Red" | displayRAGRating
           },
           {
-            html: '<a href="#">View</a>'
+            html: '<a href="#">View details</a>'
           }
         ]
       ]

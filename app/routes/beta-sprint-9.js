@@ -102,6 +102,22 @@ module.exports = function (router) {
 
     })
 
+    router.post('/' + version + '/edit-risk-rating-start', function (req, res) { 
+
+        var masterProject = getProject(req);
+        req.session.data.currentProject = masterProject;
+        req.session.data['newRiskRatingOverall'] = masterProject.currentRiskRatingOverall;
+        req.session.data['newRiskRatingOverallSummary'] = masterProject.currentRiskRatingOverallSummary;
+        req.session.data['newRiskRatingGovernance'] = masterProject.currentRiskRatingGovernance;
+        req.session.data['newRiskRatingGovernanceSummary'] = masterProject.currentRiskRatingGovernanceSummary;
+        req.session.data['newRiskRatingEducation'] = masterProject.currentRiskRatingEducation;
+        req.session.data['newRiskRatingEducationSummary'] = masterProject.currentRiskRatingEducationSummary;
+        req.session.data['newRiskRatingFinance'] = masterProject.currentRiskRatingFinance;
+        req.session.data['newRiskRatingFinanceSummary'] = masterProject.currentRiskRatingFinanceSummary;
+        req.session.data['newRiskRatingSharePointLink'] = masterProject.currentRiskRatingSharePointLink;
+        res.redirect('other-info-new-rag-rating-check-your-answers');
+    })
+    
     router.get('/' + version + '/p-o', function (req, res) {
         var project = req.session.data['project-list'].find(x => x.projectID == req.query.id)
         req.session.data.currentProject = project;
