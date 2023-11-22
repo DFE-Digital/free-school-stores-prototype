@@ -294,7 +294,7 @@
               text: "Overall risk rating"
             },
             value: {
-              html: data['create-new-rag-rating-overall'] | displayRAGRating
+              html: data['newRiskRatingOverall'] | displayRAGRating
             }
           },
           {
@@ -302,7 +302,7 @@
               text: "Overall risk summary"
             },
             value: {
-              html: data['create-new-rag-summary-overall']
+              html: data['newRiskRatingOverallSummary'] | displayText | safe
             }
           }
         ]
