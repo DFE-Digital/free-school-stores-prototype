@@ -22,7 +22,7 @@
       </h1>
 
       <div class="risk-rating-landing-page--overall-box">
-        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall risk rating and summary</h2>
+        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall rating and summary</h2>
         <p class="govuk-body">{{ "Amber Red" | displayRAGRating | safe }} </p>
         <p class="govuk-body-l">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
       </div>
@@ -33,7 +33,7 @@
         rows: [
           {
             key: {
-              text: "Overall risk rating"
+              text: "Overall rating"
             },
             value: {
               html: "Amber Red" | displayRAGRating
@@ -42,7 +42,7 @@
           ,
           {
             key: {
-              text: "Overall risk summary"
+              text: "Overall summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -51,7 +51,7 @@
           ,
           {
             key: {
-              text: "Governance and suitability risk rating"
+              text: "Governance and suitability rating"
             },
             value: {
               html: "Amber Green" | displayRAGRating
@@ -60,7 +60,7 @@
           ,
           {
             key: {
-              text: "Governance and suitability risk summary"
+              text: "Governance and suitability summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -69,7 +69,7 @@
           ,
           {
             key: {
-              text: "Education risk rating"
+              text: "Education rating"
             },
             value: {
               html: "Amber Green" | displayRAGRating
@@ -78,7 +78,7 @@
           ,
           {
             key: {
-              text: "Education risk summary"
+              text: "Education summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -87,7 +87,7 @@
           ,
           {
             key: {
-              text: "Finances risk rating"
+              text: "Finances rating"
             },
             value: {
               html: "Amber Red" | displayRAGRating
@@ -96,7 +96,7 @@
           ,
           {
             key: {
-              text: "Finances risk summary"
+              text: "Finances summary"
             },
             value: {
               html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
@@ -118,7 +118,7 @@
       <form action="other-info-new-rag-rating-check-your-answers" method="post">
       
       {{ govukButton({
-        text: "Edit risk rating"
+        text: "Update risk rating and summary"
       }) }}
         
       </form>
