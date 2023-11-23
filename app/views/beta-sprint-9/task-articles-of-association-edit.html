@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Edit model articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
+  Edit articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,13 +18,13 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Edit model articles of association
+        Edit articles of association
       </h1>
       
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" action="task-model-articles-of-association-landing-page">
+          <form method="post" action="task-articles-of-association-landing-page">
             <div class="govuk-form-group">
 
               {{ govukRadios({

@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-Model articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
+Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Model articles of association
+        Articles of association
       </h1>
 
       {{ govukSummaryList({
@@ -34,7 +34,7 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
             actions: {
               items: [
                 {
-                  href: "task-model-articles-of-association-edit",
+                  href: "task-articles-of-association-edit",
                   text: "Change",
                   visuallyHiddenText: "Trust agrees with the department's model articles of association"
                 }
@@ -52,7 +52,7 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
             actions: {
               items: [
                 {
-                  href: "task-model-articles-of-association-edit",
+                  href: "task-articles-of-association-edit",
                   text: "Change",
                   visuallyHiddenText: "Forecast date"
                 }
@@ -70,7 +70,7 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
             actions: {
               items: [
                 {
-                  href: "task-model-articles-of-association-edit",
+                  href: "task-articles-of-association-edit",
                   text: "Change",
                   visuallyHiddenText: "Actual date"
                 }
@@ -88,7 +88,7 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
             actions: {
               items: [
                 {
-                  href: "task-model-articles-of-association-edit",
+                  href: "task-articles-of-association-edit",
                   text: "Change",
                   visuallyHiddenText: "Comments on decision to approve (if applicable)"
                 }
@@ -106,7 +106,7 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
             actions: {
               items: [
                 {
-                  href: "task-model-articles-of-association-edit",
+                  href: "task-articles-of-association-edit",
                   text: "Change",
                   visuallyHiddenText: "SharePoint link"
                 }
@@ -117,11 +117,11 @@ Model articles of association - {{currentProject.projectTitle}} – {{ serviceNa
       }) }}
 
 
-      <form action="task-model-articles-of-association-confirmation" method="post">
+      <form action="task-articles-of-association-confirmation" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-model-articles-of-association-status",
-        name: "task-model-articles-of-association-status",
+        idPrefix: "task-articles-of-association-status",
+        name: "task-articles-of-association-status",
         values: currentProject.taskModelArticlesOfAssociationStatus,
         items: [
         {
