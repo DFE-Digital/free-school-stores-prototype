@@ -102,6 +102,16 @@ module.exports = function (router) {
 
     })
 
+    router.post('/' + version + '/task-constituency-confirmation', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.taskConstituencyStatus = req.session.data['task-constituency-status'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("project-task-list");
+    });
+
     router.post('/' + version + '/edit-risk-rating-start', function (req, res) { 
 
         var masterProject = getProject(req);
