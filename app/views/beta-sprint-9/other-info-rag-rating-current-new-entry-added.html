@@ -23,7 +23,7 @@
 
       <div class="risk-rating-landing-page--overall-box">
         <h2 class="govuk-heading-l govuk-!-font-size-27">Overall rating and summary</h2>
-        <p class="govuk-body">{{ data['newRiskRatingOverall'] | displayRAGRating }} </p>
+        <p class="govuk-body">{{ data['newRiskRatingOverall'] | displayRAGRating | safe }} </p>
         <p class="govuk-body-l">{{ data['newRiskRatingOverallSummary'] | safe }}</p>
       </div>
 

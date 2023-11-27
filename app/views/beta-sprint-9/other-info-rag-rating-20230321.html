@@ -24,7 +24,7 @@
       <div class="risk-rating-landing-page--overall-box">
         <h2 class="govuk-heading-l govuk-!-font-size-27">Overall rating and summary</h2>
         <p class="govuk-body">{{ currentProject.currentRiskRatingOverall | displayRAGRating | safe }} </p>
-        <p class="govuk-body-l">{{ currentProject.currentRiskRatingOverallSummary }}</p>
+        <p class="govuk-body-l">{{ currentProject.currentRiskRatingOverallSummary | safe }}</p>
       </div>
 
       <h2 class="govuk-heading-l govuk-!-font-size-27">Individual risks</h2>
