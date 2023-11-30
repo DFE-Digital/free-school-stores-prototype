@@ -659,24 +659,37 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
-    router.post('/' + version + '/task-model-articles-of-association-landing-page', function(req, res) {
+    router.post('/' + version + '/task-articles-of-association-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.modelArticlesOfAssociationTrustAgrees = req.session.data['modelArticlesOfAssociationTrustAgrees'];
-        applyDateFields(masterProject, req, 'modelArticlesOfAssociationForecastDate');
-        applyDateFields(masterProject, req, 'modelArticlesOfAssociationActualDate');
-        masterProject.modelArticlesOfAssociationCommentsOnDecisionToApprove = req.session.data['modelArticlesOfAssociationCommentsOnDecisionToApprove'];
-        masterProject.modelArticlesOfAssociationSharepointLink = req.session.data['modelArticlesOfAssociationSharepointLink'];
+        masterProject.articlesOfAssociationSubmittedMatchTheModel = req.session.data['articlesOfAssociationSubmittedMatchTheModel'];
+        masterProject.articlesOfAssociationSubmittedConfirmation = req.session.data['articlesOfAssociationSubmittedConfirmation'];
+        masterProject.articlesOfAssociationGovernanceArrangementMatch = req.session.data['articlesOfAssociationGovernanceArrangementMatch'];
+        applyDateFields(masterProject, req, 'articlesOfAssociationForecastDate');
+        applyDateFields(masterProject, req, 'articlesOfAssociationActualDate');
+        masterProject.articlesOfAssociationCommentsOnDecisionToApprove = req.session.data['articlesOfAssociationCommentsOnDecisionToApprove'];
+        masterProject.articlesOfAssociationSharepointLink = req.session.data['articlesOfAssociationSharepointLink'];
 
+        req.session.data['taskArticlesOfAssociationError'] = "No";
+        
         req.session.data.currentProject = masterProject;
 
-        res.redirect("task-model-articles-of-association-landing-page");
+
+        res.redirect("task-articles-of-association-landing-page");
     });
 
-    router.post('/' + version + '/task-model-articles-of-association-confirmation', function(req, res) {
+    router.post('/' + version + '/task-articles-of-association-confirmation', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.taskModelArticlesOfAssociationStatus = req.session.data['task-model-articles-of-association-status'];
+        // Validate the task completeness. Reject marking as completed if the three checkboxes are not completed too
+        var taskStatus = req.session.data['taskArticlesOfAssociationStatus'];
+        if (taskStatus == "Complete") {
+            if ((masterProject.articlesOfAssociationSubmittedMatchTheModel != "Complete") || (masterProject.articlesOfAssociationSubmittedConfirmation != "Complete") || (masterProject.articlesOfAssociationGovernanceArrangementMatch != "Complete") ) {
+                res.redirect('task-articles-of-association-landing-page?taskArticlesOfAssociationError=Yes');
+            }
+        }
+
+        masterProject.taskArticlesOfAssociationStatus = req.session.data['taskArticlesOfAssociationStatus'];
 
         req.session.data.currentProject = masterProject;
 

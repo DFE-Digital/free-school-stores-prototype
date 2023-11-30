@@ -1,0 +1,209 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% if data['taskArticlesOfAssociationError'] == "Yes" %}
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              {% if currentProject.articlesOfAssociationSubmittedMatchTheModel != "Complete" %}
+              <li>
+                <a href="#">You cannot mark this task as completed when you havne't checked that the submitted articles match the model articles.</a>
+              </li>
+              {% endif %}
+              {% if currentProject.articlesOfAssociationSubmittedConfirmation != "Complete" %}
+              <li>
+                <a href="#">You cannot mark this task as completed when chair of trustees and senior executive lead haven't submitted confirmation</a>
+              </li>
+              {% endif %}
+              {% if currentProject.articlesOfAssociationGovernanceArrangementMatch != "Complete" %}
+              <li>
+                <a href="#">You cannot mark this task as completed when governance arrangements doesn't match the details given in governance plans</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Articles of association
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Checked that the submitted articles match the model articles"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationSubmittedMatchTheModel | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Checked that the submitted articles match the model articles"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Chair of trustees and senior executive lead have submitted confirmation"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationSubmittedConfirmation | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Chair of trustees and senior executive lead have submitted confirmation"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Governance arrangements match the details given in governance plans"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationGovernanceArrangementMatch | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Governance arrangements match the details given in governance plans"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('articlesOfAssociationForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('articlesOfAssociationActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-articles-of-association-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "taskArticlesOfAssociationStatus",
+        name: "taskArticlesOfAssociationStatus",
+        values: currentProject.taskArticlesOfAssociationStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
