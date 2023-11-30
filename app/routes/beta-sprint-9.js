@@ -685,7 +685,9 @@ module.exports = function (router) {
         var taskStatus = req.session.data['taskArticlesOfAssociationStatus'];
         if (taskStatus == "Complete") {
             if ((masterProject.articlesOfAssociationSubmittedMatchTheModel != "Complete") || (masterProject.articlesOfAssociationSubmittedConfirmation != "Complete") || (masterProject.articlesOfAssociationGovernanceArrangementMatch != "Complete") ) {
+                req.session.data['taskArticlesOfAssociationStatus'] = "";
                 res.redirect('task-articles-of-association-landing-page?taskArticlesOfAssociationError=Yes');
+                return;
             }
         }
 
