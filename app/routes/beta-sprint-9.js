@@ -684,7 +684,7 @@ module.exports = function (router) {
         // Validate the task completeness. Reject marking as completed if the three checkboxes are not completed too
         var taskStatus = req.session.data['taskArticlesOfAssociationStatus'];
         if (taskStatus == "Complete") {
-            if ((masterProject.articlesOfAssociationSubmittedMatchTheModel != "Complete") || (masterProject.articlesOfAssociationSubmittedConfirmation != "Complete") || (masterProject.articlesOfAssociationGovernanceArrangementMatch != "Complete") ) {
+            if ((masterProject.articlesOfAssociationSubmittedMatchTheModel != "Done") || (masterProject.articlesOfAssociationSubmittedConfirmation != "Done") || (masterProject.articlesOfAssociationGovernanceArrangementMatch != "Done") ) {
                 req.session.data['taskArticlesOfAssociationStatus'] = "";
                 res.redirect('task-articles-of-association-landing-page?taskArticlesOfAssociationError=Yes');
                 return;
