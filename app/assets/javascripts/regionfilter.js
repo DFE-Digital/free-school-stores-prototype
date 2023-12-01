@@ -46,7 +46,7 @@ const main = () => {
 
         if(LACheckboxes.innerHTML === "")
         {
-            LACheckboxes.innerHTML += divider.replaceAll("{VALUE}", "Please select a region")
+            LACheckboxes.innerHTML += divider.replaceAll("{VALUE}", "Select a region.")
         }
     }
     
