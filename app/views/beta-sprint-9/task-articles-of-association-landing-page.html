@@ -26,17 +26,17 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
             <ul class="govuk-list govuk-error-summary__list">
               {% if currentProject.articlesOfAssociationSubmittedMatchTheModel != "Complete" %}
               <li>
-                <a href="#">You cannot mark this task as completed when you havne't checked that the submitted articles match the model articles.</a>
+                <a href="#">Check that the submitted articles match the model articles</a>
               </li>
               {% endif %}
               {% if currentProject.articlesOfAssociationSubmittedConfirmation != "Complete" %}
               <li>
-                <a href="#">You cannot mark this task as completed when chair of trustees and senior executive lead haven't submitted confirmation</a>
+                <a href="#">Chair of trustees and senior executive lead need to submit confirmation</a>
               </li>
               {% endif %}
               {% if currentProject.articlesOfAssociationGovernanceArrangementMatch != "Complete" %}
               <li>
-                <a href="#">You cannot mark this task as completed when governance arrangements doesn't match the details given in governance plans</a>
+                <a href="#">Governance arrangements need to match the details given in governance plans</a>
               </li>
               {% endif %}
             </ul>
