@@ -220,16 +220,18 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-articles-of-association-landing-page" aria-describedby="company-information-status">
+                <a href="task-articles-of-association-landing-page?taskArticlesOfAssociationError=No" aria-describedby="company-information-status">
                   Articles of association
                 </a>
               </span>
-              {{ currentProject.taskModelArticlesOfAssociationStatus
-                  | taskStatus([currentProject.modelArticlesOfAssociationTrustAgrees,
-                  currentProject | withDatePrefixed('modelArticlesOfAssociationForecastDate'),
-                  currentProject | withDatePrefixed('modelArticlesOfAssociationActualDate'),
-                  currentProject.modelArticlesOfAssociationCommentsOnDecisionToApprove,
-                  currentProject.modelArticlesOfAssociationSharepointLink])
+              {{ currentProject.taskArticlesOfAssociationStatus
+                  | taskStatus([currentProject.articlesOfAssociationSubmittedMatchTheModel,
+                  currentProject.articlesOfAssociationSubmittedConfirmation,
+                  currentProject.articlesOfAssociationGovernanceArrangementMatch,
+                  currentProject | withDatePrefixed('articlesOfAssociationForecastDate'),
+                  currentProject | withDatePrefixed('articlesOfAssociationActualDate'),
+                  currentProject.articlesOfAssociationCommentsOnDecisionToApprove,
+                  currentProject.articlesOfAssociationSharepointLink])
                   | safe }}
             </li>           
             <li class="app-task-list__item">

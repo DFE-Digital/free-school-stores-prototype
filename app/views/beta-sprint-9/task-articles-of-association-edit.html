@@ -27,31 +27,66 @@
           <form method="post" action="task-articles-of-association-landing-page">
             <div class="govuk-form-group">
 
-              {{ govukRadios({
-                name: "modelArticlesOfAssociationTrustAgrees",
+              {{ govukCheckboxes({
+                idPrefix: "articlesOfAssociationSubmittedMatchTheModel",
+                name: "articlesOfAssociationSubmittedMatchTheModel",
+                values: currentProject.articlesOfAssociationSubmittedMatchTheModel,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
-                    text: "Trust agrees with the department's model articles of association",
-                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                    text: "Checked that the submitted articles match the model articles",
+                    classes: "govuk-fieldset__legend--m"
                   }
                 },
                 items: [
-                  {
-                    value: "Yes",
-                    text: "Yes",
-                    checked: checked("currentProject.modelArticlesOfAssociationTrustAgrees", "Yes")
-                  },
-                  {
-                    value: "No",
-                    text: "No",
-                    checked: checked("currentProject.modelArticlesOfAssociationTrustAgrees", "No")
+                {
+                  value: "Complete",
+                  text: "Mark this as complete"
+                  }
+                ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "articlesOfAssociationSubmittedConfirmation",
+                name: "articlesOfAssociationSubmittedConfirmation",
+                values: currentProject.articlesOfAssociationSubmittedConfirmation,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Chair of trustees and senior executive lead have submitted confirmation",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Complete",
+                  text: "Mark this as complete"
+                  }
+                ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "articlesOfAssociationGovernanceArrangementMatch",
+                name: "articlesOfAssociationGovernanceArrangementMatch",
+                values: currentProject.articlesOfAssociationGovernanceArrangementMatch,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Governance arrangements match the details given in governance plans",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Complete",
+                  text: "Mark this as complete"
                   }
                 ]
               }) }}
 
               {{ govukDateInput({
-                id: "modelArticlesOfAssociationForecastDate",
-                namePrefix: "modelArticlesOfAssociationForecastDate",
+                id: "articlesOfAssociationForecastDate",
+                namePrefix: "articlesOfAssociationForecastDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -65,25 +100,25 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.modelArticlesOfAssociationForecastDateDay,
+                  value: currentProject.articlesOfAssociationForecastDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.modelArticlesOfAssociationForecastDateMonth,
+                  value: currentProject.articlesOfAssociationForecastDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.modelArticlesOfAssociationForecastDateYear,
+                  value: currentProject.articlesOfAssociationForecastDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukDateInput({
-                id: "modelArticlesOfAssociationActualDate",
-                namePrefix: "modelArticlesOfAssociationActualDate",
+                id: "articlesOfAssociationActualDate",
+                namePrefix: "articlesOfAssociationActualDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -97,42 +132,42 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.modelArticlesOfAssociationActualDateDay,
+                  value: currentProject.articlesOfAssociationActualDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.modelArticlesOfAssociationActualDateMonth,
+                  value: currentProject.articlesOfAssociationActualDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.modelArticlesOfAssociationActualDateYear,
+                  value: currentProject.articlesOfAssociationActualDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukInput({
-                id: "modelArticlesOfAssociationCommentsOnDecisionToApprove",
-                name: "modelArticlesOfAssociationCommentsOnDecisionToApprove",
+                id: "articlesOfAssociationCommentsOnDecisionToApprove",
+                name: "articlesOfAssociationCommentsOnDecisionToApprove",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Comments on decision to approve (if applicable)",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.modelArticlesOfAssociationCommentsOnDecisionToApprove
+                value: currentProject.articlesOfAssociationCommentsOnDecisionToApprove
               }) }}
 
               {{ govukInput({
-                id: "modelArticlesOfAssociationSharepointLink",
-                name: "modelArticlesOfAssociationSharepointLink",
+                id: "articlesOfAssociationSharepointLink",
+                name: "articlesOfAssociationSharepointLink",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Sharepoint link",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.modelArticlesOfAssociationSharepointLink
+                value: currentProject.articlesOfAssociationSharepointLink
               }) }}
 
               <br><br>

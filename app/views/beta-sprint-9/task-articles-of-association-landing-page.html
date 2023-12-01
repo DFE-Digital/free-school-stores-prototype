@@ -16,6 +16,35 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+      {% if data['taskArticlesOfAssociationError'] == "Yes" %}
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              {% if currentProject.articlesOfAssociationSubmittedMatchTheModel != "Complete" %}
+              <li>
+                <a href="#">You cannot mark this task as completed when you havne't checked that the submitted articles match the model articles.</a>
+              </li>
+              {% endif %}
+              {% if currentProject.articlesOfAssociationSubmittedConfirmation != "Complete" %}
+              <li>
+                <a href="#">You cannot mark this task as completed when chair of trustees and senior executive lead haven't submitted confirmation</a>
+              </li>
+              {% endif %}
+              {% if currentProject.articlesOfAssociationGovernanceArrangementMatch != "Complete" %}
+              <li>
+                <a href="#">You cannot mark this task as completed when governance arrangements doesn't match the details given in governance plans</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
         Articles of association
@@ -26,17 +55,53 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
         rows: [
           {
             key: {
-              text: "Trust agrees with the department's model articles of association"
+              text: "Checked that the submitted articles match the model articles"
             },
             value: {
-              html: currentProject.modelArticlesOfAssociationTrustAgrees | displayText
+              html: currentProject.articlesOfAssociationSubmittedMatchTheModel | displayText | safe
             },
             actions: {
               items: [
                 {
                   href: "task-articles-of-association-edit",
                   text: "Change",
-                  visuallyHiddenText: "Trust agrees with the department's model articles of association"
+                  visuallyHiddenText: "Checked that the submitted articles match the model articles"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Chair of trustees and senior executive lead have submitted confirmation"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationSubmittedConfirmation | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Chair of trustees and senior executive lead have submitted confirmation"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Governance arrangements match the details given in governance plans"
+            },
+            value: {
+              html: currentProject.articlesOfAssociationGovernanceArrangementMatch | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-articles-of-association-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Governance arrangements match the details given in governance plans"
                 }
               ]
             }
@@ -47,7 +112,7 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
               text: "Forecast date"
             },
             value: {
-              html: currentProject | withDatePrefixed('modelArticlesOfAssociationForecastDate') | displayDate
+              html: currentProject | withDatePrefixed('articlesOfAssociationForecastDate') | displayDate
             },
             actions: {
               items: [
@@ -65,7 +130,7 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
               text: "Actual date"
             },
             value: {
-              html: currentProject | withDatePrefixed('modelArticlesOfAssociationActualDate') | displayDate
+              html: currentProject | withDatePrefixed('articlesOfAssociationActualDate') | displayDate
             },
             actions: {
               items: [
@@ -83,7 +148,7 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
               text: "Comments on decision to approve (if applicable)"
             },
             value: {
-              html: currentProject.modelArticlesOfAssociationCommentsOnDecisionToApprove | displayText
+              html: currentProject.articlesOfAssociationCommentsOnDecisionToApprove | displayText
             },
             actions: {
               items: [
@@ -101,7 +166,7 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
               text: "SharePoint link"
             },
             value: {
-              html: currentProject.modelArticlesOfAssociationSharepointLink | displayText
+              html: currentProject.articlesOfAssociationSharepointLink | displayText
             },
             actions: {
               items: [
@@ -120,9 +185,9 @@ Articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
       <form action="task-articles-of-association-confirmation" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-articles-of-association-status",
-        name: "task-articles-of-association-status",
-        values: currentProject.taskModelArticlesOfAssociationStatus,
+        idPrefix: "taskArticlesOfAssociationStatus",
+        name: "taskArticlesOfAssociationStatus",
+        values: currentProject.taskArticlesOfAssociationStatus,
         items: [
         {
           value: "Complete",
