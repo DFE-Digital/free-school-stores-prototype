@@ -1,0 +1,27 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Cookie preferences – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Cookie preferences
+      </h1>
+
+    </div>
+
+  </div>
+
+{% endblock %}

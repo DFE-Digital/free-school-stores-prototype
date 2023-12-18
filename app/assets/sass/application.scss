@@ -368,3 +368,8 @@ $color_dfe-amber: #FFA621;
     padding: 2em;
     margin-bottom: 2em;
 }
+
+.dfe-footer__meta-item--grow .govuk-footer__inline-list {
+    display: unset;
+    align-content: end;
+}
