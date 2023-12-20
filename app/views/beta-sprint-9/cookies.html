@@ -25,7 +25,7 @@
       </p>
 
       <p class="govuk-body">
-        We use cookies to make this site work and collect information about how you use it. 
+        We use cookies to make this website work and collect information about how you use it. 
       </p>
 
       <h2 class="govuk-heading-l">
@@ -33,7 +33,7 @@
       </h2>
 
       <p class="govuk-body">
-        Essential cookies keep your information secure while you use this site. We do not need to ask permission to use them. 
+        Essential cookies keep your information secure while you use this website. We do not need to ask permission to use them. 
       </p>
 
       <table class="govuk-table">
@@ -45,16 +45,6 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">.ManageFreeSchoolProjects.Login</th>
-            <td class="govuk-table__cell">Keeps you signed in</td>
-            <td class="govuk-table__cell">With browser settings (session)</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">.ManageFreeSchoolProjects.Consent</th>
-            <td class="govuk-table__cell">Stores your consent to optional cookies</td>
-            <td class="govuk-table__cell">One year</td>
-          </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">ASLBSA</th>
             <td class="govuk-table__cell">Balances the load on our servers</td>
@@ -71,6 +61,16 @@
             <td class="govuk-table__cell">With browser settings (session)</td>
           </tr>
           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">.ManageFreeSchoolProjects.Consent</th>
+            <td class="govuk-table__cell">Stores your consent to optional cookies</td>
+            <td class="govuk-table__cell">One year</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">.ManageFreeSchoolProjects.Login</th>
+            <td class="govuk-table__cell">Keeps you signed in</td>
+            <td class="govuk-table__cell">With browser settings (session)</td>
+          </tr>
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">.ManageFreeSchoolProjects.PageCache</th>
             <td class="govuk-table__cell">Saves your answers when you move between pages</td>
             <td class="govuk-table__cell">One day</td>
@@ -79,11 +79,11 @@
       </table>
 
       <h2 class="govuk-heading-l">
-        Optional cookies
+        Analytics cookies (optional)
       </h2>
 
       <p class="govuk-body">
-        With your permission, we use Google Analytics to collect data about how you use this site. This information helps us to improve our service.  
+        With your permission, we use Google Analytics to collect data about how you use this website. This information helps us to improve our website.  
       </p>
 
       <p class="govuk-body">
@@ -91,10 +91,10 @@
       </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>how you got to this site</li>
-        <li>the pages you visit on this site and how long you spend on them</li>
-        <li>any errors you see while using this site</li>
-        <li>what you click on while you are visiting the site</li>
+        <li>how you got to this website</li>
+        <li>the pages you visit on this website and how long you spend on them</li>
+        <li>any errors you see while using this website</li>
+        <li>what you click on while you are visiting the website</li>
       </ul>
 
       <table class="govuk-table govuk-!-margin-bottom-9">
@@ -108,12 +108,12 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">_ga</th>
-            <td class="govuk-table__cell">Tells users apart.</td>
+            <td class="govuk-table__cell">Tells you apart from other users</td>
             <td class="govuk-table__cell">2 years</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">_ga_&lt;container-id&gt;</th>
-            <td class="govuk-table__cell">Persists your session state.</td>
+            <td class="govuk-table__cell">Persists your session state</td>
             <td class="govuk-table__cell">2 years</td>
           </tr>
         </tbody>
@@ -124,7 +124,7 @@
         {{ govukRadios({
           fieldset: {
             legend: {
-              text: "Do you want to accept cookies that measure your website use?",
+              text: "Do you want to accept analytics cookies?",
               isPageHeading: true,
               classes: "govuk-heading-l govuk-!-margin-bottom-6"
             }
