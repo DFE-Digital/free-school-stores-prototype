@@ -1,0 +1,170 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit school - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit school details
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-school-details-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukInput({
+                id: "projectTitle",
+                name: "projectTitle",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Current name",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.projectTitle
+              }) }}
+
+              {{ govukInput({
+                id: "schoolType",
+                name: "schoolType",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "School type",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.schoolType
+              }) }}
+
+              {{ govukInput({
+                id: "schoolPhase",
+                name: "schoolPhase",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "School phase",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.schoolPhase
+              }) }}
+
+              {{ govukInput({
+                id: "ageRange",
+                name: "ageRange",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Age range",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.ageRange
+              }) }}
+
+              {{ govukRadios({
+                name: "gender",
+                fieldset: {
+                  legend: {
+                    text: "Gender",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Mixed",
+                    text: "Mixed",
+                    checked: checked("currentProject.gender", "Mixed")
+                  },
+                  {
+                    value: "Boys only",
+                    text: "Boys only",
+                    checked: checked("currentProject.gender", "Boys only")
+                  },
+                  {
+                    value: "Girls only",
+                    text: "Girls only",
+                    checked: checked("currentProject.gender", "Girls only")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "nursery",
+                fieldset: {
+                  legend: {
+                    text: "Nursery",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.nursery", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.nursery", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukInput({
+                id: "sixthForm",
+                name: "sixthForm",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sixth form",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.sixthForm
+              }) }}
+
+              {{ govukInput({
+                id: "faithStatus",
+                name: "faithStatus",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Faith status",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.faithStatus
+              }) }}
+
+              {{ govukInput({
+                id: "faithType",
+                name: "faithType",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Faith type",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.faithType
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

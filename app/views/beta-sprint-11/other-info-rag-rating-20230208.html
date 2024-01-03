@@ -1,0 +1,192 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  8 February 2023 - past risk ratings - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to about the project",
+    href: "project-overView details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        8 February 2023 - past risk ratings
+      </h1>
+
+      <div class="risk-rating-landing-page--overall-box">
+        <h2 class="govuk-heading-l govuk-!-font-size-27">Overall rating and summary</h2>
+        <p class="govuk-body">{{ "Amber Red" | displayRAGRating | safe }} </p>
+        <p class="govuk-body-l">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-font-size-27">Individual risks</h2>
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Overall rating"
+            },
+            value: {
+              html: "Amber Red" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Overall summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Governance and suitability rating"
+            },
+            value: {
+              html: "Amber Green" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Governance and suitability summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Education rating"
+            },
+            value: {
+              html: "Amber Green" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Education summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Finances rating"
+            },
+            value: {
+              html: "Amber Red" | displayRAGRating
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Finances summary"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis et ex ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+            }
+          }
+          ,
+          {
+            key: {
+              text: "RAF (risk appraisal form) SharePoint link"
+            },
+            value: {
+              html: currentProject.RAFCurrentSharepointLink | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
+            }
+          }
+        ]
+      }) }}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukTable({
+      caption: "Risk ratings history",
+      captionClasses: "govuk-table__caption--m govuk-!-font-size-27",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Date",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Overall risk rating",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Action",
+          classes: "app-custom-class"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "21 March 2023"
+          },
+          {
+            html: "Amber Green" | displayRAGRating
+          },
+          {
+            html: '<a href="other-info-rag-rating-current">View details</a>'
+          }
+        ],
+        [
+          {
+            html: "8 February 2023"
+          },
+          {
+            html: "Amber Red" | displayRAGRating
+          },
+          {
+            html: ''
+          }
+        ],
+        [
+          {
+            html: "12 January 2023"
+          },
+          {
+            html: "Amber Red" | displayRAGRating
+          },
+          {
+            html: '<a href="#">View details</a>'
+          }
+        ],
+        [
+          {
+            html: "23 November 2022"
+          },
+          {
+            html: "Red" | displayRAGRating
+          },
+          {
+            html: '<a href="#">View details</a>'
+          }
+        ]
+      ]
+    }) }}
+
+
+  </div>
+</div>
+{% endblock %}
