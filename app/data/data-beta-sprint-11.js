@@ -184,7 +184,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle" : "Bolton Spa Primary", 
@@ -368,7 +374,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "St. Wilfrid's Primary School",
@@ -552,7 +564,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "Blessed John Henry Newman Roman Catholic College",
@@ -736,7 +754,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "St Luke's Church of England Primary School",
@@ -920,7 +944,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "St Thomas of Canterbury Catholic Primary School",
@@ -1104,7 +1134,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "Newcastle High School for Girls",
@@ -1288,7 +1324,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "Lymington Junior School",
@@ -1472,7 +1514,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "St Marys Catholic Academy",
@@ -1656,7 +1704,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     },
     {
       "projectTitle": "Binstead Primary School",
@@ -1879,6 +1933,12 @@ module.exports = {
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
       "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": "",
       "taskKickOffMeetingStatus": "",
       "applicationsExceedBreakEvenPupilNumbers" : "Yes", 
       "applicationsWrittenReferralFromComissioners" : "Not applicable", 
@@ -2066,7 +2126,13 @@ module.exports = {
       "dbsChecksActualDateYear": "",
       "dbsChecksCommentsOnDecisionToApprove": "",
       "dbsChecksSharepointLink": "",
-      "taskDbsChecksStatus": ""
+      "taskDbsChecksStatus": "",
+      "contactsSchoolChairOfGovernorsName": "",
+      "contactsSchoolChairOfGovernorsPhoneNumber": "",
+      "contactsSchoolChairOfGovernorsEmail": "",
+      "contactsMultiAcademyTrustChairOfGovernorsName": "",
+      "contactsMultiAcademyTrustChairOfGovernorsPhoneNumber": "",
+      "contactsMultiAcademyTrustChairOfGovernorsEmail": ""
     }
   ]
 }

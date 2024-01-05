@@ -932,6 +932,30 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/update-school-chair-of-governors', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.contactsSchoolChairOfGovernorsName = req.session.data['contactsSchoolChairOfGovernorsName'];
+        masterProject.contactsSchoolChairOfGovernorsPhoneNumber = req.session.data['contactsSchoolChairOfGovernorsPhoneNumber'];
+        masterProject.contactsSchoolChairOfGovernorsEmail = req.session.data['contactsSchoolChairOfGovernorsEmail'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("other-info-contacts-landing-page");
+    });
+
+    router.post('/' + version + '/update-multi-academy-trust-chair-of-governors', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.contactsMultiAcademyTrustChairOfGovernorsName = req.session.data['contactsMultiAcademyTrustChairOfGovernorsName'];
+        masterProject.contactsMultiAcademyTrustChairOfGovernorsPhoneNumber = req.session.data['contactsMultiAcademyTrustChairOfGovernorsPhoneNumber'];
+        masterProject.contactsMultiAcademyTrustChairOfGovernorsEmail = req.session.data['contactsMultiAcademyTrustChairOfGovernorsEmail'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("other-info-contacts-landing-page");
+    });
+
     router.post('/' + version + '/task-applications-evidence-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
