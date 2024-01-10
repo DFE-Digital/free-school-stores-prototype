@@ -936,7 +936,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.contactsSchoolChairOfGovernorsName = req.session.data['contactsSchoolChairOfGovernorsName'];
-        masterProject.contactsSchoolChairOfGovernorsPhoneNumber = req.session.data['contactsSchoolChairOfGovernorsPhoneNumber'];
         masterProject.contactsSchoolChairOfGovernorsEmail = req.session.data['contactsSchoolChairOfGovernorsEmail'];
 
         req.session.data.currentProject = masterProject;
@@ -948,7 +947,6 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.contactsMultiAcademyTrustChairOfGovernorsName = req.session.data['contactsMultiAcademyTrustChairOfGovernorsName'];
-        masterProject.contactsMultiAcademyTrustChairOfGovernorsPhoneNumber = req.session.data['contactsMultiAcademyTrustChairOfGovernorsPhoneNumber'];
         masterProject.contactsMultiAcademyTrustChairOfGovernorsEmail = req.session.data['contactsMultiAcademyTrustChairOfGovernorsEmail'];
 
         req.session.data.currentProject = masterProject;
