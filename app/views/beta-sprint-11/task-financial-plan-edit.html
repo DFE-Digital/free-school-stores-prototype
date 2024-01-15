@@ -1,0 +1,235 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit financial plan - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit financial plan
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-financial-plan-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "financialPlanBEFPAgreed",
+                fieldset: {
+                  legend: {
+                    text: "Break-even financial plan agreed that shows the minimum pupil numbers needed to sustainably deliver a broad and balanced curriculum",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.financialPlanBEFPAgreed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.financialPlanBEFPAgreed", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "financialPlanForecastDate",
+                namePrefix: "financialPlanForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.financialPlanForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.financialPlanForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.financialPlanForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "financialPlanActualDate",
+                namePrefix: "financialPlanActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.financialPlanActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.financialPlanActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.financialPlanActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "financialPlanSharepointLink",
+                name: "financialPlanSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link for financial plan",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.financialPlanSharepointLink
+              }) }}
+
+              {{ govukTextarea({
+                id: "financialPlanCommentsOnDecisionToApprove",
+                name: "financialPlanCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.financialPlanCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukTextarea({
+                id: "financialPlanReasonNotApplicable",
+                name: "financialPlanReasonNotApplicable",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Reason not applicable",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.financialPlanReasonNotApplicable
+              }) }}
+
+              {% set RPAOptInHtml %}
+              {{ govukDateInput({
+                id: "financialPlanRPAStartDate",
+                namePrefix: "financialPlanRPAStartDate",
+                classes: "",
+                fieldset: {
+                  legend: {
+                    text: "Start date",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.financialPlanRPAStartDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.financialPlanRPAStartDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.financialPlanRPAStartDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "financialPlanRPAType",
+                name: "financialPlanRPAType",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Type of RPA cover",
+                    classes: "govuk-heading-s govuk-!-font-size-19"
+                },
+                value: currentProject.financialPlanRPAType
+              }) }}
+              {% endset -%}
+
+              {{ govukRadios({
+                name: "financialPlanRPAOptIn",
+                fieldset: {
+                  legend: {
+                    text: "Opt-in to risk protection arrangement (RPA)",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.financialPlanRPAOptIn", "Yes"),
+                    conditional: {
+                      html: RPAOptInHtml
+                    }
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.financialPlanRPAOptIn", "No")
+                  }
+                ]
+              }) }}
+
+              
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
