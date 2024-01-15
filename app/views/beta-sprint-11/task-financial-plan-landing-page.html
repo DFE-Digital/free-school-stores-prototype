@@ -1,0 +1,349 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Financial plan - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Financial plan
+      </h1>
+
+      {% if currentProject.financialPlanRPAOptIn == "Yes" %}
+        {{ govukSummaryList({
+          
+          rows: [
+            {
+              key: {
+                text: "Break-even financial plan agreed that shows the minimum pupil numbers needed to sustainably deliver a broad and balanced curriculum"
+              },
+              value: {
+                html: currentProject.financialPlanBEFPAgreed | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Break-even financial plan agreed that shows the minimum pupil numbers needed to sustainably deliver a broad and balanced curriculum"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Forecast date"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financialPlanForecastDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Forecast date"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Actual date"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financialPlanActualDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Actual date"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "SharePoint link for financial plan"
+              },
+              value: {
+                html: currentProject.financialPlanSharepointLink | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "SharePoint link for financial plan"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Comments on decision to approve (if applicable)"
+              },
+              value: {
+                html: currentProject.financialPlanCommentsOnDecisionToApprove | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                  }
+                ]
+              }
+            }     
+            ,
+            {
+              key: {
+                text: "Reason not applicable"
+              },
+              value: {
+                html: currentProject.financialPlanReasonNotApplicable | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Reason not applicable"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Opt-in to risk protection arrangement (RPA)"
+              },
+              value: {
+                html: currentProject.financialPlanRPAOptIn | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Opt-in to risk protection arrangement (RPA)"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "RPA start date"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financialPlanRPAStartDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "RPA start date"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Type of RPA cover"
+              },
+              value: {
+                html: currentProject.financialPlanRPAType | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Type of RPA cover"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      {% else %}
+        {{ govukSummaryList({
+            
+          rows: [
+            {
+              key: {
+                text: "Break-even financial plan agreed that shows the minimum pupil numbers needed to sustainably deliver a broad and balanced curriculum"
+              },
+              value: {
+                html: currentProject.financialPlanBEFPAgreed | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Break-even financial plan agreed that shows the minimum pupil numbers needed to sustainably deliver a broad and balanced curriculum"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Forecast date"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financialPlanForecastDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Forecast date"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Actual date"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financialPlanActualDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Actual date"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "SharePoint link for financial plan"
+              },
+              value: {
+                html: currentProject.financialPlanSharepointLink | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "SharePoint link for financial plan"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Comments on decision to approve (if applicable)"
+              },
+              value: {
+                html: currentProject.financialPlanCommentsOnDecisionToApprove | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                  }
+                ]
+              }
+            }     
+            ,
+            {
+              key: {
+                text: "Reason not applicable"
+              },
+              value: {
+                html: currentProject.financialPlanReasonNotApplicable | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Reason not applicable"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Opt-in to risk protection arrangement (RPA)"
+              },
+              value: {
+                html: currentProject.financialPlanRPAOptIn | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Opt-in to risk protection arrangement (RPA)"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      {% endif %}
+
+
+      <form action="task-financial-plan-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-financial-plan-status",
+        name: "task-financial-plan-status",
+        values: currentProject.taskFinancialPlanStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
