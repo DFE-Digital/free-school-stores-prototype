@@ -7,6 +7,14 @@ Your projects – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+  </div>
   {{ header({
     "showNav": "true",
     "showSearch": "false",
