@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Financial plan - {{currentProject.projectTitle}} – {{ serviceName }}
+  Finance plan - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Financial plan
+        Finance plan
       </h1>
 
       {% if currentProject.financialPlanRPAOptIn == "Yes" %}
@@ -27,7 +27,7 @@
           rows: [
             {
               key: {
-                text: "Break-even financial plan agreed that shows minimum pupil numbers needed to sustainably deliver broad and balanced curriculum"
+                text: "Finance plan agreed"
               },
               value: {
                 html: currentProject.financialPlanBEFPAgreed | displayText
@@ -37,7 +37,7 @@
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "Break-even financial plan agreed that shows minimum pupil numbers needed to sustainably deliver broad and balanced curriculum"
+                    visuallyHiddenText: "Finance plan agreed"
                   }
                 ]
               }
@@ -194,7 +194,7 @@
           rows: [
             {
               key: {
-                text: "Break-even financial plan agreed that shows minimum pupil numbers needed to sustainably deliver broad and balanced curriculum"
+                text: "Finance plan agreed"
               },
               value: {
                 html: currentProject.financialPlanBEFPAgreed | displayText
@@ -204,7 +204,7 @@
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "Break-even financial plan agreed that shows minimum pupil numbers needed to sustainably deliver broad and balanced curriculum"
+                    visuallyHiddenText: "Finance plan agreed"
                   }
                 ]
               }
