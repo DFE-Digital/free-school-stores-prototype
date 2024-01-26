@@ -230,7 +230,7 @@
             ,
             {
               key: {
-                text: "Actual date"
+                text: "Date agreed"
               },
               value: {
                 html: currentProject | withDatePrefixed('financialPlanActualDate') | displayDate
@@ -240,7 +240,7 @@
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "Actual date"
+                    visuallyHiddenText: "Date agreed"
                   }
                 ]
               }
@@ -248,7 +248,7 @@
             ,
             {
               key: {
-                text: "SharePoint link"
+                text: "Plan saved in Workspaces folder"
               },
               value: {
                 html: currentProject.financialPlanSharepointLink | displayText
@@ -258,7 +258,7 @@
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "SharePoint link"
+                    visuallyHiddenText: "Plan saved in Workspaces folder"
                   }
                 ]
               }
@@ -266,7 +266,7 @@
             ,
             {
               key: {
-                text: "Comments on decision to approve (if applicable)"
+                text: "Comments"
               },
               value: {
                 html: currentProject.financialPlanCommentsOnDecisionToApprove | displayText
@@ -276,7 +276,7 @@
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                    visuallyHiddenText: "Comments"
                   }
                 ]
               }
