@@ -80,6 +80,42 @@
           ,
           {
             key: {
+              text: "Realistic year of opening"
+            },
+            value: {
+              html: currentProject.realisticYearOfOpening | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-kick-off-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Realistic year of opening"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Provisional opening date agreed with trust"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('provisionalOpeningDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-kick-off-meeting-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Provisional opening date agreed with trust"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
               text: "Comments on decision to approve (if applicable)"
             },
             value: {

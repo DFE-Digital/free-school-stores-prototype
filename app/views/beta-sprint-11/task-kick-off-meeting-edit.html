@@ -114,6 +114,53 @@
               }) }}
 
               {{ govukInput({
+                id: "realisticYearOfOpening",
+                name: "realisticYearOfOpening",
+                classes: "govuk-input--width-4 govuk-!-margin-bottom-6",
+                label: {
+                    text: "Realistic year of opening",
+                    classes: "govuk-heading-m",
+                    isPageHeading: false
+                },
+                hint: {
+                  text: "For example, 2021"
+                },
+                value: currentProject.realisticYearOfOpening
+              }) }}
+
+              {{ govukDateInput({
+                id: "provisionalOpeningDate",
+                namePrefix: "provisionalOpeningDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Provisional opening date agreed with trust",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.provisionalOpeningDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.provisionalOpeningDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.provisionalOpeningDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
                 id: "kickOffMeetingCommentsOnDecisionToApprove",
                 name: "kickOffMeetingCommentsOnDecisionToApprove",
                 classes: "govuk-!-margin-bottom-6",

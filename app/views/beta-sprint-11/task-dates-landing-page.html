@@ -46,6 +46,23 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Realistic year of opening
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if currentProject.realisticYearOfOpening %}
+              <span>{{ currentProject.realisticYearOfOpening }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task-dates-edit">
+              Change <span class="govuk-visually-hidden">Opening academic year</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Provisional opening date agreed with trust
           </dt>
           <dd class="govuk-summary-list__value">
