@@ -27,63 +27,28 @@
           <form method="post" action="task-financial-plan-alternative-landing-page">
             <div class="govuk-form-group">
 
-              {{ govukRadios({
-                name: "financialPlanBEFPAgreed",
+              {{ govukCheckboxes({
+                idPrefix: "financePlanAgreed",
+                name: "financePlanAgreed",
+                values: currentProject.financePlanAgreed,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
                     text: "Finance plan agreed",
-                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                    classes: "govuk-fieldset__legend--m"
                   }
                 },
                 items: [
-                  {
-                    value: "Yes",
-                    text: "Yes",
-                    checked: checked("currentProject.financialPlanBEFPAgreed", "Yes")
-                  },
-                  {
-                    value: "No",
-                    text: "No",
-                    checked: checked("currentProject.financialPlanBEFPAgreed", "No")
+                {
+                  value: "Done",
+                  text: "Done"
                   }
                 ]
               }) }}
 
               {{ govukDateInput({
-                id: "financialPlanForecastDate",
-                namePrefix: "financialPlanForecastDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Forecast date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.financialPlanForecastDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.financialPlanForecastDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.financialPlanForecastDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
-                id: "financialPlanActualDate",
-                namePrefix: "financialPlanActualDate",
+                id: "financePlanActualDate",
+                namePrefix: "financePlanActualDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -97,55 +62,78 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.financialPlanActualDateDay,
+                  value: currentProject.financePlanActualDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.financialPlanActualDateMonth,
+                  value: currentProject.financePlanActualDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.financialPlanActualDateYear,
+                  value: currentProject.financePlanActualDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
-              {{ govukInput({
-                id: "financialPlanSharepointLink",
-                name: "financialPlanSharepointLink",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
+              {{ govukCheckboxes({
+                idPrefix: "financePlanSaved",
+                name: "financePlanSaved",
+                values: currentProject.financePlanSaved,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
                     text: "Plan saved in Workspaces folder",
-                    classes: "govuk-heading-m"
+                    classes: "govuk-fieldset__legend--m"
+                  }
                 },
-                value: currentProject.financialPlanSharepointLink
+                items: [
+                {
+                  value: "Done",
+                  text: "Done"
+                  }
+                ]
               }) }}
 
               {{ govukTextarea({
-                id: "financialPlanCommentsOnDecisionToApprove",
-                name: "financialPlanCommentsOnDecisionToApprove",
+                id: "financePlanCommentsOnDecisionToApprove",
+                name: "financePlanCommentsOnDecisionToApprove",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Comments",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.financialPlanCommentsOnDecisionToApprove
+                value: currentProject.financePlanCommentsOnDecisionToApprove
               }) }}
 
-              {{ govukTextarea({
-                id: "financialPlanReasonNotApplicable",
-                name: "financialPlanReasonNotApplicable",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Reason not applicable",
-                    classes: "govuk-heading-m"
+              {{ govukRadios({
+                name: "financePlanPupilNumbersAgreed",
+                fieldset: {
+                  legend: {
+                    text: "Local authority agreed to underwrite pupil numbers",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
                 },
-                value: currentProject.financialPlanReasonNotApplicable
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.financePlanPupilNumbersAgreed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.financePlanPupilNumbersAgreed", "No")
+                  },
+                  {
+                    value: "Not applicable",
+                    text: "No applicable",
+                    checked: checked("currentProject.financePlanPupilNumbersAgreed", "Not applicable")
+                  }
+                ]
               }) }}
-              
 
               <br><br>
               {{ govukButton({

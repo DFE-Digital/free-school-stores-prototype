@@ -21,7 +21,7 @@
         Finance plan
       </h1>
 
-      {% if currentProject.financialPlanRPAOptIn == "Yes" %}
+      {% if currentProject.financePlanRPAOptIn == "Yes" %}
         {{ govukSummaryList({
           
           rows: [
@@ -30,7 +30,7 @@
                 text: "Finance plan agreed"
               },
               value: {
-                html: currentProject.financialPlanBEFPAgreed | displayText
+                html: currentProject.financePlanAgreed | displayText | safe
               },
               actions: {
                 items: [
@@ -45,28 +45,10 @@
             ,
             {
               key: {
-                text: "Forecast date"
-              },
-              value: {
-                html: currentProject | withDatePrefixed('financialPlanForecastDate') | displayDate
-              },
-              actions: {
-                items: [
-                  {
-                    href: "task-financial-plan-edit",
-                    text: "Change",
-                    visuallyHiddenText: "Forecast date"
-                  }
-                ]
-              }
-            }
-            ,
-            {
-              key: {
                 text: "Actual date"
               },
               value: {
-                html: currentProject | withDatePrefixed('financialPlanActualDate') | displayDate
+                html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
               },
               actions: {
                 items: [
@@ -81,17 +63,17 @@
             ,
             {
               key: {
-                text: "SharePoint link"
+                text: "Plan saved in Workspaces folder"
               },
               value: {
-                html: currentProject.financialPlanSharepointLink | displayText
+                html: currentProject.financePlanSaved | displayText | safe
               },
               actions: {
                 items: [
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "SharePoint link"
+                    visuallyHiddenText: "Plan saved in Workspaces folder"
                   }
                 ]
               }
@@ -102,7 +84,7 @@
                 text: "Comments on decision to approve (if applicable)"
               },
               value: {
-                html: currentProject.financialPlanCommentsOnDecisionToApprove | displayText
+                html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
               },
               actions: {
                 items: [
@@ -117,17 +99,17 @@
             ,
             {
               key: {
-                text: "Reason not applicable"
+                text: "Local authority agreed to underwrite pupil numbers"
               },
               value: {
-                html: currentProject.financialPlanReasonNotApplicable | displayText
+                html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
               },
               actions: {
                 items: [
                   {
-                    href: "task-financial-plan-edit",
+                    href: "task-articles-of-association-edit",
                     text: "Change",
-                    visuallyHiddenText: "Reason not applicable"
+                    visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
                   }
                 ]
               }
@@ -138,7 +120,7 @@
                 text: "Trust will opt-in to RPA (risk protection arrangement)"
               },
               value: {
-                html: currentProject.financialPlanRPAOptIn | displayText
+                html: currentProject.financePlanRPAOptIn | displayText | safe
               },
               actions: {
                 items: [
@@ -156,7 +138,7 @@
                 text: "RPA start date"
               },
               value: {
-                html: currentProject | withDatePrefixed('financialPlanRPAStartDate') | displayDate
+                html: currentProject | withDatePrefixed('financePlanRPAStartDate') | displayDate
               },
               actions: {
                 items: [
@@ -174,7 +156,7 @@
                 text: "Type of RPA cover"
               },
               value: {
-                html: currentProject.financialPlanRPAType | displayText
+                html: currentProject.financePlanRPAType | displayText
               },
               actions: {
                 items: [
@@ -190,14 +172,14 @@
         }) }}
       {% else %}
         {{ govukSummaryList({
-            
+
           rows: [
             {
               key: {
                 text: "Finance plan agreed"
               },
               value: {
-                html: currentProject.financialPlanBEFPAgreed | displayText
+                html: currentProject.financePlanAgreed | displayText
               },
               actions: {
                 items: [
@@ -212,35 +194,17 @@
             ,
             {
               key: {
-                text: "Forecast date"
+                text: "Actual date"
               },
               value: {
-                html: currentProject | withDatePrefixed('financialPlanForecastDate') | displayDate
+                html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
               },
               actions: {
                 items: [
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "Forecast date"
-                  }
-                ]
-              }
-            }
-            ,
-            {
-              key: {
-                text: "Date agreed"
-              },
-              value: {
-                html: currentProject | withDatePrefixed('financialPlanActualDate') | displayDate
-              },
-              actions: {
-                items: [
-                  {
-                    href: "task-financial-plan-edit",
-                    text: "Change",
-                    visuallyHiddenText: "Date agreed"
+                    visuallyHiddenText: "Actual date"
                   }
                 ]
               }
@@ -251,7 +215,7 @@
                 text: "Plan saved in Workspaces folder"
               },
               value: {
-                html: currentProject.financialPlanSharepointLink | displayText
+                html: currentProject.financePlanSaved | displayText | safe
               },
               actions: {
                 items: [
@@ -266,35 +230,35 @@
             ,
             {
               key: {
-                text: "Comments"
+                text: "Comments on decision to approve (if applicable)"
               },
               value: {
-                html: currentProject.financialPlanCommentsOnDecisionToApprove | displayText
+                html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
               },
               actions: {
                 items: [
                   {
                     href: "task-financial-plan-edit",
                     text: "Change",
-                    visuallyHiddenText: "Comments"
+                    visuallyHiddenText: "Comments on decision to approve (if applicable)"
                   }
                 ]
               }
-            }     
+            }
             ,
             {
               key: {
-                text: "Reason not applicable"
+                text: "Local authority agreed to underwrite pupil numbers"
               },
               value: {
-                html: currentProject.financialPlanReasonNotApplicable | displayText
+                html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
               },
               actions: {
                 items: [
                   {
-                    href: "task-financial-plan-edit",
+                    href: "task-articles-of-association-edit",
                     text: "Change",
-                    visuallyHiddenText: "Reason not applicable"
+                    visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
                   }
                 ]
               }
@@ -305,7 +269,7 @@
                 text: "Trust will opt-in to RPA (risk protection arrangement)"
               },
               value: {
-                html: currentProject.financialPlanRPAOptIn | displayText
+                html: currentProject.financePlanRPAOptIn | displayText | safe
               },
               actions: {
                 items: [
@@ -327,7 +291,7 @@
       {{ govukCheckboxes({
         idPrefix: "task-financial-plan-status",
         name: "task-financial-plan-status",
-        values: currentProject.taskFinancialPlanStatus,
+        values: currentProject.taskFinancePlanStatus,
         items: [
         {
           value: "Complete",

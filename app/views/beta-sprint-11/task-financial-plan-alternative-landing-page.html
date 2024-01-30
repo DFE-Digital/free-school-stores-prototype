@@ -20,16 +20,16 @@
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
         Finance plan
       </h1>
-      
+
       {{ govukSummaryList({
-          
+
         rows: [
           {
             key: {
               text: "Finance plan agreed"
             },
             value: {
-              html: currentProject.financialPlanBEFPAgreed | displayText
+              html: currentProject.financePlanAgreed | displayText
             },
             actions: {
               items: [
@@ -44,35 +44,17 @@
           ,
           {
             key: {
-              text: "Forecast date"
+              text: "Actual date"
             },
             value: {
-              html: currentProject | withDatePrefixed('financialPlanForecastDate') | displayDate
+              html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
             },
             actions: {
               items: [
                 {
                   href: "task-financial-plan-alternative-edit",
                   text: "Change",
-                  visuallyHiddenText: "Forecast date"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: " Date agreed"
-            },
-            value: {
-              html: currentProject | withDatePrefixed('financialPlanActualDate') | displayDate
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-financial-plan-alternative-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Date agreed"
+                  visuallyHiddenText: "Actual date"
                 }
               ]
             }
@@ -83,7 +65,7 @@
               text: "Plan saved in Workspaces folder"
             },
             value: {
-              html: currentProject.financialPlanSharepointLink | displayText
+              html: currentProject.financePlanSaved | displayText | safe
             },
             actions: {
               items: [
@@ -98,35 +80,35 @@
           ,
           {
             key: {
-              text: "Comments"
+              text: "Comments on decision to approve (if applicable)"
             },
             value: {
-              html: currentProject.financialPlanCommentsOnDecisionToApprove | displayText
+              html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
             },
             actions: {
               items: [
                 {
                   href: "task-financial-plan-alternative-edit",
                   text: "Change",
-                  visuallyHiddenText: "Comments"
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
                 }
               ]
             }
-          }     
+          }
           ,
           {
             key: {
-              text: "Reason not applicable"
+              text: "Local authority agreed to underwrite pupil numbers"
             },
             value: {
-              html: currentProject.financialPlanReasonNotApplicable | displayText
+              html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
             },
             actions: {
               items: [
                 {
-                  href: "task-financial-plan-alternative-edit",
+                  href: "task-articles-of-association-edit",
                   text: "Change",
-                  visuallyHiddenText: "Reason not applicable"
+                  visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
                 }
               ]
             }
@@ -140,7 +122,7 @@
       {{ govukCheckboxes({
         idPrefix: "task-financial-plan-status",
         name: "task-financial-plan-status",
-        values: currentProject.taskFinancialPlanStatus,
+        values: currentProject.taskFinancePlanStatus,
         items: [
         {
           value: "Complete",

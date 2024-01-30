@@ -272,14 +272,14 @@
                   Finance plan
                 </a>
               </span>
-              {{ currentProject.taskFinancialPlanStatus
-                | taskStatus([currentProject.financialPlanBEFPAgreed,
-                  currentProject | withDatePrefixed('financialPlanForecastDate'),
-                  currentProject | withDatePrefixed('financialPlanActualDate'),
-                  currentProject.financialPlanSharepointLink,
-                  currentProject.financialPlanCommentsOnDecisionToApprove,
-                  currentProject.financialPlanReasonNotApplicable,
-                  currentProject.financialPlanRPAOptIn]) 
+              {{ currentProject.taskFinancePlanStatus
+                | taskStatus([currentProject.financePlanAgreed,
+                  currentProject | withDatePrefixed('financePlanForecastDate'),
+                  currentProject | withDatePrefixed('financePlanActualDate'),
+                  currentProject.financePlanSaved,
+                  currentProject.financePlanCommentsOnDecisionToApprove,
+                  currentProject.financePlanPupilNumberAgreed,
+                  currentProject.financePlanRPAOptIn]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">

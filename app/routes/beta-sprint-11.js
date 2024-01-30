@@ -189,17 +189,7 @@ module.exports = function (router) {
             "riskRatingGovernance" : "",
             "riskRatingFinance" : "",
             "taskDatesStatus": "",
-            "taskPDGStatus": "",
-            "financialPlanBEFPAgreed" : "",
-            "financialPlanForecastDateDay": "",
-            "financialPlanForecastDateMonth": "",
-            "financialPlanForecastDateYear": "",
-            "financialPlanActualDateDay": "",
-            "financialPlanActualDateMonth": "",
-            "financialPlanActualDateYear": "",
-            "financialPlanCommentsOnDecisionToApprove": "",
-            "financialPlanSharepointLink": "",
-            "taskFinancialPlanStatus": ""
+            "taskPDGStatus": ""
         }
         console.log(newProject);
         req.session.data['project-list'].unshift(newProject);
@@ -291,16 +281,6 @@ module.exports = function (router) {
             "preFundingAgreementSharepointLink": "",
             "taskPreFundingAgreementStatus": "",
             "RAFCurrentSharepointLink" : "",
-            "financialPlanBEFPAgreed" : "",
-            "financialPlanForecastDateDay": "",
-            "financialPlanForecastDateMonth": "",
-            "financialPlanForecastDateYear": "",
-            "financialPlanActualDateDay": "",
-            "financialPlanActualDateMonth": "",
-            "financialPlanActualDateYear": "",
-            "financialPlanCommentsOnDecisionToApprove": "",
-            "financialPlanSharepointLink": "",
-            "taskFinancialPlanStatus": ""
         }
         console.log(newProject1);
         req.session.data['project-list'].unshift(newProject1);
@@ -382,16 +362,6 @@ module.exports = function (router) {
             "preFundingAgreementSharepointLink": "",
             "taskPreFundingAgreementStatus": "",
             "RAFCurrentSharepointLink" : "",
-            "financialPlanBEFPAgreed" : "",
-            "financialPlanForecastDateDay": "",
-            "financialPlanForecastDateMonth": "",
-            "financialPlanForecastDateYear": "",
-            "financialPlanActualDateDay": "",
-            "financialPlanActualDateMonth": "",
-            "financialPlanActualDateYear": "",
-            "financialPlanCommentsOnDecisionToApprove": "",
-            "financialPlanSharepointLink": "",
-            "taskFinancialPlanStatus": ""
         }
         console.log(newProject2);
         req.session.data['project-list'].unshift(newProject2);
@@ -473,16 +443,6 @@ module.exports = function (router) {
             "preFundingAgreementSharepointLink": "",
             "taskPreFundingAgreementStatus": "",
             "RAFCurrentSharepointLink" : "",
-            "financialPlanBEFPAgreed" : "",
-            "financialPlanForecastDateDay": "",
-            "financialPlanForecastDateMonth": "",
-            "financialPlanForecastDateYear": "",
-            "financialPlanActualDateDay": "",
-            "financialPlanActualDateMonth": "",
-            "financialPlanActualDateYear": "",
-            "financialPlanCommentsOnDecisionToApprove": "",
-            "financialPlanSharepointLink": "",
-            "taskFinancialPlanStatus": ""
         }
         console.log(newProject3);
         req.session.data['project-list'].unshift(newProject3);
@@ -605,28 +565,26 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
-    router.post('/' + version + '/task-financial-plan-landing-page', function(req, res) {
+    router.post('/' + version + '/task-financial-plan-update', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.financialPlanBEFPAgreed = req.session.data['financialPlanBEFPAgreed'];
-        applyDateFields(masterProject, req, 'financialPlanForecastDate');
-        applyDateFields(masterProject, req, 'financialPlanActualDate');
-        masterProject.financialPlanSharepointLink = req.session.data['financialPlanSharepointLink'];
-        masterProject.financialPlanCommentsOnDecisionToApprove = req.session.data['financialPlanCommentsOnDecisionToApprove'];
-        masterProject.financialPlanReasonNotApplicable = req.session.data['financialPlanReasonNotApplicable'];
-        masterProject.financialPlanRPAOptIn = req.session.data['financialPlanRPAOptIn'];
-        applyDateFields(masterProject, req, 'financialPlanRPAStartDate');
-        masterProject.financialPlanRPAType = req.session.data['financialPlanRPAType'];
-
+        masterProject.financePlanAgreed = req.session.data['financePlanAgreed'];
+        applyDateFields(masterProject, req, 'financePlanActualDate');
+        masterProject.financePlanSaved = req.session.data['financePlanSaved'];
+        masterProject.financePlanCommentsOnDecisionToApprove = req.session.data['financePlanCommentsOnDecisionToApprove'];
+        masterProject.financePlanPupilNumbersAgreed = req.session.data['financePlanPupilNumbersAgreed'];
+        masterProject.financePlanRPAOptIn = req.session.data['financePlanRPAOptIn'];
+        applyDateFields(masterProject, req, 'financePlanRPAStartDate');
+        masterProject.financePlanRPAType = req.session.data['financePlanRPAType'];
+        
         req.session.data.currentProject = masterProject;
-
         res.redirect("task-financial-plan-landing-page");
     });
 
     router.post('/' + version + '/task-financial-plan-confirmation', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.taskFinancialPlanStatus = req.session.data['task-financial-plan-status'];
+        masterProject.taskFinancePlanStatus = req.session.data['task-financial-plan-status'];
 
         req.session.data.currentProject = masterProject;
 
@@ -636,12 +594,11 @@ module.exports = function (router) {
     router.post('/' + version + '/task-financial-plan-alternative-landing-page', function(req, res) {
         var masterProject = getProject(req);
 
-        masterProject.financialPlanBEFPAgreed = req.session.data['financialPlanBEFPAgreed'];
-        applyDateFields(masterProject, req, 'financialPlanForecastDate');
-        applyDateFields(masterProject, req, 'financialPlanActualDate');
-        masterProject.financialPlanSharepointLink = req.session.data['financialPlanSharepointLink'];
-        masterProject.financialPlanCommentsOnDecisionToApprove = req.session.data['financialPlanCommentsOnDecisionToApprove'];
-        masterProject.financialPlanReasonNotApplicable = req.session.data['financialPlanReasonNotApplicable'];
+        masterProject.financePlanAgreed = req.session.data['financePlanAgreed'];
+        applyDateFields(masterProject, req, 'financePlanActualDate');
+        masterProject.financePlanSaved = req.session.data['financePlanSaved'];
+        masterProject.financePlanCommentsOnDecisionToApprove = req.session.data['financePlanCommentsOnDecisionToApprove'];
+        masterProject.financePlanPupilNumbersAgreed = req.session.data['financePlanPupilNumbersAgreed'];
 
         req.session.data.currentProject = masterProject;
 
