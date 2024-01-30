@@ -457,9 +457,8 @@ module.exports = function (router) {
         masterProject.dateOfEntryIntoPreOpeningDay = req.session.data['dateOfEntryIntoPreOpening-day'];
         masterProject.dateOfEntryIntoPreOpeningMonth = req.session.data['dateOfEntryIntoPreOpening-month'];
         masterProject.dateOfEntryIntoPreOpeningYear = req.session.data['dateOfEntryIntoPreOpening-year'];
-        masterProject.provisionalOpeningDateDay = req.session.data['provisionalOpeningDate-day'];
-        masterProject.provisionalOpeningDateMonth = req.session.data['provisionalOpeningDate-month'];
-        masterProject.provisionalOpeningDateYear = req.session.data['provisionalOpeningDate-year'];
+        masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening'];
+        applyDateFields(masterProject, req, 'provisionalOpeningDate');
         masterProject.openingAcademicStart = req.session.data['openingAcademic-start year'];
         masterProject.openingAcademicEnd = req.session.data['openingAcademic-end year'];
 
@@ -547,6 +546,8 @@ module.exports = function (router) {
         masterProject.kickOffMeetingFundingArrangementDetailsAgreed = req.session.data['kickOffMeetingFundingArrangementDetailsAgreed'];
         applyDateFields(masterProject, req, 'kickOffMeetingForecastDate');
         applyDateFields(masterProject, req, 'kickOffMeetingActualDate');
+        masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening'];
+        applyDateFields(masterProject, req, 'provisionalOpeningDate');
         masterProject.kickOffMeetingCommentsOnDecisionToApprove = req.session.data['kickOffMeetingCommentsOnDecisionToApprove'];
         masterProject.kickOffMeetingSharepointLink = req.session.data['kickOffMeetingSharepointLink'];
 

@@ -62,7 +62,8 @@
               </span>
               {{ currentProject.taskDatesStatus 
                 | taskStatus([currentProject.dateOfEntryIntoPreOpeningDay, 
-                currentProject.provisionalOpeningDateDay,
+                currentProject.realisticYearOfOpening,
+                currentProject | withDatePrefixed('provisionalOpeningDate'),
                 currentProject.openingAcademicStart])
                 | safe }}
             </li>
@@ -138,6 +139,8 @@
                 | taskStatus([currentProject.kickOffMeetingFundingArrangementDetailsAgreed,
                   currentProject | withDatePrefixed('kickOffMeetingForecastDate'),
                   currentProject | withDatePrefixed('kickOffMeetingActualDate'),
+                  currentProject.realisticYearOfOpening,
+                  currentProject | withDatePrefixed('provisionalOpeningDate'),
                   currentProject.kickOffMeetingCommentsOnDecisionToApprove,
                   currentProject.kickOffMeetingSharepointLink]) 
                 | safe }}

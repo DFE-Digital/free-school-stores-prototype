@@ -56,6 +56,21 @@
             ]
           }) }}
 
+          {{ govukInput({
+            id: "realisticYearOfOpening",
+            name: "realisticYearOfOpening",
+            classes: "govuk-input--width-4 govuk-!-margin-bottom-6",
+            label: {
+                text: "Realistic year of opening",
+                classes: "govuk-heading-m",
+                isPageHeading: false
+            },
+            hint: {
+              text: "For example, 2021"
+            },
+            value: currentProject.realisticYearOfOpening
+          }) }}
+          
           {{ govukDateInput({
             id: "provisionalOpeningDate",
             namePrefix: "provisionalOpeningDate",
