@@ -544,11 +544,8 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.kickOffMeetingFundingArrangementDetailsAgreed = req.session.data['kickOffMeetingFundingArrangementDetailsAgreed'];
-        applyDateFields(masterProject, req, 'kickOffMeetingForecastDate');
-        applyDateFields(masterProject, req, 'kickOffMeetingActualDate');
         masterProject.realisticYearOfOpening = req.session.data['realisticYearOfOpening'];
         applyDateFields(masterProject, req, 'provisionalOpeningDate');
-        masterProject.kickOffMeetingCommentsOnDecisionToApprove = req.session.data['kickOffMeetingCommentsOnDecisionToApprove'];
         masterProject.kickOffMeetingSharepointLink = req.session.data['kickOffMeetingSharepointLink'];
 
         req.session.data.currentProject = masterProject;

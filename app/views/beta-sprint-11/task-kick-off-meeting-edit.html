@@ -49,69 +49,6 @@
                 ]
               }) }}
 
-              {{ govukDateInput({
-                id: "kickOffMeetingForecastDate",
-                namePrefix: "kickOffMeetingForecastDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Forecast date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.kickOffMeetingForecastDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.kickOffMeetingForecastDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.kickOffMeetingForecastDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
-                id: "kickOffMeetingActualDate",
-                namePrefix: "kickOffMeetingActualDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Actual date",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.kickOffMeetingActualDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.kickOffMeetingActualDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.kickOffMeetingActualDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
 
               {{ govukInput({
                 id: "realisticYearOfOpening",
@@ -158,17 +95,6 @@
                   classes: "govuk-input--width-4"
                 }
               ]
-              }) }}
-
-              {{ govukInput({
-                id: "kickOffMeetingCommentsOnDecisionToApprove",
-                name: "kickOffMeetingCommentsOnDecisionToApprove",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Comments on decision to approve (if applicable)",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.kickOffMeetingCommentsOnDecisionToApprove
               }) }}
 
               {{ govukInput({
