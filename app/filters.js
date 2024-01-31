@@ -21,6 +21,8 @@ addFilter("displayCheckboxValues", (checkboxValues) =>
         return "<span class='empty'>Empty</span>";
     }
 
+    return checkboxValues.join(", ");
+
     /*
     for item in checkboxValues 
     {
