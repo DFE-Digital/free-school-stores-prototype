@@ -1,0 +1,142 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Finance plan - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Finance plan
+      </h1>
+
+      {{ govukSummaryList({
+
+        rows: [
+          {
+            key: {
+              text: "Finance plan agreed"
+            },
+            value: {
+              html: currentProject.financePlanAgreed | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-financial-plan-alternative-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Finance plan agreed"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date agreed"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-financial-plan-alternative-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Date agreed"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Plan saved in Workspaces folder"
+            },
+            value: {
+              html: currentProject.financePlanSaved | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-financial-plan-alternative-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Plan saved in Workspaces folder"
+                }
+              ]
+            }
+          }
+          ,
+                    {
+            key: {
+              text: "Local authority agreed to underwrite pupil numbers"
+            },
+            value: {
+              html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-financial-plan-alternative-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments"
+            },
+            value: {
+              html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-financial-plan-alternative-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments"
+                }
+              ]
+            }
+          }
+      }) }}
+
+      <form action="task-financial-plan-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-financial-plan-status",
+        name: "task-financial-plan-status",
+        values: currentProject.taskFinancePlanStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

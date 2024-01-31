@@ -1,0 +1,90 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+New risk rating entry - Overall - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
+        Overall
+      </h1>
+
+
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="other-info-new-rag-rating-check-your-answers" method="post">
+        <input hidden type="text" name="returnToSummary" value="no"/>
+
+          {{ govukRadios({
+            idPrefix: "newRiskRatingOverall",
+            name: "newRiskRatingOverall",
+            classes: "govuk-!-margin-bottom-6",
+            fieldset: {
+              legend: {
+                html: 'Risk rating',
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l govuk-!-font-size-27 govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Green",
+                checked: checked("newRiskRatingOverall", "Green"),
+                html: "Green" | displayRAGRating
+              },
+              {
+                value: "Amber Green",
+                checked: checked("newRiskRatingOverall", "Amber Green"),
+                html: "Amber Green" | displayRAGRating
+              },
+              {
+                value: "Amber Red",
+                checked: checked("newRiskRatingOverall", "Amber Red"),
+                html: "Amber Red" | displayRAGRating
+              },
+              {
+                value: "Red",
+                checked: checked("newRiskRatingOverall", "Red"),
+                html: "Red" | displayRAGRating
+              }
+
+            ]
+          }) }} 
+
+          {{ govukTextarea({
+            name: "newRiskRatingOverallSummary",
+            id: "newRiskRatingOverallSummary",
+            label: {
+                text: "Risk summary",
+                classes: "govuk-label--l govuk-!-font-size-27 govuk-!-margin-bottom-6",
+                isPageHeading: false
+            },
+            value: data['newRiskRatingOverallSummary']
+          }) }}
+        
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+  </div>
+</div>
+
+{% endblock %}

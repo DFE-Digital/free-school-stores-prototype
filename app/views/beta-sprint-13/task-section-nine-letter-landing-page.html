@@ -1,0 +1,126 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Section 9 letter - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Section 9 letter
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('sectionNineLetterForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-section-nine-letter-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('sectionNineLetterActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-section-nine-letter-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.sectionNineLetterCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-section-nine-letter-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.sectionNineLetterSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-section-nine-letter-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-section-nine-letter-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-section-nine-letter-status",
+        name: "task-section-nine-letter-status",
+        values: currentProject.taskSectionNineLetterStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

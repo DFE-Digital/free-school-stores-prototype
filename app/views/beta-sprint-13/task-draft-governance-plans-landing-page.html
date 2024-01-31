@@ -1,0 +1,126 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Draft governance plans - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Draft governance plans
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('draftGovernancePlansForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-draft-governance-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('draftGovernancePlansActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-draft-governance-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.draftGovernancePlansCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-draft-governance-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.draftGovernancePlansSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-draft-governance-plans-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-draft-governance-plans-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-draft-governance-plans-status",
+        name: "task-draft-governance-plans-status",
+        values: currentProject.taskDraftGovernancePlansStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
