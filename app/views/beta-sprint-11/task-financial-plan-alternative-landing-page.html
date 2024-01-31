@@ -78,6 +78,24 @@
             }
           }
           ,
+                    {
+            key: {
+              text: "Local authority agreed to underwrite pupil numbers"
+            },
+            value: {
+              html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-financial-plan-alternative-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
+                }
+              ]
+            }
+          }
+          ,
           {
             key: {
               text: "Comments"
@@ -95,27 +113,7 @@
               ]
             }
           }
-          ,
-          {
-            key: {
-              text: "Local authority agreed to underwrite pupil numbers"
-            },
-            value: {
-              html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-articles-of-association-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
-                }
-              ]
-            }
-          }
-        ]
       }) }}
-
 
       <form action="task-financial-plan-confirmation" method="post">
         

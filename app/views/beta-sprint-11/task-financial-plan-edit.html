@@ -97,17 +97,6 @@
                 ]
               }) }}
 
-              {{ govukTextarea({
-                id: "financePlanCommentsOnDecisionToApprove",
-                name: "financePlanCommentsOnDecisionToApprove",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Comments",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.financePlanCommentsOnDecisionToApprove
-              }) }}
-
               {{ govukRadios({
                 name: "financePlanPupilNumbersAgreed",
                 fieldset: {
@@ -133,6 +122,17 @@
                     checked: checked("currentProject.financePlanPupilNumbersAgreed", "Not applicable")
                   }
                 ]
+              }) }}
+
+              {{ govukTextarea({
+                id: "financePlanCommentsOnDecisionToApprove",
+                name: "financePlanCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.financePlanCommentsOnDecisionToApprove
               }) }}
 
               {% set RPAOptInHtml %}
