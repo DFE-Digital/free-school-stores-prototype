@@ -44,7 +44,7 @@
           ,
           {
             key: {
-              text: "Actual date"
+              text: "Date agreed"
             },
             value: {
               html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
@@ -54,7 +54,7 @@
                 {
                   href: "task-financial-plan-alternative-edit",
                   text: "Change",
-                  visuallyHiddenText: "Actual date"
+                  visuallyHiddenText: "Date agreed"
                 }
               ]
             }
@@ -80,7 +80,7 @@
           ,
           {
             key: {
-              text: "Comments on decision to approve (if applicable)"
+              text: "Comments"
             },
             value: {
               html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
@@ -90,7 +90,7 @@
                 {
                   href: "task-financial-plan-alternative-edit",
                   text: "Change",
-                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                  visuallyHiddenText: "Comments"
                 }
               ]
             }
