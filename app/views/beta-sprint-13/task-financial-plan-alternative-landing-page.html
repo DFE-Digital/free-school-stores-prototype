@@ -29,7 +29,7 @@
               text: "Finance plan agreed"
             },
             value: {
-              html: currentProject.financePlanAgreed | displayText
+              html: currentProject.financePlanAgreed | displayCheckboxValues
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Plan saved in Workspaces folder"
             },
             value: {
-              html: currentProject.financePlanSaved | displayText | safe
+              html: currentProject.financePlanSaved | displayCheckboxValues
             },
             actions: {
               items: [
@@ -78,12 +78,12 @@
             }
           }
           ,
-                    {
+          {
             key: {
               text: "Local authority agreed to underwrite pupil numbers"
             },
             value: {
-              html: currentProject.financePlanPupilNumbersAgreed | displayText | safe
+              html: currentProject.financePlanPupilNumbersAgreed | displayText
             },
             actions: {
               items: [
@@ -113,7 +113,9 @@
               ]
             }
           }
+        ]
       }) }}
+
 
       <form action="task-financial-plan-confirmation" method="post">
         

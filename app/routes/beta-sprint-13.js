@@ -589,7 +589,7 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
-    router.post('/' + version + '/task-financial-plan-alternative-landing-page', function(req, res) {
+    router.post('/' + version + '/task-financial-plan-alternative-update', function(req, res) {
         var masterProject = getProject(req);
 
         masterProject.financePlanAgreed = req.session.data['financePlanAgreed'];
