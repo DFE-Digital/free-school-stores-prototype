@@ -1,18 +1,19 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const { DateTime } = require('luxon');
 const addFilter = govukPrototypeKit.views.addFilter
+const { displayDate, displayText } = require('./filters/display-filters');
+const { getFinancialPlanRowsSprint11 } = require("./filters/row-filters");
+const { withDatePrefixed } = require('./filters/data-filters');
 
-addFilter("displayDate", (dateString) =>
-{
-    if (!dateString || dateString === "")
-    {
-        return "<span class='empty'>Empty</span>";
-    }
+/** Data filters **/
+addFilter("withDatePrefixed", withDatePrefixed);
 
-    const date = DateTime.fromFormat(dateString,"yyyyMMdd");
+/** Display filters **/
+addFilter("displayDate", displayDate);
+addFilter("displayText", displayText);
 
-    return date.toLocaleString(DateTime.DATE_FULL);
-});
+/** Row filters **/
+addFilter("getFinancialPlanRowsSprint11", getFinancialPlanRowsSprint11);
 
 addFilter("displayCheckboxValues", (checkboxValues) =>
 {
@@ -32,21 +33,6 @@ addFilter("displayCheckboxValues", (checkboxValues) =>
     */
 
 });
-
-addFilter("withDatePrefixed", (project, prefix) =>
-{
-    return (project[prefix + "Year"] + project[prefix + "Month"] + project[prefix + "Day"]);
-});
-
-addFilter("displayText", value =>
-{
-    if (!value || value === "")
-    {
-        return "<span class='empty'>Empty</span>";
-    }
-
-    return value;
-})
 
 addFilter('taskStatus', (taskStatus, fields) =>
 {
