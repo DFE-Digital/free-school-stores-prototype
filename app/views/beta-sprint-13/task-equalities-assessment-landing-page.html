@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
+Equalities assessment - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@ Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Due diligence checks
+        Equalities assessment
       </h1>
 
       {{ govukSummaryList({
@@ -26,15 +26,33 @@ Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
         rows: [
           {
             key: {
-              text: "Forecast date"
+              text: "Impact assessment and equalities analysis completed"
             },
             value: {
-              html: currentProject | withDatePrefixed('dbsChecksForecastDate') | displayDate
+              html: currentProject.impactAssessmentCompleted | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-dbs-checks-edit",
+                  href: "task-equalities-assessment-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Impact assessment and equalities analysis completed"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('impactAssessmentForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-equalities-assessment-edit",
                   text: "Change",
                   visuallyHiddenText: "Forecast date"
                 }
@@ -47,12 +65,12 @@ Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
               text: "Actual date"
             },
             value: {
-              html: currentProject | withDatePrefixed('dbsChecksActualDate') | displayDate
+              html: currentProject | withDatePrefixed('impactAssessmentActualDate') | displayDate
             },
             actions: {
               items: [
                 {
-                  href: "task-dbs-checks-edit",
+                  href: "task-equalities-assessment-edit",
                   text: "Change",
                   visuallyHiddenText: "Actual date"
                 }
@@ -65,30 +83,29 @@ Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
               text: "Comments on decision to approve (if applicable)"
             },
             value: {
-              html: currentProject.dbsChecksCommentsOnDecisionToApprove | displayText
+              html: currentProject.impactAssessmentCommentsOnDecisionToApprove | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-dbs-checks-edit",
+                  href: "task-equalities-assessment-edit",
                   text: "Change",
                   visuallyHiddenText: "Comments on decision to approve (if applicable)"
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "SharePoint link"
             },
             value: {
-              html: currentProject.dbsChecksSharepointLink | displayText
+              html: currentProject.impactAssessmentSharepointLink | displayText
             },
             actions: {
               items: [
                 {
-                  href: "task-dbs-checks-edit",
+                  href: "task-equalities-assessment-edit",
                   text: "Change",
                   visuallyHiddenText: "SharePoint link"
                 }
@@ -99,12 +116,12 @@ Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
       }) }}
 
 
-      <form action="task-dbs-checks-confirmation" method="post">
+      <form action="task-impact-assessment-and-equalities-analysis-confirmation" method="post">
         
       {{ govukCheckboxes({
-        idPrefix: "task-dbs-checks-status",
-        name: "task-dbs-checks-status",
-        values: currentProject.taskDbsChecksStatus,
+        idPrefix: "task-impact-assessment-and-equalities-analysis-status",
+        name: "task-impact-assessment-and-equalities-analysis-status",
+        values: currentProject.taskImpactAssessmentStatus,
         items: [
         {
           value: "Complete",
@@ -121,6 +138,4 @@ Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
 
     </div>
   </div>
-
-
 {% endblock %}

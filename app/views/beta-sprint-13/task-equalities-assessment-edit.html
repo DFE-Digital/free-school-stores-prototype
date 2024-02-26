@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Edit Due diligence checks - {{currentProject.projectTitle}} – {{ serviceName }}
+  Edit equalities assessment - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,18 +18,40 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Edit due diligence checks
+        Edit equalities assessment
       </h1>
       
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" action="task-dbs-checks-landing-page">
+          <form method="post" action="task-impact-assessment-and-equalities-analysis-landing-page">
             <div class="govuk-form-group">
 
+              {{ govukRadios({
+                name: "impactAssessmentCompleted",
+                fieldset: {
+                  legend: {
+                    text: "Impact assessment and equalities analysis completed",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.impactAssessmentCompleted", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.impactAssessmentCompleted", "No")
+                  }
+                ]
+              }) }}
+
               {{ govukDateInput({
-                id: "dbsChecksForecastDate",
-                namePrefix: "dbsChecksForecastDate",
+                id: "impactAssessmentForecastDate",
+                namePrefix: "impactAssessmentForecastDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -43,25 +65,25 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.dbsChecksForecastDateDay,
+                  value: currentProject.impactAssessmentForecastDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.dbsChecksForecastDateMonth,
+                  value: currentProject.impactAssessmentForecastDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.dbsChecksForecastDateYear,
+                  value: currentProject.impactAssessmentForecastDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukDateInput({
-                id: "dbsChecksActualDate",
-                namePrefix: "dbsChecksActualDate",
+                id: "impactAssessmentActualDate",
+                namePrefix: "impactAssessmentActualDate",
                 classes: "govuk-!-margin-bottom-6",
                 fieldset: {
                   legend: {
@@ -75,42 +97,42 @@
                 items: [
                 {
                   name: "day",
-                  value: currentProject.dbsChecksActualDateDay,
+                  value: currentProject.impactAssessmentActualDateDay,
                   classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: currentProject.dbsChecksActualDateMonth,
+                  value: currentProject.impactAssessmentActualDateMonth,
                   classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: currentProject.dbsChecksActualDateYear,
+                  value: currentProject.impactAssessmentActualDateYear,
                   classes: "govuk-input--width-4"
                 }
               ]
               }) }}
 
               {{ govukInput({
-                id: "dbsChecksCommentsOnDecisionToApprove",
-                name: "dbsChecksCommentsOnDecisionToApprove",
+                id: "impactAssessmentCommentsOnDecisionToApprove",
+                name: "impactAssessmentCommentsOnDecisionToApprove",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Comments on decision to approve (if applicable)",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.dbsChecksCommentsOnDecisionToApprove
+                value: currentProject.impactAssessmentCommentsOnDecisionToApprove
               }) }}
 
               {{ govukInput({
-                id: "dbsChecksSharepointLink",
-                name: "dbsChecksSharepointLink",
+                id: "impactAssessmentSharepointLink",
+                name: "impactAssessmentSharepointLink",
                 classes: "govuk-!-margin-bottom-6",
                 label: {
                     text: "Sharepoint link",
                     classes: "govuk-heading-m"
                 },
-                value: currentProject.dbsChecksSharepointLink
+                value: currentProject.impactAssessmentSharepointLink
               }) }}
 
               <br><br>

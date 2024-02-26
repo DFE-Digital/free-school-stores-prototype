@@ -171,20 +171,6 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-principal-designate-landing-page" aria-describedby="list-convictions-status">
-                  Principal designate
-                </a>
-              </span>
-              {{ currentProject.taskPrincipalDesignateStatus
-                | taskStatus([currentProject.principalDesignateAppointed,
-                currentProject | withDatePrefixed('principalDesignateForecastDate'),
-                currentProject | withDatePrefixed('principalDesignateActualDate'),
-                currentProject.principalDesignateCommentsOnDecisionToApprove,
-                currentProject.principalDesignateSharepointLink])
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
                 <a href="task-statutory-consultation-landing-page" aria-describedby="company-information-status">
                   Statutory consultation
                 </a>
@@ -195,20 +181,6 @@
                 currentProject | withDatePrefixed('statutoryConsultationActualDate'),
                 currentProject.statutoryConsultationCommentsOnDecisionToApprove,
                 currentProject.statutoryConsultationSharepointLink]) 
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="task-statutory-consultation-report-landing-page" aria-describedby="company-information-status">
-                  Statutory consultation report
-                </a>
-              </span>
-              {{ currentProject.taskStatutoryConsultationReportStatus
-                | taskStatus([
-                currentProject | withDatePrefixed('statutoryConsultationReportForecastDate'),
-                currentProject | withDatePrefixed('statutoryConsultationReportActualDate'),
-                currentProject.statutoryConsultationReportCommentsOnDecisionToApprove,
-                currentProject.statutoryConsultationReportSharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
@@ -229,20 +201,6 @@
             </li>           
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-section-nine-letter-landing-page" aria-describedby="company-information-status">
-                  Section 9 letter
-                </a>
-              </span>
-              {{ currentProject.taskSectionNineLetterStatus
-                | taskStatus([
-                currentProject | withDatePrefixed('sectionNineLetterForecastDate'),
-                currentProject | withDatePrefixed('sectionNineLetterActualDate'),
-                currentProject.sectionNineLetterCommentsOnDecisionToApprove,
-                currentProject.sectionNineLetterSharepointLink]) 
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
                 <a href="task-draft-governance-plans-landing-page" aria-describedby="company-information-status">
                   Draft governance plans
                 </a>
@@ -258,7 +216,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-school-admissions-policy-landing-page" aria-describedby="company-information-status">
-                  School admissions policy
+                  Admissions arrangements
                 </a>
               </span>
               {{ currentProject.taskSchoolAdmissionsPolicyStatus
@@ -287,16 +245,12 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-dbs-checks-landing-page" aria-describedby="company-information-status">
-                  DBS checks
+                <a href="task-equalities-assessment-landing-page" aria-describedby="list-convictions-status">
+                  Equalities assessment
                 </a>
               </span>
-              {{ currentProject.taskDbsChecksStatus
-                | taskStatus([
-                currentProject | withDatePrefixed('dbsChecksForecastDate'),
-                currentProject | withDatePrefixed('dbsChecksActualDate'),
-                currentProject.dbsChecksCommentsOnDecisionToApprove,
-                currentProject.dbsChecksSharepointLink]) 
+              {{ currentProject.taskEqualitiesAssessmentStatus
+                | taskStatus([]) 
                 | safe }}
             </li>
           </ul>
@@ -307,6 +261,7 @@
             Sign-off preparation
           </h2>
           <ul class="app-task-list__items">
+            <!--
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-pre-funding-agreement-landing-page" aria-describedby="company-information-status">
@@ -324,16 +279,6 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="task-curriculum-plans-landing-page" aria-describedby="contact-details-status">
-                  Curriculum plans
-                </a>
-              </span>
-              {{ currentProject.taskCurriculumPlansStatus
-                | taskStatus([]) 
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
                 <a href="task-final-governance-plan-landing-page" aria-describedby="list-convictions-status">
                   Final governance plan
                 </a>
@@ -342,6 +287,7 @@
                 | taskStatus([currentProject.finalGovernancePlanAgreed]) 
                 | safe }}
             </li>
+            -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-education-brief-and-policies-landing-page" aria-describedby="list-convictions-status">
@@ -355,7 +301,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-sign-off-preparation-gias-landing-page" aria-describedby="list-convictions-status">
-                  GIAS (Get Information about Schools)
+                  Set up the school on GIAS (Get information about schools)
                 </a>
               </span>
               {{ currentProject.taskGettingReadyToOpenGiasStatus
@@ -413,7 +359,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-impact-assessment-and-equalities-analysis-landing-page" aria-describedby="list-convictions-status">
-                  Impact assessment and equalities analysis
+                  Impact assessment
                 </a>
               </span>
               {{ currentProject.taskImpactAssessmentStatus
@@ -428,14 +374,7 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
             </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="task-getting-ready-to-open-gias-landing-page" aria-describedby="list-convictions-status">
-                  GIAS (Get Information about Schools)
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
-            </li>
+            <!--
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-suitability-and-dbs-checks-landing-page" aria-describedby="list-convictions-status">
@@ -444,14 +383,7 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
             </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="task-draft-education-brief-landing-page" aria-describedby="list-convictions-status">
-                  Draft education brief
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
-            </li>
+            -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-final-revenue-funding-plan-landing-page" aria-describedby="list-convictions-status">
@@ -462,6 +394,7 @@
                 | taskStatus([]) 
                 | safe }}
             </li>
+            <!--
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="task-readiness-to-open-meeting-landing-page" aria-describedby="list-convictions-status">
@@ -470,6 +403,7 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
             </li>
+            -->
           </ul>
         </li>
 
