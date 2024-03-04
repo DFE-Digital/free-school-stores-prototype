@@ -147,6 +147,20 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
+                <a href="task-school-admissions-policy-landing-page" aria-describedby="company-information-status">
+                  Admissions arrangements
+                </a>
+              </span>
+              {{ currentProject.taskSchoolAdmissionsPolicyStatus
+                | taskStatus([
+                currentProject | withDatePrefixed('schoolAdmissionsPolicyForecastDate'),
+                currentProject | withDatePrefixed('schoolAdmissionsPolicyActualDate'),
+                currentProject.schoolAdmissionsPolicyCommentsOnDecisionToApprove,
+                currentProject.schoolAdmissionsPolicySharepointLink]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="">
                   Project development grant (PDG) 
                 </a>
@@ -211,20 +225,6 @@
                 currentProject | withDatePrefixed('draftGovernancePlansActualDate'),
                 currentProject.draftGovernancePlansCommentsOnDecisionToApprove,
                 currentProject.draftGovernancePlansSharepointLink]) 
-                | safe }}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="task-school-admissions-policy-landing-page" aria-describedby="company-information-status">
-                  Admissions arrangements
-                </a>
-              </span>
-              {{ currentProject.taskSchoolAdmissionsPolicyStatus
-                | taskStatus([
-                currentProject | withDatePrefixed('schoolAdmissionsPolicyForecastDate'),
-                currentProject | withDatePrefixed('schoolAdmissionsPolicyActualDate'),
-                currentProject.schoolAdmissionsPolicyCommentsOnDecisionToApprove,
-                currentProject.schoolAdmissionsPolicySharepointLink]) 
                 | safe }}
             </li>
             <li class="app-task-list__item">
