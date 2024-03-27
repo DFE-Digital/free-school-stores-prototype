@@ -1,0 +1,175 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Applications evidence - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Applications evidence
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Evidence of applications exceeding the school's break-even pupil numbers"
+            },
+            value: {
+              html: currentProject.applicationsExceedBreakEvenPupilNumbers | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Evidence of applications exceeding the school's break-even pupil numbers"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Written evidence of sufficient referrals from commissioners (if alternative provision or a special school)"
+            },
+            value: {
+              html: currentProject.applicationsWrittenReferralFromComissioners | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Written evidence of sufficient referrals from commissioners (if alternative provision or a special school)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('applicationsEvidenceForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('applicationsEvidenceActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.applicationsEvidenceCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Reason not applicable"
+            },
+            value: {
+              html: currentProject.applicationsEvidenceReasonNotApplicable | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Reason not applicable"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.applicationsEvidenceSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-applications-evidence-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-applications-evidence-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-applications-evidence-status",
+        name: "task-applications-evidence-status",
+        values: currentProject.taskApplicationsEvidenceStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
