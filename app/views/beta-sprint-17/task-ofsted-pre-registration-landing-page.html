@@ -1,0 +1,176 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Ofsted pre-registration - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Ofsted pre-registration
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Ofsted pre-registration inspection conclusion"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationInspectionConclusion | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Ofsted pre-registration inspection conclusion"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Ofsted inspection outcome"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationInspectionOutcome | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Ofsted inspection outcome"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Inspection conditions met"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationInspectionConditionsMet | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Inspection conditions met"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationForecastDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationActualDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.ofstedPreRegistrationSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-ofsted-pre-registration-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-ofsted-pre-registration-edit-status",
+        name: "task-ofsted-pre-registration-edit-status",
+        values: currentProject.taskOfstedPreRegistrationStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

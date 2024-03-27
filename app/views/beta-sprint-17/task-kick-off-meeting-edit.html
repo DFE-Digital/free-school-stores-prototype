@@ -1,0 +1,125 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit kick-off meeting - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit kick-off meeting
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-kick-off-meeting-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "kickOffMeetingFundingArrangementDetailsAgreed",
+                fieldset: {
+                  legend: {
+                    text: "Funding arrangement details agreed between local authority and sponsor",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.kickOffMeetingFundingArrangementDetailsAgreed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.kickOffMeetingFundingArrangementDetailsAgreed", "No")
+                  }
+                ]
+              }) }}
+
+
+              {{ govukInput({
+                id: "realisticYearOfOpening",
+                name: "realisticYearOfOpening",
+                classes: "govuk-input--width-4 govuk-!-margin-bottom-6",
+                label: {
+                    text: "Realistic year of opening",
+                    classes: "govuk-heading-m",
+                    isPageHeading: false
+                },
+                hint: {
+                  text: "For example, 2021"
+                },
+                value: currentProject.realisticYearOfOpening
+              }) }}
+
+              {{ govukDateInput({
+                id: "provisionalOpeningDate",
+                namePrefix: "provisionalOpeningDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Provisional opening date agreed with trust",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.provisionalOpeningDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.provisionalOpeningDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.provisionalOpeningDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "kickOffMeetingSharepointLink",
+                name: "kickOffMeetingSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "SharePoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.kickOffMeetingSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

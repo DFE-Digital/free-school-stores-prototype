@@ -22,3 +22,4 @@ require('./routes/beta-sprint-7.js')(router);
 require('./routes/beta-sprint-9.js')(router);
 require('./routes/beta-sprint-11.js')(router);
 require('./routes/beta-sprint-13.js')(router);
+require('./routes/beta-sprint-17.js')(router);

@@ -1,0 +1,313 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Finance plan - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Finance plan
+      </h1>
+
+      {% if currentProject.financePlanRPAOptIn == "Yes" %}
+        {{ govukSummaryList({
+          
+          rows: [
+            {
+              key: {
+                text: "Finance plan agreed"
+              },
+              value: {
+                html: currentProject.financePlanAgreed | displayCheckboxValues
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Finance plan agreed"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Date agreed"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Date agreed"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Plan saved in Workspaces folder"
+              },
+              value: {
+                html: currentProject.financePlanSaved | displayCheckboxValues
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Plan saved in Workspaces folder"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Comments"
+              },
+              value: {
+                html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Comments"
+                  }
+                ]
+              }
+            }     
+            ,
+            {
+              key: {
+                text: "Local authority agreed to underwrite pupil numbers"
+              },
+              value: {
+                html: currentProject.financePlanPupilNumbersAgreed | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-articles-of-association-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Trust will opt-in to RPA (risk protection arrangement)"
+              },
+              value: {
+                html: currentProject.financePlanRPAOptIn | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Trust will opt-in to RPA (risk protection arrangement)"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "RPA start date"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financePlanRPAStartDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "RPA start date"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Type of RPA cover"
+              },
+              value: {
+                html: currentProject.financePlanRPAType | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Type of RPA cover"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      {% else %}
+        {{ govukSummaryList({
+
+          rows: [
+            {
+              key: {
+                text: "Finance plan agreed"
+              },
+              value: {
+                html: currentProject.financePlanAgreed | displayCheckboxValues
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Finance plan agreed"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Date agreed"
+              },
+              value: {
+                html: currentProject | withDatePrefixed('financePlanActualDate') | displayDate
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Date agreed"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Plan saved in Workspaces folder"
+              },
+              value: {
+                html: currentProject.financePlanSaved | displayCheckboxValues
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Plan saved in Workspaces folder"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Local authority agreed to underwrite pupil numbers"
+              },
+              value: {
+                html: currentProject.financePlanPupilNumbersAgreed | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Local authority agreed to underwrite pupil numbers"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Comments"
+              },
+              value: {
+                html: currentProject.financePlanCommentsOnDecisionToApprove | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Comments"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Trust will opt-in to RPA (risk protection arrangement)"
+              },
+              value: {
+                html: currentProject.financePlanRPAOptIn | displayText
+              },
+              actions: {
+                items: [
+                  {
+                    href: "task-financial-plan-edit",
+                    text: "Change",
+                    visuallyHiddenText: "Trust will opt-in to RPA (risk protection arrangement)"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      {% endif %}
+
+
+      <form action="task-financial-plan-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-financial-plan-status",
+        name: "task-financial-plan-status",
+        values: currentProject.taskFinancePlanStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

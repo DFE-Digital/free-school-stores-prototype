@@ -1,0 +1,221 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+New risk rating entry - Check your answers - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}} - new risk rating entry</span>
+        Review ratings and summaries
+      </h1>
+
+
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Overall risk rating"
+          },
+          value: {
+            html: data["newRiskRatingOverall"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-overall?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Overall risk rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Overall risk summary"
+          },
+          value: {
+            text: data["newRiskRatingOverallSummary"] | displayText | safe
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-overall?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Overall risk summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Governance and suitability rating"
+          },
+          value: {
+            html: data["newRiskRatingGovernance"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-governance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Governance and suitability rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Governance and suitability summary"
+          },
+          value: {
+            text: data["newRiskRatingGovernanceSummary"] | displayText | safe
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-governance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Governance and suitability summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Education rating"
+          },
+          value: {
+            html: data["newRiskRatingEducation"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-education?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Education rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Education summary"
+          },
+          value: {
+            text: data["newRiskRatingEducationSummary"] | displayText | safe
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-education?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Education summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Finance rating"
+          },
+          value: {
+            html: data["newRiskRatingFinance"] | displayRAGRating
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-finance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Finance rating"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Finance summary"
+          },
+          value: {
+            text: data["newRiskRatingFinanceSummary"] | displayText | safe
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-finance?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "Finance summary"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          key: {
+            text: "RAF (risk appraisal form) SharePoint link"
+          },
+          value: {
+            html: data["newRiskRatingSharePointLink"] | displaySharepointLink("RAF (risk appraisal form) - open in new tab")
+          },
+          actions: {
+            items: [
+              {
+                href: "other-info-new-rag-rating-raf?returnToSummary=yes",
+                text: "Change",
+                visuallyHiddenText: "RAF (risk appraisal form) SharePoint link"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form action="other-info-new-rag-rating-confirmation" method="post" novalidate>
+
+      {{ govukCheckboxes({
+        idPrefix: "editRiskRatingStatus",
+        name: "editRiskRatingStatus",
+        values: data["editRiskRatingStatus"],
+        items: [
+        {
+          value: "Complete",
+          text: "Ratings and summaries reviewed"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+    </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
