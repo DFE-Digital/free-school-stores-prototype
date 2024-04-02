@@ -475,34 +475,65 @@
         }) }}
         </div>
 
-
         <div id="pupil-numbers">
-        {{ govukSummaryList({
-        card: {
-            title: {
-            text: "Pupil numbers and capacity"
-            }
-        },
-        rows: [
-            {
-            key: {
-                text: "Fields to be put here"
-            },
-            value: {
-                html: "Content coming"
-            },
-            actions: {
-                items: [
-                {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Fields to be put here"
-                }
+            {{ govukSummaryList({
+                card: {
+                    title: {
+                        text: "Pupil numbers and recruitment"
+                    },
+                    actions: {
+                        items: [
+                            {
+                                href: "other-info-pupil-numbers?pupilNumbersJustUpdated=no",
+                                text: "View details",
+                                visuallyHiddenText: "Pupil numbers and recruitment"
+                            }
+                        ]
+                    }
+                },
+                rows: [
+                    {
+                        key: {
+                            text: "Capacity"
+                        },
+                        value: {
+                            text: currentProject.pupilNumbersFullCapacityNursery + currentProject.pupilNumbersFullCapacityReceptionToYear6 + currentProject.pupilNumbersFullCapacityYear7ToYear11 + currentProject.pupilNumbersFullCapacityYear12ToYear14 + currentProject.pupilNumbersFullCapacitySpecialEducationalNeeds + currentProject.pupilNumbersFullCapacityAlternativeProvision | displayText
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Minimum viable number (MVN) for first year"
+                        },
+                        value: {
+                            html: "35" | displayText
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Applications received"
+                        },
+                        value: {
+                            html: "43" | displayText
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Pre-16 published admission number (PAN)"
+                        },
+                        value: {
+                            html: "48" | displayText
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Post-16 published admission number (PAN)"
+                        },
+                        value: {
+                            html: "0" | displayText
+                        }
+                    }
                 ]
-            }
-            }
-        ]
-        }) }}
+            }) }}
         </div>
 
     </div>
