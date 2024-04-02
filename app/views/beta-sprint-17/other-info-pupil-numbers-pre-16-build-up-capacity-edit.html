@@ -1,0 +1,926 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set bodyClasses = "mfsp-wider-page" %}
+
+{% block pageTitle %}
+Edit Pre-16 capacity build-up - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to pupil numbers and recruitment",
+    href: "other-info-pupil-numbers?pupilNumbersJustUpdated=no"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Pre-16 capacity build-up
+      </h1>
+
+      <form action="other-info-pupil-numbers-pre-16-build-up-capacity-save" method="post">
+
+        <table class="govuk-table mfsp-pupil-numbers__table-container mfsp-pupil-numbers__table-container--pre-16-capacity">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header col1">School year</th>
+              <th scope="col" class="govuk-table__header">Current capacity (if school is open)</th>
+              <th scope="col" class="govuk-table__header">First year</th>
+              <th scope="col" class="govuk-table__header">Second year</th>
+              <th scope="col" class="govuk-table__header">Third year</th>
+              <th scope="col" class="govuk-table__header">Fourth year</th>
+              <th scope="col" class="govuk-table__header">Fifth year</th>
+              <th scope="col" class="govuk-table__header">Sixth year</th>
+              <th scope="col" class="govuk-table__header">Seventh year</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Nursery</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-nursery-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpNurseryCurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-first-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurseryFirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-second-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurserySecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-third-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurseryThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurseryFourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurseryFifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurserySixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-nursery-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-nursery-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpNurserySeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Reception</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-reception-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionCurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-first-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionFirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-second-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionSecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-third-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionFourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionFifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionSixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-reception-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-reception-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpReceptionSeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 1</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-1-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-1-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-1-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear1SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 2</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-2-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-2-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-2-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear2SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 3</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-3-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-3-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-3-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear3SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 4</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-4-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-4-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-4-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear4SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 5</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-5-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-5-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-5-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear5SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 6</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-6-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-6-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-6-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear6SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 7</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-7-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-7-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-7-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear7SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 8</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-8-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-8-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-8-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear8SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 9</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-9-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-9-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-9-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear9SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 10</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-10-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-10-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-10-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear10SeventhYear
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 11</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-current-capacity",
+                  name: "pupil-numbers-pre-16-build-up-year-11-current-capacity",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11CurrentCapacity
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-first-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-first-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11FirstYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-second-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-second-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11SecondYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-third-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-third-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11ThirdYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-fourth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-fourth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11FourthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-fifth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-fifth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11FifthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-sixth-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-sixth-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11SixthYear
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-pre-16-build-up-year-11-seventh-year",
+                  name: "pupil-numbers-pre-16-build-up-year-11-seventh-year",
+                  value: currentProject.pupilNumbersPre16BuildUpYear11SeventhYear
+                }) }}
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+  
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}

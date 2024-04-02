@@ -373,3 +373,23 @@ $color_dfe-amber: #FFA621;
     display: unset;
     align-content: end;
 }
+
+.mfsp-pupil-numbers__table-container {
+    overflow-x: auto;
+    table-layout: fixed;
+  
+    th, td {
+      border: 1px solid govuk-colour("mid-grey");
+      padding: 0.4em;
+    }
+
+    .col1 {
+        width: 180px;
+    }
+}
+
+.mfsp-pupil-numbers__table-container--capacity {
+  
+    max-width: 600px;
+
+}

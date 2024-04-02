@@ -1067,6 +1067,146 @@ module.exports = function (router) {
         res.redirect("project-task-list");
     });
 
+    router.post('/' + version + '/other-info-pupil-numbers-capacity-save', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.pupilNumbersFullCapacityNursery = req.session.data['pupil-numbers-full-capacity-nursery'];
+        masterProject.pupilNumbersFullCapacityReceptionToYear6 = req.session.data['pupil-numbers-full-capacity-reception-to-year-6'];
+        masterProject.pupilNumbersFullCapacityYear7ToYear11 = req.session.data['pupil-numbers-full-capacity-year-7-to-year-11'];
+        masterProject.pupilNumbersFullCapacityYear12ToYear14 = req.session.data['pupil-numbers-full-capacity-year-12-to-year-14'];
+        masterProject.pupilNumbersFullCapacitySpecialEducationalNeeds = req.session.data['pupil-numbers-full-capacity-special-educational-needs'];
+        masterProject.pupilNumbersFullCapacityAlternativeProvision = req.session.data['pupil-numbers-full-capacity-alternative-provision'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("other-info-pupil-numbers?pupilNumbersJustUpdated=yes");
+    });
+
+    router.post('/' + version + '/other-info-pupil-numbers-pre-16-build-up-capacity-save', function(req, res) {
+        var masterProject = getProject(req);
+
+        masterProject.pupilNumbersPre16BuildUpNurseryCurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-nursery-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpNurseryFirstYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-first-year'];
+        masterProject.pupilNumbersPre16BuildUpNurserySecondYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-second-year'];
+        masterProject.pupilNumbersPre16BuildUpNurseryThirdYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-third-year'];
+        masterProject.pupilNumbersPre16BuildUpNurseryFourthYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpNurseryFifthYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpNurserySixthYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpNurserySeventhYear = req.session.data['pupil-numbers-pre-16-build-up-nursery-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpReceptionCurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-reception-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpReceptionFirstYear = req.session.data['pupil-numbers-pre-16-build-up-reception-first-year'];
+        masterProject.pupilNumbersPre16BuildUpReceptionSecondYear = req.session.data['pupil-numbers-pre-16-build-up-reception-second-year'];
+        masterProject.pupilNumbersPre16BuildUpReceptionThirdYear = req.session.data['pupil-numbers-pre-16-build-up-reception-third-year'];
+        masterProject.pupilNumbersPre16BuildUpReceptionFourthYear = req.session.data['pupil-numbers-pre-16-build-up-reception-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpReceptionFifthYear = req.session.data['pupil-numbers-pre-16-build-up-reception-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpReceptionSixthYear = req.session.data['pupil-numbers-pre-16-build-up-reception-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpReceptionSeventhYear = req.session.data['pupil-numbers-pre-16-build-up-reception-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear1CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-1-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear1FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear1SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear1ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear1FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear1FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear1SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear1SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-1-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear2CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-2-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear2FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear2SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear2ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear2FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear2FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear2SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear2SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-2-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear3CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-3-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear3FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear3SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear3ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear3FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear3FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear3SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear3SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-3-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear4CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-4-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear4FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear4SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear4ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear4FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear4FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear4SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear4SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-4-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear5CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-5-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear5FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear5SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear5ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear5FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear5FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear5SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear5SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-5-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear6CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-6-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear6FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear6SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear6ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear6FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear6FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear6SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear6SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-6-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear7CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-7-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear7FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear7SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear7ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear7FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear7FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear7SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear7SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-7-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear8CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-8-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear8FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear8SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear8ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear8FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear8FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear8SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear8SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-8-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear9CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-9-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear9FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear9SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear9ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear9FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear9FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear9SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear9SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-9-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear10CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-10-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear10FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear10SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear10ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear10FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear10FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear10SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear10SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-10-seventh-year'];
+
+        masterProject.pupilNumbersPre16BuildUpYear11CurrentCapacity = req.session.data['pupil-numbers-pre-16-build-up-year-11-current-capacity'];
+        masterProject.pupilNumbersPre16BuildUpYear11FirstYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-first-year'];
+        masterProject.pupilNumbersPre16BuildUpYear11SecondYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-second-year'];
+        masterProject.pupilNumbersPre16BuildUpYear11ThirdYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-third-year'];
+        masterProject.pupilNumbersPre16BuildUpYear11FourthYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-fourth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear11FifthYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-fifth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear11SixthYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-sixth-year'];
+        masterProject.pupilNumbersPre16BuildUpYear11SeventhYear = req.session.data['pupil-numbers-pre-16-build-up-year-11-seventh-year'];
+
+        req.session.data.currentProject = masterProject;
+
+        res.redirect("other-info-pupil-numbers?pupilNumbersJustUpdated=yes");
+    });
+
     function getProject(req) {
         return req.session.data['project-list'].find(p => p.projectID == req.session.data.currentProject.projectID);
     }
