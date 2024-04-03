@@ -22,4 +22,15 @@ const displayText = value =>
     return value;
 };
 
-module.exports = {displayDate, displayText};
+const displayPercentage = value =>
+{
+    if (!value || value === "")
+    {
+        return "0.00%";
+    }
+
+    //return value;
+    return parseFloat(value).toFixed(2) + "%";
+};
+
+module.exports = {displayDate, displayText, displayPercentage};

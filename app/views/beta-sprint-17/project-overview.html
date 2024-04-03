@@ -497,7 +497,7 @@
                             text: "Capacity"
                         },
                         value: {
-                            text: currentProject.pupilNumbersFullCapacityNursery + currentProject.pupilNumbersFullCapacityReceptionToYear6 + currentProject.pupilNumbersFullCapacityYear7ToYear11 + currentProject.pupilNumbersFullCapacityYear12ToYear14 + currentProject.pupilNumbersFullCapacitySpecialEducationalNeeds + currentProject.pupilNumbersFullCapacityAlternativeProvision | displayText
+                            text: +currentProject.pupilNumbersFullCapacityNursery + +currentProject.pupilNumbersFullCapacityReceptionToYear6 + +currentProject.pupilNumbersFullCapacityYear7ToYear11 + +currentProject.pupilNumbersFullCapacityYear12ToYear14 + +currentProject.pupilNumbersFullCapacitySpecialEducationalNeeds + +currentProject.pupilNumbersFullCapacityAlternativeProvision | displayText
                         }
                     },
                     {
@@ -505,7 +505,10 @@
                             text: "Minimum viable number (MVN) for first year"
                         },
                         value: {
-                            html: "35" | displayText
+                            text: (+currentProject.pupilNumbersRecruitmentNurseryMVN +
+                            +currentProject.pupilNumbersRecruitmentReceptionToYear6MVN +
+                            +currentProject.pupilNumbersRecruitmentYear7ToYear11MVN +
+                            +currentProject.pupilNumbersRecruitmentYear12ToYear14MVN) | displayText
                         }
                     },
                     {
@@ -513,7 +516,10 @@
                             text: "Applications received"
                         },
                         value: {
-                            html: "43" | displayText
+                            text: (+currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived +
+                            +currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived +
+                            +currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived +
+                            +currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived) | displayText
                         }
                     },
                     {

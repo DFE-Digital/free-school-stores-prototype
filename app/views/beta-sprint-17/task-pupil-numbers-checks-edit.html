@@ -1,0 +1,89 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Pupil numbers checks - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Pupil numbers checks
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-pupil-numbers-checks-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukCheckboxes({
+                idPrefix: "pupilNumbersEnoughApplications",
+                name: "pupilNumbersEnoughApplications",
+                values: currentProject.pupilNumbersEnoughApplications,
+                classes: "govuk-fieldset__legend--m",
+                fieldset: {
+                },
+                items: [
+                {
+                  value: "Yes",
+                  text: "Checked that the school has received enough applications to be viable"
+                  }
+                ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "pupilNumbersCapacityDataMatchesFundingAgreement",
+                name: "pupilNumbersCapacityDataMatchesFundingAgreement",
+                values: currentProject.pupilNumbersCapacityDataMatchesFundingAgreement,
+                classes: "govuk-fieldset__legend--m",
+                fieldset: {
+                },
+                items: [
+                {
+                  value: "Yes",
+                  text: "Checked that the capacity data matches what's on the funding agreement"
+                  }
+                ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "pupilNumbersCapacityDataMatchesGIAS",
+                name: "pupilNumbersCapacityDataMatchesGIAS",
+                values: currentProject.pupilNumbersCapacityDataMatchesGIAS,
+                classes: "govuk-fieldset__legend--m",
+                fieldset: {
+                },
+                items: [
+                {
+                  value: "Yes",
+                  text: "Checked that the capacity data matches what's on the GIAS registration form"
+                  }
+                ]
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

@@ -94,6 +94,79 @@ Pupil numbers and recruitment - {{currentProject.projectTitle}} – {{ serviceNa
     </form>
 
     <table class="govuk-table mfsp-pupil-numbers__table-container mfsp-pupil-numbers__table-container--pre-16-capacity">
+      <caption class="govuk-table__caption govuk-table__caption--l">Recruitment and viability</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header col1">School year</th>
+          <th scope="col" class="govuk-table__header">Minimum viable number (MVN) for first year</th>
+          <th scope="col" class="govuk-table__header">Applications received</th>
+          <th scope="col" class="govuk-table__header">Percentage received compared to MVN</th>
+          <th scope="col" class="govuk-table__header">Percentage received compared to published admission number (PAN)</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Nursery</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentNurseryMVN}}</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived / currentProject.pupilNumbersRecruitmentNurseryMVN * 100) | displayPercentage}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived / currentProject.pupilNumbersPre16PANNursery * 100) | displayPercentage}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Reception to year 6</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentReceptionToYear6MVN}}</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived / currentProject.pupilNumbersRecruitmentReceptionToYear6MVN * 100) | displayPercentage}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived / currentProject.pupilNumbersPre16PANReception * 100) | displayPercentage}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Year 7 to year 11</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentYear7ToYear11MVN}}</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived / currentProject.pupilNumbersRecruitmentYear7ToYear11MVN * 100) | displayPercentage}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived / (currentProject.pupilNumbersPre16PANYear7 + currentProject.pupilNumbersPre16PANYear10) * 100) | displayPercentage}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Year 12 to year 14</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentYear12ToYear14MVN}}</td>
+          <td class="govuk-table__cell">{{currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived / currentProject.pupilNumbersRecruitmentYear12ToYear14MVN * 100) | displayPercentage}}</td>
+          <td class="govuk-table__cell">{{(currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived / currentProject.pupilNumbersPre16PANOtherPre16 * 100) | displayPercentage}}</td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Total</strong></td>
+          <td class="govuk-table__cell">
+            {{+currentProject.pupilNumbersRecruitmentNurseryMVN +
+              +currentProject.pupilNumbersRecruitmentReceptionToYear6MVN +
+              +currentProject.pupilNumbersRecruitmentYear7ToYear11MVN +
+              +currentProject.pupilNumbersRecruitmentYear12ToYear14MVN
+            }}
+          </td>
+          <td class="govuk-table__cell">
+            {{+currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived +
+              +currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived +
+              +currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived +
+              +currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived
+            }}
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form action="other-info-pupil-numbers-recruitment-and-viability-edit" method="post" class="govuk-!-margin-bottom-9">
+
+      {{ govukButton({
+        text: "Edit recruitment and viability"
+      }) }}
+        
+    </form>
+
+    <table class="govuk-table mfsp-pupil-numbers__table-container mfsp-pupil-numbers__table-container--pre-16-capacity">
       <caption class="govuk-table__caption govuk-table__caption--l">Pre-16 capacity build-up</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -394,7 +467,53 @@ Pupil numbers and recruitment - {{currentProject.projectTitle}} – {{ serviceNa
         
     </form>
     
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+      <div class="govuk-grid-column-two-thirds">
+    
+        <h2 class="govuk-heading-m">
+          Related tasks
+        </h2>
+        
+        <p class="govuk-body">You may want to complete the following related tasks.</p>
+    
+        <ol class="app-task-list">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="task-applications-evidence-landing-page" aria-describedby="contact-details-status">
+                Applications evidence
+              </a>
+            </span>
+            {{ currentProject.taskApplicationsEvidenceStatus
+              | taskStatus([currentProject.taskApplicationsEvidenceStatus]) 
+              | safe }}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="task-accepted-place-offers-evidence-landing-page" aria-describedby="contact-details-status">
+                Accepted place offers evidence
+              </a>
+            </span>
+            {{ currentProject.taskAcceptedPlaceOffersStatus
+              | taskStatus([]) 
+              | safe }}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="task-pupil-numbers-checks-landing-page" aria-describedby="contact-details-status">
+                Pupil numbers checks
+              </a>
+            </span>
+            {{ currentProject.taskPupilNumbersChecksStatus
+              | taskStatus([]) 
+              | safe }}
+          </li>
+        </ol>
+    
+      </div>
+    </div>
+    
   </div>
+
 </div>
 
 {% endblock %}

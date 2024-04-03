@@ -358,6 +358,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
+                <a href="task-pupil-numbers-checks-landing-page" aria-describedby="contact-details-status">
+                  Pupil numbers checks
+                </a>
+              </span>
+              {{ currentProject.taskPupilNumbersChecksStatus
+                | taskStatus([]) 
+                | safe }}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
                 <a href="task-impact-assessment-and-equalities-analysis-landing-page" aria-describedby="list-convictions-status">
                   Impact assessment
                 </a>
