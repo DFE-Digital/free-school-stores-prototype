@@ -1,7 +1,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const { DateTime } = require('luxon');
 const addFilter = govukPrototypeKit.views.addFilter
-const { displayDate, displayText } = require('./filters/display-filters');
+const { displayDate, displayText, displayPercentage } = require('./filters/display-filters');
 const { getFinancialPlanRowsSprint11 } = require("./filters/row-filters");
 const { withDatePrefixed } = require('./filters/data-filters');
 
@@ -11,6 +11,7 @@ addFilter("withDatePrefixed", withDatePrefixed);
 /** Display filters **/
 addFilter("displayDate", displayDate);
 addFilter("displayText", displayText);
+addFilter("displayPercentage", displayPercentage);
 
 /** Row filters **/
 addFilter("getFinancialPlanRowsSprint11", getFinancialPlanRowsSprint11);
