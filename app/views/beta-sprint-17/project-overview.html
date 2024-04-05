@@ -491,13 +491,29 @@
                         ]
                     }
                 },
-                rows: [
+                rows:  [
                     {
                         key: {
                             text: "Capacity"
                         },
                         value: {
                             text: +currentProject.pupilNumbersFullCapacityNursery + +currentProject.pupilNumbersFullCapacityReceptionToYear6 + +currentProject.pupilNumbersFullCapacityYear7ToYear11 + +currentProject.pupilNumbersFullCapacityYear12ToYear14 + +currentProject.pupilNumbersFullCapacitySpecialEducationalNeeds + +currentProject.pupilNumbersFullCapacityAlternativeProvision | displayText
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Pre-16 published admission number (PAN)"
+                        },
+                        value: {
+                            html: "48" | displayText
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Post-16 published admission number (PAN)"
+                        },
+                        value: {
+                            html: "0" | displayText
                         }
                     },
                     {
@@ -520,22 +536,6 @@
                             +currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived +
                             +currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived +
                             +currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived) | displayText
-                        }
-                    },
-                    {
-                        key: {
-                            text: "Pre-16 published admission number (PAN)"
-                        },
-                        value: {
-                            html: "48" | displayText
-                        }
-                    },
-                    {
-                        key: {
-                            text: "Post-16 published admission number (PAN)"
-                        },
-                        value: {
-                            html: "0" | displayText
                         }
                     }
                 ]
