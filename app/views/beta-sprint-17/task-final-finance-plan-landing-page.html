@@ -2,7 +2,7 @@
 {% set currentProject = data['currentProject'] %}
 
 {% block pageTitle %}
-  Final revenue funding plan - {{currentProject.projectTitle}} – {{ serviceName }}
+  Final finance plan - {{currentProject.projectTitle}} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
-        Final revenue funding plan
+        Final finance plan
       </h1>
 
       {{ govukSummaryList({
@@ -34,7 +34,7 @@
             actions: {
               items: [
                 {
-                  href: "task-final-revenue-funding-plan-edit",
+                  href: "task-final-finance-plan-edit",
                   text: "Change",
                   visuallyHiddenText: "Final revenue funding plan agreed, based on latest confirmed accepted place offers"
                 }
@@ -52,7 +52,7 @@
             actions: {
               items: [
                 {
-                  href: "task-final-revenue-funding-plan-edit",
+                  href: "task-final-finance-plan-edit",
                   text: "Change",
                   visuallyHiddenText: "Forecast date"
                 }
@@ -70,7 +70,7 @@
             actions: {
               items: [
                 {
-                  href: "task-final-revenue-funding-plan-edit",
+                  href: "task-final-finance-plan-edit",
                   text: "Change",
                   visuallyHiddenText: "Actual date"
                 }
@@ -88,7 +88,7 @@
             actions: {
               items: [
                 {
-                  href: "task-final-revenue-funding-plan-edit",
+                  href: "task-final-finance-plan-edit",
                   text: "Change",
                   visuallyHiddenText: "Comments on decision to approve (if applicable)"
                 }
@@ -105,7 +105,7 @@
             actions: {
               items: [
                 {
-                  href: "task-final-revenue-funding-plan-edit",
+                  href: "task-final-finance-plan-edit",
                   text: "Change",
                   visuallyHiddenText: "SharePoint link"
                 }
