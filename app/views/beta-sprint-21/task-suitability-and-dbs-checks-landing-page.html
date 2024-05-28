@@ -1,0 +1,158 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Suitability and DBS checks - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Suitability and DBS checks
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "All suitability and DBS checks initiated"
+            },
+            value: {
+              html: currentProject.suitabilityAndDbsChecksIntiated | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-suitability-and-dbs-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "All suitability and DBS checks initiated"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "At least 3 checks completed, including the Chair of Trustees"
+            },
+            value: {
+              html: currentProject.suitabilityAndDbsChecksCompleted | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-suitability-and-dbs-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "At least 3 checks completed, including the Chair of Trustees"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject.suitabilityAndDbsChecksForecastDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-suitability-and-dbs-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject.suitabilityAndDbsChecksActualDate | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-suitability-and-dbs-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.suitabilityAndDbsChecksCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-suitability-and-dbs-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.suitabilityAndDbsChecksSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-suitability-and-dbs-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-suitability-and-dbs-checks-status",
+        name: "task-suitability-and-dbs-checks-status",
+        values: currentProject.taskSuitabilityAndDbsChecksStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
