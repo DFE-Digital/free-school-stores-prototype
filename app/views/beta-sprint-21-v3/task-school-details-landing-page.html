@@ -1,0 +1,214 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  School - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        School
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Current name"
+            },
+            value: {
+              html: currentProject.projectTitle | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Current free school name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School type"
+            },
+            value: {
+              html: currentProject.schoolType | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "School type"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "School phase"
+            },
+            value: {
+              html: currentProject.schoolPhase | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "School phase"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Age range"
+            },
+            value: {
+              html: currentProject.ageRange | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Age range"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Gender"
+            },
+            value: {
+              html: currentProject.gender | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Gender"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Nursery"
+            },
+            value: {
+              html: currentProject.nursery | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Nursery"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Sixth form"
+            },
+            value: {
+              html: currentProject.sixthForm | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Sixth form"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Faith status"
+            },
+            value: {
+              html: currentProject.faithStatus | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Faith status"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Faith type"
+            },
+            value: {
+              html: currentProject.faithType | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-school-details-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Faith type"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-school-details-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-school-details-status",
+        name: "task-school-details-status",
+        values: currentProject.taskSchoolDetailsStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

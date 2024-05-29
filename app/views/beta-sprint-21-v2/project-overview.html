@@ -1,0 +1,269 @@
+{% extends "./layouts/main-mfsp-project-overview.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set fssPageDesc = "About the project" %}
+{% set bodyClasses = "mfsp-project-overview" %}
+
+{% block pageTitle %}
+  {{currentProject.projectTitle}} - key project information - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageContent %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+  
+        <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="#">About the project</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="project-task-list">Task list</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="#">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="project-risk-rating-and-summary">Risk rating and summary</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="project-contacts">Contacts</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="project-site-information">Site information</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="project-pupil-numbers">Pupil numbers</a>
+            </li>
+          </ul>
+  
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+        <h2 class="govuk-heading-m govuk-!-font-size-27" id="dates">Dates</h2>
+
+        {{ govukSummaryList({
+        classes: "govuk-summary-list--no-border",
+        rows: [
+            {
+            key: {
+                text: "Entry into pre-opening"
+            },
+            value: {
+                html:  (currentProject.dateOfEntryIntoPreOpeningYear + currentProject.dateOfEntryIntoPreOpeningMonth + currentProject.dateOfEntryIntoPreOpeningDay) | displayDate | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "Provisional opening date agreed with trust"
+            },
+            value: {
+                html: (currentProject.provisionalOpeningDateYear + currentProject.provisionalOpeningDateMonth + currentProject.provisionalOpeningDateDay) | displayDate | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "Opening academic year"
+            },
+            value: {
+                html: (currentProject.openingAcademicStart + "/" + currentProject.openingAcademicEnd) | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "Realistic year of opening"
+            },
+            value: {
+                html: (currentProject.realisticYearOfOpeningStart + "/" + currentProject.realisticYearOfOpeningEnd) | displayText
+            }
+            },
+            {
+            key: {
+                text: "Actual opening date"
+            },
+            value: {
+                html: (currentProject.actualOpeningDateYear + currentProject.actualOpeningDateMonth + currentProject.actualOpeningDateDay) | displayDate | displayText
+            }
+            }
+        ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-font-size-27" id="trust">Trust</h2>
+        {{ govukSummaryList({
+        classes: "govuk-summary-list--no-border",
+        rows: [
+            {
+            key: {
+                text: "TRN (trust reference number)"
+            },
+            value: {
+                html: currentProject.trustID | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "Trust name"
+            },
+            value: {
+                html: currentProject.trust | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "Trust type"
+            },
+            value: {
+                html: currentProject.trustType | displayText
+            }
+            }
+        ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-font-size-27" id="reference-numbers">Reference numbers</h2>
+        {{ govukSummaryList({
+        classes: "govuk-summary-list--no-border",
+        rows: [
+            {
+            key: {
+                text: "Project ID"
+            },
+            value: {
+                html: currentProject.projectID | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "URN"
+            },
+            value: {
+                html: "" | displayText
+            }
+            },
+            {
+            key: {
+                text: "Application number"
+            },
+            value: {
+                html: currentProject.freeSchoolsApplicationNumber | displayText
+            }
+            },
+            {
+            key: {
+                text: "Application wave"
+            },
+            value: {
+                html: currentProject.freeSchoolApplicationWave | displayText
+            }
+            },
+            {
+            key: {
+                text: "Number of forms of entry"
+            },
+            value: {
+                text: currentProject.numberOfFormsOfEntry | displayText
+            }
+            }
+        ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        
+        <h2 class="govuk-heading-m govuk-!-font-size-27" id="school">School</h2>
+        {{ govukSummaryList({
+        classes: "govuk-summary-list--no-border",
+        rows: [
+            {
+            key: {
+                text: "Current name"
+            },
+            value: {
+                html: currentProject.projectTitle | displayText
+            }
+            },
+            {
+            key: {
+                text: "School type"
+            },
+            value: {
+                html: currentProject.schoolType | displayText
+            }
+            },
+            {
+            key: {
+                text: "School phase"
+            },
+            value: {
+                html: currentProject.schoolPhase | displayText
+            }
+            },
+            {
+            key: {
+                text: "Faith Status"
+            },
+            value: {
+                html: currentProject.faithStatus | displayText
+            }
+            },
+            {
+            key: {
+                text: "Faith type"
+            },
+            value: {
+                html: currentProject.faithType | displayText
+            }
+            }
+        ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-font-size-27" id="region">Region and local authority</h2>
+        {{ govukSummaryList({
+        classes: "govuk-summary-list--no-border",
+        rows: [
+            {
+            key: {
+                text: "Local authority"
+            },
+            value: {
+                html: currentProject.localAuthority | displayText
+            }
+            }
+            ,
+            {
+            key: {
+                text: "Region"
+            },
+            value: {
+                html: currentProject.geographicalRegion | displayText
+            }
+            }
+        ]
+        }) }}
+
+    </div>
+
+</div>
+{% endblock %}

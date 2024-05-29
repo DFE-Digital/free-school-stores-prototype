@@ -1,0 +1,120 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  {% if data["constituency"] == "South London" %}
+    0 results for {{data["constituency"]}} - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% else %}
+  Confirm the constituency - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">      
+
+      {% if data["constituency"] == "South London" %}
+      
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        0 results for {{data["constituency"]}}
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            Improve your results by:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>checking you have spelt the constituency name correctly</li>
+            <li>checking you have entered the postcode in the right format. For example, W1A 1AA</li>
+            <li>searching with a different name or postcode</li>
+          </ul>
+          <p class="govuk-body">
+            <a href="task-constituency-edit">Search again for a constituency</a> 
+          </p>
+        </div>
+      </div>
+      
+      
+      {% else %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="validate-constituency-result">
+            <div class="govuk-form-group">
+              
+              {{ govukRadios({
+                idPrefix: "confirm-constituency-result",
+                name: "confirm-constituency-result",
+                fieldset: {
+                  legend: {
+                    html: "<span class='govuk-caption-l'>" + currentProject.projectTitle + "</span>Confirm the constituency",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-9"
+                  }
+                },
+                items: [
+                  {
+                    value: "South Northamptonshire",
+                    checked: checked("confirm-constituency-result", "South Northamptonshire"),
+                    text: "South Northamptonshire",
+                    hint: {
+                      html: "MP - Rt Hon Andrea Leadsom MP<br/>Political party - Conservative",
+                      classes: "govuk-!-margin-bottom-6"
+                    }
+                  },
+                  {
+                    value: "South Leicestershire",
+                    checked: checked("confirm-constituency-result", "South Leicestershire"),
+                    text: "South Leicestershire",
+                    hint: {
+                      html: "MP - Alberto Costa<br/>Political party - Conservative",
+                      classes: "govuk-!-margin-bottom-6"
+                    }
+                  },
+                  {
+                    value: "South Derbyshire",
+                    checked: checked("confirm-constituency-result", "South Derbyshire"),
+                    text: "South Derbyshire",
+                    hint: {
+                      html: "MP - Heather Wheeler MP<br/>Political party - Conservative",
+                      classes: "govuk-!-margin-bottom-6"
+                    }
+                  },
+                  {
+                    value: "None of the above",
+                    checked: checked("confirm-constituency-result", "None of the above"),
+                    text: "None of the above - I want to search again "
+                  }
+    
+                ]
+              }) }}
+
+
+              <br><br>
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

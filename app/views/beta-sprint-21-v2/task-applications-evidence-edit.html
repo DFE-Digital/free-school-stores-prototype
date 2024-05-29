@@ -1,0 +1,195 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit applications evidence - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit applications evidence
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-applications-evidence-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "applicationsExceedBreakEvenPupilNumbers",
+                fieldset: {
+                  legend: {
+                    text: "Evidence of applications exceeding the school's break-even pupil numbers",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.applicationsExceedBreakEvenPupilNumbers", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.applicationsExceedBreakEvenPupilNumbers", "No")
+                  },
+                  {
+                    value: "Not applicable",
+                    text: "Not applicable",
+                    checked: checked("currentProject.applicationsExceedBreakEvenPupilNumbers", "Not applicable")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "applicationsWrittenReferralFromComissioners",
+                fieldset: {
+                  legend: {
+                    text: "Written evidence of sufficient referrals from commissioners (if alternative provision or a special school)",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.applicationsWrittenReferralFromComissioners", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.applicationsWrittenReferralFromComissioners", "No")
+                  },
+                  {
+                    value: "Not applicable",
+                    text: "Not applicable",
+                    checked: checked("currentProject.applicationsWrittenReferralFromComissioners", "Not applicable")
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "applicationsEvidenceForecastDate",
+                namePrefix: "applicationsEvidenceForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.applicationsEvidenceForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.applicationsEvidenceForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.applicationsEvidenceForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "applicationsEvidenceActualDate",
+                namePrefix: "applicationsEvidenceActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.applicationsEvidenceActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.applicationsEvidenceActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.applicationsEvidenceActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "applicationsEvidenceCommentsOnDecisionToApprove",
+                name: "applicationsEvidenceCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.applicationsEvidenceCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "applicationsEvidenceReasonNotApplicable",
+                name: "applicationsEvidenceReasonNotApplicable",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Reason not applicable",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.applicationsEvidenceReasonNotApplicable
+              }) }}
+
+              {{ govukInput({
+                id: "applicationsEvidenceSharepointLink",
+                name: "applicationsEvidenceSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.applicationsEvidenceSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
