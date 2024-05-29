@@ -1,0 +1,122 @@
+{% extends "./layouts/main-mfsp-project-overview.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set fssPageDesc = "Pupil numbers" %}
+{% set bodyClasses = "mfsp-project-overview mfsp-wider-page" %}
+
+{% block pageTitle %}
+  {{currentProject.projectTitle}} - Pupil numbers - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageContent %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+
+      <nav class="mfsp-side-nav">
+  
+        <ul class="mfsp-side-nav__list">
+          <li class="mfsp-side-nav__item">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="project-overview">About the project</a>
+          </li>
+          <li class="mfsp-side-nav__item ">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="project-task-list">Task list</a>
+          </li>
+          <li class="mfsp-side-nav__item ">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="#">Project notes</a>
+          </li>
+          <li class="mfsp-side-nav__item ">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="project-risk-rating-and-summary">Risk rating and summary</a>
+          </li>
+          <li class="mfsp-side-nav__item ">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="project-contacts">Contacts</a>
+          </li>
+          <li class="mfsp-side-nav__item ">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="project-site-information">Site information</a>
+          </li>
+          <li class="mfsp-side-nav__item mfsp-side-nav__item--current">
+            <a class="govuk-link govuk-link--no-visited-state mfsp-side-nav__link" href="project-pupil-numbers">Pupil numbers</a>
+          </li>
+        </ul>
+
+    </nav>
+
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukSummaryList({
+        card: {
+            title: {
+                text: "Pupil numbers"
+            },
+            actions: {
+                items: [
+                    {
+                        href: "other-info-pupil-numbers?pupilNumbersJustUpdated=no",
+                        text: "View details",
+                        visuallyHiddenText: "Pupil numbers"
+                    }
+                ]
+            }
+        },
+        rows:  [
+            {
+                key: {
+                    text: "Capacity"
+                },
+                value: {
+                    text: +currentProject.pupilNumbersFullCapacityNursery + +currentProject.pupilNumbersFullCapacityReceptionToYear6 + +currentProject.pupilNumbersFullCapacityYear7ToYear11 + +currentProject.pupilNumbersFullCapacityYear12ToYear14 + +currentProject.pupilNumbersFullCapacitySpecialEducationalNeeds + +currentProject.pupilNumbersFullCapacityAlternativeProvision | displayText
+                }
+            },
+            {
+                key: {
+                    text: "Pre-16 published admission number (PAN)"
+                },
+                value: {
+                    html: "48" | displayText
+                }
+            },
+            {
+                key: {
+                    text: "Post-16 published admission number (PAN)"
+                },
+                value: {
+                    html: "0" | displayText
+                }
+            },
+            {
+                key: {
+                    text: "Minimum viable number (MVN) for first year"
+                },
+                value: {
+                    text: (+currentProject.pupilNumbersRecruitmentNurseryMVN +
+                    +currentProject.pupilNumbersRecruitmentReceptionToYear6MVN +
+                    +currentProject.pupilNumbersRecruitmentYear7ToYear11MVN +
+                    +currentProject.pupilNumbersRecruitmentYear12ToYear14MVN) | displayText
+                }
+            },
+            {
+                key: {
+                    text: "Applications received"
+                },
+                value: {
+                    text: (+currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived +
+                    +currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived +
+                    +currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived +
+                    +currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived) | displayText
+                }
+            }
+        ]
+    }) }}
+    </div>
+
+</div>
+{% endblock %}

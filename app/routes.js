@@ -23,3 +23,6 @@ require('./routes/beta-sprint-9.js')(router);
 require('./routes/beta-sprint-11.js')(router);
 require('./routes/beta-sprint-13.js')(router);
 require('./routes/beta-sprint-17.js')(router);
+require('./routes/beta-sprint-21-v1.js')(router);
+require('./routes/beta-sprint-21-v2.js')(router);
+require('./routes/beta-sprint-21-v3.js')(router);

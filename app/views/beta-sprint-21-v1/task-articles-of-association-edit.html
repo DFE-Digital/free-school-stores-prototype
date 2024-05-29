@@ -1,0 +1,187 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit articles of association - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit articles of association
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-articles-of-association-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukCheckboxes({
+                idPrefix: "articlesOfAssociationSubmittedMatchTheModel",
+                name: "articlesOfAssociationSubmittedMatchTheModel",
+                values: currentProject.articlesOfAssociationSubmittedMatchTheModel,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Checked that the submitted articles match the model articles",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Done",
+                  text: "Done"
+                  }
+                ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "articlesOfAssociationSubmittedConfirmation",
+                name: "articlesOfAssociationSubmittedConfirmation",
+                values: currentProject.articlesOfAssociationSubmittedConfirmation,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Chair of trustees and senior executive lead have submitted confirmation",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Done",
+                  text: "Done"
+                  }
+                ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "articlesOfAssociationGovernanceArrangementMatch",
+                name: "articlesOfAssociationGovernanceArrangementMatch",
+                values: currentProject.articlesOfAssociationGovernanceArrangementMatch,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Governance arrangements match the details given in governance plans",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Done",
+                  text: "Done"
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "articlesOfAssociationForecastDate",
+                namePrefix: "articlesOfAssociationForecastDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Forecast date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.articlesOfAssociationForecastDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.articlesOfAssociationForecastDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.articlesOfAssociationForecastDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "articlesOfAssociationActualDate",
+                namePrefix: "articlesOfAssociationActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Actual date",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.articlesOfAssociationActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.articlesOfAssociationActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.articlesOfAssociationActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "articlesOfAssociationCommentsOnDecisionToApprove",
+                name: "articlesOfAssociationCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments on decision to approve (if applicable)",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.articlesOfAssociationCommentsOnDecisionToApprove
+              }) }}
+
+              {{ govukInput({
+                id: "articlesOfAssociationSharepointLink",
+                name: "articlesOfAssociationSharepointLink",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Sharepoint link",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.articlesOfAssociationSharepointLink
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

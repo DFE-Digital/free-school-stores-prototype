@@ -1,0 +1,48 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Search for a constituency - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="task-constituency-edit-confirm">
+      <div class="govuk-form-group">
+
+        {{ govukInput({
+          id: "constituency",
+          name: "constituency",
+          classes: "govuk-!-margin-bottom-6",
+          label: {
+            html: '<span class="govuk-caption-l">' + currentProject.projectTitle + '</span>Search for a constituency',
+            classes: "govuk-label--xl govuk-!-margin-bottom-9",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter a name or postcode"
+          },
+          value: constituency
+        }) }}              
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

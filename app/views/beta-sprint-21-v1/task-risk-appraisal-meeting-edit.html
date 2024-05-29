@@ -1,0 +1,153 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit risk appraisal - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit risk appraisal meeting
+      </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="task-risk-appraisal-meeting-landing-page">
+        <div class="govuk-form-group">
+
+          {{ govukRadios({
+            name: "riskAppraisalMeetingCompleted",
+            fieldset: {
+              legend: {
+                text: "Initial risk appraisal meeting completed",
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: checked("currentProject.riskAppraisalMeetingCompleted", "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: checked("currentProject.riskAppraisalMeetingCompleted", "No")
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "riskAppraisalMeetingForecastDate",
+            namePrefix: "riskAppraisalMeetingForecastDate",
+            classes: "govuk-!-margin-bottom-6",
+            fieldset: {
+              legend: {
+                text: "Forecast date",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: currentProject.riskAppraisalMeetingForecastDateDay,
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: currentProject.riskAppraisalMeetingForecastDateMonth,
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: currentProject.riskAppraisalMeetingForecastDateYear,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "riskAppraisalMeetingActualDate",
+            namePrefix: "riskAppraisalMeetingActualDate",
+            classes: "govuk-!-margin-bottom-6",
+            fieldset: {
+              legend: {
+                text: "Actual date",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            },
+            items: [
+            {
+              name: "day",
+              value: currentProject.riskAppraisalMeetingActualDateDay,
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: currentProject.riskAppraisalMeetingActualDateMonth,
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",                  
+              value: currentProject.riskAppraisalMeetingActualDateYear,
+              classes: "govuk-input--width-4"
+            }
+          ]
+          }) }}
+
+          {{ govukInput({
+            id: "riskAppraisalMeetingCommentsOnDecisionToApprove",
+            name: "riskAppraisalMeetingCommentsOnDecisionToApprove",
+            classes: "govuk-!-margin-bottom-6",
+            label: {
+                text: "Comments on decision to approve (if applicable)",
+                classes: "govuk-heading-m"
+            },
+            value: currentProject.riskAppraisalMeetingCommentsOnDecisionToApprove
+          }) }}
+
+          {{ govukInput({
+            id: "riskAppraisalMeetingReasonNotApplicable",
+            name: "riskAppraisalMeetingReasonNotApplicable",
+            classes: "govuk-!-margin-bottom-6",
+            label: {
+                text: "Reason not applicable",
+                classes: "govuk-heading-m"
+            },
+            value: currentProject.riskAppraisalMeetingReasonNotApplicable
+          }) }}
+
+          <br><br>
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

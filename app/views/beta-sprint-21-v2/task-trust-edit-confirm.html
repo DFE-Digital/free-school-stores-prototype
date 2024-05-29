@@ -1,0 +1,131 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  {% if data["trustID"] == "123456" %}
+    0 results for {{data["trustID"]}} - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% else %}
+    Search for a trust by TRN - {{currentProject.projectTitle}} – {{ serviceName }}
+  {% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">      
+
+      {% if data["trustID"] == "123456" %}
+      
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        0 results for {{data["trustID"]}}
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            Improve your results by:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>checking you have entered the TRN (trust reference number) in the right format. For example, TR00036</li>
+            <li>searching with a different TRN</li>
+          </ul>
+          <p class="govuk-body">
+            <a href="task-trust-edit">Search again for a trust</a> 
+          </p>
+        </div>
+      </div>
+      
+      
+      {% else %}
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Confirm the trust
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="validate-trust-result">
+            <div class="govuk-form-group">
+
+              {{ govukSummaryList({
+
+                classes: "govuk-summary-list--no-border",
+                rows: [
+                  {
+                    key: {
+                      text: "TRN (trust reference number) "
+                    },
+                    value: {
+                      text: data["trustID"]
+                    }
+                  },        
+                  {
+                    key: {
+                      text: "Trust name"
+                    },
+                    value: {
+                      html: "United Learning Trust"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Trust type"
+                    },
+                    value: {
+                      html: "Multi-academy trust"
+                    }
+                  }
+                ]
+              }) }}
+              
+              {{ govukRadios({
+                idPrefix: "confirm-trust-result",
+                name: "confirm-trust-result",
+                fieldset: {
+                  legend: {
+                    text: "Is this the correct trust?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    checked: checked("confirm-trust-result", "Yes"),
+                    text: "Yes"
+                  },
+                  {
+                    value: "No",
+                    checked: checked("confirm-trust-result", "No"),
+                    text: "No, search again"
+                  }
+    
+                ]
+              }) }}
+
+
+              <br><br>
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

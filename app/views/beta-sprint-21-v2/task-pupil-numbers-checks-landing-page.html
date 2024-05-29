@@ -1,0 +1,110 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Pupil numbers checks - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Pupil numbers checks
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "School has received enough applications to be viable"
+            },
+            value: {
+              html: currentProject.pupilNumbersEnoughApplications | displayCheckboxValues
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pupil-numbers-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "School has received enough applications to be viable"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Capacity data matches what's on the funding agreement"
+            },
+            value: {
+              html: currentProject.pupilNumbersCapacityDataMatchesFundingAgreement | displayCheckboxValues
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pupil-numbers-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Capacity data matches what's on the funding agreement"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Capacity data matches what's on the GIAS registration form"
+            },
+            value: {
+              html: currentProject.pupilNumbersCapacityDataMatchesGIAS | displayCheckboxValues
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-pupil-numbers-checks-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Capacity data matches what's on the GIAS registration form"
+                }
+              ]
+            }
+          }
+          
+        ]
+      }) }}
+      
+
+
+      <form action="task-financial-plan-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-financial-plan-status",
+        name: "task-financial-plan-status",
+        values: currentProject.taskFinancePlanStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
