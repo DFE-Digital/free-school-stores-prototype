@@ -44,71 +44,17 @@ Principal designate - {{currentProject.projectTitle}} – {{ serviceName }}
           ,
           {
             key: {
-              text: "Forecast date"
+              text: "An education expert is commissioned"
             },
             value: {
-              html: currentProject | withDatePrefixed('principalDesignateForecastDate') | displayDate
+              html: currentProject.principalDesignateEducationExpertIsCommissioned | displayText
             },
             actions: {
               items: [
                 {
                   href: "task-principal-designate-edit",
                   text: "Change",
-                  visuallyHiddenText: "Forecast date"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Actual date"
-            },
-            value: {
-              html: currentProject | withDatePrefixed('principalDesignateActualDate') | displayDate
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-principal-designate-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Actual date"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Comments on decision to approve (if applicable)"
-            },
-            value: {
-              html: currentProject.principalDesignateCommentsOnDecisionToApprove | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-principal-designate-edit",
-                  text: "Change",
-                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "SharePoint link"
-            },
-            value: {
-              html: currentProject.principalDesignateSharepointLink | displayText
-            },
-            actions: {
-              items: [
-                {
-                  href: "task-principal-designate-edit",
-                  text: "Change",
-                  visuallyHiddenText: "SharePoint link"
+                  visuallyHiddenText: "An education expert is commissioned"
                 }
               ]
             }

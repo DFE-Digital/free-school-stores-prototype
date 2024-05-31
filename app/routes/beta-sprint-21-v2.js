@@ -631,10 +631,7 @@ module.exports = function (router) {
         var masterProject = getProject(req);
 
         masterProject.principalDesignateAppointed = req.session.data['principalDesignateAppointed'];
-        applyDateFields(masterProject, req, 'principalDesignateForecastDate');
-        applyDateFields(masterProject, req, 'principalDesignateActualDate');
-        masterProject.principalDesignateCommentsOnDecisionToApprove = req.session.data['principalDesignateCommentsOnDecisionToApprove'];
-        masterProject.principalDesignateSharepointLink = req.session.data['principalDesignateSharepointLink'];
+        masterProject.principalDesignateEducationExpertIsCommissioned = req.session.data['principalDesignateEducationExpertIsCommissioned'];
 
         req.session.data.currentProject = masterProject;
 

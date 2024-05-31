@@ -49,91 +49,28 @@
                 ]
               }) }}
 
-              {{ govukDateInput({
-                id: "principalDesignateForecastDate",
-                namePrefix: "principalDesignateForecastDate",
-                classes: "govuk-!-margin-bottom-6",
+              {{ govukRadios({
+                name: "principalDesignateEducationExpertIsCommissioned",
                 fieldset: {
                   legend: {
-                    text: "Forecast date",
-                    classes: "govuk-fieldset__legend--m"
+                    text: "An education expert is commissioned",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
                   }
                 },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
                 items: [
-                {
-                  name: "day",
-                  value: currentProject.principalDesignateForecastDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.principalDesignateForecastDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.principalDesignateForecastDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
-              }) }}
-
-              {{ govukDateInput({
-                id: "principalDesignateActualDate",
-                namePrefix: "principalDesignateActualDate",
-                classes: "govuk-!-margin-bottom-6",
-                fieldset: {
-                  legend: {
-                    text: "Actual date",
-                    classes: "govuk-fieldset__legend--m"
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.principalDesignateEducationExpertIsCommissioned", "Yes")
+                  },
+                  {
+                    value: "No, not applicable",
+                    text: "No not applicable",
+                    checked: checked("currentProject.principalDesignateEducationExpertIsCommissioned", "No, not applicable")
                   }
-                },
-                hint: {
-                  text: "For example, 27 3 2021"
-                },
-                items: [
-                {
-                  name: "day",
-                  value: currentProject.principalDesignateActualDateDay,
-                  classes: "govuk-input--width-2"
-                },
-                {
-                  name: "month",
-                  value: currentProject.principalDesignateActualDateMonth,
-                  classes: "govuk-input--width-2"
-                },                
-                {
-                  name: "year",                  
-                  value: currentProject.principalDesignateActualDateYear,
-                  classes: "govuk-input--width-4"
-                }
-              ]
+                ]
               }) }}
-
-              {{ govukInput({
-                id: "principalDesignateCommentsOnDecisionToApprove",
-                name: "principalDesignateCommentsOnDecisionToApprove",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Comments on decision to approve (if applicable)",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.principalDesignateCommentsOnDecisionToApprove
-              }) }}
-
-              {{ govukInput({
-                id: "principalDesignateSharepointLink",
-                name: "principalDesignateSharepointLink",
-                classes: "govuk-!-margin-bottom-6",
-                label: {
-                    text: "Sharepoint link",
-                    classes: "govuk-heading-m"
-                },
-                value: currentProject.principalDesignateSharepointLink
-              }) }}
+              
 
               <br><br>
               {{ govukButton({
