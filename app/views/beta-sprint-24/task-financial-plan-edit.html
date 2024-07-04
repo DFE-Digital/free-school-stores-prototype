@@ -1,0 +1,224 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Finance plan - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Finance plan
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-financial-plan-update">
+            <div class="govuk-form-group">
+
+              {{ govukCheckboxes({
+                idPrefix: "financePlanAgreed",
+                name: "financePlanAgreed",
+                values: currentProject.financePlanAgreed,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Finance plan agreed",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Done",
+                  text: "Done"
+                  }
+                ]
+              }) }}
+
+              {{ govukDateInput({
+                id: "financePlanActualDate",
+                namePrefix: "financePlanActualDate",
+                classes: "govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Date agreed",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.financePlanActualDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.financePlanActualDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.financePlanActualDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukCheckboxes({
+                idPrefix: "financePlanSaved",
+                name: "financePlanSaved",
+                values: currentProject.financePlanSaved,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6",
+                fieldset: {
+                  legend: {
+                    text: "Plan saved in Workspaces folder",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                {
+                  value: "Done",
+                  text: "Done"
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "financePlanPupilNumbersAgreed",
+                fieldset: {
+                  legend: {
+                    text: "Local authority agreed to underwrite pupil numbers",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.financePlanPupilNumbersAgreed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.financePlanPupilNumbersAgreed", "No")
+                  },
+                  {
+                    value: "Not applicable",
+                    text: "Not applicable",
+                    checked: checked("currentProject.financePlanPupilNumbersAgreed", "Not applicable")
+                  }
+                ]
+              }) }}
+
+              {{ govukTextarea({
+                id: "financePlanCommentsOnDecisionToApprove",
+                name: "financePlanCommentsOnDecisionToApprove",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Comments",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.financePlanCommentsOnDecisionToApprove
+              }) }}
+
+              {% set RPAOptInHtml %}
+              {{ govukDateInput({
+                id: "financePlanRPAStartDate",
+                namePrefix: "financePlanRPAStartDate",
+                classes: "",
+                fieldset: {
+                  legend: {
+                    text: "Start date",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: currentProject.financePlanRPAStartDateDay,
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: currentProject.financePlanRPAStartDateMonth,
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: currentProject.financePlanRPAStartDateYear,
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+              {{ govukInput({
+                id: "financePlanRPAType",
+                name: "financePlanRPAType",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Type of RPA cover",
+                    classes: "govuk-heading-s govuk-!-font-size-19"
+                },
+                value: currentProject.financePlanRPAType
+              }) }}
+              {% endset -%}
+
+              {{ govukRadios({
+                name: "financePlanRPAOptIn",
+                fieldset: {
+                  legend: {
+                    text: "Trust will opt-in to RPA (risk protection arrangement)",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.financePlanRPAOptIn", "Yes"),
+                    conditional: {
+                      html: RPAOptInHtml
+                    }
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.financePlanRPAOptIn", "No")
+                  }
+                ]
+              }) }}
+
+              
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
