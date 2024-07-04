@@ -46,7 +46,7 @@ addFilter('taskStatus', (taskStatus, fields) =>
 
     if (inProgress)
     {
-        return '<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>';
+        return '<strong class="govuk-tag govuk-tag--light-blue app-task-list__tag" id="eligibility-status">In progress</strong>';
     }
 
     return "<strong class='govuk-tag govuk-tag--grey app-task-list__tag' id='eligibility-status'>Not started</strong>";
@@ -63,7 +63,7 @@ addFilter('projectStatus', (projectStatus) =>
     
         if (projectStatus.includes("In progress"))
         {
-            return '<strong class="govuk-tag govuk-tag--blue" id="eligibility-status">In progress</strong>';
+            return '<strong class="govuk-tag govuk-tag--light-blue" id="eligibility-status">In progress</strong>';
         }
     }
 
