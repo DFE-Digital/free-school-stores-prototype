@@ -4,7 +4,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {# 1 #} 
-{% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
@@ -27,9 +27,11 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     "userNameURL": "",
     "selectedNav": pageNav,
     "logoPath": "public/images",
+    "logoAltText": "Department for Education",
     "homeHref": "/",
     "service": {
-      "name": serviceName
+      "name": "Manage free school projects",
+      "serviceUrl": "/"
     },
     "primaryLinks": [
       {
