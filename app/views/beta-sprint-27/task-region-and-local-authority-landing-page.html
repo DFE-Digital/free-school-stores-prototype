@@ -1,0 +1,88 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Region and local authority - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Region and local authority
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Region"
+            },
+            value: {
+              html: currentProject.geographicalRegion | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-region-and-local-authority-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Region"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              html: currentProject.localAuthority | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-region-and-local-authority-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Local authority"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="project-task-list" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-region-and-local-authority-status",
+        name: "task-region-and-local-authority-status",
+        values: currentProject.taskRegionAndLocalAuthority,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
