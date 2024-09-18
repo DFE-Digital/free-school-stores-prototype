@@ -1,0 +1,131 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{# 1 #} 
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 3 #}
+{% block header %}
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new system – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.'
+    }) }}
+  </div>
+
+
+  {% if data['userRole'] == "School places analysis team" %}
+    {% set pLinks =  [
+      {
+        "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
+        "label" : "All projects"
+      }
+    ] %}
+  {% else %}
+    {% set pLinks =  [
+      {
+        "url"  : "projects-listing-your-projects?dashboardSearch=&filter-regions&filter-la",
+        "label" : "Your projects"
+      }, {
+        "url"  : "projects-listing-all-projects?dashboardSearch=&filter-regions&filter-la",
+        "label" : "All projects"
+      }
+    ] %}
+  {% endif %}
+
+  {{ header({
+    "showNav": "true",
+    "showSearch": "false",
+    "showUserName": "true",
+    "userName": "Sign out",
+    "userNameURL": "",
+    "selectedNav": "",
+    "logoPath": "public/images",
+    "logoAltText": "Department for Education",
+    "homeHref": "/",
+    "service": {
+      "name": "Manage free school projects",
+      "serviceUrl": "/"
+    },
+    "primaryLinks": pLinks
+  }) }}
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__navigation">
+      <div class="govuk-footer__section govuk-grid-column-two-thirds">
+        <h2 class="govuk-footer__heading govuk-heading-m">Get help</h2>
+        <ul class="govuk-footer__list govuk-footer__list--column-1">
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="mailto:regionalservices.rg@education.gov.uk?subject=Manage%20free%20school%20projects:%20support%20query">
+              Email Service Support for help with using this system
+            </a>
+            <br>
+            <p>We aim to respond within 5 working days, or one working day for more urgent queries.</p>
+          </li>
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="https://educationgovuk.sharepoint.com/sites/lvewp00299/SitePages/complete-conversions-transfers-and-changes.aspx">
+              How to use this system (opens in a new tab)
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-footer__section govuk-grid-column-one-third">
+        <h2 class="govuk-footer__heading govuk-heading-m">Give feedback</h2>
+        <ul class="govuk-footer__list">
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-SZtRygfwTNOqcfRq-MXpv9UOTIyQlNYR0hJT1Q0TUFVSlJGVFhES01LVC4u">Give feedback (opens in a new tab)</a>
+          </li>
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-fkHK2JGo_BIpVChpLMaBFpUNUFDSzhQN0FHVklTV0JWTzFZTjNKWTNJUi4u">Suggest a change (opens in a new tab)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr class="govuk-footer__section-break">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow dfe-footer__meta-item--grow">
+        <h2 class="govuk-visually-hidden">Support links</h2>
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Privacy policy
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="cookies">
+              Cookies
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="accessibility-statement">
+              Accessibility statement
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{# 4 #} 
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/dfefrontend.js"></script>
+{% endblock %}

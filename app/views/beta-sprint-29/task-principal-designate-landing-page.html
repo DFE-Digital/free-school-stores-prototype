@@ -1,0 +1,90 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Principal designate - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Principal designate
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Trust has appointed a high-quality principal designate"
+            },
+            value: {
+              html: currentProject.principalDesignateAppointed | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-principal-designate-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust has appointed a high-quality principal designate"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Commissioned an external expert"
+            },
+            value: {
+              html: currentProject.principalDesignateEducationExpertIsCommissioned | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-principal-designate-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Commissioned an external expert"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-principal-designate-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-principal-designate-status",
+        name: "task-principal-designate-status",
+        values: currentProject.taskPrincipalDesignateStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

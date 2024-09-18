@@ -1,0 +1,244 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Contacts - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to about the project",
+    href: "project-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+      Contacts
+    </h1>
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukSummaryList({
+      card: {
+          title: {
+              text: "Project managed by"
+          },
+          actions: {
+              items: [
+                  {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Change project managed by"
+                  }
+              ]
+          }
+      },
+      rows: [
+        {
+          key: {
+              text: "Name"
+          },
+          value: {
+              html: currentProject.deliveryOfficer
+          }
+        }
+        ,
+        {
+          key: {
+              text: "Email address"
+          },
+          value: {
+              html: ""
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+          title: {
+              text: "Team lead"
+          },
+          actions: {
+              items: [
+                  {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Change team lead"
+                  }
+              ]
+          }
+      },
+      rows: [
+        {
+            key: {
+                text: "Name"
+            },
+            value: {
+                html: ""
+            }
+        }
+        ,
+        {
+            key: {
+                text: "Email address"
+            },
+            value: {
+                html: ""
+            }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+          title: {
+              text: "Grade 6"
+          },
+          actions: {
+              items: [
+                  {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Change grade 6"
+                  }
+              ]
+          }
+      },
+      rows: [
+        {
+            key: {
+                text: "Name"
+            },
+            value: {
+                html: ""
+            }
+        }
+        ,
+        {
+            key: {
+                text: "Email address"
+            },
+            value: {
+                html: ""
+            }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+          title: {
+              text: "Project director"
+          },
+          actions: {
+              items: [
+                  {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Change project director"
+                  }
+              ]
+          }
+      },
+      rows: [
+        {
+            key: {
+                text: "Name"
+            },
+            value: {
+                html: ""
+            }
+        }
+        ,
+        {
+            key: {
+                text: "Email address"
+            },
+            value: {
+                html: ""
+            }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+          title: {
+              text: "School chair of governors"
+          },
+          actions: {
+              items: [
+                  {
+                      href: "other-info-contacts-school-chair-of-governors-edit",
+                      text: "Change",
+                      visuallyHiddenText: "Change school chair of governors"
+                  }
+              ]
+          }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            html: currentProject.contactsSchoolChairOfGovernorsName
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            html: currentProject.contactsSchoolChairOfGovernorsEmail
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Trust chair"
+        },
+        actions: {
+          items: [
+            {
+              href: "other-info-contacts-multi-academy-trust-chair-of-governors-edit",
+              text: "Change",
+              visuallyHiddenText: "Change multi academy trust chair of governors"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            html: currentProject.contactsMultiAcademyTrustChairOfGovernorsName
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            html: currentProject.contactsMultiAcademyTrustChairOfGovernorsEmail
+          }
+        }
+      ]
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Edit Principal designate - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Principal designate
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="task-principal-designate-landing-page">
+            <div class="govuk-form-group">
+
+              {{ govukRadios({
+                name: "principalDesignateAppointed",
+                fieldset: {
+                  legend: {
+                    text: "Trust has appointed a high-quality principal designate",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.principalDesignateAppointed", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.principalDesignateAppointed", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                name: "principalDesignateEducationExpertIsCommissioned",
+                fieldset: {
+                  legend: {
+                    text: "Commissioned an external expert",
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("currentProject.principalDesignateEducationExpertIsCommissioned", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("currentProject.principalDesignateEducationExpertIsCommissioned", "No")
+                  }
+                ]
+              }) }}
+              
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
