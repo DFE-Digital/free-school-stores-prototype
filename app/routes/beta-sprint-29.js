@@ -39,7 +39,13 @@ module.exports = function (router) {
     router.post('/' + version + '/choose-create-method', function (req, res) {
         // Make a variable to give it the value from the radio buttons on the index page  
         var Task = req.session.data['create-new-project-methods']
-        res.redirect('create-new-project-school-name')
+
+        if (Task == "presumption") { 
+            res.redirect('create-new-project-temporary-project-id')
+        }   
+        else if (Task == "central") {
+            res.redirect('create-new-central-route-application-number')
+        }
     })
 
     router.post('/' + version + '/validate-trust-result', function (req, res) { 

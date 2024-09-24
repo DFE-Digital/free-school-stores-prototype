@@ -23,30 +23,51 @@
       {% endif %}
           <input hidden type="text" name="returnToSummary" value="no"/>
 
+          {% set CentralRouteHtml %}
+            {{ govukInput({
+              id: "CentralRouteApplicationWave",
+              name: "CentralRouteApplicationWave",
+              classes: "",
+              label: {
+                  text: "Application wave",
+                  classes: "govuk-heading-s govuk-!-font-size-19 govuk-!-margin-bottom-0 govuk-!-margin-top-3"
+              },
+              hint: {
+                text: 'For example, "FS Wave 4" or "FS Wave 12"'
+              },
+              value: currentProject.CentralRouteApplicationWave
+            }) }}
+          {% endset -%}
+
           {{ govukRadios({
             idPrefix: "create-new-project-methods",
             name: "create-new-project-methods",
             fieldset: {
               legend: {
-                html: '<span class="govuk-caption-l">Creating a new free school project</span>What project do you want to create?',
+                text: "What do you want to do?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
               }
-            },
-            hint: {
-              text: "You can only create one at a time.",
-              classes: "govuk-!-margin-bottom-6"
             },
             items: [
               {
                 value: "presumption",
                 checked: checked("create-new-project-methods", "presumption"),
-                text: "Presumption route"
+                text: "Create a presumption project",
+                hint: {
+                  text: "Presumption route only"
+                }
               },
               {
                 value: "central",
                 checked: checked("create-new-project-methods", "central"),
-                text: "Central route"
+                text: "Create a central route project",
+                hint: {
+                  text: "Central route only"
+                },
+                conditional: {
+                  html: CentralRouteHtml
+                }
               }
 
             ]
