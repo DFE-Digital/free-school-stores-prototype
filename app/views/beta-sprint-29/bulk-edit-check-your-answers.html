@@ -1,7 +1,7 @@
 {% extends "./layouts/main.html" %}
 
 {% block pageTitle %}
-  Bulk edit - check your answers – {{ serviceName }}
+  Check your answers – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,6 @@
           <input hidden type="text" name="returnToSummary" value="no"/>
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-            <span class="govuk-caption-l">Editing information of multiple projects in bulk</span>
             Check your answers
           </h1>
 
@@ -33,7 +32,7 @@
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper">
               <h2 class="govuk-summary-card__title">
-                Row 1
+                Row 2
               </h2>
             </div>
             <div class="govuk-summary-card__content">
@@ -76,7 +75,7 @@
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper">
               <h2 class="govuk-summary-card__title">
-                Row 2
+                Row 3
               </h2>
             </div>
             <div class="govuk-summary-card__content">
@@ -118,19 +117,19 @@
           </div>
 
           <h2 class="govuk-heading-m">
-            Now edit your projects
+            Now edit these projects
           </h2>
     
           <p>
-            By selecting the Confirm button, you are confirming that you have approval to edit projects.
+            By selecting the Edit projects button, you are confirming that you have approval to edit projects.
           </p>
 
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Confirm"
+              text: "Edit projects"
             }) }}
           
-            <a class="govuk-link" href="bulk-edit-file-upload">Back to the bulk edit</a>
+            <a class="govuk-link" href="bulk-edit-file-upload">Back to update multiple fields</a>
           </div>
 
         </form>

@@ -39,15 +39,7 @@ module.exports = function (router) {
     router.post('/' + version + '/choose-create-method', function (req, res) {
         // Make a variable to give it the value from the radio buttons on the index page  
         var Task = req.session.data['create-new-project-methods']
-
-        // Check whether the variable matches a condition
-        if (Task == "individual") { 
-            res.redirect('create-new-project-school-name')
-        }   
-        else if (Task == "bulk") {
-            res.redirect('create-new-project-school-bulk-upload')
-        }
-
+        res.redirect('create-new-project-school-name')
     })
 
     router.post('/' + version + '/validate-trust-result', function (req, res) { 

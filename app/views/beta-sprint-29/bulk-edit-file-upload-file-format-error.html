@@ -1,7 +1,7 @@
 {% extends "./layouts/main.html" %}
 
 {% block pageTitle %}
-  Bulk edit - Editing information of multiple projects in bulk – {{ serviceName }}
+  Update multiple fields - Editing information of multiple projects in bulk – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -64,13 +64,21 @@
           </div>
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-            <span class="govuk-caption-l">Editing information of multiple projects in bulk</span>
-            Bulk edit
+            Update multiple fields
           </h1>
 
-          <p class="govuk-body">Upload a .csv or Excel spreadsheet to edit information of multiple projects in one go.</p>
+          <p class="govuk-body">You can edit these fields in multiple projects:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>project status</li>
+            <li>actual opening date</li>
+            <li>local authority</li>
+          </ul>
 
-          <p class="govuk-body govuk-!-margin-bottom-8">If you're not sure what format your file should be, <a href="/public/downloads/SPA Team - Bulk Upload Template.xlsx">download a template</a> and upload your filled-in version.</p>
+          <p class="govuk-body">You can download this <a href="/public/downloads/SPA Team - Bulk Upload Template.xlsx">example spreadsheet</a> and upload a completed one.</p>
+
+          <div class="govuk-inset-text govuk-!-margin-bottom-8">
+            Leaving spreadsheet fields empty will not remove any existing project data.
+          </div>
 
           <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label" for="file-upload-1">

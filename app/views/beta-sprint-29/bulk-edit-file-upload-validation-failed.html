@@ -1,7 +1,7 @@
 {% extends "./layouts/main.html" %}
 
 {% block pageTitle %}
-  Bulk edit - Editing information of multiple projects in bulk – {{ serviceName }}
+  Update multiple fields - Editing information of multiple projects in bulk – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -56,7 +56,7 @@
               <div class="govuk-error-summary__body">
                 <ul class="govuk-list govuk-error-summary__list">
                   <li>
-                    <a href="#file-upload-1">Validation failed: 2 records</a>
+                    <a href="#file-upload-1">The selected file has 4 validation errors.</a>
                   </li>
                 </ul>
               </div>
@@ -64,20 +64,28 @@
           </div>
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-            <span class="govuk-caption-l">Editing information of multiple projects in bulk</span>
-            Bulk edit
+            Update multiple fields
           </h1>
 
-          <p class="govuk-body">Upload a .csv or Excel spreadsheet to edit information of multiple projects in one go.</p>
+          <p class="govuk-body">You can edit these fields in multiple projects:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>project status</li>
+            <li>actual opening date</li>
+            <li>local authority</li>
+          </ul>
 
-          <p class="govuk-body govuk-!-margin-bottom-8">If you're not sure what format your file should be, <a href="/public/downloads/SPA Team - Bulk Upload Template.xlsx">download a template</a> and upload your filled-in version.</p>
+          <p class="govuk-body">You can download this <a href="/public/downloads/SPA Team - Bulk Upload Template.xlsx">example spreadsheet</a> and upload a completed one.</p>
+
+          <div class="govuk-inset-text govuk-!-margin-bottom-8">
+            Leaving spreadsheet fields empty will not remove any existing project data.
+          </div>
 
           <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label" for="file-upload-1">
               Upload a file
             </label>
             <p id="file-upload-1-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Validation failed: 2 records
+              <span class="govuk-visually-hidden">Error:</span> The selected file has 4 validation errors.
             </p>
             <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="fileUpload1" type="file" aria-describedby="file-upload-1-error">
           </div>
@@ -92,7 +100,7 @@
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
-              Row 7
+              Row 2
             </h2>
           </div>
           <div class="govuk-summary-card__content">
@@ -105,7 +113,7 @@
                   FS0418
                 </dd>
                 <dd class="govuk-error-message">
-                  Invalid project ID
+                  Enter an existing project ID
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -145,7 +153,7 @@
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
-              Row 13
+              Row 5
             </h2>
           </div>
           <div class="govuk-summary-card__content">
@@ -168,7 +176,7 @@
                   Opening
                 </dd>
                 <dd class="govuk-error-message">
-                  Invalid project status
+                  Select an existing project status
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -189,7 +197,7 @@
                   SW19
                 </dd>
                 <dd class="govuk-error-message">
-                  Invalid local authority
+                  Local authority must be 3 characters
                 </dd>
               </div>
             </dl>

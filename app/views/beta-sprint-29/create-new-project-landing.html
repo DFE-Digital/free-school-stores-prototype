@@ -23,6 +23,22 @@
       {% endif %}
           <input hidden type="text" name="returnToSummary" value="no"/>
 
+          {% set CentralRouteHtml %}
+            {{ govukInput({
+              id: "CentralRouteApplicationWave",
+              name: "CentralRouteApplicationWave",
+              classes: "",
+              label: {
+                  text: "Application wave",
+                  classes: "govuk-heading-s govuk-!-font-size-19 govuk-!-margin-bottom-0 govuk-!-margin-top-3"
+              },
+              hint: {
+                text: 'For example, "FS Wave 4" or "FS Wave 12"'
+              },
+              value: currentProject.CentralRouteApplicationWave
+            }) }}
+          {% endset -%}
+
           {{ govukRadios({
             idPrefix: "create-new-project-methods",
             name: "create-new-project-methods",
@@ -35,19 +51,22 @@
             },
             items: [
               {
-                value: "individual",
-                checked: checked("create-new-project-methods", "individual"),
-                text: "Create one project",
+                value: "presumption",
+                checked: checked("create-new-project-methods", "presumption"),
+                text: "Create a presumption project",
                 hint: {
-                  text: "Presumption or wave route"
+                  text: "Presumption route only"
                 }
               },
               {
-                value: "bulk",
-                checked: checked("create-new-project-methods", "bulk"),
-                text: "Upload multiple projects",
+                value: "central",
+                checked: checked("create-new-project-methods", "central"),
+                text: "Create a central route project",
                 hint: {
-                  text: "Wave route only"
+                  text: "Central route only"
+                },
+                conditional: {
+                  html: CentralRouteHtml
                 }
               }
 
