@@ -1,0 +1,126 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set bodyClasses = "mfsp-wider-page" %}
+
+{% block pageTitle %}
+Edit Capacity when full - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to pupil numbers",
+    href: "other-info-pupil-numbers?pupilNumbersJustUpdated=no"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Capacity when full
+      </h1>
+
+      <form action="other-info-pupil-numbers-capacity-save" method="post">
+
+        <table class="govuk-table mfsp-pupil-numbers__table-container mfsp-pupil-numbers__table-container--small">
+          <caption class="govuk-table__caption govuk-table__caption--l">Reception to year 14</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header col1">School group</th>
+              <th scope="col" class="govuk-table__header">Capacity</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Reception to year 6</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-full-capacity-reception-to-year-6",
+                  name: "pupil-numbers-full-capacity-reception-to-year-6",
+                  value: currentProject.pupilNumbersFullCapacityReceptionToYear6
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 7 to year 11</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-full-capacity-year-7-to-year-11",
+                  name: "pupil-numbers-full-capacity-year-7-to-year-11",
+                  value: currentProject.pupilNumbersFullCapacityYear7ToYear11
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 12 to year 14</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-full-capacity-year-12-to-year-14",
+                  name: "pupil-numbers-full-capacity-year-12-to-year-14",
+                  value: currentProject.pupilNumbersFullCapacityYear12ToYear14
+                }) }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="govuk-table mfsp-pupil-numbers__table-container mfsp-pupil-numbers__table-container--small">
+          <caption class="govuk-table__caption govuk-table__caption--l">Nursery and specialist resource provision</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header col1">School group</th>
+              <th scope="col" class="govuk-table__header">Capacity</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Nursery</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-full-capacity-nursery",
+                  name: "pupil-numbers-full-capacity-nursery",
+                  value: currentProject.pupilNumbersFullCapacityNursery
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Special educational needs (specialist resource provision)</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-full-capacity-special-educational-needs",
+                  name: "pupil-numbers-full-capacity-special-educational-needs",
+                  value: currentProject.pupilNumbersFullCapacitySpecialEducationalNeeds
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Alternative provision (specialist resource provision)</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-full-capacity-alternative-provision",
+                  name: "pupil-numbers-full-capacity-alternative-provision",
+                  value: currentProject.pupilNumbersFullCapacityAlternativeProvision
+                }) }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+  
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}

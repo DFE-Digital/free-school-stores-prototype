@@ -1,0 +1,52 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Application number - Create new free school projects – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="create-new-central-route-application-wave" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-caption-l">Creating a new free school project</span>
+              What is the application number?',
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "For example, SPW3-075."
+            },
+            id: "create-new-central-route-application-number",
+            name: "create-new-central-route-application-number",
+            value: data["create-new-central-route-application-number"]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

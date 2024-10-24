@@ -1,0 +1,66 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+Edit trust chair - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit trust chair
+      </h1>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="update-multi-academy-trust-chair-of-governors">
+            <div class="govuk-form-group">
+
+              {{ govukInput({
+                id: "contactsMultiAcademyTrustChairOfGovernorsName",
+                name: "contactsMultiAcademyTrustChairOfGovernorsName",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Name",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.contactsMultiAcademyTrustChairOfGovernorsName
+              }) }}
+
+              {{ govukInput({
+                id: "contactsMultiAcademyTrustChairOfGovernorsEmail",
+                name: "contactsMultiAcademyTrustChairOfGovernorsEmail",
+                classes: "govuk-!-margin-bottom-6",
+                label: {
+                    text: "Email",
+                    classes: "govuk-heading-m"
+                },
+                value: currentProject.contactsMultiAcademyTrustChairOfGovernorsEmail
+              }) }}
+
+              <br><br>
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

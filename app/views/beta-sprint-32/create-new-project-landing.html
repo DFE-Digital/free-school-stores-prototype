@@ -1,0 +1,65 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Create new free school projects – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="choose-create-method" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          {{ govukRadios({
+            idPrefix: "create-new-project-methods",
+            name: "create-new-project-methods",
+            fieldset: {
+              legend: {
+                html: '<span class="govuk-caption-l">Creating a new free school project</span>What project do you want to create?',
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+              }
+            },
+            hint: {
+              text: "You can only create one at a time.",
+              classes: "govuk-!-margin-bottom-6"
+            },
+            items: [
+              {
+                value: "presumption",
+                checked: checked("create-new-project-methods", "presumption"),
+                text: "Presumption route"
+              },
+              {
+                value: "central",
+                checked: checked("create-new-project-methods", "central"),
+                text: "Central route"
+              }
+
+            ]
+          }) }} 
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

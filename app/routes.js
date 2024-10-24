@@ -29,3 +29,4 @@ require('./routes/beta-sprint-21-v3.js')(router);
 require('./routes/beta-sprint-24.js')(router);
 require('./routes/beta-sprint-27.js')(router);
 require('./routes/beta-sprint-29.js')(router);
+require('./routes/beta-sprint-32.js')(router);

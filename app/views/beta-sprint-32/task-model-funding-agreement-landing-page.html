@@ -1,0 +1,144 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+
+{% block pageTitle %}
+  Model funding agreement - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Model funding agreement
+      </h1>
+
+      {{ govukSummaryList({
+        
+        rows: [
+          {
+            key: {
+              text: "Trust agrees with the department's model funding agreement document"
+            },
+            value: {
+              html: currentProject.modelFundingAgreementTrustAgrees | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Trust agrees with the department's model funding agreement document"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Forecast date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('modelFundingAgreementForecastDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Forecast date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Actual date"
+            },
+            value: {
+              html: currentProject | withDatePrefixed('modelFundingAgreementActualDate') | displayDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Actual date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments on decision to approve (if applicable)"
+            },
+            value: {
+              html: currentProject.modelFundingAgreementCommentsOnDecisionToApprove | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "Comments on decision to approve (if applicable)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "SharePoint link"
+            },
+            value: {
+              html: currentProject.modelFundingAgreementSharepointLink | displayText
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-model-funding-agreement-edit",
+                  text: "Change",
+                  visuallyHiddenText: "SharePoint link"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="task-model-funding-agreement-confirmation" method="post">
+        
+      {{ govukCheckboxes({
+        idPrefix: "task-model-funding-agreement-status",
+        name: "task-model-funding-agreement-status",
+        values: currentProject.taskModelFundingAgreementStatus,
+        items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

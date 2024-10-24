@@ -1,0 +1,127 @@
+{% extends "./layouts/main.html" %}
+{% set currentProject = data['currentProject'] %}
+{% set bodyClasses = "mfsp-wider-page" %}
+
+{% block pageTitle %}
+Edit Recruitment and viability - {{currentProject.projectTitle}} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to pupil numbers",
+    href: "other-info-pupil-numbers?pupilNumbersJustUpdated=no"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">{{currentProject.projectTitle}}</span>
+        Edit Recruitment and viability
+      </h1>
+
+      <form action="other-info-pupil-numbers?pupilNumbersJustUpdated=yes" method="post">
+
+
+        <table class="govuk-table mfsp-pupil-numbers__table-container mfsp-pupil-numbers__table-container--small">
+          <caption class="govuk-table__caption govuk-table__caption--l">Recruitment and viability</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header col1">School year</th>
+              <th scope="col" class="govuk-table__header">Minimum viable number (MVN) for first year</th>
+              <th scope="col" class="govuk-table__header">Applications received</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Nursery</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-nursery-mvn",
+                  name: "pupil-numbers-recruitment-nursery-mvn",
+                  value: currentProject.pupilNumbersRecruitmentNurseryMVN
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-nursery-applications-received",
+                  name: "pupil-numbers-recruitment-nursery-applications-received",
+                  value: currentProject.pupilNumbersRecruitmentNurseryApplicationsReceived
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Reception to year 6</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-reception-to-year-6-mvn",
+                  name: "pupil-numbers-recruitment-reception-to-year-6-mvn",
+                  value: currentProject.pupilNumbersRecruitmentReceptionToYear6MVN
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-reception-to-year-6-applications-received",
+                  name: "pupil-numbers-recruitment-reception-to-year-6-applications-received",
+                  value: currentProject.pupilNumbersRecruitmentReceptionToYear6ApplicationsReceived
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 7 to year 11</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-year-7-to-year-11-mvn",
+                  name: "pupil-numbers-recruitment-year-7-to-year-11-mvn",
+                  value: currentProject.pupilNumbersRecruitmentYear7ToYear11MVN
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-year-7-to-year-11-applications-received",
+                  name: "pupil-numbers-recruitment-year-7-to-year-11-applications-received",
+                  value: currentProject.pupilNumbersRecruitmentYear7ToYear11ApplicationsReceived
+                }) }}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Year 12 to year 14</td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-year-12-to-year-14-mvn",
+                  name: "pupil-numbers-recruitment-year-12-to-year-14-mvn",
+                  value: currentProject.pupilNumbersRecruitmentYear12ToYear14MVN
+                }) }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ govukInput({
+                  classes: "govuk-input--width-3",
+                  id: "pupil-numbers-recruitment-year-12-to-year-14-applications-received",
+                  name: "pupil-numbers-recruitment-year-12-to-year-14-applications-received",
+                  value: currentProject.pupilNumbersRecruitmentYear12ToYear14ApplicationsReceived
+                }) }}
+              </td>
+            </tr>
+          
+          </tbody>
+        </table>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+  
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}

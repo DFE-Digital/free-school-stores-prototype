@@ -1,0 +1,141 @@
+{% extends "./layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form class="form" action="summary1" method="post">
+      {% else %}
+        <form class="form" action="bulk-edit-confirmation" method="post">
+      {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+            Check your answers
+          </h1>
+
+          <p class="govuk-body">You are about to edit these records:</p>
+
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Row 4 on the enter data tab
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project ID
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    FS0418
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project status
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Open
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Actual opening date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    01/09/2024
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Local authority
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Barnet
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Row 5 on the enter data tab
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project ID
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    FS0519
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project status
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Open
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Actual opening date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    01/09/2024
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Local authority
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Doncaster
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <h2 class="govuk-heading-m">
+            Now edit these projects
+          </h2>
+    
+          <p>
+            By selecting the Edit projects button, you are confirming that you have approval to edit projects.
+          </p>
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Edit projects"
+            }) }}
+          
+          </div>
+
+        </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
